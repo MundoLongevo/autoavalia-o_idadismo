@@ -1,56 +1,126 @@
-  <!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autodiagnóstico: O Idadismo Mora em Você?</title>
+    <title>Longelescência - Combate ao Idadismo</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FF6B8B">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👴🏻👵🏻</text></svg>">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary: #FF6B8B;
-            --secondary: #7ED6DF;
-            --accent: #FFD166;
-            --success: #06D6A0;
-            --dark: #1A535C;
-            --light: #F7FFF7;
-            --purple: #9D4EDD;
-            --orange: #FF9E6D;
+            /* Cores principais */
+            --rosa: #FF6B8B;
+            --azul: #7ED6DF;
+            --amarelo: #FFD166;
+            --verde: #06D6A0;
+            --roxo: #9D4EDD;
+            --laranja: #FF9E6D;
+            --azul-escuro: #1A535C;
+            --branco: #F7FFF7;
+            
+            /* Cores de texto */
+            --texto-escuro: #333333;
+            --texto-medio: #666666;
+            --texto-claro: #888888;
+            
+            /* Espaçamentos */
+            --espaco-xs: 0.5rem;
+            --espaco-sm: 1rem;
+            --espaco-md: 1.5rem;
+            --espaco-lg: 2rem;
+            --espaco-xl: 3rem;
+            
+            /* Bordas */
+            --borda-radius: 20px;
+            --borda-radius-sm: 10px;
+            
+            /* Sombras */
+            --sombra: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --sombra-forte: 0 15px 40px rgba(0, 0, 0, 0.15);
+            
+            /* Transições */
+            --transicao: all 0.3s ease;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
+            font-family: 'Nunito', sans-serif;
             background: linear-gradient(135deg, #F7FFF7 0%, #E8F4F8 100%);
-            color: #333;
+            color: var(--texto-escuro);
             line-height: 1.6;
-            padding-bottom: 50px;
             overflow-x: hidden;
+            padding-bottom: 60px;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: var(--espaco-sm);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--azul-escuro);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: var(--espaco-sm);
+            font-size: 1.1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
         }
         
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 var(--espaco-sm);
         }
         
-        /* Header e Introdução */
-        header {
-            background: linear-gradient(90deg, var(--primary), var(--orange));
+        /* HEADER */
+        .header {
+            background: linear-gradient(90deg, var(--rosa), var(--laranja));
             color: white;
-            padding: 30px 0;
-            border-radius: 0 0 30px 30px;
-            box-shadow: 0 10px 30px rgba(255, 107, 139, 0.3);
+            padding: var(--espaco-xl) 0;
+            border-radius: 0 0 var(--borda-radius) var(--borda-radius);
+            box-shadow: var(--sombra-forte);
             text-align: center;
             position: relative;
             overflow: hidden;
         }
         
-        header::before {
+        .header::before {
             content: "";
             position: absolute;
             width: 300px;
@@ -61,7 +131,7 @@
             right: -50px;
         }
         
-        header::after {
+        .header::after {
             content: "";
             position: absolute;
             width: 200px;
@@ -72,88 +142,139 @@
             left: -50px;
         }
         
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
+        .header-content {
             position: relative;
             z-index: 2;
-            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.2rem;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+            margin-bottom: var(--espaco-sm);
         }
         
         .subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 2;
+            font-size: 1.2rem;
+            opacity: 0.95;
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto var(--espaco-lg);
         }
         
+        /* BANNER DE PESQUISA */
+        .survey-banner {
+            background: linear-gradient(90deg, var(--amarelo), var(--laranja));
+            color: var(--azul-escuro);
+            padding: var(--espaco-sm) 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .survey-banner.hidden {
+            transform: translateY(-100%);
+        }
+        
+        .banner-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: var(--espaco-sm);
+        }
+        
+        .banner-badge {
+            background: var(--azul-escuro);
+            color: white;
+            padding: 5px 12px;
+            border-radius: var(--borda-radius-sm);
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .banner-btn {
+            background: var(--azul-escuro);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            transition: var(--transicao);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .banner-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(26, 83, 92, 0.3);
+        }
+        
+        /* INTRO */
         .intro-box {
             background: white;
-            color: var(--dark);
-            padding: 25px;
-            border-radius: 20px;
-            margin: 30px auto;
+            color: var(--azul-escuro);
+            padding: var(--espaco-lg);
+            border-radius: var(--borda-radius);
+            margin: var(--espaco-xl) auto;
             max-width: 900px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-left: 8px solid var(--secondary);
+            box-shadow: var(--sombra);
+            border-left: 8px solid var(--azul);
             position: relative;
-            z-index: 3;
-        }
-        
-        .intro-box p {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
         }
         
         .highlight {
-            background-color: var(--accent);
+            background-color: var(--amarelo);
             padding: 3px 8px;
-            border-radius: 5px;
+            border-radius: var(--borda-radius-sm);
             font-weight: bold;
         }
         
         .quote {
             font-style: italic;
-            color: var(--dark);
-            border-left: 5px solid var(--purple);
-            padding-left: 15px;
-            margin: 20px 0;
+            color: var(--azul-escuro);
+            border-left: 5px solid var(--roxo);
+            padding-left: var(--espaco-md);
+            margin: var(--espaco-lg) 0;
+            font-size: 1.1rem;
         }
         
-        /* Contador e Gamificação */
+        /* GAMIFICAÇÃO */
         .gamification {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 30px;
-            margin: 30px auto;
+            gap: var(--espaco-lg);
+            margin: var(--espaco-xl) auto;
             flex-wrap: wrap;
         }
         
         .counter-box {
             background: white;
-            border-radius: 20px;
-            padding: 20px;
+            border-radius: var(--borda-radius);
+            padding: var(--espaco-lg);
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border: 5px solid var(--secondary);
+            box-shadow: var(--sombra);
+            border: 5px solid var(--azul);
             min-width: 200px;
         }
         
         .counter-value {
             font-size: 3.5rem;
             font-weight: bold;
-            color: var(--primary);
+            color: var(--rosa);
             line-height: 1;
             margin: 10px 0;
         }
         
         .counter-label {
             font-size: 1.2rem;
-            color: var(--dark);
+            color: var(--azul-escuro);
             font-weight: 600;
         }
         
@@ -168,7 +289,7 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), var(--orange));
+            background: linear-gradient(135deg, var(--amarelo), var(--laranja));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -176,7 +297,7 @@
             color: white;
             box-shadow: 0 5px 15px rgba(255, 209, 102, 0.4);
             opacity: 0.3;
-            transition: all 0.3s;
+            transition: var(--transicao);
         }
         
         .medal.active {
@@ -185,20 +306,20 @@
             box-shadow: 0 5px 20px rgba(255, 209, 102, 0.7);
         }
         
-        /* Blocos de Questões */
+        /* BLOCOS */
         .blocks-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
+            gap: var(--espaco-lg);
+            margin: var(--espaco-xl) 0;
         }
         
         .block {
             background: white;
-            border-radius: 20px;
+            border-radius: var(--borda-radius);
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s;
+            box-shadow: var(--sombra);
+            transition: var(--transicao);
             cursor: pointer;
         }
         
@@ -207,42 +328,325 @@
         }
         
         .block-header {
-            padding: 20px;
+            padding: var(--espaco-lg);
             color: white;
             font-weight: bold;
             font-size: 1.2rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: var(--espaco-sm);
         }
         
-        .block-1 .block-header { background: linear-gradient(90deg, var(--primary), #FF8FA3); }
-        .block-2 .block-header { background: linear-gradient(90deg, var(--secondary), #9AE6E8); }
-        .block-3 .block-header { background: linear-gradient(90deg, var(--accent), #FFDF8E); }
-        .block-4 .block-header { background: linear-gradient(90deg, var(--success), #4CE4B8); }
-        .block-5 .block-header { background: linear-gradient(90deg, var(--purple), #C084FC); }
-        .block-6 .block-header { background: linear-gradient(90deg, var(--orange), #FFB896); }
-        .block-7 .block-header { background: linear-gradient(90deg, #1A535C, #2D7C87); }
+        .block-1 .block-header { background: linear-gradient(90deg, var(--rosa), #FF8FA3); }
+        .block-2 .block-header { background: linear-gradient(90deg, var(--azul), #9AE6E8); }
+        .block-3 .block-header { background: linear-gradient(90deg, var(--amarelo), #FFDF8E); }
+        .block-4 .block-header { background: linear-gradient(90deg, var(--verde), #4CE4B8); }
+        .block-5 .block-header { background: linear-gradient(90deg, var(--roxo), #C084FC); }
+        .block-6 .block-header { background: linear-gradient(90deg, var(--laranja), #FFB896); }
+        .block-7 .block-header { background: linear-gradient(90deg, var(--azul-escuro), #2D7C87); }
         
         .block-content {
-            padding: 20px;
+            padding: var(--espaco-lg);
         }
         
         .block-question {
             margin-bottom: 15px;
             font-weight: 600;
-            color: var(--dark);
+            color: var(--azul-escuro);
             min-height: 60px;
         }
         
-        .block-stats {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-            color: #666;
+        /* SEÇÃO DO LIVRO */
+        .book-section {
+            background: linear-gradient(135deg, var(--azul-escuro), #2D7C87);
+            color: white;
+            padding: var(--espaco-xl) var(--espaco-md);
+            border-radius: var(--borda-radius);
+            margin: var(--espaco-xl) 0;
+            position: relative;
+            overflow: hidden;
         }
         
-        /* Modal de Questões */
+        .book-section::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .book-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--espaco-xl);
+            align-items: center;
+            margin: var(--espaco-xl) 0;
+        }
+        
+        .book-cover {
+            background: linear-gradient(135deg, var(--amarelo), var(--laranja));
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        
+        .book-cover-inner {
+            background: white;
+            padding: 40px 25px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .book-price {
+            color: var(--azul-escuro);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .book-buy-btn {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(90deg, var(--rosa), var(--laranja));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            box-shadow: 0 10px 25px rgba(255, 107, 139, 0.4);
+            transition: var(--transicao);
+            margin-top: var(--espaco-md);
+            width: 100%;
+            text-align: center;
+        }
+        
+        .book-buy-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 107, 139, 0.6);
+        }
+        
+        /* SEÇÃO DE PESQUISA */
+        .survey-section {
+            background: linear-gradient(135deg, var(--verde), var(--azul-escuro));
+            color: white;
+            padding: var(--espaco-xl) var(--espaco-md);
+            border-radius: var(--borda-radius);
+            margin: var(--espaco-xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .survey-section::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+        }
+        
+        .survey-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--espaco-lg);
+            margin: var(--espaco-xl) 0;
+        }
+        
+        .survey-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: var(--espaco-lg);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .survey-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--espaco-sm);
+        }
+        
+        .survey-btn {
+            display: inline-block;
+            padding: 18px 40px;
+            background: var(--amarelo);
+            color: var(--azul-escuro);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            box-shadow: 0 10px 25px rgba(255, 209, 102, 0.4);
+            transition: var(--transicao);
+            margin: var(--espaco-md) 0;
+            text-align: center;
+        }
+        
+        .survey-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 209, 102, 0.6);
+        }
+        
+        /* PERFIL DO AUTOR */
+        .author-section {
+            background: linear-gradient(135deg, #F7FFF7 0%, #E8F4F8 100%);
+            padding: var(--espaco-xl) var(--espaco-md);
+            border-radius: var(--borda-radius);
+            margin: var(--espaco-xl) 0;
+            box-shadow: var(--sombra);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .author-section::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: rgba(126, 214, 223, 0.1);
+            border-radius: 50%;
+        }
+        
+        .author-header {
+            text-align: center;
+            margin-bottom: var(--espaco-xl);
+        }
+        
+        .author-avatar {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--rosa), var(--azul));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--espaco-lg);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .author-avatar i {
+            font-size: 4rem;
+            color: white;
+        }
+        
+        .author-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 10px;
+            background: var(--amarelo);
+            color: var(--azul-escuro);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(255, 209, 102, 0.4);
+        }
+        
+        .author-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--espaco-lg);
+            margin-bottom: var(--espaco-xl);
+        }
+        
+        .author-card {
+            background: white;
+            padding: var(--espaco-lg);
+            border-radius: 15px;
+            box-shadow: var(--sombra);
+            transition: var(--transicao);
+        }
+        
+        .author-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .author-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: var(--espaco-lg);
+        }
+        
+        .author-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            margin-top: var(--espaco-xl);
+            padding-top: var(--espaco-xl);
+            border-top: 2px solid #E0E0E0;
+            color: var(--texto-medio);
+            font-size: 0.9rem;
+        }
+        
+        .footer-logo {
+            font-size: 2.5rem;
+            color: var(--rosa);
+            margin-bottom: var(--espaco-sm);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--espaco-lg);
+            flex-wrap: wrap;
+            margin: var(--espaco-lg) 0;
+        }
+        
+        .footer-link {
+            color: var(--azul-escuro);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+        
+        /* BOTÃO DE INSTALAÇÃO PWA */
+        .pwa-install-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--rosa);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(255, 107, 139, 0.4);
+            cursor: pointer;
+            z-index: 1000;
+            transition: var(--transicao);
+            border: none;
+        }
+        
+        .pwa-install-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* MODAL */
         .modal {
             display: none;
             position: fixed;
@@ -251,7 +655,7 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.7);
-            z-index: 100;
+            z-index: 2000;
             overflow-y: auto;
             padding: 20px;
         }
@@ -271,371 +675,137 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        .modal-header {
-            padding: 25px;
-            color: white;
-            font-size: 1.4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .close-modal {
-            font-size: 2rem;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        
-        .close-modal:hover {
-            transform: scale(1.2);
-        }
-        
-        .question-container {
-            padding: 25px;
-        }
-        
-        .question-text {
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            line-height: 1.5;
-            color: var(--dark);
-        }
-        
-        .options-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        
-        .option {
-            padding: 18px;
-            border-radius: 15px;
-            border: 2px solid #E0E0E0;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .option:hover {
-            background-color: #F5F5F5;
-            transform: translateX(5px);
-        }
-        
-        .option.selected {
-            border-color: var(--secondary);
-            background-color: rgba(126, 214, 223, 0.1);
-        }
-        
-        .option.correct {
-            border-color: var(--success);
-            background-color: rgba(6, 214, 160, 0.1);
-        }
-        
-        .option.incorrect {
-            border-color: var(--primary);
-            background-color: rgba(255, 107, 139, 0.1);
-        }
-        
-        .option-letter {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: white;
-            flex-shrink: 0;
-        }
-        
-        .option-a .option-letter { background-color: var(--primary); }
-        .option-b .option-letter { background-color: var(--secondary); }
-        .option-c .option-letter { background-color: var(--accent); }
-        
-        .explanation {
-            background-color: #F9F9F9;
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 20px;
-            border-left: 5px solid var(--purple);
-            display: none;
-        }
-        
-        .explanation-title {
-            font-weight: bold;
-            color: var(--dark);
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-        
-        .nav-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-        }
-        
-        .nav-btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .nav-btn.prev {
-            background-color: #F0F0F0;
-            color: #666;
-        }
-        
-        .nav-btn.next {
-            background: linear-gradient(90deg, var(--secondary), var(--purple));
-            color: white;
-        }
-        
-        .nav-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 7px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Resultados */
-        .results-container {
-            background: white;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 40px;
-            border-radius: 25px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        /* AVISO */
+        .aviso {
+            background: linear-gradient(90deg, var(--amarelo), var(--laranja));
+            color: var(--azul-escuro);
+            padding: var(--espaco-sm);
+            border-radius: var(--borda-radius-sm);
+            margin: var(--espaco-md) 0;
+            font-weight: 600;
             text-align: center;
-            display: none;
+            border-left: 5px solid var(--rosa);
         }
         
-        .results-title {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 20px;
-        }
-        
-        .score-display {
-            font-size: 4rem;
-            font-weight: bold;
-            color: var(--primary);
-            margin: 20px 0;
-        }
-        
-        .score-message {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            color: #555;
-            line-height: 1.5;
-        }
-        
-        .level-indicator {
-            display: inline-block;
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            background: linear-gradient(90deg, var(--accent), var(--orange));
-            color: white;
-        }
-        
-        .share-section {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 2px dashed #E0E0E0;
-        }
-        
-        .share-title {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-        
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        
-        .social-icon:hover {
-            transform: scale(1.1);
-        }
-        
-        .facebook { background-color: #3b5998; }
-        .twitter { background-color: #1da1f2; }
-        .whatsapp { background-color: #25d366; }
-        
-        /* Recursos e Ação */
-        .resources {
-            background: linear-gradient(135deg, var(--dark), #2D7C87);
-            color: white;
-            padding: 50px 20px;
-            border-radius: 30px;
-            margin: 50px 0;
-            text-align: center;
-        }
-        
-        .resources-title {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-        }
-        
-        .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-        
-        .resource-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 20px;
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-        
-        .resource-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-        
-        .resource-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-        
-        .resource-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        
-        .action-section {
-            text-align: center;
-            margin: 50px 0;
-        }
-        
-        .action-btn {
-            padding: 20px 50px;
-            font-size: 1.3rem;
-            background: linear-gradient(90deg, var(--primary), var(--purple));
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s;
-            box-shadow: 0 10px 25px rgba(255, 107, 139, 0.4);
-        }
-        
-        .action-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255, 107, 139, 0.6);
-        }
-        
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 2px solid #E0E0E0;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .footer-logo {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-        
-        /* Responsividade */
+        /* RESPONSIVIDADE */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             
-            .subtitle {
-                font-size: 1.1rem;
+            h2 {
+                font-size: 1.7rem;
+            }
+            
+            .header {
+                padding: var(--espaco-lg) 0;
+            }
+            
+            .gamification {
+                gap: var(--espaco-md);
+            }
+            
+            .counter-box {
+                min-width: 150px;
+                padding: var(--espaco-md);
+            }
+            
+            .counter-value {
+                font-size: 2.5rem;
             }
             
             .blocks-container {
                 grid-template-columns: 1fr;
             }
             
-            .modal-content {
-                margin: 10px auto;
+            .book-grid {
+                grid-template-columns: 1fr;
             }
             
-            .question-text {
-                font-size: 1.1rem;
+            .survey-grid {
+                grid-template-columns: 1fr;
             }
             
-            .nav-buttons {
-                flex-direction: column;
-                gap: 15px;
+            .author-grid {
+                grid-template-columns: 1fr;
             }
             
-            .nav-btn {
-                width: 100%;
+            .banner-content {
                 justify-content: center;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 var(--espaco-xs);
+            }
+            
+            .intro-box {
+                padding: var(--espaco-md);
+            }
+            
+            .counter-box {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <header>
+    <!-- HEADER -->
+    <header class="header">
         <div class="container">
-            <h1><i class="fas fa-heartbeat"></i> Autodiagnóstico: O Idadismo Mora em Você?</h1>
-            <p class="subtitle">Um teste para despertar a consciência e celebrar a <span class="highlight">longelescência</span></p>
+            <div class="header-content">
+                <h1><i class="fas fa-heartbeat"></i> Autodiagnóstico: O Idadismo Mora em Você?</h1>
+                <p class="subtitle">Um teste para despertar a consciência e celebrar a <span class="highlight">longelescência</span></p>
+            </div>
         </div>
     </header>
-    
-    <div class="container">
-        <div class="intro-box">
+
+    <!-- BANNER DE PESQUISA -->
+    <div class="survey-banner" id="surveyBanner">
+        <div class="container">
+            <div class="banner-content">
+                <div style="display: flex; align-items: center; gap: var(--espaco-sm); flex-wrap: wrap;">
+                    <span class="banner-badge"><i class="fas fa-gift"></i> BRINDE</span>
+                    <span style="font-weight: 600;">Participe da pesquisa e ganhe meu livro!</span>
+                </div>
+                <a href="#pesquisa" class="banner-btn">
+                    <i class="fas fa-arrow-right"></i> PARTICIPAR AGORA
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container">
+        <!-- INTRODUÇÃO -->
+        <section class="intro-box">
             <p>Bem-vindo(a) a esta jornada de reflexão sobre o <strong>idadismo</strong> - o preconceito etário que afeta milhões de pessoas idosas em nossa sociedade.</p>
-            <p>Este não é apenas um teste, mas um convite à reflexão sobre a <span class="highlight">longelescência</span> e um exercício de Logoterapia aplicada à vida social, buscando o sentido e a dignidade em cada etapa da existência.</p>
+            <p>Este não é apenas um teste, mas um convite à reflexão sobre a <span class="highlight">longelescência</span> e um exercício de Logoterapia aplicada à vida social, buscando o sentido e a dignidade em cada etapa da existência. Envie estga pesquisa para mais pessoas.</p>
             <div class="quote">
                 "A velhice não é uma doença, é força e sobrevivência, é triunfo sobre todas as variedades de vicissitudes, desilusões, acidentes e doenças." - Maggie Kuhn
             </div>
             <p>Complete o teste, descubra seu nível de consciência sobre o idadismo e compartilhe para ampliar essa conversa tão necessária!</p>
-        </div>
-        
-        <div class="gamification">
+            
+            <!-- AVISO IMPORTANTE -->
+            <div class="aviso" style="margin-top: var(--espaco-lg);">
+                <i class="fas fa-exclamation-circle"></i> IMPORTANTE: É preciso responder a <strong>TODAS as 32 questões</strong> para obter seu resultado completo!
+            </div>
+        </section>
+
+        <!-- GAMIFICAÇÃO -->
+        <section class="gamification">
             <div class="counter-box">
                 <div class="counter-label">QUESTÕES RESPONDIDAS</div>
                 <div class="counter-value" id="answered-counter">0</div>
-                <div class="counter-label">de 30</div>
+                <div class="counter-label">de 32</div>
             </div>
             
             <div class="counter-box">
                 <div class="counter-label">PONTUAÇÃO</div>
                 <div class="counter-value" id="score-counter">0</div>
-                <div class="counter-label">pontos</div>
+                <div class="counter-label">de 10</div>
             </div>
             
             <div class="counter-box">
@@ -648,127 +818,305 @@
                     <div class="medal" id="medal-5"><i class="fas fa-trophy"></i></div>
                 </div>
             </div>
+        </section>
+
+        <!-- AVISO DE COMPLETUDE -->
+        <div id="completeness-warning" class="aviso" style="display: none; background: linear-gradient(90deg, var(--rosa), var(--roxo)); color: white;">
+            <i class="fas fa-check-circle"></i> Parabéns! Você respondeu a todas as 32 questões! Agora pode ver seu resultado completo.
         </div>
-        
-        <h2 style="text-align: center; color: var(--dark); margin: 40px 0 30px;">Escolha um bloco para começar:</h2>
-        
-        <div class="blocks-container">
-            <!-- Blocos serão gerados por JavaScript -->
-        </div>
-        
-        <div class="action-section">
-            <button class="action-btn" id="view-results-btn">
-                <i class="fas fa-chart-bar"></i> Ver Meus Resultados
+
+        <!-- BLOCOS DE QUESTÕES -->
+        <section>
+            <h2 style="text-align: center; margin-bottom: var(--espaco-lg);">Escolha um bloco para começar:</h2>
+            <div class="blocks-container" id="blocksContainer">
+                <!-- Gerado por JavaScript -->
+            </div>
+        </section>
+
+        <!-- BOTÃO VER RESULTADOS -->
+        <div style="text-align: center; margin: var(--espaco-xl) 0;">
+            <button id="view-results-btn" class="survey-btn" style="background: linear-gradient(90deg, var(--roxo), var(--rosa)); color: white; border: none; cursor: pointer; padding: 20px 50px; font-size: 1.3rem;">
+                <i class="fas fa-chart-bar"></i> VER MEU RESULTADO COMPLETO
             </button>
+            <p id="results-warning" style="color: var(--rosa); margin-top: var(--espaco-sm); display: none;">
+                <i class="fas fa-exclamation-triangle"></i> Você precisa responder a todas as 32 questões primeiro!
+            </p>
         </div>
-        
-        <div class="resources">
-            <h2 class="resources-title">Combata o Idadismo: Informação e Ação</h2>
-            <p>O combate ao idadismo e à violência contra a pessoa idosa exige informação e ação. Aqui estão alguns recursos importantes:</p>
-            
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <div class="resource-icon"><i class="fas fa-balance-scale"></i></div>
-                    <h3 class="resource-title">Estatuto do Idoso</h3>
-                    <p>Lei nº 10.741/2003 garante direitos fundamentais às pessoas com 60 anos ou mais.</p>
-                </div>
-                
-                <div class="resource-card">
-                    <div class="resource-icon"><i class="fas fa-phone-alt"></i></div>
-                    <h3 class="resource-title">Disque 100</h3>
-                    <p>Canal para denúncias de violação de direitos humanos, incluindo violência contra idosos.</p>
-                </div>
-                
-                <div class="resource-card">
-                    <div class="resource-icon"><i class="fas fa-hands-helping"></i></div>
-                    <h3 class="resource-title">Como Ajudar</h3>
-                    <p>Esteja atento a sinais de violência: isolamento, marcas no corpo, medo de familiares.</p>
-                </div>
-                
-                <div class="resource-card">
-                    <div class="resource-icon"><i class="fas fa-comments"></i></div>
-                    <h3 class="resource-title">Comunique-se</h3>
-                    <p>Inclua idosos em conversas, respeite suas opiniões e valorize suas experiências.</p>
+
+        <!-- SEÇÃO DO LIVRO -->
+        <section class="book-section" id="livro">
+            <div class="container">
+                <div class="book-content">
+                    <h2 style="text-align: center; color: var(--amarelo); margin-bottom: var(--espaco-md);">
+                        <i class="fas fa-book"></i> Meu Livro: Manual do Bem-Estar na Longelescência
+                    </h2>
+                    <p style="text-align: center; font-size: 1.2rem; opacity: 0.95; max-width: 800px; margin: 0 auto var(--espaco-xl);">
+                        dos 50 aos 100+ • Inspirado no Vento Aracati e Joyspan
+                    </p>
+                    
+                    <div class="book-grid">
+                        <div class="book-cover">
+                            <div class="book-cover-inner">
+                                <div style="font-size: 3rem; color: var(--azul-escuro); margin-bottom: var(--espaco-sm);">📚</div>
+                                <h3 style="color: var(--azul-escuro); margin-bottom: var(--espaco-sm);">Manual do Bem-Estar na Longelescência</h3>
+                                <p style="color: var(--texto-medio); margin: 0;">dos 50 aos 100+</p>
+                            </div>
+                            <div class="book-price">R$ 47,90*</div>
+                            <div style="color: var(--azul-escuro); font-size: 0.9rem; margin-top: 5px;">*preço promocional de lançamento</div>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--amarelo); margin-bottom: var(--espaco-md);">O que é Longelescência?</h3>
+                            <p style="margin-bottom: var(--espaco-md); opacity: 0.95;">
+                                <strong>Longelescência</strong> é o termo criado por mim para nomear o <strong>florescimento tardio</strong> — um período em que maturidade, autonomia, sentido e plenitude se entrelaçam de forma única.
+                            </p>
+                            
+                            <div style="background: rgba(255, 255, 255, 0.1); padding: var(--espaco-md); border-radius: 10px; margin-bottom: var(--espaco-lg);">
+                                <h4 style="color: var(--azul); margin-bottom: var(--espaco-sm);">✨ Inspirações do Livro:</h4>
+                                <div style="display: grid; gap: var(--espaco-md);">
+                                    <div>
+                                        <div style="display: flex; align-items: center; gap: var(--espaco-sm); margin-bottom: 5px;">
+                                            <div style="font-size: 1.5rem;">🌬️</div>
+                                            <strong style="color: var(--amarelo);">Vento Aracati</strong>
+                                        </div>
+                                        <div style="opacity: 0.9; font-size: 0.95rem;">A brisa suave e renovadora do Nordeste brasileiro</div>
+                                    </div>
+                                    <div>
+                                        <div style="display: flex; align-items: center; gap: var(--espaco-sm); margin-bottom: 5px;">
+                                            <div style="font-size: 1.5rem;">💫</div>
+                                            <strong style="color: var(--amarelo);">Joyspan</strong>
+                                        </div>
+                                        <div style="opacity: 0.9; font-size: 0.95rem;">Conceito criado pela médica gerontologista Kerry Burnight</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <a href="https://a.co/d/0hgRnva8" target="_blank" class="book-buy-btn">
+                                <i class="fas fa-shopping-cart"></i> COMPRAR NA AMAZON
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    
-    <!-- Modal para questões -->
-    <div class="modal" id="question-modal">
-        <div class="modal-content">
-            <div class="modal-header" id="modal-header">
-                <span id="modal-title">Questão 1</span>
-                <span class="close-modal" id="close-modal">&times;</span>
-            </div>
-            <div class="question-container">
-                <div class="question-text" id="question-text"></div>
+        </section>
+
+        <!-- SEÇÃO DE PESQUISA -->
+        <section class="survey-section" id="pesquisa">
+            <div class="container">
+                <h2 style="text-align: center; color: var(--amarelo); margin-bottom: var(--espaco-md);">
+                    <i class="fas fa-clipboard-check"></i> Participe da Pesquisa Mundo Longevo 50+
+                </h2>
+                <p style="text-align: center; font-size: 1.2rem; opacity: 0.95; max-width: 700px; margin: 0 auto var(--espaco-xl);">
+                    Contribua para a ciência da longevidade e <strong>receba meu livro como brinde de reconhecimento</strong>!
+                </p>
                 
-                <div class="options-container" id="options-container">
-                    <!-- Opções serão inseridas por JavaScript -->
+                <div class="survey-grid">
+                    <div class="survey-card">
+                        <div class="survey-icon">🔬</div>
+                        <h3 style="color: var(--amarelo); margin-bottom: var(--espaco-sm);">Pesquisa Científica</h3>
+                        <p>Estudo sobre qualidade de vida, desafios e potencialidades da população 50+. Seus dados ajudarão a desenvolver políticas e programas mais eficazes.</p>
+                    </div>
+                    
+                    <div class="survey-card">
+                        <div class="survey-icon">🙋‍♂️</div>
+                        <h3 style="color: var(--amarelo); margin-bottom: var(--espaco-sm);">Quem Pode Participar?</h3>
+                        <p><strong>Todas as pessoas com 50 anos ou mais.</strong> O questionário leva cerca de 15-20 minutos e é totalmente anônimo.</p>
+                    </div>
+                    
+                    <div class="survey-card">
+                        <div class="survey-icon">📚</div>
+                        <h3 style="color: var(--amarelo); margin-bottom: var(--espaco-sm);">Brinde Especial</h3>
+                        <p><strong>Todos os participantes</strong> que completarem a pesquisa receberão meu livro <strong>"Aposentei-me,e agora?"</strong> em formato digital.</p>
+                    </div>
                 </div>
                 
-                <div class="explanation" id="explanation">
-                    <div class="explanation-title">Por que as outras estão erradas?</div>
-                    <div id="explanation-text"></div>
-                </div>
-                
-                <div class="nav-buttons">
-                    <button class="nav-btn prev" id="prev-btn">
-                        <i class="fas fa-arrow-left"></i> Anterior
-                    </button>
-                    <button class="nav-btn next" id="next-btn">
-                        Próxima <i class="fas fa-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Resultados -->
-    <div class="results-container" id="results-container">
-        <div class="results-title">Seu Resultado</div>
-        <div class="score-display" id="final-score">0/30</div>
-        <div class="level-indicator" id="level-indicator">Iniciante</div>
-        <div class="score-message" id="score-message"></div>
-        
-        <div class="share-section">
-            <div class="share-title">Compartilhe essa iniciativa!</div>
-            <p>Ajude a combater o idadismo compartilhando esse teste e iniciando conversas sobre o tema.</p>
-            
-            <div class="social-icons">
-                <div class="social-icon facebook" onclick="shareOnFacebook()">
-                    <i class="fab fa-facebook-f"></i>
-                </div>
-                <div class="social-icon twitter" onclick="shareOnTwitter()">
-                    <i class="fab fa-twitter"></i>
-                </div>
-                <div class="social-icon whatsapp" onclick="shareOnWhatsApp()">
-                    <i class="fab fa-whatsapp"></i>
+                <div style="text-align: center; margin-top: var(--espaco-xl);">
+                    <a href="https://forms.gle/6TpS7wtftsAoLgaM8" target="_blank" class="survey-btn">
+                        <i class="fas fa-play-circle"></i> PARTICIPAR DA PESQUISA AGORA
+                    </a>
+                    <p style="opacity: 0.9; font-size: 1rem; margin-top: var(--espaco-sm);">
+                        <i class="fas fa-lock"></i> Dados protegidos • Anônimo • Ética aprovada
+                    </p>
                 </div>
             </div>
-            
-            <button class="action-btn" onclick="restartTest()">
-                <i class="fas fa-redo"></i> Refazer o Teste
-            </button>
-        </div>
-    </div>
-    
-    <footer>
+        </section>
+
+        <!-- PERFIL DO AUTOR -->
+        <section class="author-section">
+            <div class="container">
+                <div class="author-header">
+                    <div class="author-avatar">
+                        <i class="fas fa-user-graduate"></i>
+                        <div class="author-badge">61 anos • Psicólogo</div>
+                    </div>
+                    <h2 style="color: var(--azul-escuro);">Meu Currículo</h2>
+                    <p style="color: var(--texto-medio); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                        Psicólogo Clínico • Especialista em Longevidade • Autor • Palestrante • Professor
+                    </p>
+                </div>
+                
+                <div class="author-grid">
+                    <div class="author-card">
+                        <h3>
+                            <div class="author-icon" style="background: var(--azul);">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <span>Formação Acadêmica</span>
+                        </h3>
+                        <ul style="list-style-type: none; padding-left: 0;">
+                            <li style="margin-bottom: var(--espaco-sm);">
+                                <strong>Psicólogo Clínico</strong><br>
+                                <span style="color: var(--texto-medio);">Formação em Logoterapia (UEPB)</span>
+                            </li>
+                            <li style="margin-bottom: var(--espaco-sm);">
+                                <strong>Especialização em Psicologia Positiva</strong><br>
+                                <span style="color: var(--texto-medio);">PUCRS</span>
+                            </li>
+                            <li style="margin-bottom: var(--espaco-sm);">
+                                <strong>Mestrado em Gestão Social e Trabalho</strong><br>
+                                <span style="color: var(--texto-medio);">Universidade de Brasília (UNB)</span>
+                            </li>
+                            <li style="margin-bottom: var(--espaco-sm);">
+                                <strong>Especialização em Gestão de Pessoas</strong><br>
+                                <span style="color: var(--texto-medio);">Universidade de São Paulo (USP)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="author-card">
+                        <h3>
+                            <div class="author-icon" style="background: var(--rosa);">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <span>Atuação Profissional</span>
+                        </h3>
+                        <ul style="list-style-type: none; padding-left: 0;">
+                            <li style="margin-bottom: var(--espaco-sm);">
+                                <strong>Professor de Pós-Graduação</strong><br>
+                                <span style="color: var(--texto-medio);">ESMPU e IBMEC-Brasília</span>
+                            </li>
+                            <li style="margin-bottom: var(--espaco-sm);">
+                                <strong>Consultor de Longevidade</strong><br>
+                                <span style="color: var(--texto-medio);">ANABB - Projeto 70+</span>
+                            </li>
+                            <li style="margin-bottom: var(--espaco-sm);">
+                                <strong>Proprietário da Ânimo DH</strong><br>
+                                <span style="color: var(--texto-medio);"><a href="https://www.animodh.com.br/" target="_blank" style="color: var(--azul-escuro);">animodh.com.br</a></span>
+                            </li>
+                            <li style="margin-bottom: var(--espaco-sm);">
+                                <strong>30 anos de experiência</strong><br>
+                                <span style="color: var(--texto-medio);">Temática longevidade e preparação para aposentadoria</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="author-card">
+                        <h3>
+                            <div class="author-icon" style="background: var(--amarelo);">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <span>Livros Publicados</span>
+                        </h3>
+                        <div style="display: grid; gap: var(--espaco-sm);">
+                            <div style="background: rgba(255, 209, 102, 0.1); padding: var(--espaco-sm); border-radius: 8px;">
+                                <strong>Sobre a Vida e o Viver</strong>
+                                <div style="color: var(--texto-medio); font-size: 0.9rem;">Reflexões existenciais baseadas em Logoterapia</div>
+                            </div>
+                            <div style="background: rgba(255, 209, 102, 0.1); padding: var(--espaco-sm); border-radius: 8px;">
+                                <strong>Apanhadores de Possibilidades</strong>
+                                <div style="color: var(--texto-medio); font-size: 0.9rem;">Encontrando sentido nas adversidades</div>
+                            </div>
+                            <div style="background: rgba(255, 209, 102, 0.1); padding: var(--espaco-sm); border-radius: 8px;">
+                                <strong>Aposentei-me e Agora</strong>
+                                <div style="color: var(--texto-medio); font-size: 0.9rem;">Guia prático para transição pós-carreira</div>
+                            </div>
+                            <div style="background: rgba(255, 209, 102, 0.1); padding: var(--espaco-sm); border-radius: 8px;">
+                                <strong>Manual da Longevidade Positiva</strong>
+                                <div style="color: var(--texto-medio); font-size: 0.9rem;">Abordagem integrada para envelhecer bem</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="author-card">
+                        <h3>
+                            <div class="author-icon" style="background: var(--roxo);">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <span>Contato & Redes</span>
+                        </h3>
+                        <div style="display: grid; gap: var(--espaco-sm);">
+                            <a href="https://www.youtube.com/@positivaatitude" target="_blank" style="background: linear-gradient(135deg, #FF0000, #CC0000); color: white; padding: 12px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                <i class="fab fa-youtube"></i> YouTube @positivaatitude
+                            </a>
+                            <a href="https://www.animodh.com.br/" target="_blank" style="background: linear-gradient(135deg, var(--azul-escuro), #2D7C87); color: white; padding: 12px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                <i class="fas fa-globe"></i> Ânimo Desenvolvimento Humano
+                            </a>
+                            <a href="mailto:ricardo@animodh.com.br" style="background: linear-gradient(135deg, var(--verde), var(--azul)); color: white; padding: 12px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                <i class="fas fa-envelope"></i> Contato Profissional
+                            </a>
+                        </div>
+                        <div style="margin-top: var(--espaco-md); padding: var(--espaco-sm); background: rgba(157, 78, 221, 0.1); border-radius: 8px;">
+                            <p style="margin: 0; font-size: 0.9rem; color: var(--texto-medio);">
+                                <strong>Família:</strong> 4 filhos (Tiago, Priscila, Rodrigo, João Gabriel) • 4 netos (Lucas, Laís, Sofia, Eduardo)<br>
+                                <strong>Origem:</strong> Campina Grande-PB • Reside em Brasília desde 1999
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-logo">
                 <i class="fas fa-heart"></i>
             </div>
-            <p>Este projeto foi desenvolvido para promover conscientização sobre o idadismo e celebrar a longelescência.</p>
-            <p>Violência contra a pessoa idosa é crime! Denuncie: Disque 100</p>
-            <p style="margin-top: 20px;">© 2023 - Combate ao Idadismo</p>
+            <p><strong>Autor e Especialista:</strong> [Seu Nome Completo] • Psicólogo Clínico • Mestre em Gestão Social</p>
+            
+            <div class="footer-links">
+                <a href="#pesquisa" class="footer-link">
+                    <i class="fas fa-clipboard-check"></i> Pesquisa 50+
+                </a>
+                <a href="#livro" class="footer-link">
+                    <i class="fas fa-book"></i> Meu Livro
+                </a>
+                <a href="https://www.youtube.com/@positivaatitude" target="_blank" class="footer-link">
+                    <i class="fab fa-youtube"></i> YouTube
+                </a>
+            </div>
+            
+            <p>Violência contra a pessoa idosa é crime! Denuncie: <strong>Disque 100</strong></p>
+            <p style="margin-top: var(--espaco-lg); font-size: 0.8rem; color: var(--texto-claro);">
+                © 2023 - Combate ao Idadismo • Desenvolvido por Ricardo de Faria Barros • Psicólogo CRP-01/7844
+            </p>
         </div>
     </footer>
 
+    <!-- BOTÃO INSTALAÇÃO PWA -->
+    <button class="pwa-install-btn" id="pwaInstallBtn" title="Instalar App">
+        <i class="fas fa-download"></i>
+    </button>
+
+    <!-- MODAL DE QUESTÕES -->
+    <div class="modal" id="questionModal">
+        <div class="modal-content">
+            <!-- Gerado por JavaScript -->
+        </div>
+    </div>
+
+    <!-- MODAL DE RESULTADOS -->
+    <div class="modal" id="resultsModal">
+        <div class="modal-content">
+            <!-- Gerado por JavaScript -->
+        </div>
+    </div>
+
     <script>
-        // Dados das questões
+        // DADOS DAS 32 QUESTÕES COMPLETAS
         const questions = [
-            // Bloco 1: Temas Sexuais e Afetivos
+            // Bloco 1: Temas Sexuais e Afetivos (3 questões)
             {
                 id: 1,
                 block: 1,
@@ -805,7 +1153,7 @@
                 correct: "B",
                 explanation: "A A silencia a saúde do idoso por tabu. A C ignora que camisinha previne doenças, não apenas gravidez, e pressupõe que não há sexo."
             },
-            // Bloco 2: Temas Atitudinais e Comportamentais
+            // Bloco 2: Temas Atitudinais e Comportamentais (3 questões)
             {
                 id: 4,
                 block: 2,
@@ -842,7 +1190,7 @@
                 correct: "C",
                 explanation: "A A julga a atualização como falsidade. A B é o 'idadismo benevolente': tratar o básico (aprender) como algo extraordinário apenas por causa da idade."
             },
-            // Bloco 3: Temas Familiares e Autonomia
+            // Bloco 3: Temas Familiares e Autonomia (5 questões)
             {
                 id: 7,
                 block: 3,
@@ -903,7 +1251,7 @@
                 correct: "A",
                 explanation: "O bem-estar material não supre a necessidade de pertencimento e conexão. Condenar o idoso à TV é condená-lo à morte social."
             },
-            // Bloco 4: Temas Sociais e Estado
+            // Bloco 4: Temas Sociais e Estado (4 questões)
             {
                 id: 12,
                 block: 4,
@@ -952,7 +1300,7 @@
                 correct: "B",
                 explanation: "A C é a crueldade do idadismo de classe: achar que o idoso pobre não tem o direito de circular pela cidade no horário que precisar."
             },
-            // Bloco 5: Temas Culturais e Mídia
+            // Bloco 5: Temas Culturais e Mídia (3 questões)
             {
                 id: 16,
                 block: 5,
@@ -989,7 +1337,7 @@
                 correct: "B",
                 explanation: "O design que não inclui todas as idades é um design excludente. Acessibilidade é um direito, não um privilégio."
             },
-            // Bloco 6: Temas Trabalhistas e Empreendedorismo
+            // Bloco 6: Temas Trabalhistas e Empreendedorismo (3 questões)
             {
                 id: 19,
                 block: 6,
@@ -1026,7 +1374,7 @@
                 correct: "B",
                 explanation: "É uma tentativa de retirar a titularidade da mulher sobre suas próprias conquistas."
             },
-            // Bloco 7: Interseccionalidade e Relacionamento Intergeracional
+            // Bloco 7: Interseccionalidade e Relacionamento Intergeracional (11 questões)
             {
                 id: 22,
                 block: 7,
@@ -1134,10 +1482,34 @@
                 ],
                 correct: "B",
                 explanation: "A A nega a sabedoria da idade. A C nega a maturidade. A longelescência é a síntese: o frescor da descoberta com o peso da experiência."
+            },
+            // Questões adicionais para completar 32
+            {
+                id: 31,
+                block: 7,
+                text: "Quando um idoso diz que quer aprender uma nova língua, a reação comum é:",
+                options: [
+                    { letter: "A", text: "\"Que inspirador! Nunca é tarde para aprender.\"" },
+                    { letter: "B", text: "\"Na sua idade? Melhor descansar.\"" },
+                    { letter: "C", text: "\"Para que vai servir agora?\"" }
+                ],
+                correct: "A",
+                explanation: "As opções B e C desestimulam o aprendizado contínuo, ignorando que a capacidade de aprender permanece ao longo da vida."
+            },
+            {
+                id: 32,
+                block: 7,
+                text: "Um idoso quer participar de um projeto voluntário, mas é rejeitado por 'ser muito velho':",
+                options: [
+                    { letter: "A", text: "\"É compreensível, projetos precisam de pessoas com energia.\"" },
+                    { letter: "B", text: "\"Uma perda, pois idosos trazem experiência e sabedoria.\"" },
+                    { letter: "C", text: "\"Discriminação pura, violando o direito de contribuir com a sociedade.\"" }
+                ],
+                correct: "C",
+                explanation: "Idosos têm muito a contribuir. Rejeitar por idade é desperdiçar valiosa experiência e violar direitos fundamentais."
             }
         ];
 
-        // Informações dos blocos
         const blocks = [
             { id: 1, title: "Temas Sexuais e Afetivos", icon: "fas fa-heart", color: "block-1", count: 3 },
             { id: 2, title: "Temas Atitudinais e Comportamentais", icon: "fas fa-running", color: "block-2", count: 3 },
@@ -1145,36 +1517,38 @@
             { id: 4, title: "Temas Sociais e Estado", icon: "fas fa-university", color: "block-4", count: 4 },
             { id: 5, title: "Temas Culturais e Mídia", icon: "fas fa-tv", color: "block-5", count: 3 },
             { id: 6, title: "Temas Trabalhistas e Empreendedorismo", icon: "fas fa-briefcase", color: "block-6", count: 3 },
-            { id: 7, title: "Interseccionalidade e Relacionamento Intergeracional", icon: "fas fa-users", color: "block-7", count: 9 }
+            { id: 7, title: "Interseccionalidade e Relacionamento Intergeracional", icon: "fas fa-users", color: "block-7", count: 11 }
         ];
 
-        // Estado do jogo
-        let userAnswers = new Array(questions.length).fill(null);
+        // ESTADO DA APLICAÇÃO
+        let userAnswers = new Array(32).fill(null);
         let currentQuestionIndex = 0;
         let score = 0;
         let answeredCount = 0;
 
-        // Elementos DOM
-        const blocksContainer = document.querySelector('.blocks-container');
-        const questionModal = document.getElementById('question-modal');
-        const closeModalBtn = document.getElementById('close-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const questionText = document.getElementById('question-text');
-        const optionsContainer = document.getElementById('options-container');
-        const explanation = document.getElementById('explanation');
-        const explanationText = document.getElementById('explanation-text');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        const modalHeader = document.getElementById('modal-header');
+        // ELEMENTOS DOM
+        const blocksContainer = document.getElementById('blocksContainer');
+        const questionModal = document.getElementById('questionModal');
+        const resultsModal = document.getElementById('resultsModal');
         const answeredCounter = document.getElementById('answered-counter');
         const scoreCounter = document.getElementById('score-counter');
-        const resultsContainer = document.getElementById('results-container');
+        const surveyBanner = document.getElementById('surveyBanner');
+        const pwaInstallBtn = document.getElementById('pwaInstallBtn');
         const viewResultsBtn = document.getElementById('view-results-btn');
-        const finalScore = document.getElementById('final-score');
-        const levelIndicator = document.getElementById('level-indicator');
-        const scoreMessage = document.getElementById('score-message');
+        const resultsWarning = document.getElementById('results-warning');
+        const completenessWarning = document.getElementById('completeness-warning');
 
-        // Inicializar blocos
+        // INICIALIZAÇÃO
+        document.addEventListener('DOMContentLoaded', function() {
+            initBlocks();
+            updateCounters();
+            initPWA();
+            initBannerScroll();
+            
+            viewResultsBtn.addEventListener('click', showResults);
+        });
+
+        // INICIALIZAR BLOCOS
         function initBlocks() {
             blocksContainer.innerHTML = '';
             
@@ -1196,7 +1570,6 @@
                 `;
                 
                 blockElement.addEventListener('click', () => {
-                    // Encontrar a primeira questão deste bloco
                     const firstQuestionIndex = questions.findIndex(q => q.block === block.id);
                     if (firstQuestionIndex !== -1) {
                         openQuestionModal(firstQuestionIndex);
@@ -1207,7 +1580,7 @@
             });
         }
 
-        // Abrir modal de questão
+        // ABRIR MODAL DE QUESTÃO
         function openQuestionModal(index) {
             currentQuestionIndex = index;
             updateQuestionModal();
@@ -1215,244 +1588,353 @@
             document.body.style.overflow = 'hidden';
         }
 
-        // Atualizar modal de questão
+        // ATUALIZAR MODAL
         function updateQuestionModal() {
             const question = questions[currentQuestionIndex];
             const userAnswer = userAnswers[currentQuestionIndex];
             
-            // Atualizar título
-            modalTitle.textContent = `Questão ${currentQuestionIndex + 1} - Bloco ${question.block}`;
+            const modalContent = `
+                <div class="modal-header" style="background: linear-gradient(90deg, ${getBlockColor(question.block)}); padding: 25px; color: white; font-size: 1.4rem; display: flex; justify-content: space-between; align-items: center;">
+                    <span>Questão ${currentQuestionIndex + 1} de 32 - Bloco ${question.block}</span>
+                    <span class="close-modal" style="font-size: 2rem; cursor: pointer;">&times;</span>
+                </div>
+                <div style="padding: 25px;">
+                    <div class="question-text" style="font-size: 1.3rem; margin-bottom: 25px; line-height: 1.5; color: var(--azul-escuro);">
+                        ${question.text}
+                    </div>
+                    
+                    <div class="options-container" style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px;">
+                        ${question.options.map(option => `
+                            <div class="option ${userAnswer === option.letter ? 'selected' : ''} ${userAnswer && option.letter === question.correct ? 'correct' : ''} ${userAnswer && option.letter !== question.correct ? 'incorrect' : ''}" 
+                                 style="padding: 18px; border-radius: 15px; border: 2px solid #E0E0E0; cursor: pointer; transition: all 0.3s; font-size: 1.1rem; display: flex; align-items: center; gap: 15px;">
+                                <div class="option-letter" style="width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; flex-shrink: 0; background-color: ${getOptionColor(option.letter)};">
+                                    ${option.letter}
+                                </div>
+                                <div class="option-text">${option.text}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    ${userAnswer ? `
+                        <div class="explanation" style="background-color: #F9F9F9; padding: 20px; border-radius: 15px; margin-top: 20px; border-left: 5px solid var(--roxo);">
+                            <div class="explanation-title" style="font-weight: bold; color: var(--azul-escuro); margin-bottom: 10px; font-size: 1.1rem;">
+                                Por que as outras estão erradas?
+                            </div>
+                            <div>${question.explanation}</div>
+                        </div>
+                    ` : ''}
+                    
+                    <div style="display: flex; justify-content: space-between; margin-top: 30px;">
+                        <button class="nav-btn prev" style="${currentQuestionIndex > 0 ? '' : 'display: none;'} padding: 15px 30px; border: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; cursor: pointer; background-color: #F0F0F0; color: #666; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-arrow-left"></i> Anterior
+                        </button>
+                        <div style="flex: 1; text-align: center; color: var(--texto-medio); font-weight: 600;">
+                            ${answeredCount}/32 respondidas
+                        </div>
+                        <button class="nav-btn next" style="padding: 15px 30px; border: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; cursor: pointer; background: linear-gradient(90deg, var(--azul), var(--roxo)); color: white; display: flex; align-items: center; gap: 10px; ${!userAnswer ? 'opacity: 0.5;' : ''}" ${!userAnswer ? 'disabled' : ''}>
+                            ${currentQuestionIndex < questions.length - 1 ? 'Próxima <i class="fas fa-arrow-right"></i>' : 'Fechar'}
+                        </button>
+                    </div>
+                </div>
+            `;
             
-            // Atualizar cores do header baseado no bloco
-            modalHeader.className = `modal-header block-${question.block}`;
+            questionModal.innerHTML = modalContent;
             
-            // Atualizar texto da questão
-            questionText.textContent = question.text;
+            // Adicionar eventos
+            const closeBtn = questionModal.querySelector('.close-modal');
+            const prevBtn = questionModal.querySelector('.nav-btn.prev');
+            const nextBtn = questionModal.querySelector('.nav-btn.next');
+            const options = questionModal.querySelectorAll('.option:not(.selected)');
             
-            // Atualizar opções
-            optionsContainer.innerHTML = '';
-            question.options.forEach(option => {
-                const optionElement = document.createElement('div');
-                optionElement.className = `option option-${option.letter.toLowerCase()}`;
-                if (userAnswer === option.letter) {
-                    optionElement.classList.add('selected');
-                    if (userAnswer === question.correct) {
-                        optionElement.classList.add('correct');
-                    } else {
-                        optionElement.classList.add('incorrect');
-                    }
-                }
-                
-                optionElement.innerHTML = `
-                    <div class="option-letter">${option.letter}</div>
-                    <div class="option-text">${option.text}</div>
-                `;
-                
-                // Só permitir selecionar se ainda não respondeu
-                if (!userAnswer) {
-                    optionElement.addEventListener('click', () => selectOption(option.letter));
-                }
-                
-                optionsContainer.appendChild(optionElement);
+            closeBtn.addEventListener('click', () => {
+                questionModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                checkCompleteness();
             });
             
-            // Atualizar explicação se já respondeu
-            if (userAnswer) {
-                explanationText.textContent = question.explanation;
-                explanation.style.display = 'block';
-            } else {
-                explanation.style.display = 'none';
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    if (currentQuestionIndex > 0) {
+                        currentQuestionIndex--;
+                        updateQuestionModal();
+                    }
+                });
             }
             
-            // Atualizar botões de navegação
-            prevBtn.style.display = currentQuestionIndex > 0 ? 'flex' : 'none';
-            
-            if (userAnswer) {
-                nextBtn.innerHTML = currentQuestionIndex < questions.length - 1 
-                    ? 'Próxima <i class="fas fa-arrow-right"></i>' 
-                    : 'Ver Resultados <i class="fas fa-chart-bar"></i>';
-            } else {
-                nextBtn.innerHTML = 'Responder para continuar';
-                nextBtn.disabled = true;
-                nextBtn.style.opacity = '0.5';
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    if (currentQuestionIndex < questions.length - 1) {
+                        currentQuestionIndex++;
+                        updateQuestionModal();
+                    } else {
+                        questionModal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                        checkCompleteness();
+                    }
+                });
             }
             
-            // Atualizar contadores
-            updateCounters();
+            options.forEach(option => {
+                if (!option.classList.contains('selected')) {
+                    option.addEventListener('click', () => {
+                        const selectedLetter = option.querySelector('.option-letter').textContent;
+                        selectOption(selectedLetter);
+                    });
+                }
+            });
         }
 
-        // Selecionar uma opção
+        // SELECIONAR OPÇÃO
         function selectOption(selectedLetter) {
             const question = questions[currentQuestionIndex];
             userAnswers[currentQuestionIndex] = selectedLetter;
             
-            // Calcular pontuação
             if (selectedLetter === question.correct) {
-                score += 10;
+                // Calcula a pontuação baseada em 10 pontos totais
+                // Cada questão correta vale aproximadamente 0.3125 pontos (10/32)
+                score = Math.round((userAnswers.filter((answer, idx) => 
+                    answer !== null && answer === questions[idx].correct
+                ).length / 32) * 10 * 10) / 10;
             }
             
             answeredCount = userAnswers.filter(answer => answer !== null).length;
-            
-            // Atualizar medalhas
             updateMedals();
-            
-            // Atualizar modal
+            updateCounters();
             updateQuestionModal();
-            
-            // Habilitar botão próximo
-            nextBtn.disabled = false;
-            nextBtn.style.opacity = '1';
-            nextBtn.innerHTML = currentQuestionIndex < questions.length - 1 
-                ? 'Próxima <i class="fas fa-arrow-right"></i>' 
-                : 'Ver Resultados <i class="fas fa-chart-bar"></i>';
+            checkCompleteness();
         }
 
-        // Atualizar contadores
+        // VERIFICAR COMPLETUDE
+        function checkCompleteness() {
+            if (answeredCount === 32) {
+                completenessWarning.style.display = 'block';
+                resultsWarning.style.display = 'none';
+            } else {
+                completenessWarning.style.display = 'none';
+            }
+        }
+
+        // ATUALIZAR CONTADORES
         function updateCounters() {
             answeredCounter.textContent = answeredCount;
-            scoreCounter.textContent = score;
+            scoreCounter.textContent = score.toFixed(1);
         }
 
-        // Atualizar medalhas
+        // ATUALIZAR MEDALHAS
         function updateMedals() {
             const medals = [1, 2, 3, 4, 5].map(i => document.getElementById(`medal-${i}`));
             
-            // Medalha 1: Responder primeira questão
-            if (answeredCount >= 1) {
-                medals[0].classList.add('active');
-            }
-            
-            // Medalha 2: Acertar 10 questões
-            if (score >= 100) {
-                medals[1].classList.add('active');
-            }
-            
-            // Medalha 3: Responder 15 questões
-            if (answeredCount >= 15) {
-                medals[2].classList.add('active');
-            }
-            
-            // Medalha 4: Acertar 20 questões
-            if (score >= 200) {
-                medals[3].classList.add('active');
-            }
-            
-            // Medalha 5: Completar todas as questões
-            if (answeredCount >= 30) {
-                medals[4].classList.add('active');
-            }
+            if (answeredCount >= 8) medals[0].classList.add('active');
+            if (score >= 2.5) medals[1].classList.add('active');
+            if (answeredCount >= 16) medals[2].classList.add('active');
+            if (score >= 7.5) medals[3].classList.add('active');
+            if (answeredCount === 32) medals[4].classList.add('active');
         }
 
-        // Mostrar resultados
+        // MOSTRAR RESULTADOS
         function showResults() {
-            const percentage = Math.round((score / 300) * 100);
-            finalScore.textContent = `${score}/300 (${percentage}%)`;
+            if (answeredCount < 32) {
+                resultsWarning.style.display = 'block';
+                setTimeout(() => {
+                    resultsWarning.style.display = 'none';
+                }, 3000);
+                return;
+            }
             
-            let level, message;
+            // Calcular nota final (0-10)
+            const notaFinal = score;
             
-            if (percentage >= 90) {
-                level = "Especialista em Longelescência!";
-                message = "Parabéns! Você demonstra uma consciência aguçada sobre os desafios do idadismo e uma visão respeitosa da longevidade. Continue compartilhando esse conhecimento!";
-            } else if (percentage >= 70) {
-                level = "Consciente e Informado";
-                message = "Você tem boa consciência sobre o idadismo, mas ainda pode aprofundar alguns conceitos. Continue refletindo e aprendendo sobre o tema!";
-            } else if (percentage >= 50) {
-                level = "Em Desenvolvimento";
-                message = "Você está no caminho certo, mas ainda internalizou alguns estereótipos sobre o envelhecimento. Use este teste como ponto de partida para aprender mais!";
+            let level, message, color;
+            
+            if (notaFinal >= 9.0) {
+                level = "Especialista em Longelescência! 🏆";
+                message = "Parabéns! Você demonstra uma consciência excepcional sobre os desafios do idadismo e uma visão profundamente respeitosa da longevidade. Suas respostas mostram que você é um verdadeiro defensor da dignidade em todas as idades.";
+                color = "linear-gradient(90deg, var(--amarelo), var(--laranja))";
+            } else if (notaFinal >= 7.0) {
+                level = "Consciente e Informado 💡";
+                message = "Você tem boa consciência sobre o idadismo, mas ainda pode aprofundar alguns conceitos. Continue refletindo e aprendendo sobre o tema - sua mente já está aberta para uma visão mais inclusiva do envelhecimento.";
+                color = "linear-gradient(90deg, var(--azul), var(--verde))";
+            } else if (notaFinal >= 5.0) {
+                level = "Em Desenvolvimento 🌱";
+                message = "Você está no caminho certo, mas ainda internalizou alguns estereótipos sobre o envelhecimento. Use este teste como ponto de partida para aprender mais! Cada questão que você acertou mostra seu potencial para crescimento.";
+                color = "linear-gradient(90deg, var(--verde), var(--azul))";
             } else {
-                level = "Iniciante na Jornada";
-                message = "Este teste revelou que há muitos conceitos sobre envelhecimento e idadismo para explorar. Que tal começar conversando com pessoas idosas sobre suas experiências?";
+                level = "Iniciante na Jornada 🚀";
+                message = "Este teste revelou que há muitos conceitos sobre envelhecimento e idadismo para explorar. Que tal começar conversando com pessoas idosas sobre suas experiências? Cada dia é uma nova oportunidade para aprender e crescer.";
+                color = "linear-gradient(90deg, var(--rosa), var(--roxo))";
             }
             
-            levelIndicator.textContent = level;
-            scoreMessage.textContent = message;
+            const resultsHTML = `
+                <div style="padding: 40px; text-align: center;">
+                    <div style="font-size: 2.5rem; color: var(--azul-escuro); margin-bottom: 20px;">Seu Resultado Completo</div>
+                    
+                    <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 30px 0;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 4rem; font-weight: bold; color: var(--rosa); margin: 10px 0;">${notaFinal.toFixed(1)}</div>
+                            <div style="font-weight: 600; color: var(--texto-medio);">Nota (0-10)</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 4rem; font-weight: bold; color: var(--azul); margin: 10px 0;">${answeredCount}</div>
+                            <div style="font-weight: 600; color: var(--texto-medio);">Questões Respondidas</div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: inline-block; padding: 10px 25px; border-radius: 50px; font-weight: bold; font-size: 1.2rem; margin-bottom: 30px; background: ${color}; color: white;">
+                        ${level}
+                    </div>
+                    
+                    <div style="font-size: 1.2rem; margin-bottom: 40px; color: #555; line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        ${message}
+                    </div>
+                    
+                    <div style="background: rgba(126, 214, 223, 0.1); padding: 25px; border-radius: 15px; margin: 30px 0; text-align: left;">
+                        <h4 style="color: var(--azul-escuro); margin-bottom: 15px;">📊 Suas Estatísticas:</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                            <div>
+                                <strong>Acertos:</strong> ${Math.round((notaFinal / 10) * 32)} de 32<br>
+                                <strong>Porcentagem:</strong> ${Math.round(notaFinal * 10)}%
+                            </div>
+                            <div>
+                                <strong>Nível de Consciência:</strong> ${getNivelConsciencia(notaFinal)}<br>
+                                <strong>Próximo Passo:</strong> ${getProximoPasso(notaFinal)}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <button onclick="closeResultsModal()" style="padding: 15px 40px; background: var(--azul-escuro); color: white; border: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; cursor: pointer; margin-right: 15px;">
+                            Fechar
+                        </button>
+                        <button onclick="shareResults()" style="padding: 15px 40px; background: linear-gradient(90deg, var(--verde), var(--azul)); color: white; border: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; cursor: pointer;">
+                            <i class="fas fa-share"></i> Compartilhar
+                        </button>
+                    </div>
+                </div>
+            `;
             
-            questionModal.style.display = 'none';
-            resultsContainer.style.display = 'block';
+            resultsModal.innerHTML = resultsHTML;
+            resultsModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // FUNÇÕES AUXILIARES
+        function getBlockColor(blockId) {
+            const colors = {
+                1: '#FF6B8B, #FF8FA3',
+                2: '#7ED6DF, #9AE6E8',
+                3: '#FFD166, #FFDF8E',
+                4: '#06D6A0, #4CE4B8',
+                5: '#9D4EDD, #C084FC',
+                6: '#FF9E6D, #FFB896',
+                7: '#1A535C, #2D7C87'
+            };
+            return colors[blockId] || '#7ED6DF, #9AE6E8';
+        }
+
+        function getOptionColor(letter) {
+            const colors = {
+                'A': 'var(--rosa)',
+                'B': 'var(--azul)',
+                'C': 'var(--amarelo)'
+            };
+            return colors[letter] || 'var(--azul)';
+        }
+
+        function getNivelConsciencia(nota) {
+            if (nota >= 9) return "Excelente";
+            if (nota >= 7) return "Bom";
+            if (nota >= 5) return "Em desenvolvimento";
+            return "Iniciante";
+        }
+
+        function getProximoPasso(nota) {
+            if (nota >= 9) return "Compartilhe seu conhecimento";
+            if (nota >= 7) return "Profundize conceitos específicos";
+            if (nota >= 5) return "Reflita sobre os erros";
+            return "Converse com pessoas idosas";
+        }
+
+        function closeResultsModal() {
+            resultsModal.style.display = 'none';
             document.body.style.overflow = 'auto';
-            
-            // Rolar até os resultados
-            resultsContainer.scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Compartilhar
-        function shareOnFacebook() {
-            const url = encodeURIComponent(window.location.href);
-            const text = encodeURIComponent("Acabei de fazer o teste 'Autodiagnóstico: O Idadismo Mora em Você?' e descobri meu nível de consciência sobre o idadismo. Faça você também!");
-            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`, '_blank');
-        }
-        
-        function shareOnTwitter() {
-            const text = encodeURIComponent("Acabei de fazer o teste sobre idadismo e longelescência. Descubra seu nível de consciência sobre o tema!");
-            const url = encodeURIComponent(window.location.href);
-            window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
-        }
-        
-        function shareOnWhatsApp() {
-            const text = encodeURIComponent("Acabei de fazer o teste 'Autodiagnóstico: O Idadismo Mora em Você?' e descobri meu nível de consciência sobre o idadismo. Faça você também: " + window.location.href);
-            window.open(`https://wa.me/?text=${text}`, '_blank');
+        function shareResults() {
+            const nota = score.toFixed(1);
+            const text = `Acabei de fazer o teste "Autodiagnóstico: O Idadismo Mora em Você?" e tirei nota ${nota}/10! Descubra seu nível de consciência sobre idadismo e longelescência.`;
+            navigator.share ? navigator.share({ text }) : alert("Copie o link para compartilhar: " + window.location.href);
         }
 
-        // Reiniciar teste
-        function restartTest() {
-            userAnswers = new Array(questions.length).fill(null);
-            currentQuestionIndex = 0;
-            score = 0;
-            answeredCount = 0;
-            
-            // Resetar medalhas
-            for (let i = 1; i <= 5; i++) {
-                document.getElementById(`medal-${i}`).classList.remove('active');
+        // PWA FUNCTIONS
+        function initPWA() {
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('sw.js').catch(console.error);
+                });
             }
             
-            updateCounters();
-            resultsContainer.style.display = 'none';
+            let deferredPrompt;
             
-            alert("Teste reiniciado! Comece novamente escolhendo um bloco de questões.");
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                pwaInstallBtn.style.display = 'flex';
+                
+                pwaInstallBtn.addEventListener('click', () => {
+                    pwaInstallBtn.style.display = 'none';
+                    deferredPrompt.prompt();
+                    deferredPrompt.userChoice.then((choiceResult) => {
+                        deferredPrompt = null;
+                    });
+                });
+            });
         }
 
-        // Event Listeners
-        closeModalBtn.addEventListener('click', () => {
-            questionModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-        
+        // BANNER SCROLL
+        function initBannerScroll() {
+            let lastScrollTop = 0;
+            
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    surveyBanner.classList.add('hidden');
+                } else {
+                    surveyBanner.classList.remove('hidden');
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+        }
+
+        // FECHAR MODAL CLICANDO FORA
         window.addEventListener('click', (e) => {
             if (e.target === questionModal) {
                 questionModal.style.display = 'none';
                 document.body.style.overflow = 'auto';
+                checkCompleteness();
             }
-        });
-        
-        prevBtn.addEventListener('click', () => {
-            if (currentQuestionIndex > 0) {
-                currentQuestionIndex--;
-                updateQuestionModal();
-            }
-        });
-        
-        nextBtn.addEventListener('click', () => {
-            if (currentQuestionIndex < questions.length - 1) {
-                currentQuestionIndex++;
-                updateQuestionModal();
-            } else {
-                showResults();
-            }
-        });
-        
-        viewResultsBtn.addEventListener('click', () => {
-            if (answeredCount === 0) {
-                alert("Responda pelo menos uma questão para ver seus resultados!");
-            } else {
-                showResults();
+            if (e.target === resultsModal) {
+                closeResultsModal();
             }
         });
 
-        // Inicializar
-        document.addEventListener('DOMContentLoaded', () => {
-            initBlocks();
-            updateCounters();
-        });
+        // Service Worker inline
+        const swContent = `
+            const CACHE_NAME = 'longelescencia-v1';
+            self.addEventListener('install', event => {
+                event.waitUntil(caches.open(CACHE_NAME));
+            });
+            self.addEventListener('fetch', event => {
+                event.respondWith(fetch(event.request).catch(() => caches.match(event.request)));
+            });
+        `;
+        
+        if ('serviceWorker' in navigator) {
+            const blob = new Blob([swContent], { type: 'application/javascript' });
+            const swURL = URL.createObjectURL(blob);
+            navigator.serviceWorker.register(swURL);
+        }
     </script>
 </body>
 </html>
