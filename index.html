@@ -152,6 +152,58 @@
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         
+        /* SEÇÃO DE FEEDBACK */
+        .feedback-section {
+            background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+            padding: var(--espaco-xl);
+            border-radius: var(--borda-radius);
+            margin: var(--espaco-xl) 0;
+            box-shadow: var(--sombra);
+            text-align: center;
+            border-left: 8px solid var(--laranja);
+        }
+        
+        .feedback-title {
+            color: var(--azul-escuro);
+            margin-bottom: var(--espaco-lg);
+            font-size: 1.8rem;
+        }
+        
+        .feedback-box {
+            background: white;
+            padding: var(--espaco-xl);
+            border-radius: 20px;
+            margin: var(--espaco-lg) 0;
+            box-shadow: var(--sombra);
+            text-align: center;
+        }
+        
+        .feedback-icon {
+            font-size: 4rem;
+            color: var(--laranja);
+            margin-bottom: var(--espaco-lg);
+            display: block;
+        }
+        
+        .feedback-btn {
+            display: inline-block;
+            padding: 20px 50px;
+            background: linear-gradient(90deg, var(--laranja), var(--rosa));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.4rem;
+            box-shadow: 0 15px 35px rgba(255, 87, 34, 0.4);
+            transition: var(--transicao);
+            margin-top: var(--espaco-md);
+        }
+        
+        .feedback-btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 87, 34, 0.6);
+        }
+        
         /* REDES SOCIAIS DO AUTOR */
         .social-section {
             background: white;
@@ -198,6 +250,7 @@
         .social-icon.website { color: var(--azul); }
         .social-icon.plena { color: var(--verde); }
         .social-icon.email { color: var(--roxo); }
+        .social-icon.tiktok { color: #000000; }
         
         .social-btn {
             display: inline-block;
@@ -217,7 +270,7 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
         
-        /* INTRO SIMPLIFICADA */
+        /* INTRO COM RELATOS */
         .intro-box {
             background: white;
             color: var(--azul-escuro);
@@ -250,6 +303,14 @@
             background: linear-gradient(90deg, rgba(156, 39, 176, 0.1), transparent);
             padding: var(--espaco-md);
             border-radius: 0 var(--borda-radius-sm) var(--borda-radius-sm) 0;
+        }
+        
+        .relatos-box {
+            background: linear-gradient(135deg, #FFF8E1, #FFECB3);
+            padding: var(--espaco-lg);
+            border-radius: var(--borda-radius-sm);
+            margin: var(--espaco-lg) 0;
+            border-left: 5px solid var(--laranja);
         }
         
         /* GAMIFICAÇÃO SIMPLIFICADA */
@@ -728,25 +789,34 @@
         <div class="container">
             <div class="header-content">
                 <h1><i class="fas fa-heartbeat"></i> Autodiagnóstico: Avalie seu Idadismo</h1>
-                <p class="subtitle">36 perguntas sequenciais para despertar a consciência sobre o <span style="text-shadow: 2px 2px 0 rgba(0,0,0,0.3);">preconceito etário</span></p>
+                <p class="subtitle">41 perguntas sequenciais para despertar a consciência sobre o <span style="text-shadow: 2px 2px 0 rgba(0,0,0,0.3);">preconceito etário</span></p>
             </div>
         </div>
     </header>
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="container">
-        <!-- INTRODUÇÃO SIMPLIFICADA -->
+        <!-- INTRODUÇÃO COM RELATOS -->
         <section class="intro-box">
             <p>Bem-vindo(a) a esta jornada de reflexão sobre o <strong>idadismo</strong> - o preconceito etário que afeta milhões de pessoas idosas em nossa sociedade.</p>
+            
+            <div class="relatos-box">
+                <h3><i class="fas fa-comment-medical"></i> Baseado em Relatos Reais</h3>
+                <p>Estas <strong>41 questões</strong> foram produzidas a partir de relatos que escutei, e escuto, em minha prática clínica e profissional, retratando todas as formas de violência e preconceito contra a pessoa idosa.</p>
+                <p>Algumas são sutis, quase imperceptíveis. Outras são explícitas e dolorosas. Todas revelam como o idadismo permeia nossa sociedade.</p>
+            </div>
+            
             <p>Este não é apenas um teste, mas um convite à reflexão sobre a <span class="highlight">longelescência</span> e um exercício de cidadania aplicada à vida social, buscando o sentido e a dignidade em cada etapa da existência.</p>
+            
             <div class="quote">
                 "A nova velhice não pede licença, nem favor: ela ocupa a cidade, subverte a ordem reinante, reinventa o tempo e ressignifica a vida: de forma ativa, combativa, consciente e positiva." - Ricardo
             </div>
+            
             <p>Complete o teste, descubra seu nível de consciência sobre o idadismo.</p>
             
             <!-- AVISO IMPORTANTE -->
             <div class="aviso">
-                <i class="fas fa-exclamation-circle"></i> IMPORTANTE: É preciso responder a <strong>TODAS as 36 questões</strong> para obter seu resultado completo!
+                <i class="fas fa-exclamation-circle"></i> IMPORTANTE: É preciso responder a <strong>TODAS as 41 questões</strong> para obter seu resultado completo!
             </div>
         </section>
 
@@ -755,7 +825,7 @@
             <div class="counter-box">
                 <div class="counter-label">QUESTÕES RESPONDIDAS</div>
                 <div class="counter-value" id="answered-counter">0</div>
-                <div class="counter-label">de 36</div>
+                <div class="counter-label">de 41</div>
             </div>
             
             <div class="counter-box">
@@ -783,9 +853,56 @@
         <!-- AVISO DE RESULTADO -->
         <div style="text-align: center; margin: var(--espaco-lg) 0;">
             <p id="results-warning" style="color: var(--rosa); display: none;">
-                <i class="fas fa-exclamation-triangle"></i> Você precisa responder a todas as 36 questões primeiro!
+                <i class="fas fa-exclamation-triangle"></i> Você precisa responder a todas as 41 questões primeiro!
             </p>
         </div>
+
+        <!-- SEÇÃO DE FEEDBACK -->
+        <section class="feedback-section" id="feedback-section">
+            <h2 class="feedback-title"><i class="fas fa-comments"></i> Fale Diretamente Comigo</h2>
+            
+            <div class="feedback-box">
+                <i class="fas fa-handshake feedback-icon"></i>
+                <h3 style="color: var(--azul-escuro); margin-bottom: var(--espaco-md);">Sua Opinião é Fundamental</h3>
+                
+                <p style="font-size: 1.2rem; margin-bottom: var(--espaco-md);">
+                    Agora que você completou o teste, quero ouvir <strong>diretamente de você</strong>!
+                </p>
+                
+                <p style="margin-bottom: var(--espaco-lg); color: var(--texto-medio);">
+                    Clique no botão abaixo para se comunicar <strong>diretamente comigo</strong>. Você pode:
+                </p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--espaco-md); margin-bottom: var(--espaco-xl); text-align: left;">
+                    <div style="background: rgba(255, 193, 7, 0.1); padding: var(--espaco-md); border-radius: 15px;">
+                        <h4 style="color: var(--laranja); margin-bottom: var(--espaco-sm);"><i class="fas fa-lightbulb"></i> Sugerir Temas</h4>
+                        <p>Proponha novos temas para futuras questões do teste</p>
+                    </div>
+                    
+                    <div style="background: rgba(33, 150, 243, 0.1); padding: var(--espaco-md); border-radius: 15px;">
+                        <h4 style="color: var(--azul); margin-bottom: var(--espaco-sm);"><i class="fas fa-star"></i> Avaliar a Experiência</h4>
+                        <p>Conte como foi fazer o teste, o que aprendeu, o que mudaria</p>
+                    </div>
+                    
+                    <div style="background: rgba(233, 30, 99, 0.1); padding: var(--espaco-md); border-radius: 15px;">
+                        <h4 style="color: var(--rosa); margin-bottom: var(--espaco-sm);"><i class="fas fa-share-alt"></i> Compartilhar Relatos</h4>
+                        <p>Conte experiências reais que poderiam virar novas questões</p>
+                    </div>
+                </div>
+                
+                <p style="font-size: 1.1rem; margin-bottom: var(--espaco-lg); color: var(--azul-escuro); font-weight: 600;">
+                    <i class="fas fa-envelope-open-text"></i> Eu leio pessoalmente cada mensagem e sua contribuição é essencial para melhorar este trabalho!
+                </p>
+                
+                <a href="https://forms.gle/1mQMewjBpJbccQYp7" target="_blank" class="feedback-btn">
+                    <i class="fas fa-paper-plane"></i> FALAR DIRETAMENTE COM RICARDO
+                </a>
+                
+                <p style="color: var(--texto-claro); margin-top: var(--espaco-md); font-size: 0.9rem;">
+                    <i class="fas fa-clock"></i> Resposta garantida em até 48 horas
+                </p>
+            </div>
+        </section>
 
         <!-- REDES SOCIAIS DO AUTOR -->
         <section class="social-section">
@@ -807,6 +924,15 @@
                     <p>Desenvolvimento Humano, palestras, cursos e consultoria em preparação para aposentadoria</p>
                     <a href="https://www.animodh.com.br/" target="_blank" class="social-btn">
                         <i class="fas fa-globe"></i> Visitar Site
+                    </a>
+                </div>
+                
+                <div class="social-card">
+                    <i class="fab fa-tiktok social-icon tiktok"></i>
+                    <h3>TikTok</h3>
+                    <p>Conteúdos rápidos sobre longevidade, psicologia e combate ao idadismo no TikTok</p>
+                    <a href="https://www.tiktok.com/@ricardodefariabarros?is_from_webapp=1&sender_device=pc" target="_blank" class="social-btn">
+                        <i class="fab fa-tiktok"></i> Seguir no TikTok
                     </a>
                 </div>
                 
@@ -864,8 +990,9 @@
     </div>
 
     <script>
-        // DADOS DAS 36 QUESTÕES EM ORDEM SEQUENCIAL
+        // DADOS DAS 41 QUESTÕES EM ORDEM SEQUENCIAL
         const questions = [
+            // QUESTÕES EXISTENTES 1-36
             {
                 id: 1,
                 text: "Você vê um casal de 80 anos se beijando apaixonadamente em público. Qual seu pensamento?",
@@ -1261,11 +1388,69 @@
                 ],
                 correct: "C",
                 explanation: "Não existe 'quantidade limitada' de trabalho. A inclusão de idosos no mercado não prejudica jovens, mas sim enriquece as organizações com experiência e diversidade."
+            },
+            
+            // NOVAS QUESTÕES 37-41
+            {
+                id: 37,
+                text: "Um homem de 68 anos decide se assumir publicamente como gay e participar do movimento LGBTQIA+. Muitos dizem: 'Nessa idade? Já passou da hora, devia ficar quieto'. Isso revela:",
+                options: [
+                    { letter: "A", text: "\"Que a sexualidade tem prazo de validade e idosos não têm direito à autenticidade.\"" },
+                    { letter: "B", text: "\"Que o idadismo também afeta a comunidade LGBTQIA+, negando identidade sexual tardia.\"" },
+                    { letter: "C", text: "\"Um cuidado para proteger o idoso de possíveis preconceitos sociais.\"" }
+                ],
+                correct: "B",
+                explanation: "A A é preconceituosa ao limitar expressão sexual por idade. A C mascara controle como proteção. O idoso tem direito à autenticidade em qualquer idade."
+            },
+            {
+                id: 38,
+                text: "Um idoso de 72 anos decide vender um imóvel herdado para abrir um pequeno negócio. Os filhos se revoltam: 'Esse imóvel é da família, não tem direito de vender!'. A atitude dos filhos é:",
+                options: [
+                    { letter: "A", text: "\"Legítima preocupação com o patrimônio familiar.\"" },
+                    { letter: "B", text: "\"Violência patrimonial e negação da autonomia financeira do pai.\"" },
+                    { letter: "C", text: "\"Uma tentativa de preservar a herança para as futuras gerações.\"" }
+                ],
+                correct: "B",
+                explanation: "O idoso lúcido tem pleno direito de dispor de seus bens. Tratar o patrimônio como 'da família' é negar sua autonomia e pode configurar crime."
+            },
+            {
+                id: 39,
+                text: "Um senhor de 75 anos volta a estudar (ensino superior) e sofre bullying dos colegas jovens: riem quando ele faz perguntas, chamam de 'vovô sabidão'. Isso é:",
+                options: [
+                    { letter: "A", text: "\"Apenas brincadeira de jovens, sem maldade.\"" },
+                    { letter: "B", text: "\"Assédio moral educacional que pode levar ao abandono dos estudos.\"" },
+                    { letter: "C", text: "\"Natural, pois ele está fora do ambiente etário adequado.\"" }
+                ],
+                correct: "B",
+                explanation: "O direito à educação é para todas as idades. Ridicularizar o idoso estudante é uma forma cruel de exclusão educacional que viola direitos fundamentais."
+            },
+            {
+                id: 40,
+                text: "Idosos são alvo constante de bancos com produtos duvidosos (consórcios, seguros caríssimos, investimentos complexos) e golpes de amor virtual. A raiz do problema é:",
+                options: [
+                    { letter: "A", text: "\"Ingenuidade dos idosos que não sabem se proteger.\"" },
+                    { letter: "B", text: "\"Solidão e falta de rede de apoio para orientação e aconselhamento.\"" },
+                    { letter: "C", text: "\"Falta de fiscalização governamental apenas.\"" }
+                ],
+                correct: "B",
+                explanation: "A vulnerabilidade não é ingenuidade, mas fruto do isolamento social. Idosos solitários são presas fáceis para golpistas. A rede de apoio familiar e comunitária é essencial."
+            },
+            {
+                id: 41,
+                text: "Aplicativos como 'amigo virtual', 'jantar com estranhos' ou 'botão de pânico' que avisa 'estou vivo' revelam:",
+                options: [
+                    { letter: "A", text: "\"A criatividade tecnológica para lidar com problemas modernos.\"" },
+                    { letter: "B", text: "\"O quanto nossa sociedade está doente de solidão, especialmente para idosos.\"" },
+                    { letter: "C", text: "\"Que idosos não sabem mais fazer amigos da forma tradicional.\"" }
+                ],
+                correct: "B",
+                explanation: "Esses aplicativos são sintomas da 'epidemia de solidão' que atinge especialmente idosos. Revelam o fracasso das redes sociais reais e o abandono afetivo estrutural."
             }
         ];
 
         // ESTADO DA APLICAÇÃO
-        let userAnswers = new Array(36).fill(null);
+        const TOTAL_QUESTIONS = 41;
+        let userAnswers = new Array(TOTAL_QUESTIONS).fill(null);
         let currentQuestionIndex = 0;
         let score = 0;
         let answeredCount = 0;
@@ -1279,6 +1464,7 @@
         const downloadQuestionsBtn = document.getElementById('download-questions-btn');
         const viewResultsBtn = document.getElementById('view-results-btn');
         const resultsWarning = document.getElementById('results-warning');
+        const feedbackSection = document.getElementById('feedback-section');
 
         // INICIALIZAÇÃO
         document.addEventListener('DOMContentLoaded', function() {
@@ -1286,13 +1472,22 @@
             startTestBtn.addEventListener('click', () => openQuestionModal(0));
             downloadQuestionsBtn.addEventListener('click', downloadQuestions);
             viewResultsBtn.addEventListener('click', showResults);
+            
+            // Mostrar seção de feedback depois de completar o teste
+            const checkCompletion = setInterval(() => {
+                if (answeredCount === TOTAL_QUESTIONS) {
+                    feedbackSection.scrollIntoView({ behavior: 'smooth' });
+                    clearInterval(checkCompletion);
+                }
+            }, 1000);
         });
 
         // BAIXAR QUESTÕES EM PDF
         function downloadQuestions() {
-            let content = "QUESTÕES DO AUTODIAGNÓSTICO SOBRE IDADISMO\n";
+            let content = "QUESTÕES DO AUTODIAGNÓSTICO SOBRE IDADISMO - 41 QUESTÕES\n";
             content += "Por Ricardo de Faria Barros - Psicólogo CRP 01/7844\n";
-            content += "Especialista em Longevidade e Combate ao Idadismo\n\n";
+            content += "Especialista em Longevidade e Combate ao Idadismo\n";
+            content += "Baseado em relatos reais coletados em 30 anos de prática clínica\n\n";
             content += "=================================================================\n\n";
             
             questions.forEach((question, index) => {
@@ -1309,6 +1504,7 @@
             
             content += "\n\nPARA APRENDER MAIS:\n";
             content += "- YouTube: @positivaatitude\n";
+            content += "- TikTok: @ricardodefariabarros\n";
             content += "- Site: https://www.animodh.com.br/\n";
             content += "- Portal: https://www.plenalongevidade.com.br/\n";
             content += "- Email: ricardo@animodh.com.br\n\n";
@@ -1318,14 +1514,13 @@
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'Questoes_Autodiagnostico_Idadismo_Ricardo_Barros.txt';
+            a.download = '41_Questoes_Autodiagnostico_Idadismo_Ricardo_Barros.txt';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
             window.URL.revokeObjectURL(url);
             
-            // Mostrar mensagem de confirmação
-            alert('Questões baixadas com sucesso! Um arquivo .txt foi gerado com todas as 36 questões e respostas corretas.');
+            alert('Questões baixadas com sucesso! Um arquivo .txt foi gerado com todas as 41 questões e respostas corretas.');
         }
 
         // ABRIR MODAL DE QUESTÃO
@@ -1340,11 +1535,11 @@
         function updateQuestionModal() {
             const question = questions[currentQuestionIndex];
             const userAnswer = userAnswers[currentQuestionIndex];
-            const progressPercent = ((currentQuestionIndex + 1) / 36) * 100;
+            const progressPercent = ((currentQuestionIndex + 1) / TOTAL_QUESTIONS) * 100;
             
             const modalContent = `
                 <div class="modal-header">
-                    <span>Questão ${currentQuestionIndex + 1} de 36</span>
+                    <span>Questão ${currentQuestionIndex + 1} de ${TOTAL_QUESTIONS}</span>
                     <span class="close-modal">&times;</span>
                 </div>
                 
@@ -1353,7 +1548,7 @@
                     <div class="progress-bar">
                         <div class="progress-fill" style="width: ${progressPercent}%"></div>
                     </div>
-                    <div class="progress-text">${currentQuestionIndex + 1}/36 - ${Math.round(progressPercent)}% completo</div>
+                    <div class="progress-text">${currentQuestionIndex + 1}/${TOTAL_QUESTIONS} - ${Math.round(progressPercent)}% completo</div>
                 </div>
                 
                 <!-- BOX DA PERGUNTA -->
@@ -1424,6 +1619,10 @@
                     } else {
                         questionModal.style.display = 'none';
                         document.body.style.overflow = 'auto';
+                        // Rolar até a seção de feedback após completar
+                        setTimeout(() => {
+                            feedbackSection.scrollIntoView({ behavior: 'smooth' });
+                        }, 500);
                     }
                 });
             }
@@ -1444,9 +1643,10 @@
             userAnswers[currentQuestionIndex] = selectedLetter;
             
             if (selectedLetter === question.correct) {
+                // Calcula pontuação baseada em 10 pontos totais para 41 questões
                 score = Math.round((userAnswers.filter((answer, idx) => 
                     answer !== null && answer === questions[idx].correct
-                ).length / 36) * 10 * 10) / 10;
+                ).length / TOTAL_QUESTIONS) * 10 * 10) / 10;
             }
             
             answeredCount = userAnswers.filter(answer => answer !== null).length;
@@ -1462,7 +1662,7 @@
 
         // MOSTRAR RESULTADOS
         function showResults() {
-            if (answeredCount < 36) {
+            if (answeredCount < TOTAL_QUESTIONS) {
                 resultsWarning.style.display = 'block';
                 setTimeout(() => {
                     resultsWarning.style.display = 'none';
@@ -1471,24 +1671,27 @@
             }
             
             const notaFinal = score;
+            const acertos = userAnswers.filter((answer, idx) => 
+                answer !== null && answer === questions[idx].correct
+            ).length;
             
             let level, message, color;
             
             if (notaFinal >= 9.0) {
                 level = "Especialista em Longelescência! 🏆";
-                message = "Parabéns! Você demonstra uma consciência excepcional sobre os desafios do idadismo e uma visão profundamente respeitosa da longevidade.";
+                message = "Parabéns! Você demonstra uma consciência excepcional sobre os desafios do idadismo e uma visão profundamente respeitosa da longevidade. Compartilhe esse conhecimento!";
                 color = "linear-gradient(90deg, var(--amarelo), var(--laranja))";
             } else if (notaFinal >= 7.0) {
                 level = "Consciente e Informado 💡";
-                message = "Você tem boa consciência sobre o idadismo, mas ainda pode aprofundar alguns conceitos.";
+                message = "Você tem boa consciência sobre o idadismo, mas ainda pode aprofundar alguns conceitos. Continue estudando e conversando sobre longevidade!";
                 color = "linear-gradient(90deg, var(--azul), var(--verde))";
             } else if (notaFinal >= 5.0) {
                 level = "Em Desenvolvimento 🌱";
-                message = "Você está no caminho certo, mas ainda internalizou alguns estereótipos sobre o envelhecimento.";
+                message = "Você está no caminho certo, mas ainda internalizou alguns estereótipos sobre o envelhecimento. Reflita sobre as questões que errou!";
                 color = "linear-gradient(90deg, var(--verde), var(--azul))";
             } else {
                 level = "Iniciante na Jornada 🚀";
-                message = "Este teste revelou que há muitos conceitos sobre envelhecimento e idadismo para explorar.";
+                message = "Este teste revelou que há muitos conceitos sobre envelhecimento e idadismo para explorar. É uma ótima oportunidade para começar!";
                 color = "linear-gradient(90deg, var(--rosa), var(--roxo))";
             }
             
@@ -1502,8 +1705,12 @@
                             <div style="font-weight: 700; color: var(--texto-medio);">NOTA (0-10)</div>
                         </div>
                         <div style="text-align: center;">
-                            <div style="font-size: 4.5rem; font-weight: 900; color: var(--azul); margin: 10px 0; background: linear-gradient(45deg, var(--azul), var(--roxo)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">${answeredCount}</div>
-                            <div style="font-weight: 700; color: var(--texto-medio);">QUESTÕES RESPONDIDAS</div>
+                            <div style="font-size: 4.5rem; font-weight: 900; color: var(--azul); margin: 10px 0; background: linear-gradient(45deg, var(--azul), var(--roxo)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">${acertos}</div>
+                            <div style="font-weight: 700; color: var(--texto-medio);">ACERTOS</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 4.5rem; font-weight: 900; color: var(--verde); margin: 10px 0; background: linear-gradient(45deg, var(--verde), #4CAF50); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">${answeredCount}</div>
+                            <div style="font-weight: 700; color: var(--texto-medio);">RESPONDIDAS</div>
                         </div>
                     </div>
                     
@@ -1518,11 +1725,28 @@
                     <div style="background: rgba(126, 214, 223, 0.1); padding: 30px; border-radius: 20px; margin: 30px 0; text-align: center; border: 3px solid var(--azul);">
                         <h4 style="color: var(--azul-escuro); margin-bottom: 20px; font-size: 1.4rem;">📊 SEU DESEMPENHO DETALHADO</h4>
                         <div style="display: inline-block; text-align: left; font-size: 1.1rem; font-weight: 600;">
-                            <div style="margin-bottom: 10px;"><strong>Acertos:</strong> ${Math.round((notaFinal / 10) * 36)} de 36</div>
-                            <div style="margin-bottom: 10px;"><strong>Porcentagem:</strong> ${Math.round(notaFinal * 10)}%</div>
+                            <div style="margin-bottom: 10px;"><strong>Acertos:</strong> ${acertos} de ${TOTAL_QUESTIONS}</div>
+                            <div style="margin-bottom: 10px;"><strong>Porcentagem:</strong> ${Math.round((acertos/TOTAL_QUESTIONS)*100)}%</div>
                             <div style="margin-bottom: 10px;"><strong>Nível de Consciência:</strong> ${getNivelConsciencia(notaFinal)}</div>
                             <div><strong>Próximo Passo:</strong> ${getProximoPasso(notaFinal)}</div>
                         </div>
+                    </div>
+                    
+                    <!-- SEÇÃO DE FEEDBACK NO RESULTADO -->
+                    <div style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 87, 34, 0.1)); padding: 30px; border-radius: 20px; margin: 30px 0; text-align: center; border: 3px solid var(--laranja);">
+                        <h4 style="color: var(--azul-escuro); margin-bottom: 20px; font-size: 1.4rem;"><i class="fas fa-comments"></i> FALE DIRETAMENTE COMIGO</h4>
+                        <p style="color: var(--texto-medio); margin-bottom: 20px; font-size: 1.1rem;">
+                            <strong>Sua opinião é essencial para melhorar este trabalho!</strong>
+                        </p>
+                        <p style="color: var(--texto-medio); margin-bottom: 25px; font-size: 1rem;">
+                            Clique abaixo para se comunicar <strong>diretamente comigo</strong>. Você pode sugerir temas, avaliar a experiência ou compartilhar relatos.
+                        </p>
+                        <a href="https://forms.gle/1mQMewjBpJbccQYp7" target="_blank" style="display: inline-block; padding: 18px 40px; background: linear-gradient(90deg, var(--laranja), var(--rosa)); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.2rem; box-shadow: 0 10px 25px rgba(255, 87, 34, 0.4); transition: all 0.3s ease;">
+                            <i class="fas fa-paper-plane"></i> FALAR DIRETAMENTE COM RICARDO
+                        </a>
+                        <p style="color: var(--texto-claro); font-size: 0.9rem; margin-top: 15px;">
+                            <i class="fas fa-envelope-open-text"></i> Eu leio pessoalmente cada mensagem
+                        </p>
                     </div>
                     
                     <!-- CHAMADA PARA PESQUISA MUNDO LONGEVO -->
@@ -1545,17 +1769,33 @@
                     <!-- BOTÃO PARA BAIXAR QUESTÕES -->
                     <div style="margin: 30px 0;">
                         <button onclick="downloadQuestions()" style="padding: 18px 40px; background: linear-gradient(90deg, var(--roxo), var(--azul)); color: white; border: none; border-radius: 50px; font-weight: 700; font-size: 1.2rem; cursor: pointer; margin: 10px; box-shadow: 0 10px 25px rgba(156, 39, 176, 0.4); transition: all 0.3s ease;">
-                            <i class="fas fa-download"></i> BAIXAR QUESTÕES E RESPOSTAS
+                            <i class="fas fa-download"></i> BAIXAR AS 41 QUESTÕES E RESPOSTAS
                         </button>
                         <p style="color: var(--texto-medio); margin-top: 10px; font-size: 0.9rem;">
-                            Baixe todas as 36 questões com explicações para estudar
+                            Baixe todas as 41 questões com explicações para estudar e compartilhar
                         </p>
+                    </div>
+                    
+                    <!-- REDES SOCIAIS NO RESULTADO -->
+                    <div style="background: rgba(255, 193, 7, 0.1); padding: 25px; border-radius: 15px; margin: 20px 0;">
+                        <h4 style="color: var(--azul-escuro); margin-bottom: 15px;">📱 SIGA NAS REDES SOCIAIS</h4>
+                        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                            <a href="https://www.youtube.com/@positivaatitude" target="_blank" style="padding: 12px 25px; background: #FF0000; color: white; border-radius: 50px; text-decoration: none;">
+                                <i class="fab fa-youtube"></i> YouTube
+                            </a>
+                            <a href="https://www.tiktok.com/@ricardodefariabarros?is_from_webapp=1&sender_device=pc" target="_blank" style="padding: 12px 25px; background: #000000; color: white; border-radius: 50px; text-decoration: none;">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
+                            <a href="https://www.animodh.com.br/" target="_blank" style="padding: 12px 25px; background: var(--azul); color: white; border-radius: 50px; text-decoration: none;">
+                                <i class="fas fa-globe"></i> Site
+                            </a>
+                        </div>
                     </div>
                     
                     <div style="margin-top: 20px;">
                         <p style="color: var(--texto-medio); font-size: 0.9rem;">
                             Teste desenvolvido por <strong>Ricardo de Faria Barros</strong> - Psicólogo CRP 01/7844<br>
-                            Especialista em Longevidade e Combate ao Idadismo
+                            Especialista em Longevidade e Combate ao Idadismo • Baseado em relatos reais
                         </p>
                     </div>
                     
@@ -1568,6 +1808,14 @@
             resultsModal.querySelector('.modal-content').innerHTML = resultsHTML;
             resultsModal.style.display = 'block';
             document.body.style.overflow = 'hidden';
+            
+            // Depois de fechar o modal, rolar até a seção de feedback
+            const closeBtn = resultsModal.querySelector('button[onclick="closeResultsModal()"]');
+            closeBtn.addEventListener('click', () => {
+                setTimeout(() => {
+                    feedbackSection.scrollIntoView({ behavior: 'smooth' });
+                }, 500);
+            });
         }
 
         // FUNÇÕES AUXILIARES
@@ -1579,10 +1827,10 @@
         }
 
         function getProximoPasso(nota) {
-            if (nota >= 9) return "Compartilhe seu conhecimento!";
-            if (nota >= 7) return "Continue estudando sobre longevidade";
-            if (nota >= 5) return "Reflita sobre os conceitos aprendidos";
-            return "Converse mais com pessoas idosas";
+            if (nota >= 9) return "Compartilhe seu conhecimento e seja multiplicador!";
+            if (nota >= 7) return "Continue estudando e converse com pessoas idosas";
+            if (nota >= 5) return "Reflita sobre os erros e baixe as questões para estudar";
+            return "Converse com pessoas idosas e baixe as questões para aprender";
         }
 
         // FECHAR MODAL DE RESULTADOS
