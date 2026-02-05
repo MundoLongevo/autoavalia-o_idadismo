@@ -313,6 +313,16 @@
             border-left: 5px solid var(--laranja);
         }
         
+        /* NOTA SOBRE LINGUAGEM INCLUSIVA */
+        .linguagem-box {
+            background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+            padding: var(--espaco-md);
+            border-radius: var(--borda-radius-sm);
+            margin: var(--espaco-md) 0;
+            border-left: 5px solid var(--verde);
+            font-size: 0.95rem;
+        }
+        
         /* GAMIFICAÇÃO SIMPLIFICADA */
         .gamification {
             display: flex;
@@ -788,8 +798,8 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <h1><i class="fas fa-heartbeat"></i> Autodiagnóstico: Avalie seu Idadismo</h1>
-                <p class="subtitle">41 perguntas sequenciais para despertar a consciência sobre o <span style="text-shadow: 2px 2px 0 rgba(0,0,0,0.3);">preconceito etário</span></p>
+                <h1><i class="fas fa-heartbeat"></i>Avaliação: Responda, aprenda e mude!</h1>
+                <p class="subtitle">Educação: A melhor forma de combate ao Idadismo <span style="text-shadow: 2px 2px 0 rgba(0,0,0,0.3);"></span></p>
             </div>
         </div>
     </header>
@@ -798,11 +808,15 @@
     <main class="container">
         <!-- INTRODUÇÃO COM RELATOS -->
         <section class="intro-box">
-            <p>Bem-vindo(a) a esta jornada de reflexão sobre o <strong>idadismo</strong> - o preconceito etário que afeta milhões de pessoas idosas em nossa sociedade.</p>
+            <p>Bem-vindo(a) a esta jornada de reflexão sobre o <strong>idadismo</strong> - o preconceito etário que afeta milhões de <strong>pessoas idosas</strong> em nossa sociedade.</p>
+            
+            <div class="linguagem-box">
+                <strong><i class="fas fa-language"></i> Nota sobre Linguagem Inclusiva:</strong> Utilizamos intencionalmente a expressão "pessoa idosa" por ser mais inclusiva e respeitosa. Evitamos termos como "velho" ou diminutivos que reduzem o indivíduo a uma condição ou sugerem fragilidade. Preferimos também: "público 60+", "pessoas maduras", "pessoas longevas".
+            </div>
             
             <div class="relatos-box">
                 <h3><i class="fas fa-comment-medical"></i> Baseado em Relatos Reais</h3>
-                <p>Estas <strong>41 questões</strong> foram produzidas a partir de relatos que escutei, e escuto, em minha prática clínica e profissional, retratando todas as formas de violência e preconceito contra a pessoa idosa.</p>
+                <p>Estas <strong>41 questões</strong> foram produzidas a partir de relatos que escutei, e escuto, em minha prática clínica e profissional, retratando todas as formas de violência e preconceito contra a <strong>pessoa idosa</strong>.</p>
                 <p>Algumas são sutis, quase imperceptíveis. Outras são explícitas e dolorosas. Todas revelam como o idadismo permeia nossa sociedade.</p>
             </div>
             
@@ -990,19 +1004,19 @@
     </div>
 
     <script>
-        // DADOS DAS 41 QUESTÕES EM ORDEM SEQUENCIAL
+        // DADOS DAS 41 QUESTÕES EM ORDEM SEQUENCIAL (ATUALIZADAS PARA LINGUAGEM INCLUSIVA)
         const questions = [
-            // QUESTÕES EXISTENTES 1-36
+            // QUESTÕES EXISTENTES 1-36 (ATUALIZADAS)
             {
                 id: 1,
-                text: "Você vê um casal de 80 anos se beijando apaixonadamente em público. Qual seu pensamento?",
+                text: "Você vê um casal de pessoas idosas (80 anos) se beijando apaixonadamente em público. Qual seu pensamento?",
                 options: [
                     { letter: "A", text: "\"Que fofinhos, parecem duas crianças brincando de namorar!\"" },
                     { letter: "B", text: "\"Nessa idade? Que coisa desnecessária, deveriam ser mais discretos.\"" },
                     { letter: "C", text: "\"Que bom ver que o afeto e o desejo permanecem vivos em todas as etapas da vida.\"" }
                 ],
                 correct: "C",
-                explanation: "A letra A infantiliza o idoso (vê-lo como criança retira sua maturidade). A letra B é preconceito puro (etiquetar o afeto como 'impróprio' pela idade)."
+                explanation: "A letra A infantiliza a pessoa idosa (vê-la como criança retira sua maturidade). A letra B é preconceito puro (etiquetar o afeto como 'impróprio' pela idade)."
             },
             {
                 id: 2,
@@ -1013,18 +1027,18 @@
                     { letter: "C", text: "\"Boa sorte! É ótimo buscar novas conexões e companhia em qualquer idade.\"" }
                 ],
                 correct: "C",
-                explanation: "A A usa o medo para limitar a autonomia. A B reduz a vida do idoso à utilidade familiar (cuidar de netos), negando seu direito ao prazer e à companhia."
+                explanation: "A A usa o medo para limitar a autonomia. A B reduz a vida da pessoa idosa à utilidade familiar (cuidar de netos), negando seu direito ao prazer e à companhia."
             },
             {
                 id: 3,
-                text: "Sobre o uso de preservativos e saúde sexual na terceira idade:",
+                text: "Sobre o uso de preservativos e saúde sexual na longevidade:",
                 options: [
-                    { letter: "A", text: "\"É um assunto que nem deveria ser discutido, é constrangedor para o idoso.\"" },
+                    { letter: "A", text: "\"É um assunto que nem deveria ser discutido, é constrangedor para a pessoa idosa.\"" },
                     { letter: "B", text: "\"É essencial, pois ISTs não escolhem idade e a vida sexual nessa fase é ativa.\"" },
                     { letter: "C", text: "\"Desnecessário, pois o risco de gravidez já não existe.\"" }
                 ],
                 correct: "B",
-                explanation: "A A silencia a saúde do idoso por tabu. A C ignora que camisinha previne doenças, não apenas gravidez, e pressupõe que não há sexo."
+                explanation: "A A silencia a saúde da pessoa idosa por tabu. A C ignora que camisinha previne doenças, não apenas gravidez, e pressupõe que não há sexo."
             },
             {
                 id: 4,
@@ -1035,25 +1049,25 @@
                     { letter: "C", text: "\"Estilo e liberdade corporal não têm prazo de validade.\"" }
                 ],
                 correct: "C",
-                explanation: "Ambas impõem um 'uniforme de velho'. A ideia de que o idoso deve se vestir para esconder o corpo ou a idade é uma forma de controle social."
+                explanation: "Ambas impõem um 'uniforme' para pessoas maduras. A ideia de que a pessoa idosa deve se vestir para esconder o corpo ou a idade é uma forma de controle social."
             },
             {
                 id: 5,
-                text: "Ao ver um idoso praticando paraquedismo ou surf, você pensa:",
+                text: "Ao ver uma pessoa idosa praticando paraquedismo ou surf, você pensa:",
                 options: [
                     { letter: "A", text: "\"Deveria estar fazendo hidroginástica, que é mais seguro para a idade.\"" },
                     { letter: "B", text: "\"Exemplo de vitalidade, o limite é o que o corpo e a mente permitem.\"" },
                     { letter: "C", text: "\"Está querendo acelerar o encontro com o Criador.\"" }
                 ],
                 correct: "B",
-                explanation: "A A limita o idoso ao estereótipo da fragilidade. A C usa um 'humor' mórbido que desqualifica a busca por adrenalina e sentido na vida."
+                explanation: "A A limita a pessoa idosa ao estereótipo da fragilidade. A C usa um 'humor' mórbido que desqualifica a busca por adrenalina e sentido na vida."
             },
             {
                 id: 6,
-                text: "Você ouve um idoso dominando tecnologias de ponta e usando gírias atuais. Você:",
+                text: "Você ouve uma pessoa idosa dominando tecnologias de ponta e usando gírias atuais. Você:",
                 options: [
                     { letter: "A", text: "\"Acha ridículo, parece que está forçando a barra para ser jovem.\"" },
-                    { letter: "B", text: "\"Fica surpreso, como se ele tivesse feito um milagre acadêmico.\"" },
+                    { letter: "B", text: "\"Fica surpreso, como se ela tivesse feito um milagre acadêmico.\"" },
                     { letter: "C", text: "\"Acha natural, pois aprender é uma característica humana, não cronológica.\"" }
                 ],
                 correct: "C",
@@ -1065,7 +1079,7 @@
                 options: [
                     { letter: "A", text: "\"Um ato de amor e proteção para que ele não fique só.\"" },
                     { letter: "B", text: "\"Uma violação da autonomia e do direito de escolha do pai.\"" },
-                    { letter: "C", text: "\"Prático, afinal, idosos não sabem mais administrar imóveis.\"" }
+                    { letter: "C", text: "\"Prático, afinal, pessoas idosas não sabem mais administrar imóveis.\"" }
                 ],
                 correct: "B",
                 explanation: "A A mascara o autoritarismo com 'amor'. A C é um preconceito cognitivo, assumindo que idade é igual a incapacidade mental."
@@ -1075,7 +1089,7 @@
                 text: "A família usa a avó como babá e motorista fixa dos netos sem perguntar seus planos.",
                 options: [
                     { letter: "A", text: "\"Uma forma de manter a avó ativa e útil na família.\"" },
-                    { letter: "B", text: "\"Idadismo funcional: ver o idoso apenas como um prestador de serviços gratuito.\"" },
+                    { letter: "B", text: "\"Idadismo funcional: ver a pessoa idosa apenas como um prestador de serviços gratuito.\"" },
                     { letter: "C", text: "\"O dever natural de todo avô e avó.\"" }
                 ],
                 correct: "B",
@@ -1087,10 +1101,10 @@
                 options: [
                     { letter: "A", text: "\"Uma forma de violência patrimonial e quebra de autonomia.\"" },
                     { letter: "B", text: "\"Um auxílio administrativo que todo filho deve prestar.\"" },
-                    { letter: "C", text: "\"Uma maneira de evitar que o idoso gaste com bobagens.\"" }
+                    { letter: "C", text: "\"Uma maneira de evitar que a pessoa idosa gaste com bobagens.\"" }
                 ],
                 correct: "A",
-                explanation: "Se o idoso é lúcido, retirar seu poder financeiro é uma forma de castração social e crime previsto no Estatuto do Idoso."
+                explanation: "Se a pessoa idosa é lúcida, retirar seu poder financeiro é uma forma de castração social e crime previsto no Estatuto da Pessoa Idosa."
             },
             {
                 id: 10,
@@ -1098,7 +1112,7 @@
                 options: [
                     { letter: "A", text: "\"Proteção extrema e amorosa.\"" },
                     { letter: "B", text: "\"Cárcere privado e violação da autonomia individual.\"" },
-                    { letter: "C", text: "\"Prevenção de acidentes necessária para qualquer um nessa idade.\"" }
+                    { letter: "C", text: "\"Prevenção de acidentes necessária para qualquer pessoa nessa idade.\"" }
                 ],
                 correct: "B",
                 explanation: "Retirar a liberdade de ir e vir sem um diagnóstico real de incapacidade é uma agressão severa à dignidade humana."
@@ -1108,11 +1122,11 @@
                 text: "Um filho não visita a mãe há meses, pois 'ela tem comida, remédios e uma TV ótima'. Isso é:",
                 options: [
                     { letter: "A", text: "\"Solidão funcional e abandono afetivo estrutural.\"" },
-                    { letter: "B", text: "\"Respeito ao espaço e à privacidade do idoso.\"" },
+                    { letter: "B", text: "\"Respeito ao espaço e à privacidade da pessoa idosa.\"" },
                     { letter: "C", text: "\"Confiança na autonomia da mãe.\"" }
                 ],
                 correct: "A",
-                explanation: "O bem-estar material não supre a necessidade de pertencimento e conexão. Condenar o idoso à TV é condená-lo à morte social."
+                explanation: "O bem-estar material não supre a necessidade de pertencimento e conexão. Condenar a pessoa idosa à TV é condená-la à morte social."
             },
             {
                 id: 12,
@@ -1120,10 +1134,10 @@
                 options: [
                     { letter: "A", text: "\"Um azar do dia, acontece com todo mundo.\"" },
                     { letter: "B", text: "\"Um 'respeito de fachada' que não se traduz em eficiência estrutural.\"" },
-                    { letter: "C", text: "\"O idoso tem mais tempo mesmo, então pode esperar um pouco mais.\"" }
+                    { letter: "C", text: "\"A pessoa idosa tem mais tempo mesmo, então pode esperar um pouco mais.\"" }
                 ],
                 correct: "B",
-                explanation: "A C é um desrespeito ao tempo de vida do idoso. A A ignora que a lei exige prioridade em todas as etapas do fluxo, não só na fila."
+                explanation: "A C é um desrespeito ao tempo de vida da pessoa idosa. A A ignora que a lei exige prioridade em todas as etapas do fluxo, não só na fila."
             },
             {
                 id: 13,
@@ -1142,58 +1156,58 @@
                 options: [
                     { letter: "A", text: "\"Uma forma carinhosa e respeitosa de tratamento.\"" },
                     { letter: "B", text: "\"Infantilização e apagamento da identidade individual da pessoa.\"" },
-                    { letter: "C", text: "\"Necessário para que eles se sintam acolhidos.\"" }
+                    { letter: "C", text: "\"Necessário para que elas se sintam acolhidas.\"" }
                 ],
                 correct: "B",
                 explanation: "Chamar um estranho de 'vovô' retira dele seu nome e sua história. É tratá-lo como uma categoria fofa, não como um cidadão."
             },
             {
                 id: 15,
-                text: "Ao ver um idoso pobre no transporte público, a reação comum é:",
+                text: "Ao ver uma pessoa idosa pobre no transporte público, a reação comum é:",
                 options: [
-                    { letter: "A", text: "\"Oferecer o lugar e perguntar se ele precisa de ajuda.\"" },
-                    { letter: "B", text: "\"Torná-lo invisível, ignorando suas dificuldades de acesso.\"" },
-                    { letter: "C", text: "\"Achar que ele está passeando e atrapalhando quem trabalha.\"" }
+                    { letter: "A", text: "\"Oferecer o lugar e perguntar se ela precisa de ajuda.\"" },
+                    { letter: "B", text: "\"Torná-la invisível, ignorando suas dificuldades de acesso.\"" },
+                    { letter: "C", text: "\"Achar que ela está passeando e atrapalhando quem trabalha.\"" }
                 ],
                 correct: "B",
-                explanation: "A C é a crueldade do idadismo de classe: achar que o idoso pobre não tem o direito de circular pela cidade no horário que precisar."
+                explanation: "A C é a crueldade do idadismo de classe: achar que a pessoa idosa pobre não tem o direito de circular pela cidade no horário que precisar."
             },
             {
                 id: 16,
-                text: "Na TV, o idoso é quase sempre retratado como 'ranzinza' ou 'esquecido'. O impacto é:",
+                text: "Na TV, a pessoa idosa é quase sempre retratada como 'ranzinza' ou 'esquecida'. O impacto é:",
                 options: [
                     { letter: "A", text: "\"Apenas humor, não deve ser levado a sério.\"" },
-                    { letter: "B", text: "\"A manutenção de estereótipos que moldam como a sociedade trata os idosos.\"" },
-                    { letter: "C", text: "\"Realista, pois a maioria dos idosos é assim mesmo.\"" }
+                    { letter: "B", text: "\"A manutenção de estereótipos que moldam como a sociedade trata pessoas idosas.\"" },
+                    { letter: "C", text: "\"Realista, pois a maioria das pessoas idosas é assim mesmo.\"" }
                 ],
                 correct: "B",
-                explanation: "A mídia cria a realidade. Se só vemos idosos limitados na tela, passamos a acreditar que a velhice é apenas perda e rabugice."
+                explanation: "A mídia cria a realidade. Se só vemos pessoas idosas limitadas na tela, passamos a acreditar que a maturidade é apenas perda e rabugice."
             },
             {
                 id: 17,
                 text: "As imagens de bancos de dados (senhor de bengala, senhora tricotando):",
                 options: [
-                    { letter: "A", text: "\"São a melhor forma de representar o idoso para todos entenderem.\"" },
+                    { letter: "A", text: "\"São a melhor forma de representar a pessoa idosa para todos entenderem.\"" },
                     { letter: "B", text: "\"Estão ultrapassadas e não refletem a diversidade da longelescência.\"" },
                     { letter: "C", text: "\"Devem ser mantidas por tradição cultural.\"" }
                 ],
                 correct: "B",
-                explanation: "Essas imagens reforçam o 'antigo normal'. O novo longevo viaja, empreende e usa tecnologia."
+                explanation: "Essas imagens reforçam o 'antigo normal'. A nova pessoa longeva viaja, empreende e usa tecnologia."
             },
             {
                 id: 18,
                 text: "Linguagem inacessível (letras minúsculas, termos em inglês sem explicação) é:",
                 options: [
                     { letter: "A", text: "\"Uma falha de design sem intenção.\"" },
-                    { letter: "B", text: "\"Uma forma de exclusão digital e social do público idoso.\"" },
-                    { letter: "C", text: "\"Culpa do idoso que não se esforça para aprender.\"" }
+                    { letter: "B", text: "\"Uma forma de exclusão digital e social do público maduro.\"" },
+                    { letter: "C", text: "\"Culpa da pessoa idosa que não se esforça para aprender.\"" }
                 ],
                 correct: "B",
                 explanation: "O design que não inclui todas as idades é um design excludente. Acessibilidade é um direito, não um privilégio."
             },
             {
                 id: 19,
-                text: "Um idoso decide abrir uma startup aos 65 anos. O mercado financeiro geralmente:",
+                text: "Uma pessoa idosa decide abrir uma startup aos 65 anos. O mercado financeiro geralmente:",
                 options: [
                     { letter: "A", text: "\"Dá todo apoio pela experiência acumulada.\"" },
                     { letter: "B", text: "\"Dificulta o crédito por considerar o risco de 'sobrevida' do negócio.\"" },
@@ -1207,11 +1221,11 @@
                 text: "No currículo de uma pessoa de 62 anos, o descarte imediato ocorre por:",
                 options: [
                     { letter: "A", text: "\"Falta de qualificação técnica para o mundo moderno.\"" },
-                    { letter: "B", text: "\"Idadismo: medo de que ele não aceite ordens de jovens ou seja lento.\"" },
+                    { letter: "B", text: "\"Idadismo: medo de que ela não aceite ordens de jovens ou seja lenta.\"" },
                     { letter: "C", text: "\"Salário pretendido ser muito alto.\"" }
                 ],
                 correct: "B",
-                explanation: "O preconceito assume que o idoso é rígido ou tecnologicamente incapaz, o que é uma mentira generalizada."
+                explanation: "O preconceito assume que a pessoa madura é rígida ou tecnologicamente incapaz, o que é uma mentira generalizada."
             },
             {
                 id: 21,
@@ -1226,62 +1240,62 @@
             },
             {
                 id: 22,
-                text: "Quem sofre mais preconceito na velhice?",
+                text: "Quem sofre mais preconceito na maturidade?",
                 options: [
                     { letter: "A", text: "\"O homem branco de classe média.\"" },
                     { letter: "B", text: "\"A mulher negra e pobre (acúmulo de gênero, raça, classe e idade).\"" },
                     { letter: "C", text: "\"Todos sofrem exatamente igual.\"" }
                 ],
                 correct: "B",
-                explanation: "A interseccionalidade prova que vulnerabilidades se somam. A velhice não apaga o racismo nem o machismo; ela os aprofunda."
+                explanation: "A interseccionalidade prova que vulnerabilidades se somam. A maturidade não apaga o racismo nem o machismo; ela os aprofunda."
             },
             {
                 id: 23,
-                text: "\"É da idade mesmo\", diz o médico sem fazer exames em um idoso pobre:",
+                text: "\"É da idade mesmo\", diz o médico sem fazer exames em uma pessoa idosa pobre:",
                 options: [
                     { letter: "A", text: "\"Um diagnóstico sincero baseado na estatística.\"" },
                     { letter: "B", text: "\"Negligência médica baseada no idadismo estrutural.\"" },
                     { letter: "C", text: "\"Uma forma de acalmar o paciente.\"" }
                 ],
                 correct: "B",
-                explanation: "Idade não é diagnóstico. Dor e mal-estar em idosos devem ser investigados com o mesmo rigor que em jovens."
+                explanation: "Idade não é diagnóstico. Dor e mal-estar em pessoas idosas devem ser investigados com o mesmo rigor que em jovens."
             },
             {
                 id: 24,
-                text: "Um idoso de 72 anos entra em uma loja de luxo e o vendedor pergunta por quem ele trabalha:",
+                text: "Uma pessoa idosa de 72 anos entra em uma loja de luxo e o vendedor pergunta por quem ela trabalha:",
                 options: [
                     { letter: "A", text: "\"O vendedor está apenas sendo solícito.\"" },
                     { letter: "B", text: "\"É um 'combo' de racismo, classismo e idadismo.\"" },
-                    { letter: "C", text: "\"Provavelmente o idoso parece perdido.\"" }
+                    { letter: "C", text: "\"Provavelmente a pessoa idosa parece perdida.\"" }
                 ],
                 correct: "B",
-                explanation: "Assume-se que o idoso (especialmente se for negro ou parecer pobre) não pode ser o sujeito do desejo de consumo."
+                explanation: "Assume-se que a pessoa idosa (especialmente se for negra ou parecer pobre) não pode ser o sujeito do desejo de consumo."
             },
             {
                 id: 25,
-                text: "O relacionamento ideal entre jovens e idosos seria:",
+                text: "O relacionamento ideal entre jovens e pessoas maduras seria:",
                 options: [
-                    { letter: "A", text: "\"O jovem ensinar tecnologia e o idoso apenas ouvir.\"" },
-                    { letter: "B", text: "\"O idoso contar histórias e o jovem fingir que ouve.\"" },
-                    { letter: "C", text: "\"Uma troca mútua: o novo do jovem e o contexto do idoso.\"" }
+                    { letter: "A", text: "\"O jovem ensinar tecnologia e a pessoa idosa apenas ouvir.\"" },
+                    { letter: "B", text: "\"A pessoa idosa contar histórias e o jovem fingir que ouve.\"" },
+                    { letter: "C", text: "\"Uma troca mútua: o novo do jovem e o contexto da pessoa madura.\"" }
                 ],
                 correct: "C",
                 explanation: "Ambas as opções tratam a relação como unilateral. A intergeracionalidade real é uma via de mão dupla."
             },
             {
                 id: 26,
-                text: "Quando um idoso conta uma superação e o jovem diz 'Lá vem o museu':",
+                text: "Quando uma pessoa idosa conta uma superação e o jovem diz 'Lá vem o museu':",
                 options: [
                     { letter: "A", text: "\"O jovem é apenas focado no futuro.\"" },
                     { letter: "B", text: "\"O jovem despreza a memória como algo 'ultrapassado'.\"" },
-                    { letter: "C", text: "\"As histórias de idosos são sempre repetitivas.\"" }
+                    { letter: "C", text: "\"As histórias de pessoas idosas são sempre repetitivas.\"" }
                 ],
                 correct: "B",
                 explanation: "Desprezar a experiência é ignorar o alicerce do presente. Sem memória, não há evolução."
             },
             {
                 id: 27,
-                text: "Um idoso quer aprender IA e os colegas jovens riem. A presença dele é:",
+                text: "Uma pessoa idosa quer aprender IA e os colegas jovens riem. A presença dela é:",
                 options: [
                     { letter: "A", text: "\"Uma tentativa desesperada de não se sentir só.\"" },
                     { letter: "B", text: "\"Um exemplo de lifelong learning e direito à atualização.\"" },
@@ -1294,7 +1308,7 @@
                 id: 28,
                 text: "A família viaja e avisa à avó: 'Você vai para cuidar das crianças à noite':",
                 options: [
-                    { letter: "A", text: "\"Assume-se que o tempo do idoso é 'sobra' e não tem valor próprio.\"" },
+                    { letter: "A", text: "\"Assume-se que o tempo da pessoa idosa é 'sobra' e não tem valor próprio.\"" },
                     { letter: "B", text: "\"É uma ajuda que toda avó gosta de dar.\"" },
                     { letter: "C", text: "\"Uma forma de economizar com a babá.\"" }
                 ],
@@ -1303,29 +1317,29 @@
             },
             {
                 id: 29,
-                text: "O preconceito de ver idosos como 'sem agenda própria' resulta em:",
+                text: "O preconceito de ver pessoas idosas como 'sem agenda própria' resulta em:",
                 options: [
-                    { letter: "A", text: "\"Mais tempo de descanso para eles.\"" },
+                    { letter: "A", text: "\"Mais tempo de descanso para elas.\"" },
                     { letter: "B", text: "\"Isolamento social e perda do sentido de vida (logoterapia).\"" },
                     { letter: "C", text: "\"Uma vida mais simples e sem estresse.\"" }
                 ],
                 correct: "B",
-                explanation: "O ser humano precisa de propósito. Retirar a agenda do idoso é retirar seu lugar no mundo."
+                explanation: "O ser humano precisa de propósito. Retirar a agenda da pessoa idosa é retirar seu lugar no mundo."
             },
             {
                 id: 30,
                 text: "Sobre a 'longelescência' (seu termo!), o que ela propõe?",
                 options: [
-                    { letter: "A", text: "\"Que o idoso deve agir como se tivesse 15 anos para ser aceito.\"" },
+                    { letter: "A", text: "\"Que a pessoa idosa deve agir como se tivesse 15 anos para ser aceita.\"" },
                     { letter: "B", text: "\"Que a longevidade pode manter a curiosidade e o vigor da juventude.\"" },
-                    { letter: "C", text: "\"Que a velhice é apenas uma adolescência tardia e sem responsabilidades.\"" }
+                    { letter: "C", text: "\"Que a maturidade é apenas uma adolescência tardia e sem responsabilidades.\"" }
                 ],
                 correct: "B",
                 explanation: "A A nega a sabedoria da idade. A C nega a maturidade. A longelescência é a síntese: o frescor da descoberta com o peso da experiência."
             },
             {
                 id: 31,
-                text: "Quando um idoso diz que quer aprender uma nova língua, a reação comum é:",
+                text: "Quando uma pessoa idosa diz que quer aprender uma nova língua, a reação comum é:",
                 options: [
                     { letter: "A", text: "\"Que inspirador! Nunca é tarde para aprender.\"" },
                     { letter: "B", text: "\"Na sua idade? Melhor descansar.\"" },
@@ -1336,25 +1350,25 @@
             },
             {
                 id: 32,
-                text: "Um idoso quer participar de um projeto voluntário, mas é rejeitado por 'ser muito velho':",
+                text: "Uma pessoa idosa quer participar de um projeto voluntário, mas é rejeitada por 'ser muito velha':",
                 options: [
                     { letter: "A", text: "\"É compreensível, projetos precisam de pessoas com energia.\"" },
-                    { letter: "B", text: "\"Uma perda, pois idosos trazem experiência e sabedoria.\"" },
+                    { letter: "B", text: "\"Uma perda, pois pessoas maduras trazem experiência e sabedoria.\"" },
                     { letter: "C", text: "\"Discriminação pura, violando o direito de contribuir com a sociedade.\"" }
                 ],
                 correct: "C",
-                explanation: "Idosos têm muito a contribuir. Rejeitar por idade é desperdiçar valiosa experiência e violar direitos fundamentais."
+                explanation: "Pessoas idosas têm muito a contribuir. Rejeitar por idade é desperdiçar valiosa experiência e violar direitos fundamentais."
             },
             {
                 id: 33,
                 text: "Um colega diz para um trabalhador de 60 anos: 'Já está na hora de aposentar, deixe a vaga para os mais jovens'. Isso é:",
                 options: [
-                    { letter: "A", text: "\"Um conselho amigável para o bem-estar do idoso.\"" },
+                    { letter: "A", text: "\"Um conselho amigável para o bem-estar da pessoa idosa.\"" },
                     { letter: "B", text: "\"Discriminação por idade que viola o direito ao trabalho.\"" },
                     { letter: "C", text: "\"Uma constatação realista sobre o mercado de trabalho.\"" }
                 ],
                 correct: "B",
-                explanation: "A idade não determina capacidade produtiva. Forçar aposentadoria é discriminação e viola o Estatuto do Idoso."
+                explanation: "A idade não determina capacidade produtiva. Forçar aposentadoria é discriminação e viola o Estatuto da Pessoa Idosa."
             },
             {
                 id: 34,
@@ -1369,82 +1383,82 @@
             },
             {
                 id: 35,
-                text: "A frase 'idosos no trabalho são lentos e improdutivos' reflete:",
+                text: "A frase 'pessoas idosas no trabalho são lentas e improdutivas' reflete:",
                 options: [
                     { letter: "A", text: "\"Um estereótipo prejudicial sem base científica.\"" },
                     { letter: "B", text: "\"Uma verdade estatística sobre desempenho laboral.\"" },
-                    { letter: "C", text: "\"A necessidade de funções adaptadas para idosos.\"" }
+                    { letter: "C", text: "\"A necessidade de funções adaptadas para pessoas maduras.\"" }
                 ],
                 correct: "A",
                 explanation: "Pesquisas mostram que trabalhadores mais velhos têm menor absenteísmo, mais experiência e maior comprometimento. A produtividade não diminui necessariamente com a idade."
             },
             {
                 id: 36,
-                text: "Quando um idoso permanece ativo no mercado, muitos dizem: 'O que ele quer com essa vaga, tomando espaço dos jovens?'. Esta visão:",
+                text: "Quando uma pessoa idosa permanece ativa no mercado, muitos dizem: 'O que ela quer com essa vaga, tomando espaço dos jovens?'. Esta visão:",
                 options: [
                     { letter: "A", text: "\"Promove a competição intergeracional injusta.\"" },
                     { letter: "B", text: "\"Ignora que o mercado deve incluir todas as gerações.\"" },
                     { letter: "C", text: "\"Ambas as alternativas anteriores estão corretas.\"" }
                 ],
                 correct: "C",
-                explanation: "Não existe 'quantidade limitada' de trabalho. A inclusão de idosos no mercado não prejudica jovens, mas sim enriquece as organizações com experiência e diversidade."
+                explanation: "Não existe 'quantidade limitada' de trabalho. A inclusão de pessoas maduras no mercado não prejudica jovens, mas sim enriquece as organizações com experiência e diversidade."
             },
             
-            // NOVAS QUESTÕES 37-41
+            // NOVAS QUESTÕES 37-41 (ATUALIZADAS)
             {
                 id: 37,
                 text: "Um homem de 68 anos decide se assumir publicamente como gay e participar do movimento LGBTQIA+. Muitos dizem: 'Nessa idade? Já passou da hora, devia ficar quieto'. Isso revela:",
                 options: [
-                    { letter: "A", text: "\"Que a sexualidade tem prazo de validade e idosos não têm direito à autenticidade.\"" },
+                    { letter: "A", text: "\"Que a sexualidade tem prazo de validade e pessoas idosas não têm direito à autenticidade.\"" },
                     { letter: "B", text: "\"Que o idadismo também afeta a comunidade LGBTQIA+, negando identidade sexual tardia.\"" },
-                    { letter: "C", text: "\"Um cuidado para proteger o idoso de possíveis preconceitos sociais.\"" }
+                    { letter: "C", text: "\"Um cuidado para proteger a pessoa idosa de possíveis preconceitos sociais.\"" }
                 ],
                 correct: "B",
-                explanation: "A A é preconceituosa ao limitar expressão sexual por idade. A C mascara controle como proteção. O idoso tem direito à autenticidade em qualquer idade."
+                explanation: "A A é preconceituosa ao limitar expressão sexual por idade. A C mascara controle como proteção. A pessoa idosa tem direito à autenticidade em qualquer idade."
             },
             {
                 id: 38,
-                text: "Um idoso de 72 anos decide vender um imóvel herdado para abrir um pequeno negócio. Os filhos se revoltam: 'Esse imóvel é da família, não tem direito de vender!'. A atitude dos filhos é:",
+                text: "Uma pessoa idosa de 72 anos decide vender um imóvel herdado para abrir um pequeno negócio. Os filhos se revoltam: 'Esse imóvel é da família, não tem direito de vender!'. A atitude dos filhos é:",
                 options: [
                     { letter: "A", text: "\"Legítima preocupação com o patrimônio familiar.\"" },
                     { letter: "B", text: "\"Violência patrimonial e negação da autonomia financeira do pai.\"" },
                     { letter: "C", text: "\"Uma tentativa de preservar a herança para as futuras gerações.\"" }
                 ],
                 correct: "B",
-                explanation: "O idoso lúcido tem pleno direito de dispor de seus bens. Tratar o patrimônio como 'da família' é negar sua autonomia e pode configurar crime."
+                explanation: "A pessoa idosa lúcida tem pleno direito de dispor de seus bens. Tratar o patrimônio como 'da família' é negar sua autonomia e pode configurar crime."
             },
             {
                 id: 39,
-                text: "Um senhor de 75 anos volta a estudar (ensino superior) e sofre bullying dos colegas jovens: riem quando ele faz perguntas, chamam de 'vovô sabidão'. Isso é:",
+                text: "Um senhor de 75 anos volta a estudar (ensino médio) e sofre bullying dos colegas jovens: riem quando ele faz perguntas, chamam de 'vovô caduco'. Isso é:",
                 options: [
                     { letter: "A", text: "\"Apenas brincadeira de jovens, sem maldade.\"" },
                     { letter: "B", text: "\"Assédio moral educacional que pode levar ao abandono dos estudos.\"" },
                     { letter: "C", text: "\"Natural, pois ele está fora do ambiente etário adequado.\"" }
                 ],
                 correct: "B",
-                explanation: "O direito à educação é para todas as idades. Ridicularizar o idoso estudante é uma forma cruel de exclusão educacional que viola direitos fundamentais."
+                explanation: "O direito à educação é para todas as idades. Ridicularizar a pessoa idosa estudante é uma forma cruel de exclusão educacional que viola direitos fundamentais."
             },
             {
                 id: 40,
-                text: "Idosos são alvo constante de bancos com produtos duvidosos (consórcios, seguros caríssimos, investimentos complexos) e golpes de amor virtual. A raiz do problema é:",
+                text: "Pessoas idosas são alvo constante de bancos com produtos duvidosos (consórcios, seguros caríssimos, investimentos complexos) e golpes de amor virtual. A raiz do problema é:",
                 options: [
-                    { letter: "A", text: "\"Ingenuidade dos idosos que não sabem se proteger.\"" },
+                    { letter: "A", text: "\"Ingenuidade das pessoas idosas que não sabem se proteger.\"" },
                     { letter: "B", text: "\"Solidão e falta de rede de apoio para orientação e aconselhamento.\"" },
                     { letter: "C", text: "\"Falta de fiscalização governamental apenas.\"" }
                 ],
                 correct: "B",
-                explanation: "A vulnerabilidade não é ingenuidade, mas fruto do isolamento social. Idosos solitários são presas fáceis para golpistas. A rede de apoio familiar e comunitária é essencial."
+                explanation: "A vulnerabilidade não é ingenuidade, mas fruto do isolamento social. Pessoas idosas solitárias são presas fáceis para golpistas. A rede de apoio familiar e comunitária é essencial."
             },
             {
                 id: 41,
                 text: "Aplicativos como 'amigo virtual', 'jantar com estranhos' ou 'botão de pânico' que avisa 'estou vivo' revelam:",
                 options: [
                     { letter: "A", text: "\"A criatividade tecnológica para lidar com problemas modernos.\"" },
-                    { letter: "B", text: "\"O quanto nossa sociedade está doente de solidão, especialmente para idosos.\"" },
-                    { letter: "C", text: "\"Que idosos não sabem mais fazer amigos da forma tradicional.\"" }
+                    { letter: "B", text: "\"O quanto nossa sociedade está doente de solidão, especialmente para pessoas idosas.\"" },
+                    { letter: "C", text: "\"Que pessoas idosas não sabem mais fazer amigos da forma tradicional.\"" }
                 ],
                 correct: "B",
-                explanation: "Esses aplicativos são sintomas da 'epidemia de solidão' que atinge especialmente idosos. Revelam o fracasso das redes sociais reais e o abandono afetivo estrutural."
+                explanation: "Esses aplicativos são sintomas da 'epidemia de solidão' que atinge especialmente pessoas idosas. Revelam o fracasso das redes sociais reais e o abandono afetivo estrutural."
             }
         ];
 
@@ -1485,9 +1499,10 @@
         // BAIXAR QUESTÕES EM PDF
         function downloadQuestions() {
             let content = "QUESTÕES DO AUTODIAGNÓSTICO SOBRE IDADISMO - 41 QUESTÕES\n";
-            content += "Por Ricardo de Faria Barros - Psicólogo CRP 01/7844\n";
+            content += "Direitos Reservados: Ricardo de Faria Barros - Psicólogo CRP 01/7844\n";
             content += "Especialista em Longevidade e Combate ao Idadismo\n";
-            content += "Baseado em relatos reais coletados em 30 anos de prática clínica\n\n";
+            content += "Baseado em relatos reais coletados em 30 anos de prática clínica\n";
+            content += "NOTA: Utilizamos intencionalmente a expressão 'pessoa idosa' por ser mais inclusiva e respeitosa.\n\n";
             content += "=================================================================\n\n";
             
             questions.forEach((question, index) => {
