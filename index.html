@@ -3,12 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Longelescência - Combate ao Idadismo</title>
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#FF6B8B">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👴🏻👵🏻</text></svg>">
+    <title>Longelescência - Questionário Completo (40 Questões)</title>
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -56,11 +51,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent; /* Remove highlight azul no iOS */
-        }
-        
-        html {
-            scroll-behavior: smooth;
         }
         
         body {
@@ -68,10 +58,7 @@
             background: linear-gradient(135deg, #F7FFF7 0%, #E8F4F8 100%);
             color: var(--texto-escuro);
             line-height: 1.6;
-            overflow-x: hidden;
             padding-bottom: 60px;
-            -webkit-font-smoothing: antialiased; /* Melhora renderização no Safari */
-            -moz-osx-font-smoothing: grayscale;
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -79,29 +66,6 @@
             font-weight: 700;
             line-height: 1.3;
             margin-bottom: var(--espaco-sm);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-        }
-        
-        h2 {
-            font-size: 2rem;
-            color: var(--azul-escuro);
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-        }
-        
-        p {
-            margin-bottom: var(--espaco-sm);
-            font-size: 1.1rem;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
         }
         
         .container {
@@ -121,37 +85,11 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-        
-        .header::before {
-            content: "";
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            top: -150px;
-            right: -50px;
-        }
-        
-        .header::after {
-            content: "";
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 50%;
-            bottom: -100px;
-            left: -50px;
-        }
-        
-        .header-content {
-            position: relative;
-            z-index: 2;
+            margin-bottom: var(--espaco-xl);
         }
         
         .header h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
             margin-bottom: var(--espaco-sm);
         }
@@ -163,162 +101,7 @@
             margin: 0 auto var(--espaco-lg);
         }
         
-        /* BANNER DE PESQUISA - CORRIGIDO z-index */
-        .survey-banner {
-            background: linear-gradient(90deg, var(--amarelo), var(--laranja));
-            color: var(--azul-escuro);
-            padding: var(--espaco-sm) 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            -webkit-backface-visibility: hidden; /* Corrige rendering no iOS */
-        }
-        
-        .survey-banner.hidden {
-            transform: translateY(-100%);
-        }
-        
-        .banner-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: var(--espaco-sm);
-        }
-        
-        .banner-badge {
-            background: var(--azul-escuro);
-            color: white;
-            padding: 5px 12px;
-            border-radius: var(--borda-radius-sm);
-            font-size: 0.9rem;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .banner-btn {
-            background: var(--azul-escuro);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            white-space: nowrap;
-            transition: var(--transicao);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            -webkit-appearance: none; /* Remove estilos padrão iOS */
-        }
-        
-        .banner-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(26, 83, 92, 0.3);
-        }
-        
-        /* INTRO */
-        .intro-box {
-            background: white;
-            color: var(--azul-escuro);
-            padding: var(--espaco-lg);
-            border-radius: var(--borda-radius);
-            margin: var(--espaco-xl) auto;
-            max-width: 900px;
-            box-shadow: var(--sombra);
-            border-left: 8px solid var(--azul);
-            position: relative;
-            z-index: 1; /* Garante que fique acima de elementos com fundo */
-        }
-        
-        .highlight {
-            background-color: var(--amarelo);
-            padding: 3px 8px;
-            border-radius: var(--borda-radius-sm);
-            font-weight: bold;
-        }
-        
-        .quote {
-            font-style: italic;
-            color: var(--azul-escuro);
-            border-left: 5px solid var(--roxo);
-            padding-left: var(--espaco-md);
-            margin: var(--espaco-lg) 0;
-            font-size: 1.1rem;
-        }
-        
-        /* GAMIFICAÇÃO - ATUALIZADO PARA 40 PERGUNTAS */
-        .gamification {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: var(--espaco-lg);
-            margin: var(--espaco-xl) auto;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .counter-box {
-            background: white;
-            border-radius: var(--borda-radius);
-            padding: var(--espaco-lg);
-            text-align: center;
-            box-shadow: var(--sombra);
-            border: 5px solid var(--azul);
-            min-width: 200px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .counter-value {
-            font-size: 3.5rem;
-            font-weight: bold;
-            color: var(--rosa);
-            line-height: 1;
-            margin: 10px 0;
-        }
-        
-        .counter-label {
-            font-size: 1.2rem;
-            color: var(--azul-escuro);
-            font-weight: 600;
-        }
-        
-        .medal-container {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .medal {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--amarelo), var(--laranja));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: white;
-            box-shadow: 0 5px 15px rgba(255, 209, 102, 0.4);
-            opacity: 0.3;
-            transition: var(--transicao);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .medal.active {
-            opacity: 1;
-            transform: scale(1.1);
-            box-shadow: 0 5px 20px rgba(255, 209, 102, 0.7);
-        }
-        
-        /* SISTEMA DE PONTUAÇÃO NOVO */
+        /* SISTEMA DE PONTUAÇÃO */
         .scoring-system {
             background: white;
             padding: var(--espaco-lg);
@@ -352,68 +135,119 @@
             color: var(--verde);
         }
         
-        /* BLOCOS DE QUESTÕES - ATUALIZADO */
-        .blocks-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: var(--espaco-lg);
-            margin: var(--espaco-xl) 0;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .block {
+        /* QUESTION BOX - DESIGN DESTACADO */
+        .question-box {
             background: white;
             border-radius: var(--borda-radius);
-            overflow: hidden;
+            padding: var(--espaco-lg);
+            margin-bottom: var(--espaco-lg);
             box-shadow: var(--sombra);
+            border-left: 6px solid var(--azul);
             transition: var(--transicao);
-            cursor: pointer;
             position: relative;
-            opacity: 1 !important; /* Força opacidade total */
-            -webkit-transform: translateZ(0); /* Aceleração GPU */
+            overflow: hidden;
         }
         
-        .block:hover {
-            transform: translateY(-10px);
+        .question-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(126, 214, 223, 0.05) 0%, rgba(255, 107, 139, 0.05) 100%);
+            z-index: 0;
         }
         
-        .block-header {
-            padding: var(--espaco-lg);
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: var(--espaco-sm);
-            position: relative;
-            z-index: 2;
-        }
-        
-        .block-1 .block-header { background: linear-gradient(90deg, var(--rosa), #FF8FA3); }
-        .block-2 .block-header { background: linear-gradient(90deg, var(--azul), #9AE6E8); }
-        .block-3 .block-header { background: linear-gradient(90deg, var(--amarelo), #FFDF8E); }
-        .block-4 .block-header { background: linear-gradient(90deg, var(--verde), #4CE4B8); }
-        .block-5 .block-header { background: linear-gradient(90deg, var(--roxo), #C084FC); }
-        .block-6 .block-header { background: linear-gradient(90deg, var(--laranja), #FFB896); }
-        .block-7 .block-header { background: linear-gradient(90deg, var(--azul-escuro), #2D7C87); }
-        .block-8 .block-header { background: linear-gradient(90deg, #FF6B8B, #9D4EDD); }
-        
-        .block-content {
-            padding: var(--espaco-lg);
+        .question-box > * {
             position: relative;
             z-index: 1;
-            background: white; /* Garante fundo sólido */
         }
         
-        .block-question {
-            margin-bottom: 15px;
+        .question-number {
+            display: inline-block;
+            background: var(--azul);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: var(--espaco-md);
+            font-size: 0.9rem;
+        }
+        
+        .question-text {
+            font-size: 1.2rem;
             font-weight: 600;
-            color: var(--azul-escuro);
-            min-height: 60px;
+            margin-bottom: var(--espaco-md);
+            color: var(--texto-escuro);
+            line-height: 1.5;
+            background: rgba(255, 255, 255, 0.8);
+            padding: var(--espaco-md);
+            border-radius: var(--borda-radius-sm);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
         
-        /* BOTÕES DE CONTROLE */
+        .options-container {
+            display: grid;
+            gap: var(--espaco-sm);
+        }
+        
+        .option {
+            background: white;
+            padding: var(--espaco-md);
+            border-radius: var(--borda-radius-sm);
+            cursor: pointer;
+            transition: var(--transicao);
+            border: 2px solid #E0E0E0;
+            display: flex;
+            align-items: flex-start;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .option::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, rgba(126, 214, 223, 0.1), rgba(255, 107, 139, 0.1));
+            transition: var(--transicao);
+        }
+        
+        .option:hover::before {
+            width: 100%;
+        }
+        
+        .option:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .option-letter {
+            background: var(--azul-escuro);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: var(--espaco-md);
+            flex-shrink: 0;
+            font-size: 1.1rem;
+            box-shadow: 0 3px 8px rgba(26, 83, 92, 0.3);
+        }
+        
+        .option-text {
+            flex: 1;
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+        
+        /* CONTROLES */
         .controls {
             display: flex;
             justify-content: space-between;
@@ -434,12 +268,9 @@
             cursor: pointer;
             transition: var(--transicao);
             font-size: 1rem;
-            -webkit-appearance: none;
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .btn-primary {
@@ -450,12 +281,6 @@
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(126, 214, 223, 0.4);
-        }
-        
-        .btn-secondary {
-            background: var(--light-bg);
-            color: var(--texto-dark);
-            border: 2px solid #ddd;
         }
         
         .btn-secondary {
@@ -503,416 +328,12 @@
             font-weight: bold;
             color: var(--azul-escuro);
             margin-bottom: var(--espaco-sm);
-        }
-        
-        /* SEÇÃO DO LIVRO */
-        .book-section {
-            background: linear-gradient(135deg, var(--azul-escuro), #2D7C87);
-            color: white;
-            padding: var(--espaco-xl) var(--espaco-md);
-            border-radius: var(--borda-radius);
-            margin: var(--espaco-xl) 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .book-section::before {
-            content: "";
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-        }
-        
-        .book-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .book-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--espaco-xl);
-            align-items: center;
-            margin: var(--espaco-xl) 0;
-        }
-        
-        .book-cover {
-            background: linear-gradient(135deg, var(--amarelo), var(--laranja));
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .book-cover-inner {
-            background: white;
-            padding: 40px 25px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-        
-        .book-price {
-            color: var(--azul-escuro);
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-        
-        .book-buy-btn {
-            display: inline-block;
-            padding: 18px 40px;
-            background: linear-gradient(90deg, var(--rosa), var(--laranja));
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.3rem;
-            box-shadow: 0 10px 25px rgba(255, 107, 139, 0.4);
-            transition: var(--transicao);
-            margin-top: var(--espaco-md);
-            width: 100%;
-            text-align: center;
-            -webkit-appearance: none;
-        }
-        
-        .book-buy-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255, 107, 139, 0.6);
-        }
-        
-        /* SEÇÃO DE PESQUISA - CORRIGIDO backdrop-filter */
-        .survey-section {
-            background: linear-gradient(135deg, var(--verde), var(--azul-escuro));
-            color: white;
-            padding: var(--espaco-xl) var(--espaco-md);
-            border-radius: var(--borda-radius);
-            margin: var(--espaco-xl) 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .survey-section::before {
-            content: "";
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 200px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 50%;
-        }
-        
-        .survey-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--espaco-lg);
-            margin: var(--espaco-xl) 0;
-        }
-        
-        .survey-card {
-            background: rgba(255, 255, 255, 0.15);
-            padding: var(--espaco-lg);
-            border-radius: 15px;
-            /* Removido backdrop-filter que pode causar problemas no iOS */
-            backdrop-filter: none; /* Substituído por fundo sólido */
-            -webkit-backdrop-filter: none; /* Para Safari */
-        }
-        
-        .survey-icon {
-            font-size: 2.5rem;
-            margin-bottom: var(--espaco-sm);
-        }
-        
-        .survey-btn {
-            display: inline-block;
-            padding: 18px 40px;
-            background: var(--amarelo);
-            color: var(--azul-escuro);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.3rem;
-            box-shadow: 0 10px 25px rgba(255, 209, 102, 0.4);
-            transition: var(--transicao);
-            margin: var(--espaco-md) 0;
-            text-align: center;
-            -webkit-appearance: none;
-        }
-        
-        .survey-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255, 209, 102, 0.6);
-        }
-        
-        /* PERFIL DO AUTOR */
-        .author-section {
-            background: linear-gradient(135deg, #F7FFF7 0%, #E8F4F8 100%);
-            padding: var(--espaco-xl) var(--espaco-md);
-            border-radius: var(--borda-radius);
-            margin: var(--espaco-xl) 0;
-            box-shadow: var(--sombra);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .author-section::before {
-            content: "";
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            background: rgba(126, 214, 223, 0.1);
-            border-radius: 50%;
-        }
-        
-        .author-header {
-            text-align: center;
-            margin-bottom: var(--espaco-xl);
-        }
-        
-        .author-avatar {
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(135deg, var(--rosa), var(--azul));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto var(--espaco-lg);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
-        
-        .author-avatar i {
-            font-size: 4rem;
-            color: white;
-        }
-        
-        .author-badge {
-            position: absolute;
-            bottom: 20px;
-            right: 10px;
-            background: var(--amarelo);
-            color: var(--azul-escuro);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            box-shadow: 0 5px 15px rgba(255, 209, 102, 0.4);
-        }
-        
-        .author-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--espaco-lg);
-            margin-bottom: var(--espaco-xl);
-        }
-        
-        .author-card {
-            background: white;
-            padding: var(--espaco-lg);
-            border-radius: 15px;
-            box-shadow: var(--sombra);
-            transition: var(--transicao);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .author-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .author-card h3 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: var(--espaco-lg);
-        }
-        
-        .author-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-        
-        /* FOOTER */
-        .footer {
-            text-align: center;
-            margin-top: var(--espaco-xl);
-            padding-top: var(--espaco-xl);
-            border-top: 2px solid #E0E0E0;
-            color: var(--texto-medio);
-            font-size: 0.9rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .footer-logo {
-            font-size: 2.5rem;
-            color: var(--rosa);
-            margin-bottom: var(--espaco-sm);
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: var(--espaco-lg);
-            flex-wrap: wrap;
-            margin: var(--espaco-lg) 0;
-        }
-        
-        .footer-link {
-            color: var(--azul-escuro);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-        }
-        
-        /* BOTÃO DE INSTALAÇÃO PWA */
-        .pwa-install-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--rosa);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: 0 5px 20px rgba(255, 107, 139, 0.4);
-            cursor: pointer;
-            z-index: 1000;
-            transition: var(--transicao);
-            border: none;
-            -webkit-appearance: none;
-        }
-        
-        .pwa-install-btn:hover {
-            transform: scale(1.1);
-        }
-        
-        /* MODAL - CORRIGIDO para iOS */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 2000;
-            overflow-y: auto;
-            padding: 20px;
-            -webkit-overflow-scrolling: touch; /* Scroll suave no iOS */
-        }
-        
-        .modal-content {
-            background-color: white;
-            max-width: 800px;
-            margin: 30px auto;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            animation: modalAppear 0.5s;
-            position: relative;
-            z-index: 2001;
-            opacity: 1 !important; /* Garante que não fique transparente */
-        }
-        
-        @keyframes modalAppear {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* QUESTION BOX - NOVO DESIGN */
-        .question-box {
-            background: white;
-            border-radius: var(--borda-radius);
-            padding: var(--espaco-lg);
-            margin-bottom: var(--espaco-lg);
-            box-shadow: var(--sombra);
-            border-left: 6px solid var(--azul);
-            transition: var(--transicao);
-        }
-        
-        .question-box:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-        }
-        
-        .question-number {
-            display: inline-block;
-            background: var(--azul);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-bottom: var(--espaco-md);
-            font-size: 0.9rem;
-        }
-        
-        .question-text-large {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: var(--espaco-md);
-            color: var(--texto-escuro);
-            line-height: 1.5;
-        }
-        
-        .options-container {
-            display: grid;
-            gap: var(--espaco-sm);
-        }
-        
-        .option {
-            background: #f8f9fa;
-            padding: var(--espaco-md);
-            border-radius: var(--borda-radius-sm);
-            cursor: pointer;
-            transition: var(--transicao);
-            border: 2px solid transparent;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .option:hover {
-            background: #e3f2fd;
-            border-color: var(--azul);
-        }
-        
-        .option-letter {
-            background: var(--azul-escuro);
-            color: white;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: var(--espaco-md);
-            flex-shrink: 0;
-            margin-top: 2px;
+            font-size: 1.1rem;
         }
         
         /* SEÇÃO DE RESULTADOS */
         .result-section {
-            background: linear-gradient(to right, var(--azul-escuro), var(--primary));
+            background: linear-gradient(135deg, var(--azul-escuro), #2D7C87);
             color: white;
             padding: var(--espaco-xl);
             border-radius: var(--borda-radius);
@@ -923,126 +344,56 @@
         }
         
         .result-title {
-            font-size: 2rem;
-            margin-bottom: var(--espaco-md);
+            font-size: 2.5rem;
+            margin-bottom: var(--espaco-lg);
         }
         
         .final-score {
-            font-size: 4rem;
+            font-size: 5rem;
             font-weight: bold;
-            margin: var(--espaco-md) 0;
+            margin: var(--espaco-lg) 0;
             color: var(--amarelo);
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
         
         .score-label {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             opacity: 0.9;
             margin-bottom: var(--espaco-xl);
         }
         
         .medal-large {
-            font-size: 4rem;
-            margin: var(--espaco-md) 0;
+            font-size: 5rem;
+            margin: var(--espaco-lg) 0;
         }
         
         .performance-text {
             font-size: 1.3rem;
-            margin-top: var(--espaco-md);
-            padding: var(--espaco-md);
+            margin-top: var(--espaco-lg);
+            padding: var(--espaco-lg);
             background: rgba(255, 255, 255, 0.15);
             border-radius: var(--borda-radius);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         /* AVISO */
         .aviso {
             background: linear-gradient(90deg, var(--amarelo), var(--laranja));
             color: var(--azul-escuro);
-            padding: var(--espaco-sm);
+            padding: var(--espaco-md);
             border-radius: var(--borda-radius-sm);
-            margin: var(--espaco-md) 0;
+            margin: var(--espaco-lg) 0;
             font-weight: 600;
             text-align: center;
             border-left: 5px solid var(--rosa);
-            position: relative;
-            z-index: 1;
         }
         
-        /* RESPONSIVIDADE ESPECÍFICA PARA iOS */
-        @media screen and (-webkit-min-device-pixel-ratio: 0) {
-            /* Regras específicas para Safari/Chrome */
-            .block, .intro-box, .modal-content, .question-box {
-                -webkit-transform: translateZ(0); /* Força aceleração por hardware */
-                transform: translateZ(0);
-            }
-            
-            .survey-card {
-                background: rgba(255, 255, 255, 0.25); /* Mais opaco para Safari */
-            }
-        }
-        
-        /* Fix para modais no iOS */
-        @supports (-webkit-touch-callout: none) {
-            .modal {
-                position: fixed;
-                height: -webkit-fill-available; /* Altura total no iOS */
-            }
-            
-            .modal-content {
-                -webkit-overflow-scrolling: touch;
-            }
-            
-            /* Previne zoom automático no iOS */
-            select, textarea, input, button {
-                font-size: 16px;
-            }
-        }
-        
-        /* RESPONSIVIDADE GERAL */
+        /* RESPONSIVIDADE */
         @media (max-width: 768px) {
-            h1 {
+            .header h1 {
                 font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.7rem;
-            }
-            
-            .header {
-                padding: var(--espaco-lg) 0;
-            }
-            
-            .gamification {
-                gap: var(--espaco-md);
-            }
-            
-            .counter-box {
-                min-width: 150px;
-                padding: var(--espaco-md);
-            }
-            
-            .counter-value {
-                font-size: 2.5rem;
-            }
-            
-            .blocks-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .book-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .survey-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .author-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .banner-content {
-                justify-content: center;
-                text-align: center;
             }
             
             .controls {
@@ -1052,6 +403,19 @@
             
             .btn {
                 width: 100%;
+                justify-content: center;
+            }
+            
+            .question-text {
+                font-size: 1.1rem;
+            }
+            
+            .option-text {
+                font-size: 1rem;
+            }
+            
+            .final-score {
+                font-size: 4rem;
             }
         }
         
@@ -1060,16 +424,18 @@
                 padding: 0 var(--espaco-xs);
             }
             
-            .intro-box {
+            .question-box {
                 padding: var(--espaco-md);
             }
             
-            .counter-box {
-                width: 100%;
+            .option {
+                padding: var(--espaco-sm);
             }
             
-            .modal {
-                padding: 10px;
+            .option-letter {
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
             }
         }
     </style>
@@ -1078,52 +444,23 @@
     <!-- HEADER -->
     <header class="header">
         <div class="container">
-            <div class="header-content">
-                <h1><i class="fas fa-heartbeat"></i> Autodiagnóstico: Avalie seu Idadismo</h1>
-                <p class="subtitle">Um teste para despertar a consciência e combater o <span class="highlight">preconceito</span></p>
+            <h1><i class="fas fa-heartbeat"></i> Questionário Longelescência</h1>
+            <p class="subtitle">40 questões sobre idadismo, envelhecimento e direitos sociais</p>
+            <div class="aviso" style="background: rgba(255, 255, 255, 0.2); color: white; max-width: 600px;">
+                <i class="fas fa-exclamation-circle"></i> <strong>PONTUAÇÃO:</strong> 10 pontos no total (0,25 por questão correta)
             </div>
         </div>
     </header>
 
-    <!-- BANNER DE PESQUISA -->
-    <div class="survey-banner" id="surveyBanner">
-        <div class="container">
-            <div class="banner-content">
-                <div style="display: flex; align-items: center; gap: var(--espaco-sm); flex-wrap: wrap;">
-                    <span class="banner-badge"><i class="fas fa-gift"></i> BRINDE</span>
-                    <span style="font-weight: 600;"></span>
-                </div>
-                <a href="#pesquisa" class="banner-btn">
-                    <i class="fas fa-arrow-right"></i> 
-                </a>
-            </div>
-        </div>
-    </div>
-
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="container">
-        <!-- INTRODUÇÃO -->
-        <section class="intro-box">
-            <p>Bem-vindo(a) a esta jornada de reflexão sobre o <strong>idadismo</strong> - o preconceito etário que afeta milhões de pessoas idosas em nossa sociedade.</p>
-            <p>Este não é apenas um teste, mas um convite à reflexão sobre a <span class="highlight">longelescência</span> e um exercício de cidadania aplicada à vida social, buscando o sentido e a dignidade em cada etapa da existência. Sugiro que você envie esta pesquisa para mais pessoas; ampliando a rede de conscientização.</p>
-            <div class="quote">
-                "A nova velhice não pede licença, nem favor: ela ocupa a cidade, subverte e ordem reinante, reinventa o tempo e ressignifica a vida: de forma ativa, combativa, consciente e positiva." - Ricardo
-            </div>
-            <p>Complete o teste, descubra seu nível de consciência sobre o idadismo.</p>
-            
-            <!-- AVISO IMPORTANTE -->
-            <div class="aviso" style="margin-top: var(--espaco-lg);">
-                <i class="fas fa-exclamation-circle"></i> IMPORTANTE: É preciso responder a <strong>TODAS as 40 questões</strong> para obter seu resultado completo!
-            </div>
-        </section>
-
         <!-- SISTEMA DE PONTUAÇÃO -->
         <div class="scoring-system">
             <h3><i class="fas fa-calculator"></i> Sistema de Pontuação</h3>
             <div class="scoring-item">
                 <div class="scoring-icon">🎯</div>
                 <div>
-                    <strong>Pontuação Total:</strong> 10 pontos máximos (para todas as 40 questões corretas)
+                    <strong>Pontuação Total:</strong> 10 pontos máximos
                 </div>
             </div>
             <div class="scoring-item">
@@ -1133,38 +470,12 @@
                 </div>
             </div>
             <div class="scoring-item">
-                <div class="scoring-icon">📈</div>
+                <div class="scoring-icon">📊</div>
                 <div>
-                    <strong>Progresso:</strong> Complete todas as questões para ver sua pontuação final
+                    <strong>Avaliação:</strong> Responda todas as 40 questões para obter sua pontuação completa
                 </div>
             </div>
         </div>
-
-        <!-- GAMIFICAÇÃO -->
-        <section class="gamification">
-            <div class="counter-box">
-                <div class="counter-label">QUESTÕES RESPONDIDAS</div>
-                <div class="counter-value" id="answered-counter">0</div>
-                <div class="counter-label">de 40</div>
-            </div>
-            
-            <div class="counter-box">
-                <div class="counter-label">PONTUAÇÃO</div>
-                <div class="counter-value" id="score-counter">0.00</div>
-                <div class="counter-label">de 10</div>
-            </div>
-            
-            <div class="counter-box">
-                <div class="counter-label">CONQUISTAS</div>
-                <div class="medal-container">
-                    <div class="medal" id="medal-1"><i class="fas fa-star"></i></div>
-                    <div class="medal" id="medal-2"><i class="fas fa-heart"></i></div>
-                    <div class="medal" id="medal-3"><i class="fas fa-brain"></i></div>
-                    <div class="medal" id="medal-4"><i class="fas fa-gem"></i></div>
-                    <div class="medal" id="medal-5"><i class="fas fa-trophy"></i></div>
-                </div>
-            </div>
-        </section>
 
         <!-- BARRA DE PROGRESSO -->
         <div class="progress-container">
@@ -1178,142 +489,887 @@
             </div>
         </div>
 
-        <!-- AVISO DE COMPLETUDE -->
-        <div id="completeness-warning" class="aviso" style="display: none; background: linear-gradient(90deg, var(--rosa), var(--roxo)); color: white;">
-            <i class="fas fa-check-circle"></i> Parabéns! Você respondeu a todas as 40 questões! Agora pode ver seu resultado completo.
-        </div>
-
-        <!-- BLOCOS DE QUESTÕES -->
-        <section>
-            <h2 style="text-align: center; margin-bottom: var(--espaco-lg);">Escolha um bloco para começar:</h2>
-            <div class="blocks-container" id="blocksContainer">
-                <!-- Gerado por JavaScript -->
-            </div>
-        </section>
-
-        <!-- PERGUNTAS (PRIMEIRAS 5 COMO EXEMPLO) -->
+        <!-- QUESTÕES -->
         <section id="questions-section">
-            <h2 style="text-align: center; margin-bottom: var(--espaco-lg); color: var(--azul-escuro);">
-                <i class="fas fa-question-circle"></i> Questões do Teste
-            </h2>
-            
             <!-- PERGUNTA 1 -->
             <div class="question-box" id="question-1">
                 <div class="question-number">Questão 1 de 40</div>
-                <span class="theme-tag" style="background: #e8f5e9; color: #2e7d32; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: bold;">Envelhecimento</span>
-                <div class="question-text-large">
-                    Você vê um casal de 80 anos se beijando apaticamente. Qual sua reação mais adequada?
+                <div class="question-text">
+                    Você vê um casal de 80 anos se beijando apaixonadamente. Qual sua reação?
                 </div>
                 <div class="options-container">
                     <div class="option" onclick="selectOption(1, 'A')">
                         <div class="option-letter">A</div>
-                        <div>"Que fofinhos, parecem duas crianças brincando de namorar!"</div>
+                        <div class="option-text">"Que fofinhos, parecem duas crianças brincando de namorar!"</div>
                     </div>
                     <div class="option" onclick="selectOption(1, 'B')">
                         <div class="option-letter">B</div>
-                        <div>"Nessa idade? Que coisa desnecessária, deveriam ser mais discretos."</div>
+                        <div class="option-text">"Nessa idade? Que coisa desnecessária, deveriam ser mais discretos."</div>
                     </div>
                     <div class="option" onclick="selectOption(1, 'C')">
                         <div class="option-letter">C</div>
-                        <div>"Que bom ver que o afeto e o desejo permanecem vivos em todas as etapas da vida."</div>
+                        <div class="option-text">"Que bom ver que o afeto e o desejo permanecem vivos em todas as etapas da vida."</div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- PERGUNTA 2 -->
             <div class="question-box" id="question-2">
                 <div class="question-number">Questão 2 de 40</div>
-                <span class="theme-tag" style="background: #e3f2fd; color: #1565c0; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: bold;">Cidades Sustentáveis</span>
-                <div class="question-text-large">
-                    Como o transporte público de qualidade pode reduzir desigualdades sociais e ambientais em uma cidade?
+                <div class="question-text">
+                    Como o transporte público de qualidade pode reduzir desigualdades sociais e ambientais?
                 </div>
                 <div class="options-container">
                     <div class="option" onclick="selectOption(2, 'A')">
                         <div class="option-letter">A</div>
-                        <div>Apenas reduzindo o tempo de deslocamento dos trabalhadores</div>
+                        <div class="option-text">Apenas reduzindo o tempo de deslocamento dos trabalhadores</div>
                     </div>
                     <div class="option" onclick="selectOption(2, 'B')">
                         <div class="option-letter">B</div>
-                        <div>Diminuindo emissões de poluentes e garantindo acesso a oportunidades para toda a população</div>
+                        <div class="option-text">Diminuindo emissões de poluentes e garantindo acesso a oportunidades para toda a população</div>
                     </div>
                     <div class="option" onclick="selectOption(2, 'C')">
                         <div class="option-letter">C</div>
-                        <div>Aumentando o valor dos imóveis nas áreas centrais</div>
+                        <div class="option-text">Aumentando o valor dos imóveis nas áreas centrais</div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- PERGUNTA 3 -->
             <div class="question-box" id="question-3">
                 <div class="question-number">Questão 3 de 40</div>
-                <span class="theme-tag" style="background: #f3e5f5; color: #7b1fa2; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: bold;">Acessibilidade</span>
-                <div class="question-text-large">
+                <div class="question-text">
                     De que maneira a acessibilidade urbana impacta a autonomia de pessoas com deficiência?
                 </div>
                 <div class="options-container">
                     <div class="option" onclick="selectOption(3, 'A')">
                         <div class="option-letter">A</div>
-                        <div>Apenas facilita o deslocamento, mas não influencia na autonomia</div>
+                        <div class="option-text">Apenas facilita o deslocamento, mas não influencia na autonomia</div>
                     </div>
                     <div class="option" onclick="selectOption(3, 'B')">
                         <div class="option-letter">B</div>
-                        <div>Permite participação social, acesso a serviços e exercício pleno da cidadania</div>
+                        <div class="option-text">Permite participação social, acesso a serviços e exercício pleno da cidadania</div>
                     </div>
                     <div class="option" onclick="selectOption(3, 'C')">
                         <div class="option-letter">C</div>
-                        <div>Só é importante em edifícios públicos</div>
+                        <div class="option-text">Só é importante em edifícios públicos</div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- PERGUNTA 4 -->
             <div class="question-box" id="question-4">
                 <div class="question-number">Questão 4 de 40</div>
-                <span class="theme-tag" style="background: #fff3e0; color: #ef6c00; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: bold;">Mitos do Envelhecimento</span>
-                <div class="question-text-large">
+                <div class="question-text">
                     A ideia de que idosos são menos produtivos é considerada um mito porque:
                 </div>
                 <div class="options-container">
                     <div class="option" onclick="selectOption(4, 'A')">
                         <div class="option-letter">A</div>
-                        <div>Idosos sempre trabalham mais que jovens</div>
+                        <div class="option-text">Idosos sempre trabalham mais que jovens</div>
                     </div>
                     <div class="option" onclick="selectOption(4, 'B')">
                         <div class="option-letter">B</div>
-                        <div>Experiência, sabedoria e habilidades compensam eventuais mudanças físicas</div>
+                        <div class="option-text">Experiência, sabedoria e habilidades compensam eventuais mudanças físicas</div>
                     </div>
                     <div class="option" onclick="selectOption(4, 'C')">
                         <div class="option-letter">C</div>
-                        <div>Todos os idosos se aposentam cedo por opção</div>
+                        <div class="option-text">Todos os idosos se aposentam cedo por opção</div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- PERGUNTA 5 -->
             <div class="question-box" id="question-5">
                 <div class="question-number">Questão 5 de 40</div>
-                <span class="theme-tag" style="background: #ffebee; color: #c62828; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: bold;">Direito à Saúde</span>
-                <div class="question-text-large">
+                <div class="question-text">
                     Qual a relação entre planejamento urbano, saneamento básico e prevenção de doenças?
                 </div>
                 <div class="options-container">
                     <div class="option" onclick="selectOption(5, 'A')">
                         <div class="option-letter">A</div>
-                        <div>Não há relação significativa entre esses fatores</div>
+                        <div class="option-text">Não há relação significativa entre esses fatores</div>
                     </div>
                     <div class="option" onclick="selectOption(5, 'B')">
                         <div class="option-letter">B</div>
-                        <div>Cidades planejadas com saneamento adequado reduzem doenças e melhoram a qualidade de vida</div>
+                        <div class="option-text">Cidades planejadas com saneamento adequado reduzem doenças e melhoram a qualidade de vida</div>
                     </div>
                     <div class="option" onclick="selectOption(5, 'C')">
                         <div class="option-letter">C</div>
-                        <div>Saneamento básico só previne doenças em áreas rurais</div>
+                        <div class="option-text">Saneamento básico só previne doenças em áreas rurais</div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Adicione mais 35 perguntas aqui seguindo o mesmo padrão -->
-            
+
+            <!-- PERGUNTA 6 -->
+            <div class="question-box" id="question-6">
+                <div class="question-number">Questão 6 de 40</div>
+                <div class="question-text">
+                    Um homem de 75 anos comenta que está usando aplicativos de relacionamento. Você:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(6, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Cuidado para não cair em golpe, o senhor não tem mais idade para essas aventuras."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(6, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Isso é falta de ocupação, vá cuidar dos seus netos."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(6, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Boa sorte! É ótimo buscar novas conexões e companhia em qualquer idade."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 7 -->
+            <div class="question-box" id="question-7">
+                <div class="question-number">Questão 7 de 40</div>
+                <div class="question-text">
+                    Sobre o uso de preservativos e saúde sexual na terceira idade:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(7, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"É um assunto que nem deveria ser discutido, é constrangedor para o idoso."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(7, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"É essencial, pois ISTs não escolhem idade e a vida sexual nessa fase é ativa."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(7, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Desnecessário, pois o risco de gravidez já não existe."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 8 -->
+            <div class="question-box" id="question-8">
+                <div class="question-number">Questão 8 de 40</div>
+                <div class="question-text">
+                    Uma mulher de 70 anos aparece de minissaia e tatuagem. Sua reação:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(8, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Ela está tendo uma crise de identidade, quer parecer ter 20 anos."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(8, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Corajosa, mas está passando vergonha com essa roupa."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(8, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Estilo e liberdade corporal não têm prazo de validade."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 9 -->
+            <div class="question-box" id="question-9">
+                <div class="question-number">Questão 9 de 40</div>
+                <div class="question-text">
+                    Ao ver um idoso praticando paraquedismo, você pensa:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(9, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Deveria estar fazendo hidroginástica, que é mais seguro para a idade."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(9, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Exemplo de vitalidade, o limite é o que o corpo e a mente permitem."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(9, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Está querendo acelerar o encontro com o Criador."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 10 -->
+            <div class="question-box" id="question-10">
+                <div class="question-number">Questão 10 de 40</div>
+                <div class="question-text">
+                    Você ouve um idoso dominando tecnologias de ponta. Você:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(10, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Acha ridículo, parece que está forçando a barra para ser jovem."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(10, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Fica surpreso, como se ele tivesse feito um milagre acadêmico."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(10, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Acha natural, pois aprender é uma característica humana, não cronológica."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 11 -->
+            <div class="question-box" id="question-11">
+                <div class="question-number">Questão 11 de 40</div>
+                <div class="question-text">
+                    Os filhos vendem a casa do pai de 78 anos sem consultá-lo profundamente. Isso é:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(11, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Um ato de amor e proteção para que ele não fique só."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(11, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Uma violação da autonomia e do direito de escolha do pai."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(11, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Prático, afinal, idosos não sabem mais administrar imóveis."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 12 -->
+            <div class="question-box" id="question-12">
+                <div class="question-number">Questão 12 de 40</div>
+                <div class="question-text">
+                    A família usa a avó como babá e motorista fixa sem perguntar seus planos. Isso é:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(12, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Uma forma de manter a avó ativa e útil na família."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(12, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Idadismo funcional: ver o idoso apenas como prestador de serviços gratuito."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(12, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"O dever natural de todo avô e avó."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 13 -->
+            <div class="question-box" id="question-13">
+                <div class="question-number">Questão 13 de 40</div>
+                <div class="question-text">
+                    "Pai, o senhor não precisa mais usar cartão de crédito, eu administro sua aposentadoria". Isso é:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(13, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Uma forma de violência patrimonial e quebra de autonomia."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(13, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Um auxílio administrativo que todo filho deve prestar."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(13, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Uma maneira de evitar que o idoso gaste com bobagens."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 14 -->
+            <div class="question-box" id="question-14">
+                <div class="question-number">Questão 14 de 40</div>
+                <div class="question-text">
+                    Os filhos escondem as chaves do carro do pai 'pelo bem dele'. Isso é:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(14, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Proteção extrema e amorosa."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(14, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Cárcere privado e violação da autonomia individual."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(14, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Prevenção de acidentes necessária para qualquer um nessa idade."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 15 -->
+            <div class="question-box" id="question-15">
+                <div class="question-number">Questão 15 de 40</div>
+                <div class="question-text">
+                    Um filho não visita a mãe há meses, pois 'ela tem comida, remédios e uma TV ótima'. Isso é:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(15, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Solidão funcional e abandono afetivo estrutural."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(15, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Respeito ao espaço e à privacidade do idoso."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(15, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Confiança na autonomia da mãe."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 16 -->
+            <div class="question-box" id="question-16">
+                <div class="question-number">Questão 16 de 40</div>
+                <div class="question-text">
+                    Atendimento preferencial que funciona no balcão, mas o serviço demora o dobro depois:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(16, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Um azar do dia, acontece com todo mundo."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(16, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Um 'respeito de fachada' que não se traduz em eficiência estrutural."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(16, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"O idoso tem mais tempo mesmo, então pode esperar um pouco mais."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 17 -->
+            <div class="question-box" id="question-17">
+                <div class="question-number">Questão 17 de 40</div>
+                <div class="question-text">
+                    Editais que proíbem pessoas acima de certa idade de participarem de projetos:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(17, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Normais, para garantir que o investimento no profissional dure mais."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(17, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Violência estrutural e puro idadismo institucional."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(17, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Uma forma de dar oportunidade aos mais jovens, que precisam mais."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 18 -->
+            <div class="question-box" id="question-18">
+                <div class="question-number">Questão 18 de 40</div>
+                <div class="question-text">
+                    O uso de termos como 'vovozinho' ou 'velhinho' por desconhecidos é:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(18, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Uma forma carinhosa e respeitosa de tratamento."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(18, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Infantilização e apagamento da identidade individual da pessoa."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(18, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Necessário para que eles se sintam acolhidos."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 19 -->
+            <div class="question-box" id="question-19">
+                <div class="question-number">Questão 19 de 40</div>
+                <div class="question-text">
+                    Ao ver um idoso pobre no transporte público, a reação comum é:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(19, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Oferecer o lugar e perguntar se ele precisa de ajuda."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(19, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Torná-lo invisível, ignorando suas dificuldades de acesso."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(19, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Achar que ele está passeando e atrapalhando quem trabalha."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 20 -->
+            <div class="question-box" id="question-20">
+                <div class="question-number">Questão 20 de 40</div>
+                <div class="question-text">
+                    Na TV, o idoso é quase sempre retratado como 'ranzinza' ou 'esquecido'. O impacto é:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(20, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Apenas humor, não deve ser levado a sério."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(20, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"A manutenção de estereótipos que moldam como a sociedade trata os idosos."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(20, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Realista, pois a maioria dos idosos é assim mesmo."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 21 -->
+            <div class="question-box" id="question-21">
+                <div class="question-number">Questão 21 de 40</div>
+                <div class="question-text">
+                    As imagens de bancos de dados (senhor de bengala, senhora tricotando):
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(21, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"São a melhor forma de representar o idoso para todos entenderem."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(21, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Estão ultrapassadas e não refletem a diversidade da longelescência."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(21, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Devem ser mantidas por tradição cultural."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 22 -->
+            <div class="question-box" id="question-22">
+                <div class="question-number">Questão 22 de 40</div>
+                <div class="question-text">
+                    Linguagem inacessível (letras minúsculas, termos em inglês sem explicação) é:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(22, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Uma falha de design sem intenção."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(22, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Uma forma de exclusão digital e social do público idoso."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(22, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Culpa do idoso que não se esforça para aprender."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 23 -->
+            <div class="question-box" id="question-23">
+                <div class="question-number">Questão 23 de 40</div>
+                <div class="question-text">
+                    Um idoso decide abrir uma startup aos 65 anos. O mercado financeiro geralmente:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(23, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Dá todo apoio pela experiência acumulada."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(23, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Dificulta o crédito por considerar o risco de 'sobrevida' do negócio."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(23, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Ignora, achando que é apenas um passatempo de aposentado."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 24 -->
+            <div class="question-box" id="question-24">
+                <div class="question-number">Questão 24 de 40</div>
+                <div class="question-text">
+                    No currículo de uma pessoa de 62 anos, o descarte imediato ocorre por:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(24, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Falta de qualificação técnica para o mundo moderno."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(24, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Idadismo: medo de que ele não aceite ordens de jovens ou seja lento."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(24, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Salário pretendido ser muito alto."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 25 -->
+            <div class="question-box" id="question-25">
+                <div class="question-number">Questão 25 de 40</div>
+                <div class="question-text">
+                    Uma mulher de 66 anos quer abrir conta PJ e o gerente sugere o nome do filho:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(25, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Um conselho financeiro prudente."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(25, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Idadismo financeiro que ataca a autonomia feminina e sênior."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(25, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Uma gentileza para poupar a cliente de burocracias."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 26 -->
+            <div class="question-box" id="question-26">
+                <div class="question-number">Questão 26 de 40</div>
+                <div class="question-text">
+                    Quem sofre mais preconceito na velhice?
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(26, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"O homem branco de classe média."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(26, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"A mulher negra e pobre (acúmulo de gênero, raça, classe e idade)."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(26, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Todos sofrem exatamente igual."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 27 -->
+            <div class="question-box" id="question-27">
+                <div class="question-number">Questão 27 de 40</div>
+                <div class="question-text">
+                    "É da idade mesmo", diz o médico sem fazer exames em um idoso pobre:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(27, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Um diagnóstico sincero baseado na estatística."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(27, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Negligência médica baseada no idadismo estrutural."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(27, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Uma forma de acalmar o paciente."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 28 -->
+            <div class="question-box" id="question-28">
+                <div class="question-number">Questão 28 de 40</div>
+                <div class="question-text">
+                    Um idoso de 72 anos entra em uma loja de luxo e o vendedor pergunta por quem ele trabalha:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(28, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"O vendedor está apenas sendo solícito."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(28, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"É um 'combo' de racismo, classismo e idadismo."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(28, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Provavelmente o idoso parece perdido."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 29 -->
+            <div class="question-box" id="question-29">
+                <div class="question-number">Questão 29 de 40</div>
+                <div class="question-text">
+                    O relacionamento ideal entre jovens e idosos seria:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(29, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"O jovem ensinar tecnologia e o idoso apenas ouvir."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(29, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"O idoso contar histórias e o jovem fingir que ouve."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(29, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Uma troca mútua: o novo do jovem e o contexto do idoso."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 30 -->
+            <div class="question-box" id="question-30">
+                <div class="question-number">Questão 30 de 40</div>
+                <div class="question-text">
+                    Quando um idoso conta uma superação e o jovem diz 'Lá vem o museu':
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(30, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"O jovem é apenas focado no futuro."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(30, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"O jovem despreza a memória como algo 'ultrapassado'."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(30, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"As histórias de idosos são sempre repetitivas."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 31 -->
+            <div class="question-box" id="question-31">
+                <div class="question-number">Questão 31 de 40</div>
+                <div class="question-text">
+                    Um idoso quer aprender IA e os colegas jovens riem. A presença dele é:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(31, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Uma tentativa desesperada de não se sentir só."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(31, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Um exemplo de lifelong learning e direito à atualização."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(31, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Perda de tempo, pois o cérebro não processa mais isso."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 32 -->
+            <div class="question-box" id="question-32">
+                <div class="question-number">Questão 32 de 40</div>
+                <div class="question-text">
+                    A família viaja e avisa à avó: 'Você vai para cuidar das crianças à noite':
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(32, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Assume-se que o tempo do idoso é 'sobra' e não tem valor próprio."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(32, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"É uma ajuda que toda avó gosta de dar."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(32, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Uma forma de economizar com a babá."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 33 -->
+            <div class="question-box" id="question-33">
+                <div class="question-number">Questão 33 de 40</div>
+                <div class="question-text">
+                    O preconceito de ver idosos como 'sem agenda própria' resulta em:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(33, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Mais tempo de descanso para eles."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(33, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Isolamento social e perda do sentido de vida (logoterapia)."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(33, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Uma vida mais simples e sem estresse."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 34 -->
+            <div class="question-box" id="question-34">
+                <div class="question-number">Questão 34 de 40</div>
+                <div class="question-text">
+                    Sobre a 'longelescência', o que ela propõe?
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(34, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Que o idoso deve agir como se tivesse 15 anos para ser aceito."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(34, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Que a longevidade pode manter a curiosidade e o vigor da juventude."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(34, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Que a velhice é apenas uma adolescência tardia e sem responsabilidades."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 35 -->
+            <div class="question-box" id="question-35">
+                <div class="question-number">Questão 35 de 40</div>
+                <div class="question-text">
+                    Quando um idoso diz que quer aprender uma nova língua, a reação comum é:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(35, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Que inspirador! Nunca é tarde para aprender."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(35, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Na sua idade? Melhor descansar."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(35, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Para que vai servir agora?"</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 36 -->
+            <div class="question-box" id="question-36">
+                <div class="question-number">Questão 36 de 40</div>
+                <div class="question-text">
+                    Um idoso quer participar de um projeto voluntário, mas é rejeitado por 'ser muito velho':
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(36, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"É compreensível, projetos precisam de pessoas com energia."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(36, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Uma perda, pois idosos trazem experiência e sabedoria."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(36, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Discriminação pura, violando o direito de contribuir com a sociedade."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 37 -->
+            <div class="question-box" id="question-37">
+                <div class="question-number">Questão 37 de 40</div>
+                <div class="question-text">
+                    A ideia de que "idosos não devem trabalhar para não tirar vagas dos jovens" é:
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(37, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Correta, pois jovens precisam mais de emprego."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(37, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Uma forma de idadismo que limita direitos trabalhistas."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(37, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Justa para equilibrar o mercado de trabalho."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 38 -->
+            <div class="question-box" id="question-38">
+                <div class="question-number">Questão 38 de 40</div>
+                <div class="question-text">
+                    O que significa "envelhecimento ativo" segundo a OMS?
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(38, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Idosos fazendo exercícios físicos diários."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(38, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Processo de otimização das oportunidades de saúde, participação e segurança."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(38, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Idosos que continuam trabalhando depois da aposentadoria."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 39 -->
+            <div class="question-box" id="question-39">
+                <div class="question-number">Questão 39 de 40</div>
+                <div class="question-text">
+                    Por que é importante falar sobre morte e finitude com idosos?
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(39, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"É desnecessário e só causa depressão."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(39, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Permite planejamento, despedidas e encontro de sentido existencial."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(39, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Só deve ser abordado por profissionais especializados."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERGUNTA 40 -->
+            <div class="question-box" id="question-40">
+                <div class="question-number">Questão 40 de 40</div>
+                <div class="question-text">
+                    Qual a principal contribuição da longelescência para a sociedade?
+                </div>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption(40, 'A')">
+                        <div class="option-letter">A</div>
+                        <div class="option-text">"Mostrar que idosos podem ser produtivos economicamente."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(40, 'B')">
+                        <div class="option-letter">B</div>
+                        <div class="option-text">"Valorizar a sabedoria, experiência e potencial de crescimento em todas as idades."</div>
+                    </div>
+                    <div class="option" onclick="selectOption(40, 'C')">
+                        <div class="option-letter">C</div>
+                        <div class="option-text">"Reduzir os custos com aposentadorias e saúde pública."</div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- CONTROLES -->
@@ -1329,8 +1385,8 @@
                     Próxima Questão <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
-            <button class="btn btn-success" onclick="submitQuiz()" style="background: linear-gradient(90deg, var(--verde), var(--azul-escuro));">
-                <i class="fas fa-flag-checkered"></i> Finalizar Questionário
+            <button class="btn btn-success" onclick="submitQuiz()">
+                <i class="fas fa-flag-checkered"></i> Ver Resultado
             </button>
         </div>
 
@@ -1350,648 +1406,53 @@
                 <button class="btn btn-primary" onclick="restartQuiz()" style="background: white; color: var(--azul-escuro); margin-right: 15px; border: 2px solid var(--azul-escuro);">
                     <i class="fas fa-redo"></i> Refazer Questionário
                 </button>
-                <button class="btn btn-success" onclick="shareResults()" style="background: linear-gradient(90deg, var(--verde), var(--azul));">
+                <button class="btn btn-success" onclick="shareResults()">
                     <i class="fas fa-share"></i> Compartilhar
                 </button>
             </div>
         </div>
-
-        <!-- SEÇÃO DO LIVRO -->
-        <section class="book-section" id="livro">
-            <div class="container">
-                <div class="book-content">
-                    <h2 style="text-align: center; color: var(--amarelo); margin-bottom: var(--espaco-md);">
-                        <i class="fas fa-book"></i> Meu Livro: Manual do Bem-Estar na Longelescência
-                    </h2>
-                    <p style="text-align: center; font-size: 1.2rem; opacity: 0.95; max-width: 800px; margin: 0 auto var(--espaco-xl);">
-                        dos 50 aos 100+ • Inspirado no Vento Aracati e Joyspan
-                    </p>
-                    
-                    <div class="book-grid">
-                        <div class="book-cover">
-                            <div class="book-cover-inner">
-                                <div style="font-size: 3rem; color: var(--azul-escuro); margin-bottom: var(--espaco-sm);">📚</div>
-                                <h3 style="color: var(--azul-escuro); margin-bottom: var(--espaco-sm);">Manual do Bem-Estar na Longevidade</h3>
-                                <p style="color: var(--texto-medio); margin: 0;">dos 50 aos 100+</p>
-                            </div>
-                            <div class="book-price">R$ 50,00*</div>
-                            <div style="color: var(--azul-escuro); font-size: 0.9rem; margin-top: 5px;">*Versão impressa, pedidos por email, com frete grátis</div>
-                        </div>
-                        
-                        <div>
-                            <h3 style="color: var(--amarelo); margin-bottom: var(--espaco-md);">O que é a nova longevidade, a "longelescência"?</h3>
-                            <p style="margin-bottom: var(--espaco-md); opacity: 0.95;">
-                                <strong>Longelescência</strong> é foi um termo criado por mim para nomear o <strong>florescimento tardio</strong> — um período em que maturidade, autonomia, sentido e plenitude se entrelaçam de forma única.
-                            </p>
-                            
-                            <div style="background: rgba(255, 255, 255, 0.1); padding: var(--espaco-md); border-radius: 10px; margin-bottom: var(--espaco-lg);">
-                                <h4 style="color: var(--azul); margin-bottom: var(--espaco-sm);">✨ Inspirações do Livro:</h4>
-                                <div style="display: grid; gap: var(--espaco-md);">
-                                    <div>
-                                        <div style="display: flex; align-items: center; gap: var(--espaco-sm); margin-bottom: 5px;">
-                                            <div style="font-size: 1.5rem;">🌬️</div>
-                                            <strong style="color: var(--amarelo);">Vento Aracati</strong>
-                                        </div>
-                                        <div style="opacity: 0.9; font-size: 0.95rem;">A brisa suave e renovadora do Nordeste brasileiro</div>
-                                    </div>
-                                    <div>
-                                        <div style="display: flex; align-items: center; gap: var(--espaco-sm); margin-bottom: 5px;">
-                                            <div style="font-size: 1.5rem;">💫</div>
-                                            <strong style="color: var(--amarelo);">Joyspan</strong>
-                                        </div>
-                                        <div style="opacity: 0.9; font-size: 0.95rem;">Conceito criado pela médica gerontologista Kerry Burnight</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <a href="https://a.co/d/0hgRnva8" target="_blank" class="book-buy-btn">
-                                <i class="fas fa-shopping-cart"></i> COMPRAR NA AMAZON
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEÇÃO DE PESQUISA -->
-        <section class="survey-section" id="pesquisa">
-            <div class="container">
-                <h2 style="text-align: center; color: var(--amarelo); margin-bottom: var(--espaco-md);">
-                    <i class="fas fa-clipboard-check"></i> Participe da Pesquisa Mundo Longevo 50+
-                </h2>
-                <p style="text-align: center; font-size: 1.2rem; opacity: 0.95; max-width: 700px; margin: 0 auto var(--espaco-xl);">
-                    Contribua para a ciência da longevidade e <strong>receba meu livro como brinde de reconhecimento</strong>!
-                </p>
-                
-                <div class="survey-grid">
-                    <div class="survey-card">
-                        <div class="survey-icon">🔬</div>
-                        <h3 style="color: var(--amarelo); margin-bottom: var(--espaco-sm);">Pesquisa Científica</h3>
-                        <p>Estudo sobre qualidade de vida, desafios e potencialidades da população 50+. Seus dados ajudarão a desenvolver políticas e programas mais eficazes.</p>
-                    </div>
-                    
-                    <div class="survey-card">
-                        <div class="survey-icon">🙋‍♂️</div>
-                        <h3 style="color: var(--amarelo); margin-bottom: var(--espaco-sm);">Quem Pode Participar?</h3>
-                        <p><strong>Todas as pessoas com 50 anos ou mais.</strong> O questionário leva cerca de 15-20 minutos e é totalmente anônimo.</p>
-                    </div>
-                    
-                    <div class="survey-card">
-                        <div class="survey-icon">📚</div>
-                        <h3 style="color: var(--amarelo); margin-bottom: var(--espaco-sm);">Brinde Especial</h3>
-                        <p><strong>Todos os participantes</strong> que completarem a pesquisa receberão meu livro <strong>"Aposentei-me,e agora?"</strong> em formato digital.</p>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: var(--espaco-xl);">
-                    <a href="https://forms.gle/6TpS7wtftsAoLgaM8" target="_blank" class="survey-btn">
-                        <i class="fas fa-play-circle"></i> PARTICIPAR DA PESQUISA AGORA
-                    </a>
-                    <p style="opacity: 0.9; font-size: 1rem; margin-top: var(--espaco-sm);">
-                        <i class="fas fa-lock"></i> Dados protegidos • Anônimo • Ética aprovada
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PERFIL DO AUTOR -->
-        <section class="author-section">
-            <div class="container">
-                <div class="author-header">
-                    <div class="author-avatar">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="author-badge">61 anos • Psicólogo</div>
-                    </div>
-                    <h2 style="color: var(--azul-escuro);">Meu Currículo</h2>
-                    <p style="color: var(--texto-medio); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
-                        Psicólogo Clínico • Especialista em Longevidade • Autor • Palestrante • Professor
-                    </p>
-                </div>
-                
-                <div class="author-grid">
-                    <div class="author-card">
-                        <h3>
-                            <div class="author-icon" style="background: var(--azul);">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <span>Formação Acadêmica</span>
-                        </h3>
-                        <ul style="list-style-type: none; padding-left: 0;">
-                            <li style="margin-bottom: var(--espaco-sm);">
-                                <strong>Psicólogo Clínico</strong><br>
-                                <span style="color: var(--texto-medio);">Formação em Logoterapia (UEPB)</span>
-                            </li>
-                            <li style="margin-bottom: var(--espaco-sm);">
-                                <strong>Especialização em Psicologia Positiva</strong><br>
-                                <span style="color: var(--texto-medio);">PUCRS</span>
-                            </li>
-                            <li style="margin-bottom: var(--espaco-sm);">
-                                <strong>Mestrado em Gestão Social e Trabalho</strong><br>
-                                <span style="color: var(--texto-medio);">Universidade de Brasília (UNB)</span>
-                            </li>
-                            <li style="margin-bottom: var(--espaco-sm);">
-                                <strong>Especialização em Gestão de Pessoas</strong><br>
-                                <span style="color: var(--texto-medio);">Universidade de São Paulo (USP)</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="author-card">
-                        <h3>
-                            <div class="author-icon" style="background: var(--rosa);">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <span>Atuação Profissional</span>
-                        </h3>
-                        <ul style="list-style-type: none; padding-left: 0;">
-                            <li style="margin-bottom: var(--espaco-sm);">
-                                <strong>Professor de Pós-Graduação</strong><br>
-                                <span style="color: var(--texto-medio);">ESMPU e IBMEC-Brasília</span>
-                            </li>
-                            <li style="margin-bottom: var(--espaco-sm);">
-                                <strong>Consultor de Longevidade</strong><br>
-                                <span style="color: var(--texto-medio);">ANABB - Projeto 70+</span>
-                            </li>
-                            <li style="margin-bottom: var(--espaco-sm);">
-                                <strong>Proprietário da Ânimo DH</strong><br>
-                                <span style="color: var(--texto-medio);"><a href="https://www.animodh.com.br/" target="_blank" style="color: var(--azul-escuro);">animodh.com.br</a></span>
-                            </li>
-                            <li style="margin-bottom: var(--espaco-sm);">
-                                <strong>30 anos de experiência</strong><br>
-                                <span style="color: var(--texto-medio);">Temática longevidade e preparação para aposentadoria</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="author-card">
-                        <h3>
-                            <div class="author-icon" style="background: var(--amarelo);">
-                                <i class="fas fa-book"></i>
-                            </div>
-                            <span>Livros Publicados</span>
-                        </h3>
-                        <div style="display: grid; gap: var(--espaco-sm);">
-                            <div style="background: rgba(255, 209, 102, 0.1); padding: var(--espaco-sm); border-radius: 8px;">
-                                <strong>Sobre a Vida e o Viver</strong>
-                                <div style="color: var(--texto-medio); font-size: 0.9rem;">Reflexões existenciais baseadas em Logoterapia</div>
-                            </div>
-                            <div style="background: rgba(255, 209, 102, 0.1); padding: var(--espaco-sm); border-radius: 8px;">
-                                <strong>Apanhadores de Possibilidades</strong>
-                                <div style="color: var(--texto-medio); font-size: 0.9rem;">Encontrando sentido nas adversidades</div>
-                            </div>
-                            <div style="background: rgba(255, 209, 102, 0.1); padding: var(--espaco-sm); border-radius: 8px;">
-                                <strong>Aposentei-me e Agora</strong>
-                                <div style="color: var(--texto-medio); font-size: 0.9rem;">Guia prático para transição pós-carreira</div>
-                            </div>
-                            <div style="background: rgba(255, 209, 102, 0.1); padding: var(--espaco-sm); border-radius: 8px;">
-                                <strong>Manual da Longevidade Positiva</strong>
-                                <div style="color: var(--texto-medio); font-size: 0.9rem;">Abordagem integrada para envelhecer bem</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="author-card">
-                        <h3>
-                            <div class="author-icon" style="background: var(--roxo);">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <span>Contato & Redes</span>
-                        </h3>
-                        <div style="display: grid; gap: var(--espaco-sm);">
-                            <a href="https://www.youtube.com/@positivaatitude" target="_blank" style="background: linear-gradient(135deg, #FF0000, #CC0000); color: white; padding: 12px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                                <i class="fab fa-youtube"></i> YouTube @positivaatitude
-                            </a>
-                            <a href="https://www.animodh.com.br/" target="_blank" style="background: linear-gradient(135deg, var(--azul-escuro), #2D7C87); color: white; padding: 12px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                                <i class="fas fa-globe"></i> Ânimo Desenvolvimento Humano
-                            </a>
-                            <a href="mailto:ricardo@animodh.com.br" style="background: linear-gradient(135deg, var(--verde), var(--azul)); color: white; padding: 12px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                                <i class="fas fa-envelope"></i> Contato Profissional
-                            </a>
-                        </div>
-                        <div style="margin-top: var(--espaco-md); padding: var(--espaco-sm); background: rgba(157, 78, 221, 0.1); border-radius: 8px;">
-                            <p style="margin: 0; font-size: 0.9rem; color: var(--texto-medio);">
-                                <strong>Família:</strong> 4 filhos (Tiago, Priscila, Rodrigo, João Gabriel) • 4 netos (Lucas, Laís, Sofia, Eduardo)<br>
-                                <strong>Origem:</strong> Campina Grande-PB • Reside em Brasília desde 1999
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-logo">
-                <i class="fas fa-heart"></i>
-            </div>
-            <p><strong>Autor e Especialista:</strong> Ricardo de Faria Barros • Psicólogo Clínico CRP 01/7844• Mestre em Gestão Social</p>
-            
-            <div class="footer-links">
-                <a href="#pesquisa" class="footer-link">
-                    <i class="fas fa-clipboard-check"></i> Pesquisa 50+
-                </a>
-                <a href="#livro" class="footer-link">
-                    <i class="fas fa-book"></i> Meu Livro
-                </a>
-                <a href="https://www.youtube.com/@positivaatitude" target="_blank" class="footer-link">
-                    <i class="fab fa-youtube"></i> YouTube
-                </a>
-            </div>
-            
-            <p>Violência contra a pessoa idosa é crime! Denuncie: <strong>Disque 100</strong></p>
-            <p style="margin-top: var(--espaco-lg); font-size: 0.8rem; color: var(--texto-claro);">
-                © 2023 - Combate ao Idadismo • Desenvolvido por Ricardo de Faria Barros • Psicólogo CRP-01/7844
-            </p>
-        </div>
-    </footer>
-
-    <!-- BOTÃO INSTALAÇÃO PWA -->
-    <button class="pwa-install-btn" id="pwaInstallBtn" title="Instalar App">
-        <i class="fas fa-download"></i>
-    </button>
-
     <script>
-        // DADOS DAS 40 QUESTÕES COMPLETAS
-        const questions = [
-            // Bloco 1: Envelhecimento e Afetividade (5 questões)
-            {
-                id: 1,
-                block: 1,
-                text: "Você vê um casal de 80 anos se beijando apaixonadamente em público. Qual seu pensamento?",
-                options: [
-                    { letter: "A", text: "\"Que fofinhos, parecem duas crianças brincando de namorar!\"" },
-                    { letter: "B", text: "\"Nessa idade? Que coisa desnecessária, deveriam ser mais discretos.\"" },
-                    { letter: "C", text: "\"Que bom ver que o afeto e o desejo permanecem vivos em todas as etapas da vida.\"" }
-                ],
-                correct: "C",
-                explanation: "A letra A infantiliza o idoso. A letra B é preconceito puro."
-            },
-            {
-                id: 2,
-                block: 1,
-                text: "Um homem de 75 anos comenta que está usando aplicativos de relacionamento. Você responde:",
-                options: [
-                    { letter: "A", text: "\"Cuidado para não cair em golpe, o senhor não tem mais idade para essas aventuras.\"" },
-                    { letter: "B", text: "\"Isso é falta de ocupação, vá cuidar dos seus netos.\"" },
-                    { letter: "C", text: "\"Boa sorte! É ótimo buscar novas conexões e companhia em qualquer idade.\"" }
-                ],
-                correct: "C",
-                explanation: "A A usa o medo para limitar a autonomia. A B reduz a vida do idoso à utilidade familiar."
-            },
-            {
-                id: 3,
-                block: 1,
-                text: "Sobre o uso de preservativos e saúde sexual na terceira idade:",
-                options: [
-                    { letter: "A", text: "\"É um assunto que nem deveria ser discutido, é constrangedor para o idoso.\"" },
-                    { letter: "B", text: "\"É essencial, pois ISTs não escolhem idade e a vida sexual nessa fase é ativa.\"" },
-                    { letter: "C", text: "\"Desnecessário, pois o risco de gravidez já não existe.\"" }
-                ],
-                correct: "B",
-                explanation: "A A silencia a saúde do idoso por tabu. A C ignora que camisinha previne doenças, não apenas gravidez."
-            },
-            {
-                id: 4,
-                block: 1,
-                text: "Uma mulher de 70 anos aparece de minissaia e com uma tatuagem nova. Sua reação é:",
-                options: [
-                    { letter: "A", text: "\"Ela está tendo uma crise de identidade, quer parecer ter 20 anos.\"" },
-                    { letter: "B", text: "\"Corajosa, mas está passando vergonha com essa roupa.\"" },
-                    { letter: "C", text: "\"Estilo e liberdade corporal não têm prazo de validade.\"" }
-                ],
-                correct: "C",
-                explanation: "Ambas impõem um 'uniforme de velho'. A ideia de que o idoso deve se vestir para esconder o corpo ou a idade é uma forma de controle social."
-            },
-            {
-                id: 5,
-                block: 1,
-                text: "Ao ver um idoso praticando paraquedismo ou surf, você pensa:",
-                options: [
-                    { letter: "A", text: "\"Deveria estar fazendo hidroginástica, que é mais seguro para a idade.\"" },
-                    { letter: "B", text: "\"Exemplo de vitalidade, o limite é o que o corpo e a mente permitem.\"" },
-                    { letter: "C", text: "\"Está querendo acelerar o encontro com o Criador.\"" }
-                ],
-                correct: "B",
-                explanation: "A A limita o idoso ao estereótipo da fragilidade. A C usa um 'humor' mórbido que desqualifica a busca por adrenalina e sentido na vida."
-            },
-            
-            // Bloco 2: Cidades Sustentáveis e Mobilidade (5 questões)
-            {
-                id: 6,
-                block: 2,
-                text: "Como o transporte público de qualidade pode reduzir desigualdades sociais e ambientais?",
-                options: [
-                    { letter: "A", text: "Apenas reduzindo o tempo de deslocamento dos trabalhadores" },
-                    { letter: "B", text: "Diminuindo emissões de poluentes e garantindo acesso a oportunidades para toda a população" },
-                    { letter: "C", text: "Aumentando o valor dos imóveis nas áreas centrais" }
-                ],
-                correct: "B",
-                explanation: "A resposta B abrange os aspectos sociais (acesso) e ambientais (emissões) de forma completa."
-            },
-            {
-                id: 7,
-                block: 2,
-                text: "De que maneira a acessibilidade urbana impacta a autonomia de pessoas com deficiência?",
-                options: [
-                    { letter: "A", text: "Apenas facilita o deslocamento, mas não influencia na autonomia" },
-                    { letter: "B", text: "Permite participação social, acesso a serviços e exercício pleno da cidadania" },
-                    { letter: "C", text: "Só é importante em edifícios públicos" }
-                ],
-                correct: "B",
-                explanation: "A acessibilidade urbana é fundamental para autonomia plena, não apenas para deslocamento."
-            },
-            {
-                id: 8,
-                block: 2,
-                text: "Por que a regularização fundiária e o acesso à moradia digna são essenciais para a cidadania plena?",
-                options: [
-                    { letter: "A", text: "Porque aumentam o valor dos imóveis" },
-                    { letter: "B", text: "Garantem segurança jurídica, dignidade e inclusão social" },
-                    { letter: "C", text: "São apenas questões burocráticas sem grande impacto social" }
-                ],
-                correct: "B",
-                explanation: "Moradia digna é direito fundamental que impacta todos os aspectos da vida."
-            },
-            {
-                id: 9,
-                block: 2,
-                text: "Como a geração de empregos verdes pode contribuir para uma economia mais sustentável e inclusiva?",
-                options: [
-                    { letter: "A", text: "Apenas reduzindo a poluição ambiental" },
-                    { letter: "B", text: "Criando oportunidades de trabalho que respeitam o meio ambiente e promovem justiça social" },
-                    { letter: "C", text: "São empregos temporários sem grande impacto econômico" }
-                ],
-                correct: "B",
-                explanation: "Empregos verdes combinam sustentabilidade ambiental com justiça social."
-            },
-            {
-                id: 10,
-                block: 2,
-                text: "Qual a relação entre planejamento urbano, saneamento básico e prevenção de doenças?",
-                options: [
-                    { letter: "A", text: "Não há relação significativa entre esses fatores" },
-                    { letter: "B", text: "Cidades planejadas com saneamento adequado reduzem doenças e melhoram a qualidade de vida" },
-                    { letter: "C", text: "Saneamento básico só previne doenças em áreas rurais" }
-                ],
-                correct: "B",
-                explanation: "Saneamento básico é fundamental para saúde pública em qualquer contexto urbano."
-            },
-            
-            // Bloco 3: Mitos do Envelhecimento (5 questões)
-            {
-                id: 11,
-                block: 3,
-                text: "A ideia de que idosos são menos produtivos é considerada um mito porque:",
-                options: [
-                    { letter: "A", text: "Idosos sempre trabalham mais que jovens" },
-                    { letter: "B", text: "Experiência, sabedoria e habilidades compensam eventuais mudanças físicas" },
-                    { letter: "C", text: "Todos os idosos se aposentam cedo por opção" }
-                ],
-                correct: "B",
-                explanation: "Produtividade não está ligada apenas à idade, mas à experiência e habilidades."
-            },
-            {
-                id: 12,
-                block: 3,
-                text: "Muitos acreditam que idosos naturalmente tendem ao isolamento. Isso é um mito porque:",
-                options: [
-                    { letter: "A", text: "Idosos sempre preferem ficar sozinhos" },
-                    { letter: "B", text: "O isolamento geralmente resulta de barreiras sociais e estruturais, não de preferência" },
-                    { letter: "C", text: "Isolamento é parte natural do envelhecimento" }
-                ],
-                correct: "B",
-                explanation: "O isolamento social na velhice é frequentemente causado por fatores externos, não por escolha."
-            },
-            {
-                id: 13,
-                block: 3,
-                text: "\"Envelhecer é sinônimo de doença.\" Por que isso é um mito?",
-                options: [
-                    { letter: "A", text: "Porque todos os idosos são saudáveis" },
-                    { letter: "B", text: "Porque o envelhecimento saudável é possível com hábitos adequados e políticas públicas" },
-                    { letter: "C", text: "Porque doenças não afetam pessoas idosas" }
-                ],
-                correct: "B",
-                explanation: "Envelhecimento não é necessariamente doença; hábitos saudáveis podem promover qualidade de vida."
-            },
-            {
-                id: 14,
-                block: 3,
-                text: "O mito de que idosos não conseguem aprender coisas novas é desmentido por:",
-                options: [
-                    { letter: "A", text: "A neuroplasticidade, que permite aprendizagem em qualquer idade" },
-                    { letter: "B", text: "O fato de que idosos só aprendem coisas simples" },
-                    { letter: "C", text: "Apenas idosos com formação universitária conseguem aprender" }
-                ],
-                correct: "A",
-                explanation: "O cérebro mantém capacidade de aprendizado ao longo da vida através da neuroplasticidade."
-            },
-            {
-                id: 15,
-                block: 3,
-                text: "Por que é um mito que todos os idosos são tecnologicamente analfabetos?",
-                options: [
-                    { letter: "A", text: "Porque muitos idosos usam tecnologia no dia a dia e se adaptam a novas ferramentas" },
-                    { letter: "B", text: "Porque tecnologia é apenas para jovens" },
-                    { letter: "C", text: "Porque idosos não precisam de tecnologia" }
-                ],
-                correct: "A",
-                explanation: "Muitos idosos utilizam smartphones, computadores e internet regularmente."
-            },
-            
-            // Adicione mais 25 perguntas seguindo o mesmo padrão...
-            // Para simplificação, vou adicionar algumas perguntas genéricas
-            {
-                id: 16,
-                block: 4,
-                text: "Qual é a importância do direito à saúde pública para pessoas idosas?",
-                options: [
-                    { letter: "A", text: "É um luxo, não um direito" },
-                    { letter: "B", text: "É essencial para qualidade de vida e dignidade na velhice" },
-                    { letter: "C", text: "Importa apenas para idosos doentes" }
-                ],
-                correct: "B",
-                explanation: "Saúde é direito fundamental em qualquer idade."
-            },
-            {
-                id: 17,
-                block: 4,
-                text: "Como a participação social ativa beneficia pessoas idosas?",
-                options: [
-                    { letter: "A", text: "Não traz benefícios significativos" },
-                    { letter: "B", text: "Promove saúde mental, sentido de propósito e inclusão social" },
-                    { letter: "C", text: "Apenas ocupa o tempo livre" }
-                ],
-                correct: "B",
-                explanation: "Participação social é fundamental para bem-estar na velhice."
-            },
-            {
-                id: 18,
-                block: 5,
-                text: "Qual o impacto do preconceito etário (idadismo) na saúde mental dos idosos?",
-                options: [
-                    { letter: "A", text: "Nenhum impacto significativo" },
-                    { letter: "B", text: "Pode levar a depressão, isolamento e redução da autoestima" },
-                    { letter: "C", text: "Apenas afeta idosos sensíveis" }
-                ],
-                correct: "B",
-                explanation: "O idadismo tem consequências graves para saúde mental."
-            },
-            {
-                id: 19,
-                block: 5,
-                text: "Por que é importante combater estereótipos sobre envelhecimento?",
-                options: [
-                    { letter: "A", text: "Para que os idosos pareçam mais jovens" },
-                    { letter: "B", text: "Para promover uma visão realista e respeitosa da velhice" },
-                    { letter: "C", text: "É apenas uma questão política" }
-                ],
-                correct: "B",
-                explanation: "Estereótipos prejudicam a percepção social sobre envelhecimento."
-            },
-            {
-                id: 20,
-                block: 6,
-                text: "Como famílias podem promover autonomia de idosos?",
-                options: [
-                    { letter: "A", text: "Tomando todas as decisões por eles" },
-                    { letter: "B", text: "Respeitando suas escolhas e apoiando sua independência" },
-                    { letter: "C", text: "Limitando suas atividades por segurança" }
-                ],
-                correct: "B",
-                explanation: "Autonomia é fundamental para dignidade na velhice."
-            },
-            // Continue até 40 perguntas...
-        ];
-
-        // Para simplificar, vou completar com perguntas genéricas
-        for (let i = 21; i <= 40; i++) {
-            questions.push({
-                id: i,
-                block: Math.ceil((i-20)/5) + 6, // Distribui em blocos adicionais
-                text: `Questão ${i} sobre envelhecimento e direitos sociais: Qual a importância do respeito à diversidade etária?`,
-                options: [
-                    { letter: "A", text: "Pouco importante" },
-                    { letter: "B", text: "Importante apenas em contextos específicos" },
-                    { letter: "C", text: "Fundamental para uma sociedade justa e inclusiva" }
-                ],
-                correct: "C",
-                explanation: "O respeito à diversidade etária é essencial para uma sociedade que valoriza todas as gerações."
-            });
-        }
-
-        const blocks = [
-            { id: 1, title: "Envelhecimento e Afetividade", icon: "fas fa-heart", color: "block-1", count: 5 },
-            { id: 2, title: "Cidades Sustentáveis", icon: "fas fa-city", color: "block-2", count: 5 },
-            { id: 3, title: "Mitos do Envelhecimento", icon: "fas fa-brain", color: "block-3", count: 5 },
-            { id: 4, title: "Direito à Saúde", icon: "fas fa-heartbeat", color: "block-4", count: 5 },
-            { id: 5, title: "Combate ao Idadismo", icon: "fas fa-users", color: "block-5", count: 5 },
-            { id: 6, title: "Autonomia Familiar", icon: "fas fa-home", color: "block-6", count: 5 },
-            { id: 7, title: "Participação Social", icon: "fas fa-hands-helping", color: "block-7", count: 5 },
-            { id: 8, title: "Políticas Públicas", icon: "fas fa-university", color: "block-8", count: 5 }
-        ];
+        // RESPOSTAS CORRETAS
+        const correctAnswers = {
+            1: 'C', 2: 'B', 3: 'B', 4: 'B', 5: 'B',
+            6: 'C', 7: 'B', 8: 'C', 9: 'B', 10: 'C',
+            11: 'B', 12: 'B', 13: 'A', 14: 'B', 15: 'A',
+            16: 'B', 17: 'B', 18: 'B', 19: 'B', 20: 'B',
+            21: 'B', 22: 'B', 23: 'B', 24: 'B', 25: 'B',
+            26: 'B', 27: 'B', 28: 'B', 29: 'C', 30: 'B',
+            31: 'B', 32: 'A', 33: 'B', 34: 'B', 35: 'A',
+            36: 'C', 37: 'B', 38: 'B', 39: 'B', 40: 'B'
+        };
 
         // ESTADO DO QUESTIONÁRIO
         const quizState = {
             totalQuestions: 40,
             currentQuestion: 1,
             answers: new Array(41).fill(null), // Índice 1-40
-            correctAnswers: questions.reduce((acc, q) => {
-                acc[q.id] = q.correct;
-                return acc;
-            }, {}),
             pointsPerQuestion: 10/40 // 0.25 pontos por questão
         };
 
         // INICIALIZAÇÃO
         document.addEventListener('DOMContentLoaded', function() {
-            initBlocks();
             updateProgress();
-            initPWA();
-            initBannerScroll();
         });
-
-        // INICIALIZAR BLOCOS
-        function initBlocks() {
-            const blocksContainer = document.getElementById('blocksContainer');
-            blocksContainer.innerHTML = '';
-            
-            blocks.forEach(block => {
-                const blockElement = document.createElement('div');
-                blockElement.className = `block ${block.color}`;
-                blockElement.innerHTML = `
-                    <div class="block-header">
-                        <i class="${block.icon}"></i>
-                        <span>${block.title}</span>
-                    </div>
-                    <div class="block-content">
-                        <div class="block-question">${block.count} questões sobre ${block.title.toLowerCase()}</div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
-                            <span style="font-size: 0.9rem; color: var(--texto-medio);">Clique para ver questões</span>
-                            <span style="color: var(--azul-escuro);"><i class="fas fa-play-circle"></i></span>
-                        </div>
-                    </div>
-                `;
-                
-                blockElement.addEventListener('click', () => {
-                    // Rolar para a seção de questões
-                    document.getElementById('questions-section').scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-                
-                blocksContainer.appendChild(blockElement);
-            });
-        }
 
         // ATUALIZAR PROGRESSO
         function updateProgress() {
             const answered = quizState.answers.filter(a => a !== null).length;
-            const correctCount = Object.keys(quizState.correctAnswers).reduce((count, qId) => {
-                return count + (quizState.answers[qId] === quizState.correctAnswers[qId] ? 1 : 0);
+            const correctCount = Object.keys(correctAnswers).reduce((count, qId) => {
+                return count + (quizState.answers[qId] === correctAnswers[qId] ? 1 : 0);
             }, 0);
             
             const partialScore = (correctCount * quizState.pointsPerQuestion).toFixed(2);
             
-            document.getElementById('answered-counter').textContent = answered;
-            document.getElementById('score-counter').textContent = partialScore;
             document.getElementById('answered-count').textContent = answered;
             document.getElementById('partial-score').textContent = partialScore;
             
             const progressPercent = (answered / quizState.totalQuestions) * 100;
             document.getElementById('progress-fill').style.width = `${progressPercent}%`;
-            
-            // Atualizar medalhas
-            updateMedals(answered, parseFloat(partialScore));
-            
-            // Verificar completude
-            if (answered === quizState.totalQuestions) {
-                document.getElementById('completeness-warning').style.display = 'block';
-            } else {
-                document.getElementById('completeness-warning').style.display = 'none';
-            }
-        }
-
-        // ATUALIZAR MEDALHAS
-        function updateMedals(answered, score) {
-            const medals = [1, 2, 3, 4, 5].map(i => document.getElementById(`medal-${i}`));
-            
-            if (answered >= 8) medals[0].classList.add('active');
-            else medals[0].classList.remove('active');
-            
-            if (score >= 2.5) medals[1].classList.add('active');
-            else medals[1].classList.remove('active');
-            
-            if (answered >= 16) medals[2].classList.add('active');
-            else medals[2].classList.remove('active');
-            
-            if (score >= 5.0) medals[3].classList.add('active');
-            else medals[3].classList.remove('active');
-            
-            if (answered === quizState.totalQuestions && score >= 7.5) medals[4].classList.add('active');
-            else medals[4].classList.remove('active');
         }
 
         // SELECIONAR OPÇÃO
@@ -2006,6 +1467,7 @@
                 questionElement.querySelectorAll('.option').forEach(opt => {
                     opt.style.background = '';
                     opt.style.borderColor = '';
+                    opt.style.border = '2px solid #E0E0E0';
                 });
                 
                 // Destacar opção selecionada
@@ -2013,6 +1475,7 @@
                 if (selectedOption) {
                     selectedOption.style.background = '#e3f2fd';
                     selectedOption.style.borderColor = '#2196f3';
+                    selectedOption.style.border = '2px solid #2196f3';
                 }
             }
         }
@@ -2022,7 +1485,8 @@
             if (quizState.currentQuestion < quizState.totalQuestions) {
                 quizState.currentQuestion++;
                 document.getElementById(`question-${quizState.currentQuestion}`).scrollIntoView({
-                    behavior: 'smooth'
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             }
         }
@@ -2031,7 +1495,8 @@
             if (quizState.currentQuestion > 1) {
                 quizState.currentQuestion--;
                 document.getElementById(`question-${quizState.currentQuestion}`).scrollIntoView({
-                    behavior: 'smooth'
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             }
         }
@@ -2045,6 +1510,7 @@
                 questionElement.querySelectorAll('.option').forEach(opt => {
                     opt.style.background = '';
                     opt.style.borderColor = '';
+                    opt.style.border = '2px solid #E0E0E0';
                 });
             }
             
@@ -2064,7 +1530,7 @@
             // Calcular pontuação
             let correctCount = 0;
             for (let i = 1; i <= quizState.totalQuestions; i++) {
-                if (quizState.answers[i] === quizState.correctAnswers[i]) {
+                if (quizState.answers[i] === correctAnswers[i]) {
                     correctCount++;
                 }
             }
@@ -2098,7 +1564,10 @@
             
             // Mostrar seção de resultados
             document.getElementById('result-section').style.display = 'block';
-            document.getElementById('result-section').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('result-section').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
         }
 
         // REINICIAR QUESTIONÁRIO
@@ -2112,6 +1581,7 @@
                 document.querySelectorAll('.option').forEach(opt => {
                     opt.style.background = '';
                     opt.style.borderColor = '';
+                    opt.style.border = '2px solid #E0E0E0';
                 });
                 
                 document.getElementById('result-section').style.display = 'none';
@@ -2124,63 +1594,19 @@
         // COMPARTILHAR RESULTADOS
         function shareResults() {
             const finalScore = document.getElementById('final-score').textContent;
-            const text = `Acabei de fazer o teste "Autodiagnóstico: O Idadismo Mora em Você?" e tirei nota ${finalScore}/10! Descubra seu nível de consciência sobre idadismo e longelescência.`;
+            const text = `Acabei de fazer o questionário "Longelescência" (40 questões) e tirei nota ${finalScore}/10! Teste seu conhecimento sobre idadismo e envelhecimento.`;
             
             if (navigator.share) {
                 navigator.share({ 
-                    title: 'Meu Resultado do Teste Anti-Idadismo',
+                    title: 'Meu Resultado do Questionário Longelescência',
                     text: text,
                     url: window.location.href
                 });
             } else {
                 // Fallback para copiar para área de transferência
                 navigator.clipboard.writeText(`${text}\n\n${window.location.href}`)
-                    .then(() => alert("Link copiado para a área de transferência!"));
+                    .then(() => alert("Resultado copiado para a área de transferência!"));
             }
-        }
-
-        // PWA FUNCTIONS
-        function initPWA() {
-            if ('serviceWorker' in navigator) {
-                window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('sw.js').catch(console.error);
-                });
-            }
-            
-            let deferredPrompt;
-            
-            window.addEventListener('beforeinstallprompt', (e) => {
-                e.preventDefault();
-                deferredPrompt = e;
-                const pwaInstallBtn = document.getElementById('pwaInstallBtn');
-                pwaInstallBtn.style.display = 'flex';
-                
-                pwaInstallBtn.addEventListener('click', () => {
-                    pwaInstallBtn.style.display = 'none';
-                    deferredPrompt.prompt();
-                    deferredPrompt.userChoice.then((choiceResult) => {
-                        deferredPrompt = null;
-                    });
-                });
-            });
-        }
-
-        // BANNER SCROLL
-        function initBannerScroll() {
-            let lastScrollTop = 0;
-            const surveyBanner = document.getElementById('surveyBanner');
-            
-            window.addEventListener('scroll', function() {
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    surveyBanner.classList.add('hidden');
-                } else {
-                    surveyBanner.classList.remove('hidden');
-                }
-                
-                lastScrollTop = scrollTop;
-            });
         }
     </script>
 </body>
