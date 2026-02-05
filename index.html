@@ -434,6 +434,31 @@
             box-shadow: 0 15px 30px rgba(255, 209, 102, 0.6);
         }
         
+        /* BOTÃO DA PESQUISA MUNDO LONGEVO */
+        .research-btn {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(90deg, var(--verde), var(--azul));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            box-shadow: 0 10px 25px rgba(6, 214, 160, 0.4);
+            transition: var(--transicao);
+            margin: var(--espaco-md) 0;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .research-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(6, 214, 160, 0.6);
+        }
+        
         /* MODAL - SIMPLIFICADO */
         .modal {
             display: none;
@@ -938,6 +963,9 @@
                             <a href="https://www.animodh.com.br/" target="_blank" style="background: linear-gradient(135deg, var(--azul-escuro), #2D7C87); color: white; padding: 12px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px;">
                                 <i class="fas fa-globe"></i> Ânimo Desenvolvimento Humano
                             </a>
+                            <a href="https://www.plenalongevidade.com.br/" target="_blank" style="background: linear-gradient(135deg, #FF6B35, #FF9E6D); color: white; padding: 12px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                <i class="fas fa-leaf"></i> Plena Longevidade
+                            </a>
                             <a href="mailto:ricardo@animodh.com.br" style="background: linear-gradient(135deg, var(--verde), var(--azul)); color: white; padding: 12px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px;">
                                 <i class="fas fa-envelope"></i> Contato Profissional
                             </a>
@@ -960,7 +988,7 @@
             <div class="footer-logo">
                 <i class="fas fa-heart"></i>
             </div>
-            <p><strong>Direitos Reservados:</strong> Ricardo de Faria Barros • Psicólogo Clínico CRP 01/7844 • Mestre em Gestão Social</p>
+            <p><strong>Todos os Direitos Reservados:</strong> Ricardo de Faria Barros • Psicólogo Clínico CRP 01/7844 • Mestre em Gestão Social</p>
             
             <div class="footer-links">
                 <a href="#livro" class="footer-link">
@@ -968,6 +996,9 @@
                 </a>
                 <a href="https://www.youtube.com/@positivaatitude" target="_blank" class="footer-link">
                     <i class="fab fa-youtube"></i> YouTube
+                </a>
+                <a href="https://www.plenalongevidade.com.br/" target="_blank" class="footer-link">
+                    <i class="fas fa-leaf"></i> Plena Longevidade
                 </a>
                 <a href="https://www.animodh.com.br/" target="_blank" class="footer-link">
                     <i class="fas fa-globe"></i> Ânimo DH
@@ -1695,6 +1726,23 @@
                                 <strong>Próximo Passo:</strong> ${getProximoPasso(notaFinal)}
                             </div>
                         </div>
+                    </div>
+                    
+                    <!-- SEÇÃO DA PESQUISA MUNDO LONGEVO -->
+                    <div style="background: linear-gradient(135deg, rgba(6, 214, 160, 0.1), rgba(126, 214, 223, 0.1)); padding: 25px; border-radius: 15px; margin: 30px 0; text-align: center; border: 2px solid var(--verde);">
+                        <h4 style="color: var(--azul-escuro); margin-bottom: 15px;">🔬 Participe da Pesquisa Mundo Longevo</h4>
+                        <p style="color: var(--texto-medio); margin-bottom: 20px;">
+                            Se você tem <strong>50 anos ou mais</strong>, sua experiência é valiosa para a ciência da longevidade!
+                        </p>
+                        <p style="color: var(--texto-medio); margin-bottom: 25px; font-size: 0.95rem;">
+                            <strong>Como brinde:</strong> Todos os participantes recebem meu livro <strong>"Aposentei-me e Agora?"</strong> em formato digital!
+                        </p>
+                        <a href="https://forms.gle/3i9bUdmc5AicdXHUA" target="_blank" class="research-btn" style="margin: 0 auto;">
+                            <i class="fas fa-clipboard-check"></i> PARTICIPAR DA PESQUISA
+                        </a>
+                        <p style="color: var(--texto-claro); font-size: 0.8rem; margin-top: 15px;">
+                            <i class="fas fa-lock"></i> Dados protegidos • Anônimo • Ética aprovada
+                        </p>
                     </div>
                     
                     <div style="margin-top: 20px;">
