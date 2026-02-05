@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Longelescência - Combate ao Idadismo</title>
+    <title>Longelescência - Autodiagnóstico</title>
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,20 +13,20 @@
     
     <style>
         :root {
-            /* Cores principais */
-            --rosa: #FF6B8B;
-            --azul: #7ED6DF;
-            --amarelo: #FFD166;
-            --verde: #06D6A0;
-            --roxo: #9D4EDD;
-            --laranja: #FF9E6D;
-            --azul-escuro: #1A535C;
+            /* Cores profissionais vibrantes */
+            --rosa: #E91E63;
+            --azul: #2196F3;
+            --amarelo: #FFC107;
+            --verde: #4CAF50;
+            --roxo: #9C27B0;
+            --laranja: #FF5722;
+            --azul-escuro: #0D47A1;
             --branco: #F7FFF7;
             
             /* Cores de texto */
-            --texto-escuro: #333333;
-            --texto-medio: #666666;
-            --texto-claro: #888888;
+            --texto-escuro: #222222;
+            --texto-medio: #555555;
+            --texto-claro: #777777;
             
             /* Espaçamentos */
             --espaco-xs: 0.5rem;
@@ -36,12 +36,12 @@
             --espaco-xl: 3rem;
             
             /* Bordas */
-            --borda-radius: 20px;
-            --borda-radius-sm: 10px;
+            --borda-radius: 25px;
+            --borda-radius-sm: 12px;
             
             /* Sombras */
-            --sombra: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --sombra-forte: 0 15px 40px rgba(0, 0, 0, 0.15);
+            --sombra: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --sombra-forte: 0 15px 40px rgba(0, 0, 0, 0.2);
             
             /* Transições */
             --transicao: all 0.3s ease;
@@ -59,7 +59,7 @@
         
         body {
             font-family: 'Nunito', sans-serif;
-            background: linear-gradient(135deg, #F7FFF7 0%, #E8F4F8 100%);
+            background: linear-gradient(135deg, #E3F2FD 0%, #FCE4EC 100%);
             color: var(--texto-escuro);
             line-height: 1.6;
             overflow-x: hidden;
@@ -74,16 +74,16 @@
         }
         
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
         }
         
         h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--azul-escuro);
         }
         
         h3 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
         }
         
         p {
@@ -103,70 +103,161 @@
             padding: 0 var(--espaco-sm);
         }
         
-        /* HEADER */
+        /* HEADER PROFISSIONAL */
         .header {
-            background: linear-gradient(90deg, var(--rosa), var(--laranja));
+            background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--roxo) 100%);
             color: white;
             padding: var(--espaco-xl) 0;
-            border-radius: 0 0 var(--borda-radius) var(--borda-radius);
+            border-radius: 0 0 40px 40px;
             box-shadow: var(--sombra-forte);
             text-align: center;
             position: relative;
             overflow: hidden;
+            margin-bottom: var(--espaco-xl);
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            z-index: 1;
         }
         
         .header-content {
             position: relative;
             z-index: 2;
+            padding: 0 var(--espaco-md);
         }
         
         .header h1 {
-            font-size: 2.2rem;
-            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
-            margin-bottom: var(--espaco-sm);
+            font-size: 3rem;
+            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+            margin-bottom: var(--espaco-md);
+            background: linear-gradient(45deg, #FFF, #FFEB3B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             opacity: 0.95;
             max-width: 800px;
             margin: 0 auto var(--espaco-lg);
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         
-        /* INTRO */
+        /* REDES SOCIAIS DO AUTOR */
+        .social-section {
+            background: white;
+            padding: var(--espaco-xl);
+            border-radius: var(--borda-radius);
+            margin: var(--espaco-xl) 0;
+            box-shadow: var(--sombra);
+            text-align: center;
+        }
+        
+        .social-title {
+            color: var(--azul-escuro);
+            margin-bottom: var(--espaco-lg);
+            font-size: 1.8rem;
+        }
+        
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--espaco-lg);
+            margin-bottom: var(--espaco-xl);
+        }
+        
+        .social-card {
+            background: linear-gradient(135deg, #F8F9FA, #E8F4F8);
+            padding: var(--espaco-lg);
+            border-radius: 15px;
+            box-shadow: var(--sombra);
+            transition: var(--transicao);
+            text-align: center;
+        }
+        
+        .social-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .social-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--espaco-md);
+            display: block;
+        }
+        
+        .social-icon.youtube { color: #FF0000; }
+        .social-icon.website { color: var(--azul); }
+        .social-icon.plena { color: var(--verde); }
+        .social-icon.email { color: var(--roxo); }
+        
+        .social-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(90deg, var(--azul), var(--roxo));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transicao);
+            margin-top: var(--espaco-sm);
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* INTRO SIMPLIFICADA */
         .intro-box {
             background: white;
             color: var(--azul-escuro);
-            padding: var(--espaco-lg);
+            padding: var(--espaco-xl);
             border-radius: var(--borda-radius);
-            margin: var(--espaco-xl) auto;
+            margin: 0 auto var(--espaco-xl);
             max-width: 900px;
             box-shadow: var(--sombra);
-            border-left: 8px solid var(--azul);
+            border: 5px solid transparent;
+            background-clip: padding-box;
+            border-image: linear-gradient(45deg, var(--azul), var(--roxo)) 1;
         }
         
         .highlight {
-            background-color: var(--amarelo);
-            padding: 3px 8px;
-            border-radius: var(--borda-radius-sm);
+            background: linear-gradient(90deg, var(--amarelo), var(--laranja));
+            padding: 5px 15px;
+            border-radius: 20px;
             font-weight: bold;
+            color: var(--azul-escuro);
+            display: inline-block;
         }
         
         .quote {
             font-style: italic;
             color: var(--azul-escuro);
             border-left: 5px solid var(--roxo);
-            padding-left: var(--espaco-md);
+            padding-left: var(--espaco-lg);
             margin: var(--espaco-lg) 0;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            background: linear-gradient(90deg, rgba(156, 39, 176, 0.1), transparent);
+            padding: var(--espaco-md);
+            border-radius: 0 var(--borda-radius-sm) var(--borda-radius-sm) 0;
         }
         
-        /* GAMIFICAÇÃO */
+        /* GAMIFICAÇÃO SIMPLIFICADA */
         .gamification {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: var(--espaco-lg);
+            gap: var(--espaco-xl);
             margin: var(--espaco-xl) auto;
             flex-wrap: wrap;
         }
@@ -174,292 +265,105 @@
         .counter-box {
             background: white;
             border-radius: var(--borda-radius);
-            padding: var(--espaco-lg);
+            padding: var(--espaco-xl);
             text-align: center;
             box-shadow: var(--sombra);
-            border: 5px solid var(--azul);
-            min-width: 200px;
+            border: 5px solid;
+            min-width: 250px;
+            transition: var(--transicao);
+        }
+        
+        .counter-box:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+        
+        .counter-box:nth-child(1) {
+            border-color: var(--rosa);
+        }
+        
+        .counter-box:nth-child(2) {
+            border-color: var(--azul);
         }
         
         .counter-value {
-            font-size: 3.5rem;
-            font-weight: bold;
-            color: var(--rosa);
+            font-size: 4.5rem;
+            font-weight: 900;
             line-height: 1;
-            margin: 10px 0;
+            margin: 20px 0;
+            background: linear-gradient(45deg, var(--rosa), var(--azul));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .counter-label {
-            font-size: 1.2rem;
-            color: var(--azul-escuro);
-            font-weight: 600;
-        }
-        
-        /* BLOCOS */
-        .blocks-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: var(--espaco-lg);
-            margin: var(--espaco-xl) 0;
-        }
-        
-        .block {
-            background: white;
-            border-radius: var(--borda-radius);
-            overflow: hidden;
-            box-shadow: var(--sombra);
-            transition: var(--transicao);
-            cursor: pointer;
-        }
-        
-        .block:hover {
-            transform: translateY(-10px);
-        }
-        
-        .block-header {
-            padding: var(--espaco-lg);
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: var(--espaco-sm);
-        }
-        
-        .block-1 .block-header { background: linear-gradient(90deg, var(--rosa), #FF8FA3); }
-        .block-2 .block-header { background: linear-gradient(90deg, var(--azul), #9AE6E8); }
-        .block-3 .block-header { background: linear-gradient(90deg, var(--amarelo), #FFDF8E); }
-        .block-4 .block-header { background: linear-gradient(90deg, var(--verde), #4CE4B8); }
-        .block-5 .block-header { background: linear-gradient(90deg, var(--roxo), #C084FC); }
-        .block-6 .block-header { background: linear-gradient(90deg, var(--laranja), #FFB896); }
-        .block-7 .block-header { background: linear-gradient(90deg, var(--azul-escuro), #2D7C87); }
-        
-        .block-content {
-            padding: var(--espaco-lg);
-        }
-        
-        .block-question {
-            margin-bottom: 15px;
-            font-weight: 600;
-            color: var(--azul-escuro);
-            min-height: 60px;
-        }
-        
-        /* SEÇÃO DO AUTOR */
-        .author-section {
-            background: white;
-            padding: var(--espaco-xl) var(--espaco-md);
-            border-radius: var(--borda-radius);
-            margin: var(--espaco-xl) 0;
-            box-shadow: var(--sombra);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .author-header {
-            text-align: center;
-            margin-bottom: var(--espaco-xl);
-        }
-        
-        .author-avatar {
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(135deg, var(--rosa), var(--azul));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto var(--espaco-lg);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
-        
-        .author-avatar i {
-            font-size: 4rem;
-            color: white;
-        }
-        
-        .author-badge {
-            position: absolute;
-            bottom: 20px;
-            right: 10px;
-            background: var(--amarelo);
-            color: var(--azul-escuro);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            box-shadow: 0 5px 15px rgba(255, 209, 102, 0.4);
-        }
-        
-        .author-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--espaco-lg);
-            margin-bottom: var(--espaco-xl);
-        }
-        
-        .author-card {
-            background: #F8F9FA;
-            padding: var(--espaco-lg);
-            border-radius: 15px;
-            box-shadow: var(--sombra);
-            transition: var(--transicao);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .author-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .author-card h3 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: var(--espaco-lg);
-            color: var(--azul-escuro);
-        }
-        
-        .author-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-        
-        /* SEÇÃO DO LIVRO */
-        .book-section {
-            background: linear-gradient(135deg, var(--azul-escuro), #2D7C87);
-            color: white;
-            padding: var(--espaco-xl) var(--espaco-md);
-            border-radius: var(--borda-radius);
-            margin: var(--espaco-xl) 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .book-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .book-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--espaco-xl);
-            align-items: center;
-            margin: var(--espaco-xl) 0;
-        }
-        
-        .book-cover {
-            background: linear-gradient(135deg, var(--amarelo), var(--laranja));
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .book-cover-inner {
-            background: white;
-            padding: 40px 25px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-        
-        .book-price {
-            color: var(--azul-escuro);
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-        
-        .book-buy-btn {
-            display: inline-block;
-            padding: 18px 40px;
-            background: linear-gradient(90deg, var(--rosa), var(--laranja));
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
             font-size: 1.3rem;
-            box-shadow: 0 10px 25px rgba(255, 107, 139, 0.4);
+            color: var(--azul-escuro);
+            font-weight: 700;
+        }
+        
+        /* BOTÕES DE AÇÃO */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: var(--espaco-lg);
+            flex-wrap: wrap;
+            margin: var(--espaco-xl) 0;
+        }
+        
+        .action-btn {
+            padding: 25px 50px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            cursor: pointer;
             transition: var(--transicao);
-            margin-top: var(--espaco-md);
-            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            min-width: 300px;
             text-align: center;
         }
         
-        .book-buy-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255, 107, 139, 0.6);
+        .start-btn {
+            background: linear-gradient(90deg, var(--azul), var(--roxo));
+            color: white;
+            box-shadow: 0 15px 35px rgba(33, 150, 243, 0.4);
         }
         
-        /* AVISO */
+        .download-btn {
+            background: linear-gradient(90deg, var(--verde), #4CAF50);
+            color: white;
+            box-shadow: 0 15px 35px rgba(76, 175, 80, 0.4);
+        }
+        
+        .results-btn {
+            background: linear-gradient(90deg, var(--amarelo), var(--laranja));
+            color: var(--azul-escuro);
+            box-shadow: 0 15px 35px rgba(255, 193, 7, 0.4);
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* AVISO IMPORTANTE */
         .aviso {
             background: linear-gradient(90deg, var(--amarelo), var(--laranja));
             color: var(--azul-escuro);
-            padding: var(--espaco-sm);
+            padding: var(--espaco-md);
             border-radius: var(--borda-radius-sm);
-            margin: var(--espaco-md) 0;
-            font-weight: 600;
+            margin: var(--espaco-lg) 0;
+            font-weight: 700;
             text-align: center;
-            border-left: 5px solid var(--rosa);
+            border: 3px solid var(--rosa);
+            font-size: 1.1rem;
         }
         
-        /* BOTÃO VER RESULTADOS */
-        .survey-btn {
-            display: inline-block;
-            padding: 18px 40px;
-            background: var(--amarelo);
-            color: var(--azul-escuro);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.3rem;
-            box-shadow: 0 10px 25px rgba(255, 209, 102, 0.4);
-            transition: var(--transicao);
-            margin: var(--espaco-md) 0;
-            text-align: center;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .survey-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255, 209, 102, 0.6);
-        }
-        
-        /* BOTÃO DA PESQUISA MUNDO LONGEVO */
-        .research-btn {
-            display: inline-block;
-            padding: 18px 40px;
-            background: linear-gradient(90deg, var(--verde), var(--azul));
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.3rem;
-            box-shadow: 0 10px 25px rgba(6, 214, 160, 0.4);
-            transition: var(--transicao);
-            margin: var(--espaco-md) 0;
-            text-align: center;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            max-width: 400px;
-        }
-        
-        .research-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(6, 214, 160, 0.6);
-        }
-        
-        /* MODAL - SIMPLIFICADO */
+        /* MODAL DE QUESTÕES */
         .modal {
             display: none;
             position: fixed;
@@ -467,7 +371,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.85);
             z-index: 2000;
             overflow-y: auto;
             padding: 20px;
@@ -477,9 +381,9 @@
             background-color: white;
             max-width: 800px;
             margin: 30px auto;
-            border-radius: 25px;
+            border-radius: 30px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
             animation: modalAppear 0.5s;
         }
         
@@ -488,96 +392,138 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* BOX DA PERGUNTA - FIXADO */
+        /* HEADER DO MODAL */
+        .modal-header {
+            background: linear-gradient(90deg, var(--azul-escuro), var(--roxo));
+            padding: 25px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .close-modal {
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: var(--transicao);
+        }
+        
+        .close-modal:hover {
+            transform: rotate(90deg);
+        }
+        
+        /* QUESTÃO */
         .question-box {
-            background: #F8F9FA;
-            padding: 30px;
-            border-radius: 15px;
-            margin: 25px;
-            border-left: 5px solid var(--azul);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            background: linear-gradient(135deg, #F8F9FA, #E8F4F8);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 30px;
+            border-left: 8px solid var(--azul);
+            box-shadow: 0 10px 25px rgba(33, 150, 243, 0.2);
+        }
+        
+        .question-number {
+            display: inline-block;
+            background: var(--azul-escuro);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
         }
         
         .question-text {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             line-height: 1.5;
-            color: #000000 !important; /* PRETO PARA BOA VISIBILIDADE */
+            color: #000000;
             font-weight: 600;
             margin-bottom: 0;
         }
         
         /* OPÇÕES */
         .option {
-            padding: 18px;
-            border-radius: 15px;
-            border: 2px solid #E0E0E0;
+            padding: 22px;
+            border-radius: 20px;
+            border: 3px solid #E0E0E0;
             cursor: pointer;
             transition: var(--transicao);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
             background-color: white;
-            margin: 15px 25px;
+            margin: 18px 30px;
         }
         
         .option:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         
         .option.selected {
             border-color: var(--azul);
-            background-color: #E8F4F8;
+            background: linear-gradient(135deg, #E8F4F8, #F0F9FF);
         }
         
         .option.correct {
             border-color: var(--verde);
-            background-color: #E8F9F3;
+            background: linear-gradient(135deg, #E8F9F3, #F0FFF5);
         }
         
         .option.incorrect {
             border-color: var(--rosa);
-            background-color: #FFEEF2;
+            background: linear-gradient(135deg, #FFEEF2, #FFF0F5);
         }
         
         .option-letter {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
+            font-weight: 700;
             color: white;
             flex-shrink: 0;
+            font-size: 1.3rem;
         }
         
-        .option-letter.A { background-color: var(--rosa); }
-        .option-letter.B { background-color: var(--azul); }
-        .option-letter.C { background-color: var(--amarelo); }
+        .option-letter.A { background: linear-gradient(45deg, var(--rosa), #E91E63); }
+        .option-letter.B { background: linear-gradient(45deg, var(--azul), #2196F3); }
+        .option-letter.C { background: linear-gradient(45deg, var(--amarelo), #FFC107); }
         
         .option-text {
             color: #333;
             flex: 1;
+            font-weight: 600;
         }
         
         /* BOTÕES DE NAVEGAÇÃO */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+            background: linear-gradient(135deg, #F8F9FA, #E8F4F8);
+        }
+        
         .nav-btn {
-            padding: 15px 30px;
+            padding: 18px 40px;
             border: none;
             border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1.2rem;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin: 0 25px 25px;
+            gap: 15px;
+            transition: var(--transicao);
         }
         
         .nav-btn.prev {
-            background-color: #F0F0F0;
+            background: linear-gradient(90deg, #E0E0E0, #F0F0F0);
             color: #666;
         }
         
@@ -591,85 +537,104 @@
             cursor: not-allowed;
         }
         
-        /* HEADER DO MODAL */
-        .modal-header {
-            background: linear-gradient(90deg, var(--rosa), var(--laranja));
-            padding: 25px;
-            color: white;
-            font-size: 1.4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .nav-btn:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
         
-        .close-modal {
-            font-size: 2rem;
-            cursor: pointer;
+        /* PROGRESSO */
+        .progress-container {
+            padding: 20px 30px;
+            background: white;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #E0E0E0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--azul), var(--roxo));
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+        
+        .progress-text {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: 700;
+            color: var(--azul-escuro);
         }
         
         /* EXPLICAÇÃO */
         .explanation {
-            background-color: #F9F9F9;
-            padding: 20px;
-            border-radius: 15px;
-            margin: 20px 25px;
-            border-left: 5px solid var(--roxo);
+            background: linear-gradient(135deg, #F9F9F9, #F0F0F0);
+            padding: 25px;
+            border-radius: 20px;
+            margin: 20px 30px;
+            border-left: 8px solid var(--roxo);
         }
         
         .explanation-title {
-            font-weight: bold;
+            font-weight: 700;
             color: var(--azul-escuro);
-            margin-bottom: 10px;
-            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
         }
         
-        /* FOOTER */
-        .footer {
+        /* SEÇÃO DO LIVRO */
+        .book-section {
+            background: linear-gradient(135deg, var(--azul-escuro), #1565C0);
+            color: white;
+            padding: var(--espaco-xl);
+            border-radius: var(--borda-radius);
+            margin: var(--espaco-xl) 0;
             text-align: center;
-            margin-top: var(--espaco-xl);
-            padding-top: var(--espaco-xl);
-            border-top: 2px solid #E0E0E0;
-            color: var(--texto-medio);
-            font-size: 0.9rem;
-            position: relative;
-            z-index: 1;
         }
         
-        .footer-logo {
-            font-size: 2.5rem;
-            color: var(--rosa);
-            margin-bottom: var(--espaco-sm);
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: var(--espaco-lg);
-            flex-wrap: wrap;
-            margin: var(--espaco-lg) 0;
-        }
-        
-        .footer-link {
+        .book-btn {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(90deg, var(--amarelo), var(--laranja));
             color: var(--azul-escuro);
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            box-shadow: 0 10px 25px rgba(255, 193, 7, 0.4);
+            transition: var(--transicao);
+            margin-top: var(--espaco-md);
+        }
+        
+        .book-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 193, 7, 0.6);
         }
         
         /* RESPONSIVIDADE */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             h2 {
-                font-size: 1.7rem;
+                font-size: 1.8rem;
             }
             
-            .header {
-                padding: var(--espaco-lg) 0;
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .intro-box {
+                padding: var(--espaco-lg);
             }
             
             .gamification {
@@ -677,38 +642,46 @@
             }
             
             .counter-box {
-                min-width: 150px;
-                padding: var(--espaco-md);
+                min-width: 200px;
+                padding: var(--espaco-lg);
             }
             
             .counter-value {
-                font-size: 2.5rem;
+                font-size: 3.5rem;
             }
             
-            .blocks-container {
-                grid-template-columns: 1fr;
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
             }
             
-            .author-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .book-grid {
-                grid-template-columns: 1fr;
+            .action-btn {
+                min-width: 250px;
+                padding: 20px 40px;
             }
             
             .question-text {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
             
             .option {
-                padding: 15px;
-                margin: 10px 15px;
+                padding: 18px;
+                margin: 12px 20px;
             }
             
             .question-box {
-                padding: 20px;
-                margin: 15px;
+                padding: 25px;
+                margin: 20px;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
             }
         }
         
@@ -717,12 +690,9 @@
                 padding: 0 var(--espaco-xs);
             }
             
-            .intro-box {
-                padding: var(--espaco-md);
-            }
-            
             .counter-box {
                 width: 100%;
+                min-width: auto;
             }
             
             .modal {
@@ -730,25 +700,42 @@
             }
             
             .modal-content {
-                border-radius: 15px;
+                border-radius: 20px;
+            }
+            
+            .question-box {
+                padding: 20px;
+                margin: 15px;
+            }
+            
+            .option {
+                padding: 15px;
+                margin: 10px 15px;
+                font-size: 1.1rem;
+            }
+            
+            .option-letter {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- HEADER -->
+    <!-- HEADER PROFISSIONAL -->
     <header class="header">
         <div class="container">
             <div class="header-content">
                 <h1><i class="fas fa-heartbeat"></i> Autodiagnóstico: Avalie seu Idadismo</h1>
-                <p class="subtitle">Um teste para despertar a consciência e combater o <span class="highlight">preconceito</span></p>
+                <p class="subtitle">36 perguntas sequenciais para despertar a consciência sobre o <span style="text-shadow: 2px 2px 0 rgba(0,0,0,0.3);">preconceito etário</span></p>
             </div>
         </div>
     </header>
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="container">
-        <!-- INTRODUÇÃO -->
+        <!-- INTRODUÇÃO SIMPLIFICADA -->
         <section class="intro-box">
             <p>Bem-vindo(a) a esta jornada de reflexão sobre o <strong>idadismo</strong> - o preconceito etário que afeta milhões de pessoas idosas em nossa sociedade.</p>
             <p>Este não é apenas um teste, mas um convite à reflexão sobre a <span class="highlight">longelescência</span> e um exercício de cidadania aplicada à vida social, buscando o sentido e a dignidade em cada etapa da existência.</p>
@@ -758,7 +745,7 @@
             <p>Complete o teste, descubra seu nível de consciência sobre o idadismo.</p>
             
             <!-- AVISO IMPORTANTE -->
-            <div class="aviso" style="margin-top: var(--espaco-lg);">
+            <div class="aviso">
                 <i class="fas fa-exclamation-circle"></i> IMPORTANTE: É preciso responder a <strong>TODAS as 36 questões</strong> para obter seu resultado completo!
             </div>
         </section>
@@ -778,239 +765,89 @@
             </div>
         </section>
 
-        <!-- BLOCOS DE QUESTÕES -->
-        <section>
-            <h2 style="text-align: center; margin-bottom: var(--espaco-lg);">Escolha um bloco para começar:</h2>
-            <div class="blocks-container" id="blocksContainer">
-                <!-- Gerado por JavaScript -->
-            </div>
+        <!-- BOTÕES DE AÇÃO -->
+        <section class="action-buttons">
+            <button id="start-test-btn" class="action-btn start-btn">
+                <i class="fas fa-play-circle"></i> COMEÇAR TESTE
+            </button>
+            
+            <button id="download-questions-btn" class="action-btn download-btn">
+                <i class="fas fa-download"></i> BAIXAR QUESTÕES
+            </button>
+            
+            <button id="view-results-btn" class="action-btn results-btn">
+                <i class="fas fa-chart-bar"></i> VER RESULTADO
+            </button>
         </section>
 
-        <!-- BOTÃO VER RESULTADOS -->
-        <div style="text-align: center; margin: var(--espaco-xl) 0;">
-            <button id="view-results-btn" class="survey-btn" style="background: linear-gradient(90deg, var(--roxo), var(--rosa)); color: white;">
-                <i class="fas fa-chart-bar"></i> VER MEU RESULTADO COMPLETO
-            </button>
-            <p id="results-warning" style="color: var(--rosa); margin-top: var(--espaco-sm); display: none;">
+        <!-- AVISO DE RESULTADO -->
+        <div style="text-align: center; margin: var(--espaco-lg) 0;">
+            <p id="results-warning" style="color: var(--rosa); display: none;">
                 <i class="fas fa-exclamation-triangle"></i> Você precisa responder a todas as 36 questões primeiro!
             </p>
         </div>
 
-        <!-- SEÇÃO DO LIVRO -->
-        <section class="book-section">
-            <div class="container">
-                <div class="book-content">
-                    <h2 style="text-align: center; color: var(--amarelo); margin-bottom: var(--espaco-md);">
-                        <i class="fas fa-book"></i> Meu Livro: Manual do Bem-Estar na Longelescência
-                    </h2>
-                    <p style="text-align: center; font-size: 1.2rem; opacity: 0.95; max-width: 800px; margin: 0 auto var(--espaco-xl);">
-                        dos 50 aos 100+ • Inspirado no Vento Aracati e Joyspan
-                    </p>
-                    
-                    <div class="book-grid">
-                        <div class="book-cover">
-                            <div class="book-cover-inner">
-                                <div style="font-size: 3rem; color: var(--azul-escuro); margin-bottom: var(--espaco-sm);">📚</div>
-                                <h3 style="color: var(--azul-escuro); margin-bottom: var(--espaco-sm);">Manual do Bem-Estar na Longevidade</h3>
-                                <p style="color: var(--texto-medio); margin: 0;">dos 50 aos 100+</p>
-                            </div>
-                            <div class="book-price">R$ 50,00*</div>
-                            <div style="color: var(--azul-escuro); font-size: 0.9rem; margin-top: 5px;">*Versão impressa, pedidos por email, com frete grátis</div>
-                        </div>
-                        
-                        <div>
-                            <h3 style="color: var(--amarelo); margin-bottom: var(--espaco-md);">O que é a nova longevidade, a "longelescência"?</h3>
-                            <p style="margin-bottom: var(--espaco-md); opacity: 0.95;">
-                                <strong>Longelescência</strong> é um termo criado por mim para nomear o <strong>florescimento tardio</strong> — um período em que maturidade, autonomia, sentido e plenitude se entrelaçam de forma única.
-                            </p>
-                            
-                            <div style="background: rgba(255, 255, 255, 0.1); padding: var(--espaco-md); border-radius: 10px; margin-bottom: var(--espaco-lg);">
-                                <h4 style="color: var(--azul); margin-bottom: var(--espaco-sm);">✨ Inspirações do Livro:</h4>
-                                <div style="display: grid; gap: var(--espaco-md);">
-                                    <div>
-                                        <div style="display: flex; align-items: center; gap: var(--espaco-sm); margin-bottom: 5px;">
-                                            <div style="font-size: 1.5rem;">🌬️</div>
-                                            <strong style="color: var(--amarelo);">Vento Aracati</strong>
-                                        </div>
-                                        <div style="opacity: 0.9; font-size: 0.95rem;">A brisa suave e renovadora do Nordeste brasileiro</div>
-                                    </div>
-                                    <div>
-                                        <div style="display: flex; align-items: center; gap: var(--espaco-sm); margin-bottom: 5px;">
-                                            <div style="font-size: 1.5rem;">💫</div>
-                                            <strong style="color: var(--amarelo);">Joyspan</strong>
-                                        </div>
-                                        <div style="opacity: 0.9; font-size: 0.95rem;">Conceito criado pela médica gerontologista Kerry Burnight</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <a href="https://a.co/d/0hgRnva8" target="_blank" class="book-buy-btn">
-                                <i class="fas fa-shopping-cart"></i> COMPRAR NA AMAZON
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PERFIL DO AUTOR -->
-        <section class="author-section">
-            <div class="container">
-                <div class="author-header">
-                    <div class="author-avatar">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="author-badge">61 anos • Psicólogo</div>
-                    </div>
-                    <h2 style="color: var(--azul-escuro);">Meu Currículo</h2>
-                    <p style="color: var(--texto-medio); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
-                        Psicólogo Clínico • Especialista em Longevidade • Autor • Palestrante • Professor
-                    </p>
+        <!-- REDES SOCIAIS DO AUTOR -->
+        <section class="social-section">
+            <h2 class="social-title"><i class="fas fa-user-graduate"></i> Ricardo de Faria Barros - Redes Sociais</h2>
+            
+            <div class="social-grid">
+                <div class="social-card">
+                    <i class="fab fa-youtube social-icon youtube"></i>
+                    <h3>YouTube</h3>
+                    <p>Canal Positiva Atitude com conteúdos sobre longevidade, psicologia positiva e combate ao idadismo</p>
+                    <a href="https://www.youtube.com/@positivaatitude" target="_blank" class="social-btn">
+                        <i class="fab fa-youtube"></i> Visitar Canal
+                    </a>
                 </div>
                 
-                <div class="author-grid">
-                    <div class="author-card">
-                        <h3>
-                            <div class="author-icon" style="background: var(--azul);">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <span>Formação Acadêmica</span>
-                        </h3>
-                        <ul style="list-style-type: none; padding-left: 0;">
-                            <li style="margin-bottom: var(--espaco-sm);">
-                                <strong>Psicólogo Clínico</strong><br>
-                                <span style="color: var(--texto-medio);">Formação em Logoterapia (UEPB)</span>
-                            </li>
-                            <li style="margin-bottom: var(--espaco-sm);">
-                                <strong>Especialização em Psicologia Positiva</strong><br>
-                                <span style="color: var(--texto-medio);">PUCRS</span>
-                            </li>
-                            <li style="margin-bottom: var(--espaco-sm);">
-                                <strong>Mestrado em Gestão Social e Trabalho</strong><br>
-                                <span style="color: var(--texto-medio);">Universidade de Brasília (UNB)</span>
-                            </li>
-                            <li style="margin-bottom: var(--espaco-sm);">
-                                <strong>Especialização em Gestão de Pessoas</strong><br>
-                                <span style="color: var(--texto-medio);">Universidade de São Paulo (USP)</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="author-card">
-                        <h3>
-                            <div class="author-icon" style="background: var(--rosa);">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <span>Atuação Profissional</span>
-                        </h3>
-                        <ul style="list-style-type: none; padding-left: 0;">
-                            <li style="margin-bottom: var(--espaco-sm);">
-                                <strong>Professor de Pós-Graduação</strong><br>
-                                <span style="color: var(--texto-medio);">ESMPU e IBMEC-Brasília</span>
-                            </li>
-                            <li style="margin-bottom: var(--espaco-sm);">
-                                <strong>Consultor de Longevidade</strong><br>
-                                <span style="color: var(--texto-medio);">ANABB - Projeto 70+</span>
-                            </li>
-                            <li style="margin-bottom: var(--espaco-sm);">
-                                <strong>Proprietário da Ânimo DH</strong><br>
-                                <span style="color: var(--texto-medio);"><a href="https://www.animodh.com.br/" target="_blank" style="color: var(--azul-escuro);">animodh.com.br</a></span>
-                            </li>
-                            <li style="margin-bottom: var(--espaco-sm);">
-                                <strong>30 anos de experiência</strong><br>
-                                <span style="color: var(--texto-medio);">Temática longevidade e preparação para aposentadoria</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="author-card">
-                        <h3>
-                            <div class="author-icon" style="background: var(--amarelo);">
-                                <i class="fas fa-book"></i>
-                            </div>
-                            <span>Livros Publicados</span>
-                        </h3>
-                        <div style="display: grid; gap: var(--espaco-sm);">
-                            <div style="background: rgba(255, 209, 102, 0.1); padding: var(--espaco-sm); border-radius: 8px;">
-                                <strong>Sobre a Vida e o Viver</strong>
-                                <div style="color: var(--texto-medio); font-size: 0.9rem;">Reflexões existenciais baseadas em Logoterapia</div>
-                            </div>
-                            <div style="background: rgba(255, 209, 102, 0.1); padding: var(--espaco-sm); border-radius: 8px;">
-                                <strong>Apanhadores de Possibilidades</strong>
-                                <div style="color: var(--texto-medio); font-size: 0.9rem;">Encontrando sentido nas adversidades</div>
-                            </div>
-                            <div style="background: rgba(255, 209, 102, 0.1); padding: var(--espaco-sm); border-radius: 8px;">
-                                <strong>Aposentei-me e Agora</strong>
-                                <div style="color: var(--texto-medio); font-size: 0.9rem;">Guia prático para transição pós-carreira</div>
-                            </div>
-                            <div style="background: rgba(255, 209, 102, 0.1); padding: var(--espaco-sm); border-radius: 8px;">
-                                <strong>Manual da Longevidade Positiva</strong>
-                                <div style="color: var(--texto-medio); font-size: 0.9rem;">Abordagem integrada para envelhecer bem</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="author-card">
-                        <h3>
-                            <div class="author-icon" style="background: var(--roxo);">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <span>Contato & Redes</span>
-                        </h3>
-                        <div style="display: grid; gap: var(--espaco-sm);">
-                            <a href="https://www.youtube.com/@positivaatitude" target="_blank" style="background: linear-gradient(135deg, #FF0000, #CC0000); color: white; padding: 12px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                                <i class="fab fa-youtube"></i> YouTube @positivaatitude
-                            </a>
-                            <a href="https://www.animodh.com.br/" target="_blank" style="background: linear-gradient(135deg, var(--azul-escuro), #2D7C87); color: white; padding: 12px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                                <i class="fas fa-globe"></i> Ânimo Desenvolvimento Humano
-                            </a>
-                            <a href="https://www.plenalongevidade.com.br/" target="_blank" style="background: linear-gradient(135deg, #FF6B35, #FF9E6D); color: white; padding: 12px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                                <i class="fas fa-leaf"></i> Plena Longevidade
-                            </a>
-                            <a href="mailto:ricardo@animodh.com.br" style="background: linear-gradient(135deg, var(--verde), var(--azul)); color: white; padding: 12px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                                <i class="fas fa-envelope"></i> Contato Profissional
-                            </a>
-                        </div>
-                        <div style="margin-top: var(--espaco-md); padding: var(--espaco-sm); background: rgba(157, 78, 221, 0.1); border-radius: 8px;">
-                            <p style="margin: 0; font-size: 0.9rem; color: var(--texto-medio);">
-                                <strong>Família:</strong> 4 filhos (Tiago, Priscila, Rodrigo, João Gabriel) • 4 netos (Lucas, Laís, Sofia, Eduardo)<br>
-                                <strong>Origem:</strong> Campina Grande-PB • Reside em Brasília desde 1999
-                            </p>
-                        </div>
-                    </div>
+                <div class="social-card">
+                    <i class="fas fa-globe social-icon website"></i>
+                    <h3>Site Ânimo DH</h3>
+                    <p>Desenvolvimento Humano, palestras, cursos e consultoria em preparação para aposentadoria</p>
+                    <a href="https://www.animodh.com.br/" target="_blank" class="social-btn">
+                        <i class="fas fa-globe"></i> Visitar Site
+                    </a>
+                </div>
+                
+                <div class="social-card">
+                    <i class="fas fa-leaf social-icon plena"></i>
+                    <h3>Plena Longevidade</h3>
+                    <p>Portal dedicado ao envelhecimento ativo, saudável e com propósito</p>
+                    <a href="https://www.plenalongevidade.com.br/" target="_blank" class="social-btn">
+                        <i class="fas fa-leaf"></i> Visitar Portal
+                    </a>
+                </div>
+                
+                <div class="social-card">
+                    <i class="fas fa-envelope social-icon email"></i>
+                    <h3>Contato Profissional</h3>
+                    <p>Para palestras, consultorias, workshops e parcerias</p>
+                    <a href="mailto:ricardo@animodh.com.br" class="social-btn">
+                        <i class="fas fa-envelope"></i> Enviar Email
+                    </a>
                 </div>
             </div>
+            
+            <p style="color: var(--texto-medio); margin-top: var(--espaco-lg);">
+                <strong>Psicólogo Clínico CRP 01/7844 • Especialista em Longevidade • Autor • Palestrante • Professor</strong><br>
+                30 anos de experiência em desenvolvimento humano e preparação para aposentadoria
+            </p>
+        </section>
+
+        <!-- SEÇÃO DO LIVRO -->
+        <section class="book-section">
+            <h2 style="color: var(--amarelo); margin-bottom: var(--espaco-md);">
+                <i class="fas fa-book"></i> Meu Livro: Manual do Bem-Estar na Longelescência
+            </h2>
+            <p style="margin-bottom: var(--espaco-lg); opacity: 0.95; font-size: 1.2rem;">
+                dos 50 aos 100+ • Inspirado no Vento Aracati e Joyspan
+            </p>
+            <a href="https://a.co/d/0hgRnva8" target="_blank" class="book-btn">
+                <i class="fas fa-shopping-cart"></i> COMPRAR NA AMAZON
+            </a>
         </section>
     </main>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-logo">
-                <i class="fas fa-heart"></i>
-            </div>
-            <p><strong>Todos os Direitos Reservados:</strong> Ricardo de Faria Barros • Psicólogo Clínico CRP 01/7844 • Mestre em Gestão Social</p>
-            
-            <div class="footer-links">
-                <a href="#livro" class="footer-link">
-                    <i class="fas fa-book"></i> Meu Livro
-                </a>
-                <a href="https://www.youtube.com/@positivaatitude" target="_blank" class="footer-link">
-                    <i class="fab fa-youtube"></i> YouTube
-                </a>
-                <a href="https://www.plenalongevidade.com.br/" target="_blank" class="footer-link">
-                    <i class="fas fa-leaf"></i> Plena Longevidade
-                </a>
-                <a href="https://www.animodh.com.br/" target="_blank" class="footer-link">
-                    <i class="fas fa-globe"></i> Ânimo DH
-                </a>
-            </div>
-            
-            <p>Violência contra a pessoa idosa é crime! Denuncie: <strong>Disque 100</strong></p>
-            <p style="margin-top: var(--espaco-lg); font-size: 0.8rem; color: var(--texto-claro);">
-                © 2026 - Combate ao Idadismo • Desenvolvido por Ricardo de Faria Barros • Psicólogo CRP-01/7844
-            </p>
-        </div>
-    </footer>
 
     <!-- MODAL DE QUESTÕES -->
     <div class="modal" id="questionModal">
@@ -1027,12 +864,10 @@
     </div>
 
     <script>
-        // DADOS DAS 36 QUESTÕES
+        // DADOS DAS 36 QUESTÕES EM ORDEM SEQUENCIAL
         const questions = [
-            // Bloco 1: Temas Sexuais e Afetivos (3 questões)
             {
                 id: 1,
-                block: 1,
                 text: "Você vê um casal de 80 anos se beijando apaixonadamente em público. Qual seu pensamento?",
                 options: [
                     { letter: "A", text: "\"Que fofinhos, parecem duas crianças brincando de namorar!\"" },
@@ -1044,7 +879,6 @@
             },
             {
                 id: 2,
-                block: 1,
                 text: "Um homem de 75 anos comenta que está usando aplicativos de relacionamento. Você responde:",
                 options: [
                     { letter: "A", text: "\"Cuidado para não cair em golpe, o senhor não tem mais idade para essas aventuras.\"" },
@@ -1056,7 +890,6 @@
             },
             {
                 id: 3,
-                block: 1,
                 text: "Sobre o uso de preservativos e saúde sexual na terceira idade:",
                 options: [
                     { letter: "A", text: "\"É um assunto que nem deveria ser discutido, é constrangedor para o idoso.\"" },
@@ -1066,10 +899,8 @@
                 correct: "B",
                 explanation: "A A silencia a saúde do idoso por tabu. A C ignora que camisinha previne doenças, não apenas gravidez, e pressupõe que não há sexo."
             },
-            // Bloco 2: Temas Atitudinais e Comportamentais (3 questões)
             {
                 id: 4,
-                block: 2,
                 text: "Uma mulher de 70 anos aparece de minissaia e com uma tatuagem nova. Sua reação é:",
                 options: [
                     { letter: "A", text: "\"Ela está tendo uma crise de identidade, quer parecer ter 20 anos.\"" },
@@ -1081,7 +912,6 @@
             },
             {
                 id: 5,
-                block: 2,
                 text: "Ao ver um idoso praticando paraquedismo ou surf, você pensa:",
                 options: [
                     { letter: "A", text: "\"Deveria estar fazendo hidroginástica, que é mais seguro para a idade.\"" },
@@ -1093,7 +923,6 @@
             },
             {
                 id: 6,
-                block: 2,
                 text: "Você ouve um idoso dominando tecnologias de ponta e usando gírias atuais. Você:",
                 options: [
                     { letter: "A", text: "\"Acha ridículo, parece que está forçando a barra para ser jovem.\"" },
@@ -1103,10 +932,8 @@
                 correct: "C",
                 explanation: "A A julga a atualização como falsidade. A B é o 'idadismo benevolente': tratar o básico (aprender) como algo extraordinário apenas por causa da idade."
             },
-            // Bloco 3: Temas Familiares e Autonomia (5 questões)
             {
                 id: 7,
-                block: 3,
                 text: "Os filhos vendem a casa do pai de 78 anos para ele morar perto deles, sem consultá-lo profundamente.",
                 options: [
                     { letter: "A", text: "\"Um ato de amor e proteção para que ele não fique só.\"" },
@@ -1118,7 +945,6 @@
             },
             {
                 id: 8,
-                block: 3,
                 text: "A família usa a avó como babá e motorista fixa dos netos sem perguntar seus planos.",
                 options: [
                     { letter: "A", text: "\"Uma forma de manter a avó ativa e útil na família.\"" },
@@ -1130,7 +956,6 @@
             },
             {
                 id: 9,
-                block: 3,
                 text: "\"Pai, o senhor não precisa mais usar cartão de crédito, eu administro sua aposentadoria\". Isso é:",
                 options: [
                     { letter: "A", text: "\"Uma forma de violência patrimonial e quebra de autonomia.\"" },
@@ -1142,7 +967,6 @@
             },
             {
                 id: 10,
-                block: 3,
                 text: "Os filhos decidem colocar grades nas janelas e esconder as chaves do carro do pai 'pelo bem dele':",
                 options: [
                     { letter: "A", text: "\"Proteção extrema e amorosa.\"" },
@@ -1154,7 +978,6 @@
             },
             {
                 id: 11,
-                block: 3,
                 text: "Um filho não visita a mãe há meses, pois 'ela tem comida, remédios e uma TV ótima'. Isso é:",
                 options: [
                     { letter: "A", text: "\"Solidão funcional e abandono afetivo estrutural.\"" },
@@ -1164,10 +987,8 @@
                 correct: "A",
                 explanation: "O bem-estar material não supre a necessidade de pertencimento e conexão. Condenar o idoso à TV é condená-lo à morte social."
             },
-            // Bloco 4: Temas Sociais e Estado (4 questões)
             {
                 id: 12,
-                block: 4,
                 text: "Atendimento preferencial que funciona no balcão, mas o serviço demora o dobro depois:",
                 options: [
                     { letter: "A", text: "\"Um azar do dia, acontece com todo mundo.\"" },
@@ -1179,7 +1000,6 @@
             },
             {
                 id: 13,
-                block: 4,
                 text: "Editais que proíbem pessoas acima de uma certa idade de participarem de projetos:",
                 options: [
                     { letter: "A", text: "\"Normais, para garantir que o investimento no profissional dure mais.\"" },
@@ -1191,7 +1011,6 @@
             },
             {
                 id: 14,
-                block: 4,
                 text: "O uso de termos como 'vovozinho' ou 'velhinho' por desconhecidos é:",
                 options: [
                     { letter: "A", text: "\"Uma forma carinhosa e respeitosa de tratamento.\"" },
@@ -1203,7 +1022,6 @@
             },
             {
                 id: 15,
-                block: 4,
                 text: "Ao ver um idoso pobre no transporte público, a reação comum é:",
                 options: [
                     { letter: "A", text: "\"Oferecer o lugar e perguntar se ele precisa de ajuda.\"" },
@@ -1213,10 +1031,8 @@
                 correct: "B",
                 explanation: "A C é a crueldade do idadismo de classe: achar que o idoso pobre não tem o direito de circular pela cidade no horário que precisar."
             },
-            // Bloco 5: Temas Culturais e Mídia (3 questões)
             {
                 id: 16,
-                block: 5,
                 text: "Na TV, o idoso é quase sempre retratado como 'ranzinza' ou 'esquecido'. O impacto é:",
                 options: [
                     { letter: "A", text: "\"Apenas humor, não deve ser levado a sério.\"" },
@@ -1228,7 +1044,6 @@
             },
             {
                 id: 17,
-                block: 5,
                 text: "As imagens de bancos de dados (senhor de bengala, senhora tricotando):",
                 options: [
                     { letter: "A", text: "\"São a melhor forma de representar o idoso para todos entenderem.\"" },
@@ -1240,7 +1055,6 @@
             },
             {
                 id: 18,
-                block: 5,
                 text: "Linguagem inacessível (letras minúsculas, termos em inglês sem explicação) é:",
                 options: [
                     { letter: "A", text: "\"Uma falha de design sem intenção.\"" },
@@ -1250,10 +1064,8 @@
                 correct: "B",
                 explanation: "O design que não inclui todas as idades é um design excludente. Acessibilidade é um direito, não um privilégio."
             },
-            // Bloco 6: Temas Trabalhistas e Empreendedorismo (7 questões)
             {
                 id: 19,
-                block: 6,
                 text: "Um idoso decide abrir uma startup aos 65 anos. O mercado financeiro geralmente:",
                 options: [
                     { letter: "A", text: "\"Dá todo apoio pela experiência acumulada.\"" },
@@ -1265,7 +1077,6 @@
             },
             {
                 id: 20,
-                block: 6,
                 text: "No currículo de uma pessoa de 62 anos, o descarte imediato ocorre por:",
                 options: [
                     { letter: "A", text: "\"Falta de qualificação técnica para o mundo moderno.\"" },
@@ -1277,7 +1088,6 @@
             },
             {
                 id: 21,
-                block: 6,
                 text: "Uma mulher de 66 anos quer abrir conta PJ e o gerente sugere o nome do filho:",
                 options: [
                     { letter: "A", text: "\"Um conselho financeiro prudente.\"" },
@@ -1287,59 +1097,8 @@
                 correct: "B",
                 explanation: "É uma tentativa de retirar a titularidade da mulher sobre suas próprias conquistas."
             },
-            // NOVAS QUESTÕES SOBRE TRABALHO (33-36)
-            {
-                id: 33,
-                block: 6,
-                text: "Um colega diz para um trabalhador de 60 anos: 'Já está na hora de aposentar, deixe a vaga para os mais jovens'. Isso é:",
-                options: [
-                    { letter: "A", text: "\"Um conselho amigável para o bem-estar do idoso.\"" },
-                    { letter: "B", text: "\"Discriminação por idade que viola o direito ao trabalho.\"" },
-                    { letter: "C", text: "\"Uma constatação realista sobre o mercado de trabalho.\"" }
-                ],
-                correct: "B",
-                explanation: "A idade não determina capacidade produtiva. Forçar aposentadoria é discriminação e viola o Estatuto do Idoso."
-            },
-            {
-                id: 34,
-                block: 6,
-                text: "Em uma entrevista, o recrutador diz: 'As regras do processo são para outro perfil, pessoas mais jovens'. Esta atitude:",
-                options: [
-                    { letter: "A", text: "\"É uma filtragem honesta para adequação cultural.\"" },
-                    { letter: "B", text: "\"Representa discriminação estrutural nos processos seletivos.\"" },
-                    { letter: "C", text: "\"É necessária para manter a produtividade da empresa.\"" }
-                ],
-                correct: "B",
-                explanation: "Excluir candidatos por idade é ilegal e ignora que diversidade etária traz diferentes perspectivas e experiências valiosas."
-            },
-            {
-                id: 35,
-                block: 6,
-                text: "A frase 'idosos no trabalho são lentos e improdutivos' reflete:",
-                options: [
-                    { letter: "A", text: "\"Um estereótipo prejudicial sem base científica.\"" },
-                    { letter: "B", text: "\"Uma verdade estatística sobre desempenho laboral.\"" },
-                    { letter: "C", text: "\"A necessidade de funções adaptadas para idosos.\"" }
-                ],
-                correct: "A",
-                explanation: "Pesquisas mostram que trabalhadores mais velhos têm menor absenteísmo, mais experiência e maior comprometimento. A produtividade não diminui necessariamente com a idade."
-            },
-            {
-                id: 36,
-                block: 6,
-                text: "Quando um idoso permanece ativo no mercado, muitos dizem: 'O que ele quer com essa vaga, tomando espaço dos jovens?'. Esta visão:",
-                options: [
-                    { letter: "A", text: "\"Promove a competição intergeracional injusta.\"" },
-                    { letter: "B", text: "\"Ignora que o mercado deve incluir todas as gerações.\"" },
-                    { letter: "C", text: "\"Ambas as alternativas anteriores estão corretas.\"" }
-                ],
-                correct: "C",
-                explanation: "Não existe 'quantidade limitada' de trabalho. A inclusão de idosos no mercado não prejudica jovens, mas sim enriquece as organizações com experiência e diversidade."
-            },
-            // Bloco 7: Interseccionalidade e Relacionamento Intergeracional (11 questões)
             {
                 id: 22,
-                block: 7,
                 text: "Quem sofre mais preconceito na velhice?",
                 options: [
                     { letter: "A", text: "\"O homem branco de classe média.\"" },
@@ -1351,7 +1110,6 @@
             },
             {
                 id: 23,
-                block: 7,
                 text: "\"É da idade mesmo\", diz o médico sem fazer exames em um idoso pobre:",
                 options: [
                     { letter: "A", text: "\"Um diagnóstico sincero baseado na estatística.\"" },
@@ -1363,7 +1121,6 @@
             },
             {
                 id: 24,
-                block: 7,
                 text: "Um idoso de 72 anos entra em uma loja de luxo e o vendedor pergunta por quem ele trabalha:",
                 options: [
                     { letter: "A", text: "\"O vendedor está apenas sendo solícito.\"" },
@@ -1375,7 +1132,6 @@
             },
             {
                 id: 25,
-                block: 7,
                 text: "O relacionamento ideal entre jovens e idosos seria:",
                 options: [
                     { letter: "A", text: "\"O jovem ensinar tecnologia e o idoso apenas ouvir.\"" },
@@ -1387,7 +1143,6 @@
             },
             {
                 id: 26,
-                block: 7,
                 text: "Quando um idoso conta uma superação e o jovem diz 'Lá vem o museu':",
                 options: [
                     { letter: "A", text: "\"O jovem é apenas focado no futuro.\"" },
@@ -1399,7 +1154,6 @@
             },
             {
                 id: 27,
-                block: 7,
                 text: "Um idoso quer aprender IA e os colegas jovens riem. A presença dele é:",
                 options: [
                     { letter: "A", text: "\"Uma tentativa desesperada de não se sentir só.\"" },
@@ -1411,7 +1165,6 @@
             },
             {
                 id: 28,
-                block: 7,
                 text: "A família viaja e avisa à avó: 'Você vai para cuidar das crianças à noite':",
                 options: [
                     { letter: "A", text: "\"Assume-se que o tempo do idoso é 'sobra' e não tem valor próprio.\"" },
@@ -1423,7 +1176,6 @@
             },
             {
                 id: 29,
-                block: 7,
                 text: "O preconceito de ver idosos como 'sem agenda própria' resulta em:",
                 options: [
                     { letter: "A", text: "\"Mais tempo de descanso para eles.\"" },
@@ -1435,7 +1187,6 @@
             },
             {
                 id: 30,
-                block: 7,
                 text: "Sobre a 'longelescência' (seu termo!), o que ela propõe?",
                 options: [
                     { letter: "A", text: "\"Que o idoso deve agir como se tivesse 15 anos para ser aceito.\"" },
@@ -1447,7 +1198,6 @@
             },
             {
                 id: 31,
-                block: 7,
                 text: "Quando um idoso diz que quer aprender uma nova língua, a reação comum é:",
                 options: [
                     { letter: "A", text: "\"Que inspirador! Nunca é tarde para aprender.\"" },
@@ -1459,7 +1209,6 @@
             },
             {
                 id: 32,
-                block: 7,
                 text: "Um idoso quer participar de um projeto voluntário, mas é rejeitado por 'ser muito velho':",
                 options: [
                     { letter: "A", text: "\"É compreensível, projetos precisam de pessoas com energia.\"" },
@@ -1468,17 +1217,51 @@
                 ],
                 correct: "C",
                 explanation: "Idosos têm muito a contribuir. Rejeitar por idade é desperdiçar valiosa experiência e violar direitos fundamentais."
+            },
+            {
+                id: 33,
+                text: "Um colega diz para um trabalhador de 60 anos: 'Já está na hora de aposentar, deixe a vaga para os mais jovens'. Isso é:",
+                options: [
+                    { letter: "A", text: "\"Um conselho amigável para o bem-estar do idoso.\"" },
+                    { letter: "B", text: "\"Discriminação por idade que viola o direito ao trabalho.\"" },
+                    { letter: "C", text: "\"Uma constatação realista sobre o mercado de trabalho.\"" }
+                ],
+                correct: "B",
+                explanation: "A idade não determina capacidade produtiva. Forçar aposentadoria é discriminação e viola o Estatuto do Idoso."
+            },
+            {
+                id: 34,
+                text: "Em uma entrevista, o recrutador diz: 'As regras do processo são para outro perfil, pessoas mais jovens'. Esta atitude:",
+                options: [
+                    { letter: "A", text: "\"É uma filtragem honesta para adequação cultural.\"" },
+                    { letter: "B", text: "\"Representa discriminação estrutural nos processos seletivos.\"" },
+                    { letter: "C", text: "\"É necessária para manter a produtividade da empresa.\"" }
+                ],
+                correct: "B",
+                explanation: "Excluir candidatos por idade é ilegal e ignora que diversidade etária traz diferentes perspectivas e experiências valiosas."
+            },
+            {
+                id: 35,
+                text: "A frase 'idosos no trabalho são lentos e improdutivos' reflete:",
+                options: [
+                    { letter: "A", text: "\"Um estereótipo prejudicial sem base científica.\"" },
+                    { letter: "B", text: "\"Uma verdade estatística sobre desempenho laboral.\"" },
+                    { letter: "C", text: "\"A necessidade de funções adaptadas para idosos.\"" }
+                ],
+                correct: "A",
+                explanation: "Pesquisas mostram que trabalhadores mais velhos têm menor absenteísmo, mais experiência e maior comprometimento. A produtividade não diminui necessariamente com a idade."
+            },
+            {
+                id: 36,
+                text: "Quando um idoso permanece ativo no mercado, muitos dizem: 'O que ele quer com essa vaga, tomando espaço dos jovens?'. Esta visão:",
+                options: [
+                    { letter: "A", text: "\"Promove a competição intergeracional injusta.\"" },
+                    { letter: "B", text: "\"Ignora que o mercado deve incluir todas as gerações.\"" },
+                    { letter: "C", text: "\"Ambas as alternativas anteriores estão corretas.\"" }
+                ],
+                correct: "C",
+                explanation: "Não existe 'quantidade limitada' de trabalho. A inclusão de idosos no mercado não prejudica jovens, mas sim enriquece as organizações com experiência e diversidade."
             }
-        ];
-
-        const blocks = [
-            { id: 1, title: "Temas Sexuais e Afetivos", icon: "fas fa-heart", color: "block-1", count: 3 },
-            { id: 2, title: "Temas Atitudinais e Comportamentais", icon: "fas fa-running", color: "block-2", count: 3 },
-            { id: 3, title: "Temas Familiares e Autonomia", icon: "fas fa-home", color: "block-3", count: 5 },
-            { id: 4, title: "Temas Sociais e Estado", icon: "fas fa-university", color: "block-4", count: 4 },
-            { id: 5, title: "Temas Culturais e Mídia", icon: "fas fa-tv", color: "block-5", count: 3 },
-            { id: 6, title: "Temas Trabalhistas e Empreendedorismo", icon: "fas fa-briefcase", color: "block-6", count: 7 },
-            { id: 7, title: "Interseccionalidade e Relacionamento Intergeracional", icon: "fas fa-users", color: "block-7", count: 11 }
         ];
 
         // ESTADO DA APLICAÇÃO
@@ -1488,51 +1271,61 @@
         let answeredCount = 0;
 
         // ELEMENTOS DOM
-        const blocksContainer = document.getElementById('blocksContainer');
         const questionModal = document.getElementById('questionModal');
         const resultsModal = document.getElementById('resultsModal');
         const answeredCounter = document.getElementById('answered-counter');
         const scoreCounter = document.getElementById('score-counter');
+        const startTestBtn = document.getElementById('start-test-btn');
+        const downloadQuestionsBtn = document.getElementById('download-questions-btn');
         const viewResultsBtn = document.getElementById('view-results-btn');
         const resultsWarning = document.getElementById('results-warning');
 
         // INICIALIZAÇÃO
         document.addEventListener('DOMContentLoaded', function() {
-            initBlocks();
             updateCounters();
+            startTestBtn.addEventListener('click', () => openQuestionModal(0));
+            downloadQuestionsBtn.addEventListener('click', downloadQuestions);
             viewResultsBtn.addEventListener('click', showResults);
         });
 
-        // INICIALIZAR BLOCOS
-        function initBlocks() {
-            blocksContainer.innerHTML = '';
+        // BAIXAR QUESTÕES EM PDF
+        function downloadQuestions() {
+            let content = "QUESTÕES DO AUTODIAGNÓSTICO SOBRE IDADISMO\n";
+            content += "Por Ricardo de Faria Barros - Psicólogo CRP 01/7844\n";
+            content += "Especialista em Longevidade e Combate ao Idadismo\n\n";
+            content += "=================================================================\n\n";
             
-            blocks.forEach(block => {
-                const blockElement = document.createElement('div');
-                blockElement.className = `block ${block.color}`;
-                blockElement.innerHTML = `
-                    <div class="block-header">
-                        <i class="${block.icon}"></i>
-                        <span>${block.title}</span>
-                    </div>
-                    <div class="block-content">
-                        <div class="block-question">${block.count} questões para refletir sobre ${block.title.toLowerCase()}</div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
-                            <span style="font-size: 0.9rem; color: var(--texto-medio);">Clique para começar</span>
-                            <span style="color: var(--azul-escuro);"><i class="fas fa-play-circle"></i></span>
-                        </div>
-                    </div>
-                `;
-                
-                blockElement.addEventListener('click', () => {
-                    const firstQuestionIndex = questions.findIndex(q => q.block === block.id);
-                    if (firstQuestionIndex !== -1) {
-                        openQuestionModal(firstQuestionIndex);
-                    }
+            questions.forEach((question, index) => {
+                content += `QUESTÃO ${index + 1}:\n`;
+                content += `${question.text}\n\n`;
+                content += `OPÇÕES:\n`;
+                question.options.forEach(option => {
+                    content += `${option.letter}) ${option.text}\n`;
                 });
-                
-                blocksContainer.appendChild(blockElement);
+                content += `\nRESPOSTA CORRETA: ${question.correct}\n`;
+                content += `EXPLICAÇÃO: ${question.explanation}\n\n`;
+                content += "=================================================================\n\n";
             });
+            
+            content += "\n\nPARA APRENDER MAIS:\n";
+            content += "- YouTube: @positivaatitude\n";
+            content += "- Site: https://www.animodh.com.br/\n";
+            content += "- Portal: https://www.plenalongevidade.com.br/\n";
+            content += "- Email: ricardo@animodh.com.br\n\n";
+            content += "© 2026 - Combate ao Idadismo - Ricardo de Faria Barros";
+            
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Questoes_Autodiagnostico_Idadismo_Ricardo_Barros.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+            
+            // Mostrar mensagem de confirmação
+            alert('Questões baixadas com sucesso! Um arquivo .txt foi gerado com todas as 36 questões e respostas corretas.');
         }
 
         // ABRIR MODAL DE QUESTÃO
@@ -1547,18 +1340,29 @@
         function updateQuestionModal() {
             const question = questions[currentQuestionIndex];
             const userAnswer = userAnswers[currentQuestionIndex];
+            const progressPercent = ((currentQuestionIndex + 1) / 36) * 100;
             
             const modalContent = `
                 <div class="modal-header">
-                    <span>Questão ${currentQuestionIndex + 1} de 36 - Bloco ${question.block}</span>
+                    <span>Questão ${currentQuestionIndex + 1} de 36</span>
                     <span class="close-modal">&times;</span>
                 </div>
                 
-                <!-- BOX DA PERGUNTA COM FUNDO CLARO E TEXTO PRETO -->
+                <!-- BARRA DE PROGRESSO -->
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${progressPercent}%"></div>
+                    </div>
+                    <div class="progress-text">${currentQuestionIndex + 1}/36 - ${Math.round(progressPercent)}% completo</div>
+                </div>
+                
+                <!-- BOX DA PERGUNTA -->
                 <div class="question-box">
+                    <div class="question-number">QUESTÃO ${currentQuestionIndex + 1}</div>
                     <div class="question-text">${question.text}</div>
                 </div>
                 
+                <!-- OPÇÕES -->
                 <div class="options-container">
                     ${question.options.map(option => `
                         <div class="option ${userAnswer === option.letter ? 'selected' : ''} 
@@ -1571,29 +1375,28 @@
                     `).join('')}
                 </div>
                 
+                <!-- EXPLICAÇÃO (SE RESPONDIDA) -->
                 ${userAnswer ? `
                     <div class="explanation">
-                        <div class="explanation-title">Por que as outras estão erradas?</div>
+                        <div class="explanation-title">📝 Por que as outras estão erradas?</div>
                         <div>${question.explanation}</div>
                     </div>
                 ` : ''}
                 
-                <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <!-- BOTÕES DE NAVEGAÇÃO -->
+                <div class="nav-buttons">
                     <button class="nav-btn prev" ${currentQuestionIndex === 0 ? 'disabled style="display: none;"' : ''}>
-                        <i class="fas fa-arrow-left"></i> Anterior
+                        <i class="fas fa-arrow-left"></i> ANTERIOR
                     </button>
-                    <div style="flex: 1; text-align: center; color: var(--texto-medio); font-weight: 600; padding: 15px;">
-                        ${answeredCount}/36 respondidas
-                    </div>
                     <button class="nav-btn next" ${!userAnswer ? 'disabled' : ''}>
-                        ${currentQuestionIndex < questions.length - 1 ? 'Próxima <i class="fas fa-arrow-right"></i>' : 'Fechar'}
+                        ${currentQuestionIndex < questions.length - 1 ? 'PRÓXIMA <i class="fas fa-arrow-right"></i>' : 'FINALIZAR TESTE'}
                     </button>
                 </div>
             `;
             
             questionModal.querySelector('.modal-content').innerHTML = modalContent;
             
-            // Adicionar eventos
+            // ADICIONAR EVENTOS
             const closeBtn = questionModal.querySelector('.close-modal');
             const prevBtn = questionModal.querySelector('.nav-btn.prev');
             const nextBtn = questionModal.querySelector('.nav-btn.next');
@@ -1641,7 +1444,6 @@
             userAnswers[currentQuestionIndex] = selectedLetter;
             
             if (selectedLetter === question.correct) {
-                // Calcula a pontuação baseada em 10 pontos totais
                 score = Math.round((userAnswers.filter((answer, idx) => 
                     answer !== null && answer === questions[idx].correct
                 ).length / 36) * 10 * 10) / 10;
@@ -1668,7 +1470,6 @@
                 return;
             }
             
-            // Calcular nota final (0-10)
             const notaFinal = score;
             
             let level, message, color;
@@ -1693,55 +1494,61 @@
             
             const resultsHTML = `
                 <div style="padding: 40px; text-align: center;">
-                    <div style="font-size: 2.5rem; color: var(--azul-escuro); margin-bottom: 20px;">Seu Resultado Completo</div>
+                    <div style="font-size: 2.5rem; color: var(--azul-escuro); margin-bottom: 20px; font-weight: 700;">SEU RESULTADO COMPLETO</div>
                     
                     <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 30px 0;">
                         <div style="text-align: center;">
-                            <div style="font-size: 4rem; font-weight: bold; color: var(--rosa); margin: 10px 0;">${notaFinal.toFixed(1)}</div>
-                            <div style="font-weight: 600; color: var(--texto-medio);">Nota (0-10)</div>
+                            <div style="font-size: 4.5rem; font-weight: 900; color: var(--rosa); margin: 10px 0; background: linear-gradient(45deg, var(--rosa), var(--laranja)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">${notaFinal.toFixed(1)}</div>
+                            <div style="font-weight: 700; color: var(--texto-medio);">NOTA (0-10)</div>
                         </div>
                         <div style="text-align: center;">
-                            <div style="font-size: 4rem; font-weight: bold; color: var(--azul); margin: 10px 0;">${answeredCount}</div>
-                            <div style="font-weight: 600; color: var(--texto-medio);">Questões Respondidas</div>
+                            <div style="font-size: 4.5rem; font-weight: 900; color: var(--azul); margin: 10px 0; background: linear-gradient(45deg, var(--azul), var(--roxo)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">${answeredCount}</div>
+                            <div style="font-weight: 700; color: var(--texto-medio);">QUESTÕES RESPONDIDAS</div>
                         </div>
                     </div>
                     
-                    <div style="display: inline-block; padding: 10px 25px; border-radius: 50px; font-weight: bold; font-size: 1.2rem; margin-bottom: 30px; background: ${color}; color: white;">
+                    <div style="display: inline-block; padding: 15px 35px; border-radius: 50px; font-weight: 700; font-size: 1.5rem; margin-bottom: 30px; background: ${color}; color: white; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
                         ${level}
                     </div>
                     
-                    <div style="font-size: 1.2rem; margin-bottom: 40px; color: #555; line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    <div style="font-size: 1.3rem; margin-bottom: 40px; color: #555; line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto; font-weight: 600;">
                         ${message}
                     </div>
                     
-                    <div style="background: rgba(126, 214, 223, 0.1); padding: 25px; border-radius: 15px; margin: 30px 0; text-align: left;">
-                        <h4 style="color: var(--azul-escuro); margin-bottom: 15px;">📊 Seu Desempenho:</h4>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-                            <div>
-                                <strong>Acertos:</strong> ${Math.round((notaFinal / 10) * 36)} de 36<br>
-                                <strong>Porcentagem:</strong> ${Math.round(notaFinal * 10)}%
-                            </div>
-                            <div>
-                                <strong>Nível de Consciência:</strong> ${getNivelConsciencia(notaFinal)}<br>
-                                <strong>Próximo Passo:</strong> ${getProximoPasso(notaFinal)}
-                            </div>
+                    <div style="background: rgba(126, 214, 223, 0.1); padding: 30px; border-radius: 20px; margin: 30px 0; text-align: center; border: 3px solid var(--azul);">
+                        <h4 style="color: var(--azul-escuro); margin-bottom: 20px; font-size: 1.4rem;">📊 SEU DESEMPENHO DETALHADO</h4>
+                        <div style="display: inline-block; text-align: left; font-size: 1.1rem; font-weight: 600;">
+                            <div style="margin-bottom: 10px;"><strong>Acertos:</strong> ${Math.round((notaFinal / 10) * 36)} de 36</div>
+                            <div style="margin-bottom: 10px;"><strong>Porcentagem:</strong> ${Math.round(notaFinal * 10)}%</div>
+                            <div style="margin-bottom: 10px;"><strong>Nível de Consciência:</strong> ${getNivelConsciencia(notaFinal)}</div>
+                            <div><strong>Próximo Passo:</strong> ${getProximoPasso(notaFinal)}</div>
                         </div>
                     </div>
                     
-                    <!-- SEÇÃO DA PESQUISA MUNDO LONGEVO -->
-                    <div style="background: linear-gradient(135deg, rgba(6, 214, 160, 0.1), rgba(126, 214, 223, 0.1)); padding: 25px; border-radius: 15px; margin: 30px 0; text-align: center; border: 2px solid var(--verde);">
-                        <h4 style="color: var(--azul-escuro); margin-bottom: 15px;">🔬 Participe da Pesquisa Mundo Longevo</h4>
-                        <p style="color: var(--texto-medio); margin-bottom: 20px;">
-                            Se você tem <strong>50 anos ou mais</strong>, sua experiência é valiosa para a ciência da longevidade!
+                    <!-- CHAMADA PARA PESQUISA MUNDO LONGEVO -->
+                    <div style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(33, 150, 243, 0.1)); padding: 30px; border-radius: 20px; margin: 30px 0; text-align: center; border: 3px solid var(--verde);">
+                        <h4 style="color: var(--azul-escuro); margin-bottom: 20px; font-size: 1.4rem;">🔬 PARTICIPE DA PESQUISA MUNDO LONGEVO</h4>
+                        <p style="color: var(--texto-medio); margin-bottom: 20px; font-size: 1.1rem;">
+                            <strong>Você tem 50 anos ou mais?</strong> Sua experiência é valiosa para a ciência da longevidade!
                         </p>
-                        <p style="color: var(--texto-medio); margin-bottom: 25px; font-size: 0.95rem;">
+                        <p style="color: var(--texto-medio); margin-bottom: 25px; font-size: 1rem;">
                             <strong>Como brinde:</strong> Todos os participantes recebem meu livro <strong>"Aposentei-me e Agora?"</strong> em formato digital!
                         </p>
-                        <a href="https://forms.gle/3i9bUdmc5AicdXHUA" target="_blank" class="research-btn" style="margin: 0 auto;">
+                        <a href="https://forms.gle/3i9bUdmc5AicdXHUA" target="_blank" style="display: inline-block; padding: 18px 40px; background: linear-gradient(90deg, var(--verde), var(--azul)); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.2rem; box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4); transition: all 0.3s ease;">
                             <i class="fas fa-clipboard-check"></i> PARTICIPAR DA PESQUISA
                         </a>
-                        <p style="color: var(--texto-claro); font-size: 0.8rem; margin-top: 15px;">
-                            <i class="fas fa-lock"></i> Dados protegidos • Anônimo • Ética aprovada
+                        <p style="color: var(--texto-claro); font-size: 0.9rem; margin-top: 15px;">
+                            <i class="fas fa-lock"></i> Dados protegidos • Pesquisa anônima • Ética aprovada
+                        </p>
+                    </div>
+                    
+                    <!-- BOTÃO PARA BAIXAR QUESTÕES -->
+                    <div style="margin: 30px 0;">
+                        <button onclick="downloadQuestions()" style="padding: 18px 40px; background: linear-gradient(90deg, var(--roxo), var(--azul)); color: white; border: none; border-radius: 50px; font-weight: 700; font-size: 1.2rem; cursor: pointer; margin: 10px; box-shadow: 0 10px 25px rgba(156, 39, 176, 0.4); transition: all 0.3s ease;">
+                            <i class="fas fa-download"></i> BAIXAR QUESTÕES E RESPOSTAS
+                        </button>
+                        <p style="color: var(--texto-medio); margin-top: 10px; font-size: 0.9rem;">
+                            Baixe todas as 36 questões com explicações para estudar
                         </p>
                     </div>
                     
@@ -1752,8 +1559,8 @@
                         </p>
                     </div>
                     
-                    <button onclick="closeResultsModal()" style="padding: 15px 40px; background: var(--azul-escuro); color: white; border: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; cursor: pointer; margin-top: 20px;">
-                        Fechar
+                    <button onclick="closeResultsModal()" style="padding: 18px 45px; background: linear-gradient(90deg, var(--azul-escuro), #1565C0); color: white; border: none; border-radius: 50px; font-weight: 700; font-size: 1.2rem; cursor: pointer; margin-top: 20px; box-shadow: 0 10px 25px rgba(13, 71, 161, 0.3); transition: all 0.3s ease;">
+                        FECHAR
                     </button>
                 </div>
             `;
@@ -1772,10 +1579,10 @@
         }
 
         function getProximoPasso(nota) {
-            if (nota >= 9) return "Compartilhe seu conhecimento";
-            if (nota >= 7) return "Profundize conceitos específicos";
-            if (nota >= 5) return "Reflita sobre os erros";
-            return "Converse com pessoas idosas";
+            if (nota >= 9) return "Compartilhe seu conhecimento!";
+            if (nota >= 7) return "Continue estudando sobre longevidade";
+            if (nota >= 5) return "Reflita sobre os conceitos aprendidos";
+            return "Converse mais com pessoas idosas";
         }
 
         // FECHAR MODAL DE RESULTADOS
