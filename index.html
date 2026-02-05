@@ -56,6 +56,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent; /* Remove highlight azul no iOS */
         }
         
         html {
@@ -69,6 +70,8 @@
             line-height: 1.6;
             overflow-x: hidden;
             padding-bottom: 60px;
+            -webkit-font-smoothing: antialiased; /* Melhora renderização no Safari */
+            -moz-osx-font-smoothing: grayscale;
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -160,16 +163,17 @@
             margin: 0 auto var(--espaco-lg);
         }
         
-        /* BANNER DE PESQUISA */
+        /* BANNER DE PESQUISA - CORRIGIDO z-index */
         .survey-banner {
             background: linear-gradient(90deg, var(--amarelo), var(--laranja));
             color: var(--azul-escuro);
             padding: var(--espaco-sm) 0;
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            -webkit-backface-visibility: hidden; /* Corrige rendering no iOS */
         }
         
         .survey-banner.hidden {
@@ -208,6 +212,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            -webkit-appearance: none; /* Remove estilos padrão iOS */
         }
         
         .banner-btn:hover {
@@ -226,6 +231,7 @@
             box-shadow: var(--sombra);
             border-left: 8px solid var(--azul);
             position: relative;
+            z-index: 1; /* Garante que fique acima de elementos com fundo */
         }
         
         .highlight {
@@ -252,6 +258,8 @@
             gap: var(--espaco-lg);
             margin: var(--espaco-xl) auto;
             flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
         }
         
         .counter-box {
@@ -262,6 +270,8 @@
             box-shadow: var(--sombra);
             border: 5px solid var(--azul);
             min-width: 200px;
+            position: relative;
+            z-index: 1;
         }
         
         .counter-value {
@@ -298,6 +308,8 @@
             box-shadow: 0 5px 15px rgba(255, 209, 102, 0.4);
             opacity: 0.3;
             transition: var(--transicao);
+            position: relative;
+            z-index: 1;
         }
         
         .medal.active {
@@ -306,12 +318,14 @@
             box-shadow: 0 5px 20px rgba(255, 209, 102, 0.7);
         }
         
-        /* BLOCOS */
+        /* BLOCOS - CORRIGIDO transparência */
         .blocks-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: var(--espaco-lg);
             margin: var(--espaco-xl) 0;
+            position: relative;
+            z-index: 1;
         }
         
         .block {
@@ -321,6 +335,9 @@
             box-shadow: var(--sombra);
             transition: var(--transicao);
             cursor: pointer;
+            position: relative;
+            opacity: 1 !important; /* Força opacidade total */
+            -webkit-transform: translateZ(0); /* Aceleração GPU */
         }
         
         .block:hover {
@@ -335,6 +352,8 @@
             display: flex;
             align-items: center;
             gap: var(--espaco-sm);
+            position: relative;
+            z-index: 2;
         }
         
         .block-1 .block-header { background: linear-gradient(90deg, var(--rosa), #FF8FA3); }
@@ -347,6 +366,9 @@
         
         .block-content {
             padding: var(--espaco-lg);
+            position: relative;
+            z-index: 1;
+            background: white; /* Garante fundo sólido */
         }
         
         .block-question {
@@ -397,6 +419,8 @@
             border-radius: 15px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
         
         .book-cover-inner {
@@ -426,6 +450,7 @@
             margin-top: var(--espaco-md);
             width: 100%;
             text-align: center;
+            -webkit-appearance: none;
         }
         
         .book-buy-btn:hover {
@@ -433,7 +458,7 @@
             box-shadow: 0 15px 30px rgba(255, 107, 139, 0.6);
         }
         
-        /* SEÇÃO DE PESQUISA */
+        /* SEÇÃO DE PESQUISA - CORRIGIDO backdrop-filter */
         .survey-section {
             background: linear-gradient(135deg, var(--verde), var(--azul-escuro));
             color: white;
@@ -466,7 +491,9 @@
             background: rgba(255, 255, 255, 0.15);
             padding: var(--espaco-lg);
             border-radius: 15px;
-            backdrop-filter: blur(10px);
+            /* Removido backdrop-filter que pode causar problemas no iOS */
+            backdrop-filter: none; /* Substituído por fundo sólido */
+            -webkit-backdrop-filter: none; /* Para Safari */
         }
         
         .survey-icon {
@@ -487,6 +514,7 @@
             transition: var(--transicao);
             margin: var(--espaco-md) 0;
             text-align: center;
+            -webkit-appearance: none;
         }
         
         .survey-btn:hover {
@@ -565,6 +593,8 @@
             border-radius: 15px;
             box-shadow: var(--sombra);
             transition: var(--transicao);
+            position: relative;
+            z-index: 1;
         }
         
         .author-card:hover {
@@ -596,6 +626,8 @@
             border-top: 2px solid #E0E0E0;
             color: var(--texto-medio);
             font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
         }
         
         .footer-logo {
@@ -640,13 +672,14 @@
             z-index: 1000;
             transition: var(--transicao);
             border: none;
+            -webkit-appearance: none;
         }
         
         .pwa-install-btn:hover {
             transform: scale(1.1);
         }
         
-        /* MODAL */
+        /* MODAL - CORRIGIDO para iOS */
         .modal {
             display: none;
             position: fixed;
@@ -658,6 +691,7 @@
             z-index: 2000;
             overflow-y: auto;
             padding: 20px;
+            -webkit-overflow-scrolling: touch; /* Scroll suave no iOS */
         }
         
         .modal-content {
@@ -668,6 +702,9 @@
             overflow: hidden;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
             animation: modalAppear 0.5s;
+            position: relative;
+            z-index: 2001;
+            opacity: 1 !important; /* Garante que não fique transparente */
         }
         
         @keyframes modalAppear {
@@ -685,9 +722,41 @@
             font-weight: 600;
             text-align: center;
             border-left: 5px solid var(--rosa);
+            position: relative;
+            z-index: 1;
         }
         
-        /* RESPONSIVIDADE */
+        /* RESPONSIVIDADE ESPECÍFICA PARA iOS */
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            /* Regras específicas para Safari/Chrome */
+            .block, .intro-box, .modal-content {
+                -webkit-transform: translateZ(0); /* Força aceleração por hardware */
+                transform: translateZ(0);
+            }
+            
+            .survey-card {
+                background: rgba(255, 255, 255, 0.25); /* Mais opaco para Safari */
+            }
+        }
+        
+        /* Fix para modais no iOS */
+        @supports (-webkit-touch-callout: none) {
+            .modal {
+                position: fixed;
+                height: -webkit-fill-available; /* Altura total no iOS */
+            }
+            
+            .modal-content {
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            /* Previne zoom automático no iOS */
+            select, textarea, input, button {
+                font-size: 16px;
+            }
+        }
+        
+        /* RESPONSIVIDADE GERAL */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -747,6 +816,10 @@
             
             .counter-box {
                 width: 100%;
+            }
+            
+            .modal {
+                padding: 10px;
             }
         }
     </style>
@@ -835,7 +908,7 @@
 
         <!-- BOTÃO VER RESULTADOS -->
         <div style="text-align: center; margin: var(--espaco-xl) 0;">
-            <button id="view-results-btn" class="survey-btn" style="background: linear-gradient(90deg, var(--roxo), var(--rosa)); color: white; border: none; cursor: pointer; padding: 20px 50px; font-size: 1.3rem;">
+            <button id="view-results-btn" class="survey-btn" style="background: linear-gradient(90deg, var(--roxo), var(--rosa)); color: white; border: none; cursor: pointer; padding: 20px 50px; font-size: 1.3rem; -webkit-appearance: none;">
                 <i class="fas fa-chart-bar"></i> VER MEU RESULTADO COMPLETO
             </button>
             <p id="results-warning" style="color: var(--rosa); margin-top: var(--espaco-sm); display: none;">
@@ -1562,9 +1635,9 @@
                     </div>
                     <div class="block-content">
                         <div class="block-question">${block.count} questões para refletir sobre ${block.title.toLowerCase()}</div>
-                        <div class="block-stats">
-                            <span>Clique para começar</span>
-                            <span><i class="fas fa-play-circle"></i></span>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                            <span style="font-size: 0.9rem; color: var(--texto-medio);">Clique para começar</span>
+                            <span style="color: var(--azul-escuro);"><i class="fas fa-play-circle"></i></span>
                         </div>
                     </div>
                 `;
@@ -1606,7 +1679,7 @@
                     <div class="options-container" style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px;">
                         ${question.options.map(option => `
                             <div class="option ${userAnswer === option.letter ? 'selected' : ''} ${userAnswer && option.letter === question.correct ? 'correct' : ''} ${userAnswer && option.letter !== question.correct ? 'incorrect' : ''}" 
-                                 style="padding: 18px; border-radius: 15px; border: 2px solid #E0E0E0; cursor: pointer; transition: all 0.3s; font-size: 1.1rem; display: flex; align-items: center; gap: 15px;">
+                                 style="padding: 18px; border-radius: 15px; border: 2px solid #E0E0E0; cursor: pointer; transition: all 0.3s; font-size: 1.1rem; display: flex; align-items: center; gap: 15px; background-color: white;">
                                 <div class="option-letter" style="width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; flex-shrink: 0; background-color: ${getOptionColor(option.letter)};">
                                     ${option.letter}
                                 </div>
@@ -1862,7 +1935,17 @@
         function shareResults() {
             const nota = score.toFixed(1);
             const text = `Acabei de fazer o teste "Autodiagnóstico: O Idadismo Mora em Você?" e tirei nota ${nota}/10! Descubra seu nível de consciência sobre idadismo e longelescência.`;
-            navigator.share ? navigator.share({ text }) : alert("Copie o link para compartilhar: " + window.location.href);
+            if (navigator.share) {
+                navigator.share({ 
+                    title: 'Meu Resultado do Teste Anti-Idadismo',
+                    text: text,
+                    url: window.location.href
+                });
+            } else {
+                // Fallback para copiar para área de transferência
+                navigator.clipboard.writeText(`${text}\n\n${window.location.href}`)
+                    .then(() => alert("Link copiado para a área de transferência!"));
+            }
         }
 
         // PWA FUNCTIONS
