@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Longelescência - Autodiagnóstico</title>
+    <title>Das 50- para as 50+ - Autodiagnóstico de Idadismo</title>
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -73,28 +71,11 @@
             margin-bottom: var(--espaco-sm);
         }
         
-        h1 {
-            font-size: 2.8rem;
-        }
-        
-        h2 {
-            font-size: 2.2rem;
-            color: var(--azul-escuro);
-        }
-        
-        h3 {
-            font-size: 1.6rem;
-        }
-        
-        p {
-            margin-bottom: var(--espaco-sm);
-            font-size: 1.1rem;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        h1 { font-size: 2.8rem; }
+        h2 { font-size: 2.2rem; color: var(--azul-escuro); }
+        h3 { font-size: 1.6rem; }
+        p { margin-bottom: var(--espaco-sm); font-size: 1.1rem; }
+        a { text-decoration: none; color: inherit; }
         
         .container {
             width: 100%;
@@ -127,84 +108,60 @@
             z-index: 1;
         }
         
-        .header-content {
-            position: relative;
-            z-index: 2;
-            padding: 0 var(--espaco-md);
-        }
+        .header-content { position: relative; z-index: 2; padding: 0 var(--espaco-md); }
         
         .header h1 {
             font-size: 3rem;
-            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
             margin-bottom: var(--espaco-md);
-            background: linear-gradient(45deg, #FFF, #FFEB3B);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #FFFFFF;
         }
         
         .subtitle {
             font-size: 1.4rem;
             opacity: 0.95;
             max-width: 800px;
-            margin: 0 auto var(--espaco-lg);
+            margin: 0 auto var(--espaco-sm);
             font-weight: 600;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
-        
-        /* SEÇÃO DE FEEDBACK */
-        .feedback-section {
-            background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
-            padding: var(--espaco-xl);
-            border-radius: var(--borda-radius);
-            margin: var(--espaco-xl) 0;
-            box-shadow: var(--sombra);
-            text-align: center;
-            border-left: 8px solid var(--laranja);
-        }
-        
-        .feedback-title {
-            color: var(--azul-escuro);
-            margin-bottom: var(--espaco-lg);
-            font-size: 1.8rem;
-        }
-        
-        .feedback-box {
-            background: white;
-            padding: var(--espaco-xl);
-            border-radius: 20px;
-            margin: var(--espaco-lg) 0;
-            box-shadow: var(--sombra);
-            text-align: center;
-        }
-        
-        .feedback-icon {
-            font-size: 4rem;
-            color: var(--laranja);
-            margin-bottom: var(--espaco-lg);
-            display: block;
-        }
-        
-        .feedback-btn {
+
+        .header-compliment {
+            font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.15);
             display: inline-block;
-            padding: 20px 50px;
-            background: linear-gradient(90deg, var(--laranja), var(--rosa));
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            margin-bottom: var(--espaco-md);
+        }
+        
+        /* BLOCO DE DESTAQUE: ANABB 70+ */
+        .anabb-box {
+            background: linear-gradient(135deg, #E3F2FD, #FFF);
+            border: 2px solid #1565C0;
+            border-left: 8px solid #0D47A1;
+            padding: var(--espaco-lg);
+            border-radius: var(--borda-radius-sm);
+            margin-bottom: var(--espaco-lg);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        .anabb-tag {
+            background-color: #0D47A1;
             color: white;
-            text-decoration: none;
-            border-radius: 50px;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
             font-weight: 700;
-            font-size: 1.4rem;
-            box-shadow: 0 15px 35px rgba(255, 87, 34, 0.4);
-            transition: var(--transicao);
-            margin-top: var(--espaco-md);
+            display: inline-block;
+            margin-bottom: 10px;
         }
         
-        .feedback-btn:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(255, 87, 34, 0.6);
-        }
-        
-        /* REDES SOCIAIS DO AUTOR */
+        /* REDES SOCIAIS E BLOG DO AUTOR */
         .social-section {
             background: white;
             padding: var(--espaco-xl);
@@ -214,18 +171,8 @@
             text-align: center;
         }
         
-        .social-title {
-            color: var(--azul-escuro);
-            margin-bottom: var(--espaco-lg);
-            font-size: 1.8rem;
-        }
-        
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--espaco-lg);
-            margin-bottom: var(--espaco-xl);
-        }
+        .social-title { color: var(--azul-escuro); margin-bottom: var(--espaco-lg); font-size: 1.8rem; }
+        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--espaco-lg); margin-bottom: var(--espaco-xl); }
         
         .social-card {
             background: linear-gradient(135deg, #F8F9FA, #E8F4F8);
@@ -234,21 +181,17 @@
             box-shadow: var(--sombra);
             transition: var(--transicao);
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         
-        .social-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .social-icon {
-            font-size: 2.5rem;
-            margin-bottom: var(--espaco-md);
-            display: block;
-        }
-        
+        .social-card:hover { transform: translateY(-5px); }
+        .social-icon { font-size: 2.5rem; margin-bottom: var(--espaco-md); display: block; }
         .social-icon.youtube { color: #FF0000; }
         .social-icon.website { color: var(--azul); }
         .social-icon.plena { color: var(--verde); }
+        .social-icon.blog { color: var(--laranja); }
         .social-icon.email { color: var(--roxo); }
         .social-icon.tiktok { color: #000000; }
         
@@ -265,10 +208,7 @@
             margin-top: var(--espaco-sm);
         }
         
-        .social-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
+        .social-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
         
         /* INTRO COM RELATOS */
         .intro-box {
@@ -293,18 +233,6 @@
             display: inline-block;
         }
         
-        .quote {
-            font-style: italic;
-            color: var(--azul-escuro);
-            border-left: 5px solid var(--roxo);
-            padding-left: var(--espaco-lg);
-            margin: var(--espaco-lg) 0;
-            font-size: 1.2rem;
-            background: linear-gradient(90deg, rgba(156, 39, 176, 0.1), transparent);
-            padding: var(--espaco-md);
-            border-radius: 0 var(--borda-radius-sm) var(--borda-radius-sm) 0;
-        }
-        
         .relatos-box {
             background: linear-gradient(135deg, #FFF8E1, #FFECB3);
             padding: var(--espaco-lg);
@@ -313,7 +241,6 @@
             border-left: 5px solid var(--laranja);
         }
         
-        /* NOTA SOBRE LINGUAGEM INCLUSIVA */
         .linguagem-box {
             background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
             padding: var(--espaco-md);
@@ -344,17 +271,9 @@
             transition: var(--transicao);
         }
         
-        .counter-box:hover {
-            transform: translateY(-5px) scale(1.05);
-        }
-        
-        .counter-box:nth-child(1) {
-            border-color: var(--rosa);
-        }
-        
-        .counter-box:nth-child(2) {
-            border-color: var(--azul);
-        }
+        .counter-box:hover { transform: translateY(-5px) scale(1.05); }
+        .counter-box:nth-child(1) { border-color: var(--rosa); }
+        .counter-box:nth-child(2) { border-color: var(--azul); }
         
         .counter-value {
             font-size: 4.5rem;
@@ -367,61 +286,68 @@
             background-clip: text;
         }
         
-        .counter-label {
-            font-size: 1.3rem;
-            color: var(--azul-escuro);
-            font-weight: 700;
-        }
+        .counter-label { font-size: 1.3rem; color: var(--azul-escuro); font-weight: 700; }
         
-        /* BOTÕES DE AÇÃO */
-        .action-buttons {
-            display: flex;
+        /* BOTÃO HERO NA CAPA */
+        .hero-start-btn {
+            display: inline-flex;
+            align-items: center;
             justify-content: center;
-            gap: var(--espaco-lg);
-            flex-wrap: wrap;
-            margin: var(--espaco-xl) 0;
+            gap: 14px;
+            padding: 22px 64px;
+            background: linear-gradient(90deg, #FFEB3B, #FF9800);
+            color: #0D47A1;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-top: var(--espaco-md);
+            box-shadow: 0 15px 40px rgba(255, 152, 0, 0.45);
+            animation: pulse-hero 2.2s ease-in-out infinite;
+            transition: var(--transicao);
+            letter-spacing: 0.4px;
         }
+
+        .hero-start-btn:hover {
+            transform: translateY(-6px) scale(1.04);
+            box-shadow: 0 22px 50px rgba(255, 152, 0, 0.65);
+            animation: none;
+        }
+
+        @keyframes pulse-hero {
+            0%, 100% { box-shadow: 0 15px 40px rgba(255, 152, 0, 0.45); }
+            50% { box-shadow: 0 15px 40px rgba(255, 152, 0, 0.45), 0 0 0 14px rgba(255,235,59,0.18), 0 0 0 28px rgba(255,235,59,0.07); }
+        }
+
+        .hero-hint { color: rgba(255, 255, 255, 0.72); font-size: 0.92rem; margin-top: 12px; font-weight: 500; }
+
+        /* BOTÕES DE AÇÃO SECUNDÁRIOS */
+        .action-buttons { display: flex; justify-content: center; gap: var(--espaco-md); flex-wrap: wrap; margin: var(--espaco-lg) 0; }
         
         .action-btn {
-            padding: 25px 50px;
+            padding: 18px 38px;
             border: none;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             cursor: pointer;
             transition: var(--transicao);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            min-width: 300px;
+            gap: 12px;
+            min-width: 220px;
             text-align: center;
         }
         
-        .start-btn {
-            background: linear-gradient(90deg, var(--azul), var(--roxo));
-            color: white;
-            box-shadow: 0 15px 35px rgba(33, 150, 243, 0.4);
-        }
+        .start-btn { background: linear-gradient(90deg, var(--azul), var(--roxo)); color: white; box-shadow: 0 10px 25px rgba(33, 150, 243, 0.35); }
+        .download-btn { background: linear-gradient(90deg, var(--verde), #4CAF50); color: white; box-shadow: 0 10px 25px rgba(76, 175, 80, 0.35); }
+        .results-btn { background: linear-gradient(90deg, var(--amarelo), var(--laranja)); color: var(--azul-escuro); box-shadow: 0 10px 25px rgba(255, 193, 7, 0.35); }
         
-        .download-btn {
-            background: linear-gradient(90deg, var(--verde), #4CAF50);
-            color: white;
-            box-shadow: 0 15px 35px rgba(76, 175, 80, 0.4);
-        }
+        .action-btn:hover { transform: translateY(-5px); box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25); }
         
-        .results-btn {
-            background: linear-gradient(90deg, var(--amarelo), var(--laranja));
-            color: var(--azul-escuro);
-            box-shadow: 0 15px 35px rgba(255, 193, 7, 0.4);
-        }
-        
-        .action-btn:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* AVISO IMPORTANTE */
         .aviso {
             background: linear-gradient(90deg, var(--amarelo), var(--laranja));
             color: var(--azul-escuro);
@@ -463,7 +389,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* HEADER DO MODAL */
         .modal-header {
             background: linear-gradient(90deg, var(--azul-escuro), var(--roxo));
             padding: 25px;
@@ -475,17 +400,9 @@
             align-items: center;
         }
         
-        .close-modal {
-            font-size: 2.5rem;
-            cursor: pointer;
-            transition: var(--transicao);
-        }
+        .close-modal { font-size: 2.5rem; cursor: pointer; transition: var(--transicao); }
+        .close-modal:hover { transform: rotate(90deg); }
         
-        .close-modal:hover {
-            transform: rotate(90deg);
-        }
-        
-        /* QUESTÃO */
         .question-box {
             background: linear-gradient(135deg, #F8F9FA, #E8F4F8);
             padding: 40px;
@@ -506,15 +423,8 @@
             font-size: 1.2rem;
         }
         
-        .question-text {
-            font-size: 1.6rem;
-            line-height: 1.5;
-            color: #000000;
-            font-weight: 600;
-            margin-bottom: 0;
-        }
+        .question-text { font-size: 1.6rem; line-height: 1.5; color: #000000; font-weight: 600; margin-bottom: 0; }
         
-        /* OPÇÕES */
         .option {
             padding: 22px;
             border-radius: 20px;
@@ -529,25 +439,8 @@
             margin: 18px 30px;
         }
         
-        .option:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .option.selected {
-            border-color: var(--azul);
-            background: linear-gradient(135deg, #E8F4F8, #F0F9FF);
-        }
-        
-        .option.correct {
-            border-color: var(--verde);
-            background: linear-gradient(135deg, #E8F9F3, #F0FFF5);
-        }
-        
-        .option.incorrect {
-            border-color: var(--rosa);
-            background: linear-gradient(135deg, #FFEEF2, #FFF0F5);
-        }
+        .option:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); }
+        .option.selected { border-color: var(--azul); background: linear-gradient(135deg, #E8F4F8, #F0F9FF); }
         
         .option-letter {
             width: 50px;
@@ -566,19 +459,8 @@
         .option-letter.B { background: linear-gradient(45deg, var(--azul), #2196F3); }
         .option-letter.C { background: linear-gradient(45deg, var(--amarelo), #FFC107); }
         
-        .option-text {
-            color: #333;
-            flex: 1;
-            font-weight: 600;
-        }
-        
-        /* BOTÕES DE NAVEGAÇÃO */
-        .nav-buttons {
-            display: flex;
-            justify-content: space-between;
-            padding: 30px;
-            background: linear-gradient(135deg, #F8F9FA, #E8F4F8);
-        }
+        .option-text { color: #333; flex: 1; font-weight: 600; }
+        .nav-buttons { display: flex; justify-content: space-between; padding: 30px; background: linear-gradient(135deg, #F8F9FA, #E8F4F8); }
         
         .nav-btn {
             padding: 18px 40px;
@@ -593,253 +475,131 @@
             transition: var(--transicao);
         }
         
-        .nav-btn.prev {
-            background: linear-gradient(90deg, #E0E0E0, #F0F0F0);
-            color: #666;
-        }
+        .nav-btn.prev { background: linear-gradient(90deg, #E0E0E0, #F0F0F0); color: #666; }
+        .nav-btn.next { background: linear-gradient(90deg, var(--azul), var(--roxo)); color: white; }
+        .nav-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .nav-btn:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); }
         
-        .nav-btn.next {
-            background: linear-gradient(90deg, var(--azul), var(--roxo));
-            color: white;
-        }
+        .progress-container { padding: 20px 30px; background: white; }
+        .progress-bar { width: 100%; height: 20px; background: #E0E0E0; border-radius: 10px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--azul), var(--roxo)); border-radius: 10px; transition: width 0.5s ease; }
         
-        .nav-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-        
-        .nav-btn:hover:not(:disabled) {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* PROGRESSO */
-        .progress-container {
-            padding: 20px 30px;
-            background: white;
-        }
-        
-        .progress-bar {
-            width: 100%;
-            height: 20px;
-            background: #E0E0E0;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--azul), var(--roxo));
-            border-radius: 10px;
-            transition: width 0.5s ease;
-        }
-        
-        .progress-text {
-            text-align: center;
-            margin-top: 10px;
-            font-weight: 700;
-            color: var(--azul-escuro);
-        }
-        
-        /* EXPLICAÇÃO */
-        .explanation {
-            background: linear-gradient(135deg, #F9F9F9, #F0F0F0);
-            padding: 25px;
-            border-radius: 20px;
-            margin: 20px 30px;
-            border-left: 8px solid var(--roxo);
-        }
-        
-        .explanation-title {
-            font-weight: 700;
-            color: var(--azul-escuro);
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-        
-        /* SEÇÃO DO LIVRO */
-        .book-section {
-            background: linear-gradient(135deg, var(--azul-escuro), #1565C0);
-            color: white;
-            padding: var(--espaco-xl);
-            border-radius: var(--borda-radius);
-            margin: var(--espaco-xl) 0;
-            text-align: center;
-        }
-        
-        .book-btn {
-            display: inline-block;
-            padding: 18px 40px;
-            background: linear-gradient(90deg, var(--amarelo), var(--laranja));
-            color: var(--azul-escuro);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.3rem;
-            box-shadow: 0 10px 25px rgba(255, 193, 7, 0.4);
-            transition: var(--transicao);
-            margin-top: var(--espaco-md);
-        }
-        
-        .book-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255, 193, 7, 0.6);
-        }
-        
-        /* RESPONSIVIDADE */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
+        /* RESPONSIVIDADE PARA SMARTPHONES */
+        @media (max-width: 600px) {
+            body { padding-bottom: 40px; }
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.45rem; }
             
-            h2 {
-                font-size: 1.8rem;
-            }
+            .header { padding: var(--espaco-lg) 0; border-radius: 0 0 24px 24px; margin-bottom: var(--espaco-lg); }
+            .header h1 { font-size: 1.9rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.4); padding: 0 var(--espaco-xs); }
+            .subtitle { font-size: 1rem; margin-bottom: var(--espaco-md); padding: 0 var(--espaco-sm); }
+            .header-compliment { font-size: 0.85rem; padding: 4px 12px; }
             
-            .header h1 {
-                font-size: 2.2rem;
-            }
+            .hero-start-btn { font-size: 1.15rem; padding: 16px 36px; gap: 8px; width: 90%; max-width: 320px; }
+            .hero-hint { font-size: 0.8rem; }
             
-            .subtitle {
-                font-size: 1.1rem;
-            }
+            .intro-box { padding: var(--espaco-md); border-radius: 18px; margin-bottom: var(--espaco-lg); }
+            .anabb-box { padding: var(--espaco-md); }
+            .relatos-box { padding: var(--espaco-sm); }
+            .linguagem-box { font-size: 0.85rem; padding: var(--espaco-sm); }
+            .aviso { font-size: 0.9rem; padding: var(--espaco-sm); }
             
-            .intro-box {
-                padding: var(--espaco-lg);
-            }
+            .gamification { gap: var(--espaco-sm); padding: 0 var(--espaco-xs); }
+            .counter-box { min-width: 135px; flex: 1; padding: var(--espaco-sm); border-radius: 16px; }
+            .counter-value { font-size: 2.5rem; margin: 10px 0; }
+            .counter-label { font-size: 0.85rem; }
             
-            .gamification {
-                gap: var(--espaco-md);
-            }
+            .action-buttons { gap: var(--espaco-xs); padding: 0 var(--espaco-xs); }
+            .action-btn { min-width: 0; flex: 1; padding: 12px 10px; font-size: 0.85rem; gap: 6px; border-radius: 30px; }
             
-            .counter-box {
-                min-width: 200px;
-                padding: var(--espaco-lg);
-            }
+            /* MODAL DE QUESTÕES NO MOBILE */
+            .modal { padding: 10px; }
+            .modal-content { margin: 10px auto; border-radius: 20px; width: 100%; }
+            .modal-header { padding: 15px; font-size: 1.1rem; }
+            .close-modal { font-size: 1.8rem; }
+            .progress-container { padding: 12px 15px; }
+            .progress-bar { height: 12px; }
             
-            .counter-value {
-                font-size: 3.5rem;
-            }
+            .question-box { padding: 18px; margin: 15px; border-radius: 14px; border-left-width: 5px; }
+            .question-number { font-size: 0.9rem; padding: 6px 14px; margin-bottom: 12px; }
+            .question-text { font-size: 1.15rem; line-height: 1.4; font-weight: 700; text-align: left; }
             
-            .action-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
+            .option { padding: 14px; margin: 10px 15px; font-size: 0.95rem; gap: 10px; border-radius: 12px; border-width: 2px; }
+            .option-letter { width: 34px; height: 34px; font-size: 0.95rem; }
+            .option-text { font-weight: 600; line-height: 1.3; text-align: left; }
             
-            .action-btn {
-                min-width: 250px;
-                padding: 20px 40px;
-            }
+            .nav-buttons { padding: 15px; gap: 10px; }
+            .nav-btn { font-size: 0.9rem; padding: 12px 18px; border-radius: 25px; gap: 8px; flex: 1; justify-content: center; }
             
-            .question-text {
-                font-size: 1.3rem;
-            }
+            /* RESULTADOS NO MOBILE */
+            .result-modal-inner { padding: 20px 12px !important; }
+            .result-modal-inner [style*="font-size: 1.4rem"] { font-size: 1.1rem !important; padding: 10px 20px !important; }
+            .result-modal-inner [style*="font-size: 2.2rem"] { font-size: 1.7rem !important; }
+            .result-modal-inner [style*="padding: 25px"] { padding: 15px !important; font-size: 0.95rem !important; }
+            .result-modal-inner ul { font-size: 0.95rem !important; }
             
-            .option {
-                padding: 18px;
-                margin: 12px 20px;
-            }
-            
-            .question-box {
-                padding: 25px;
-                margin: 20px;
-            }
-            
-            .nav-buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .nav-btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 var(--espaco-xs);
-            }
-            
-            .counter-box {
-                width: 100%;
-                min-width: auto;
-            }
-            
-            .modal {
-                padding: 10px;
-            }
-            
-            .modal-content {
-                border-radius: 20px;
-            }
-            
-            .question-box {
-                padding: 20px;
-                margin: 15px;
-            }
-            
-            .option {
-                padding: 15px;
-                margin: 10px 15px;
-                font-size: 1.1rem;
-            }
-            
-            .option-letter {
-                width: 40px;
-                height: 40px;
-                font-size: 1.1rem;
-            }
+            .social-grid { grid-template-columns: 1fr; gap: var(--espaco-md); padding: 0 var(--espaco-xs); }
+            .social-card { padding: var(--espaco-md); border-radius: 16px; }
+            .social-section { padding: var(--espaco-lg) var(--espaco-sm); border-radius: 18px; }
         }
     </style>
 </head>
 <body>
-    <!-- HEADER PROFISSIONAL -->
+
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <h1><i class="fas fa-heartbeat"></i>Avaliação: Responda, aprenda e mude!</h1>
-                <p class="subtitle">Educação: A melhor forma de combate ao Idadismo <span style="text-shadow: 2px 2px 0 rgba(0,0,0,0.3);"></span></p>
+                <div class="header-compliment"><i class="fas fa-award"></i> Um elogio à sua atitude: parabéns por investir tempo na desconstrução de preconceitos!</div>
+                <h1><i class="fas fa-heartbeat"></i> Das 50- para as 50+</h1>
+                <p class="subtitle">Educação: A melhor forma de combate ao Idadismo</p>
+                
+                <button id="hero-start-btn" class="hero-start-btn">
+                    <i class="fas fa-play"></i> INICIAR AUTODIAGNÓSTICO
+                </button>
+                <div class="hero-hint">Leva menos de 12 minutos &bull; 50 Questões Práticas</div>
             </div>
         </div>
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
     <main class="container">
-        <!-- INTRODUÇÃO COM RELATOS -->
+        
+        <section class="anabb-box">
+            <span class="anabb-tag"><i class="fas fa-star"></i> PIONEIRISMO INSTITUCIONAL</span>
+            <h3 style="color: #0D47A1; margin-bottom: 8px; font-size: 1.4rem;">Parceria de Visão: Apoio ao Projeto ANABB 70+</h3>
+            <p style="font-size: 1.05rem; line-height: 1.6; color: #333; margin-bottom: 0;">
+                Este instrumento pedagógico orgulha-se de fazer menção honrosa ao <strong>Projeto ANABB 70+</strong>, iniciativa em que o autor atua como consultor especialista em longevidade. O Projeto ANABB 70+ consolidou-se como um verdadeiro marco histórico ao conduzir a temática da maturidade de forma <strong>cidadã, inclusiva, participativa e combativa</strong>. Antecipando-se com maestria a um movimento inevitável de revolução cultural e económica na nossa sociedade, a ANABB assume um papel inteiramente protagonista. Mais do que acolher, a instituição promove de forma ativa um espaço insubstituível de socialização, reflexão profunda e luta intransigente pelos direitos fundamentais das pessoas idosas — que hoje já constituem uma expressiva e honrosa parcela dos seus associados e assistidos.
+            </p>
+        </section>
+
         <section class="intro-box">
-            <p>Bem-vindo(a) a esta jornada de reflexão sobre o <strong>idadismo</strong> - o preconceito etário que afeta milhões de <strong>pessoas idosas</strong> em nossa sociedade.</p>
-            
-            <div class="linguagem-box">
-                <strong><i class="fas fa-language"></i> Nota sobre Linguagem Inclusiva:</strong> Utilizamos intencionalmente a expressão "pessoa idosa" por ser mais inclusiva e respeitosa. Evitamos termos como "velho" ou diminutivos que reduzem o indivíduo a uma condição ou sugerem fragilidade. Preferimos também: "público 60+", "pessoas maduras", "pessoas longevas".
+            <div style="text-align: center; margin-bottom: var(--espaco-md);">
+                <span class="highlight">AUTODIAGNÓSTICO DE IDADISMO</span>
             </div>
+            <p>O idadismo (ou etarismo) é um dos preconceitos mais silenciosos e socialmente aceitos no mundo moderno. Muitas vezes, ele se manifesta em nossas falas diárias disfarçado de "cuidado", "elogio" ou "brincadeira".</p>
+            <p>Este sistema de <strong>Autodiagnóstico</strong> foi estruturado pelo psicólogo <strong>Ricardo de Faria Barros</strong> com base em situações reais do cotidiano para ajudar você a identificar os seus próprios pontos cegos etários e descobrir em qual nível de consciência sobre a <strong>Longelescência</strong> você se encontra.</p>
             
             <div class="relatos-box">
-                <h3><i class="fas fa-comment-medical"></i> Baseado em Relatos Reais</h3>
-                <p>Estas <strong>41 questões</strong> foram produzidas a partir de relatos que escutei, e escuto, em minha prática clínica e profissional, retratando todas as formas de violência e preconceito contra a <strong>pessoa idosa</strong>.</p>
-                <p>Algumas são sutis, quase imperceptíveis. Outras são explícitas e dolorosas. Todas revelam como o idadismo permeia nossa sociedade.</p>
+                <h4 style="color: var(--laranja); margin-bottom: 8px;"><i class="fas fa-comments"></i> O preconceito que se disfarça no dia a dia:</h4>
+                <p style="font-size: 1rem; margin-bottom: 5px; font-style: italic;">"Nossa, você tem 70 anos? Nem parece, está super bem!" (Elogio idadista: pressupõe que ter 70 anos é necessariamente ser ou parecer inválido).</p>
+                <p style="font-size: 1rem; margin-bottom: 0; font-style: italic;">"Cuidado, vovó, não mexe nesse aplicativo para não estragar." (Infantilização e exclusão digital).</p>
+            </div>
+
+            <div class="linguagem-box">
+                <i class="fas fa-info-circle"></i> <strong>Nota sobre Linguagem Inclusiva:</strong> Ao longo do teste, você verá o uso alternado de termos como <em>"Pessoa Idosa"</em> (termo legal do Estatuto), <em>"Longevo"</em>, <em>"Pessoa Madura"</em> e referências ao conceito da <strong>Longelescência</strong>, buscando a máxima dignidade e respeito à pluralidade da maturidade.
             </div>
             
-            <p>Este não é apenas um teste, mas um convite à reflexão sobre a <span class="highlight">longelescência</span> e um exercício de cidadania aplicada à vida social, buscando o sentido e a dignidade em cada etapa da existência.</p>
-            
-            <div class="quote">
-                "A nova velhice não pede licença, nem favor: ela ocupa a cidade, subverte a ordem reinante, reinventa o tempo e ressignifica a vida: de forma ativa, combativa, consciente e positiva." - Ricardo
-            </div>
-            
-            <p>Complete o teste, descubra seu nível de consciência sobre o idadismo.</p>
-            
-            <!-- AVISO IMPORTANTE -->
+            <p style="font-weight: 600; text-align: center; color: var(--azul-escuro); margin-top: var(--espaco-md);">Clique abaixo para iniciar sua jornada de reflexão e aprendizado sobre o idadismo.</p>
+
             <div class="aviso">
-                <i class="fas fa-exclamation-circle"></i> IMPORTANTE: É preciso responder a <strong>TODAS as 41 questões</strong> para obter seu resultado completo!
+                <i class="fas fa-exclamation-circle"></i> IMPORTANTE: É preciso responder a <strong>TODAS as 50 questões</strong> para obter seu resultado completo!
             </div>
         </section>
 
-        <!-- GAMIFICAÇÃO -->
         <section class="gamification">
             <div class="counter-box">
                 <div class="counter-label">QUESTÕES RESPONDIDAS</div>
                 <div class="counter-value" id="answered-counter">0</div>
-                <div class="counter-label">de 41</div>
+                <div class="counter-label">de 50</div>
             </div>
             
             <div class="counter-box">
@@ -849,171 +609,119 @@
             </div>
         </section>
 
-        <!-- BOTÕES DE AÇÃO -->
         <section class="action-buttons">
             <button id="start-test-btn" class="action-btn start-btn">
                 <i class="fas fa-play-circle"></i> COMEÇAR TESTE
             </button>
-            
             <button id="download-questions-btn" class="action-btn download-btn">
                 <i class="fas fa-download"></i> BAIXAR QUESTÕES
             </button>
-            
             <button id="view-results-btn" class="action-btn results-btn">
                 <i class="fas fa-chart-bar"></i> VER RESULTADO
             </button>
         </section>
 
-        <!-- AVISO DE RESULTADO -->
-        <div style="text-align: center; margin: var(--espaco-lg) 0;">
-            <p id="results-warning" style="color: var(--rosa); display: none;">
-                <i class="fas fa-exclamation-triangle"></i> Você precisa responder a todas as 41 questões primeiro!
-            </p>
+        <div style="text-align: center; margin: var(--espaco-lg) 0; display: none;" id="results-warning" class="aviso">
+            <i class="fas fa-exclamation-triangle"></i> Você precisa responder a todas as 50 questões antes de ver o resultado!
         </div>
 
-        <!-- SEÇÃO DE FEEDBACK -->
-        <section class="feedback-section" id="feedback-section">
-            <h2 class="feedback-title"><i class="fas fa-comments"></i> Fale Diretamente Comigo</h2>
-            
-            <div class="feedback-box">
-                <i class="fas fa-handshake feedback-icon"></i>
-                <h3 style="color: var(--azul-escuro); margin-bottom: var(--espaco-md);">Sua Opinião é Fundamental</h3>
-                
-                <p style="font-size: 1.2rem; margin-bottom: var(--espaco-md);">
-                    Agora que você completou o teste, quero ouvir <strong>diretamente de você</strong>!
-                </p>
-                
-                <p style="margin-bottom: var(--espaco-lg); color: var(--texto-medio);">
-                    Clique no botão abaixo para se comunicar <strong>diretamente comigo</strong>. Você pode:
-                </p>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--espaco-md); margin-bottom: var(--espaco-xl); text-align: left;">
-                    <div style="background: rgba(255, 193, 7, 0.1); padding: var(--espaco-md); border-radius: 15px;">
-                        <h4 style="color: var(--laranja); margin-bottom: var(--espaco-sm);"><i class="fas fa-lightbulb"></i> Sugerir Temas</h4>
-                        <p>Proponha novos temas para futuras questões do teste</p>
-                    </div>
-                    
-                    <div style="background: rgba(33, 150, 243, 0.1); padding: var(--espaco-md); border-radius: 15px;">
-                        <h4 style="color: var(--azul); margin-bottom: var(--espaco-sm);"><i class="fas fa-star"></i> Avaliar a Experiência</h4>
-                        <p>Conte como foi fazer o teste, o que aprendeu, o que mudaria</p>
-                    </div>
-                    
-                    <div style="background: rgba(233, 30, 99, 0.1); padding: var(--espaco-md); border-radius: 15px;">
-                        <h4 style="color: var(--rosa); margin-bottom: var(--espaco-sm);"><i class="fas fa-share-alt"></i> Compartilhar Relatos</h4>
-                        <p>Conte experiências reais que poderiam virar novas questões</p>
-                    </div>
-                </div>
-                
-                <p style="font-size: 1.1rem; margin-bottom: var(--espaco-lg); color: var(--azul-escuro); font-weight: 600;">
-                    <i class="fas fa-envelope-open-text"></i> Eu leio pessoalmente cada mensagem e sua contribuição é essencial para melhorar este trabalho!
-                </p>
-                
-                <a href="https://forms.gle/1mQMewjBpJbccQYp7" target="_blank" class="feedback-btn">
-                    <i class="fas fa-paper-plane"></i> FALAR DIRETAMENTE COM RICARDO
-                </a>
-                
-                <p style="color: var(--texto-claro); margin-top: var(--espaco-md); font-size: 0.9rem;">
-                    <i class="fas fa-clock"></i> Resposta garantida em até 48 horas
-                </p>
-            </div>
-        </section>
-
-        <!-- REDES SOCIAIS DO AUTOR -->
         <section class="social-section">
-            <h2 class="social-title"><i class="fas fa-user-graduate"></i> Ricardo de Faria Barros - Redes Sociais</h2>
-            
+            <h2 class="social-title"><i class="fas fa-user-graduate"></i> Ricardo de Faria Barros - Redes e Leituras</h2>
             <div class="social-grid">
                 <div class="social-card">
-                    <i class="fab fa-youtube social-icon youtube"></i>
-                    <h3>YouTube</h3>
-                    <p>Canal Positiva Atitude com conteúdos sobre longevidade, psicologia positiva e combate ao idadismo</p>
+                    <div>
+                        <i class="fas fa-heartbeat social-icon plena"></i>
+                        <h3>Plena Longevidade</h3>
+                        <p>Acesse programas de consultoria institucional 60+, mentoria e conteúdos dedicados aos quatro capitais da longevidade ativa.</p>
+                    </div>
+                    <a href="https://www.plenalongevidade.com.br/" target="_blank" class="social-btn" style="background: linear-gradient(90deg, var(--verde), var(--azul));">
+                        <i class="fas fa-globe"></i> Visitar o Site
+                    </a>
+                </div>
+
+                <div class="social-card">
+                    <div>
+                        <i class="fas fa-blog social-icon blog"></i>
+                        <h3>Blog Bode com Farinha</h3>
+                        <p>Explore mais de 600 crônicas e textos profundos dedicados inteiramente ao seu bem-estar emocional e reflexão existencial.</p>
+                    </div>
+                    <a href="https://bodecomfarinha.blogspot.com/" target="_blank" class="social-btn" style="background: linear-gradient(90deg, var(--laranja), var(--rosa));">
+                        <i class="fas fa-book-open"></i> Ler o Blog
+                    </a>
+                </div>
+
+                <div class="social-card">
+                    <div>
+                        <i class="fab fa-youtube social-icon youtube"></i>
+                        <h3>YouTube</h3>
+                        <p>Canal Positiva Atitude com conteúdos sobre longevidade, psicologia positiva e combate ao idadismo.</p>
+                    </div>
                     <a href="https://www.youtube.com/@positivaatitude" target="_blank" class="social-btn">
                         <i class="fab fa-youtube"></i> Visitar Canal
                     </a>
                 </div>
                 
                 <div class="social-card">
-                    <i class="fas fa-globe social-icon website"></i>
-                    <h3>Site Ânimo DH</h3>
-                    <p>Desenvolvimento Humano, palestras, cursos e consultoria em preparação para aposentadoria</p>
+                    <div>
+                        <i class="fas fa-globe social-icon website"></i>
+                        <h3>Site Ânimo DH</h3>
+                        <p>Desenvolvimento Humano, palestras, cursos e consultoria em preparação para aposentadoria.</p>
+                    </div>
                     <a href="https://www.animodh.com.br/" target="_blank" class="social-btn">
                         <i class="fas fa-globe"></i> Visitar Site
                     </a>
                 </div>
-                
+
                 <div class="social-card">
-                    <i class="fab fa-tiktok social-icon tiktok"></i>
-                    <h3>TikTok</h3>
-                    <p>Conteúdos rápidos sobre longevidade, psicologia e combate ao idadismo no TikTok</p>
-                    <a href="https://www.tiktok.com/@ricardodefariabarros?is_from_webapp=1&sender_device=pc" target="_blank" class="social-btn">
+                    <div>
+                        <i class="fab fa-tiktok social-icon tiktok"></i>
+                        <h3>TikTok</h3>
+                        <p>Conteúdos rápidos e descontraídos sobre longevidade, psicologia e as novas visões da longelescência.</p>
+                    </div>
+                    <a href="https://www.tiktok.com/@ricardobarros70" target="_blank" class="social-btn">
                         <i class="fab fa-tiktok"></i> Seguir no TikTok
                     </a>
                 </div>
                 
                 <div class="social-card">
-                    <i class="fas fa-leaf social-icon plena"></i>
-                    <h3>Plena Longevidade</h3>
-                    <p>Portal dedicado ao envelhecimento ativo, saudável e com propósito</p>
-                    <a href="https://www.plenalongevidade.com.br/" target="_blank" class="social-btn">
-                        <i class="fas fa-leaf"></i> Visitar Portal
-                    </a>
-                </div>
-                
-                <div class="social-card">
-                    <i class="fas fa-envelope social-icon email"></i>
-                    <h3>Contato Profissional</h3>
-                    <p>Para palestras, consultorias, workshops e parcerias</p>
+                    <div>
+                        <i class="fas fa-envelope social-icon email"></i>
+                        <h3>E-mail Direto</h3>
+                        <p>Para parcerias, palestras institucionais, mentorias e projetos de consultoria e ambientes 60+.</p>
+                    </div>
                     <a href="mailto:ricardo@animodh.com.br" class="social-btn">
-                        <i class="fas fa-envelope"></i> Enviar Email
+                        <i class="fas fa-envelope"></i> Enviar Mensagem
                     </a>
                 </div>
             </div>
-            
-            <p style="color: var(--texto-medio); margin-top: var(--espaco-lg);">
-                <strong>Psicólogo Clínico CRP 01/7844 • Especialista em Longevidade • Autor • Palestrante • Professor</strong><br>
-                30 anos de experiência em desenvolvimento humano e preparação para aposentadoria
-            </p>
-        </section>
-
-        <!-- SEÇÃO DO LIVRO -->
-        <section class="book-section">
-            <h2 style="color: var(--amarelo); margin-bottom: var(--espaco-md);">
-                <i class="fas fa-book"></i> Meu Livro: Manual do Bem-Estar na Longelescência
-            </h2>
-            <p style="margin-bottom: var(--espaco-lg); opacity: 0.95; font-size: 1.2rem;">
-                dos 50 aos 100+ • Inspirado no Vento Aracati e Joyspan
-            </p>
-            <a href="https://a.co/d/0hgRnva8" target="_blank" class="book-btn">
-                <i class="fas fa-shopping-cart"></i> COMPRAR NA AMAZON
-            </a>
         </section>
     </main>
 
-    <!-- MODAL DE QUESTÕES -->
-    <div class="modal" id="questionModal">
-        <div class="modal-content">
-            <!-- Gerado por JavaScript -->
-        </div>
+    <div id="questionModal" class="modal">
+        <div class="modal-content" id="questionModalContent">
+            </div>
     </div>
 
-    <!-- MODAL DE RESULTADOS -->
-    <div class="modal" id="resultsModal">
-        <div class="modal-content">
-            <!-- Gerado por JavaScript -->
+    <div id="resultsModal" class="modal">
+        <div class="modal-content" style="max-width: 850px;">
+            <div class="modal-header">
+                <span>Seu Diagnóstico Detalhado</span>
+                <span class="close-modal" onclick="closeResultsModal()">&times;</span>
+            </div>
+            <div id="resultsModalContent" class="result-modal-inner" style="padding: 40px; text-align: center; overflow-y: auto; max-height: 80vh;">
+                </div>
         </div>
     </div>
 
     <script>
-        // DADOS DAS 41 QUESTÕES EM ORDEM SEQUENCIAL (ATUALIZADAS PARA LINGUAGEM INCLUSIVA)
         const questions = [
-            // QUESTÕES EXISTENTES 1-36 (ATUALIZADAS)
             {
                 id: 1,
-                text: "Você vê um casal de pessoas idosas (80 anos) se beijando apaixonadamente em público. Qual seu pensamento?",
+                text: "Uma mulher de 72 anos decide adotar um visual moderno, com cabelo colorido e roupas juvenis. Você ouve alguém comentar: 'Na idade dela, isso fica ridículo, deveria se vestir de forma mais discreta'. Qual sua postura?",
                 options: [
-                    { letter: "A", text: "\"Que fofinhos, parecem duas crianças brincando de namorar!\"" },
-                    { letter: "B", text: "\"Nessa idade? Que coisa desnecessária, deveriam ser mais discretos.\"" },
-                    { letter: "C", text: "\"Que bom ver que o afeto e o desejo permanecem vivos em todas as etapas da vida.\"" }
+                    { letter: "A", text: "Concorda internamente, achando que há roupas e estilos adequados para cada faixa etária." },
+                    { letter: "B", text: "Acha engraçado ou exótico, considerando-a uma 'velhinha sapeca ou rebelde'." },
+                    { letter: "C", text: "Defende que autonomia estético-corporal independe da idade e que o afeto e o desejo permanecem vivos em todas as etapas da vida." }
                 ],
                 correct: "C",
                 explanation: "A letra A infantiliza a pessoa idosa (vê-la como criança retira sua maturidade). A letra B é preconceito puro (etiquetar o afeto como 'impróprio' pela idade)."
@@ -1027,29 +735,29 @@
                     { letter: "C", text: "\"Boa sorte! É ótimo buscar novas conexões e companhia em qualquer idade.\"" }
                 ],
                 correct: "C",
-                explanation: "A A usa o medo para limitar a autonomia. A B reduz a vida da pessoa idosa à utilidade familiar (cuidar de netos), negando seu direito ao prazer e à companhia."
+                explanation: "A A usa o medo para limitar a vida afetiva alheia. A B restringe o papel do idoso exclusivamente à serventia familiar (avofreia)."
             },
             {
                 id: 3,
-                text: "Sobre o uso de preservativos e saúde sexual na longevidade:",
+                text: "Ao ver uma propaganda de cosméticos com a frase 'Combata o envelhecimento e recupere sua juventude', você pensa:",
                 options: [
-                    { letter: "A", text: "\"É um assunto que nem deveria ser discutido, é constrangedor para a pessoa idosa.\"" },
-                    { letter: "B", text: "\"É essencial, pois ISTs não escolhem idade e a vida sexual nessa fase é ativa.\"" },
-                    { letter: "C", text: "\"Desnecessário, pois o risco de gravidez já não existe.\"" }
+                    { letter: "A", text: "\"Uma campanha excelente, afinal, ninguém quer parecer velho.\"" },
+                    { letter: "B", text: "\"Uma estratégia de marketing normal, o mercado funciona assim.\"" },
+                    { letter: "C", text: "\"Uma violência substituível ou simbólica que trata o envelhecimento natural como uma doença a ser combatida.\"" }
                 ],
-                correct: "B",
-                explanation: "A A silencia a saúde da pessoa idosa por tabu. A C ignora que camisinha previne doenças, não apenas gravidez, e pressupõe que não há sexo."
+                correct: "C",
+                explanation: "A publicidade 'anti-aging' lucra com a negação do tempo, gerando vergonha e inadequação em relação ao corpo maduro."
             },
             {
                 id: 4,
-                text: "Uma mulher de 70 anos aparece de minissaia e com uma tatuagem nova. Sua reação é:",
+                text: "Uma colega de trabalho de 63 anos comete um erro ao mexer em um software novo da empresa. O comentário no corredor é: 'Nessa idade é difícil aprender tecnologia'. Você:",
                 options: [
-                    { letter: "A", text: "\"Ela está tendo uma crise de identidade, quer parecer ter 20 anos.\"" },
-                    { letter: "B", text: "\"Corajosa, mas está passando vergonha com essa roupa.\"" },
-                    { letter: "C", text: "\"Estilo e liberdade corporal não têm prazo de validade.\"" }
+                    { letter: "A", text: "Concorda, pois sabe que a plasticidade cerebral diminui muito com os anos." },
+                    { letter: "B", text: "Sugere que a poupem de sistemas complexos, dando-lhe tarefas manuais." },
+                    { letter: "C", text: "Intervém afirmando que erros tecnológicos acontecem com qualquer idade e apoia seu treinamento." }
                 ],
                 correct: "C",
-                explanation: "Ambas impõem um 'uniforme' para pessoas maduras. A ideia de que a pessoa idosa deve se vestir para esconder o corpo ou a idade é uma forma de controle social."
+                explanation: "A capacidade de aprendizado continua ao longo da vida (neuroplasticidade). Culpar a idade pelo erro é idadismo corporativo."
             },
             {
                 id: 5,
@@ -1067,33 +775,33 @@
                 text: "Você ouve uma pessoa idosa dominando tecnologias de ponta e usando gírias atuais. Você:",
                 options: [
                     { letter: "A", text: "\"Acha ridículo, parece que está forçando a barra para ser jovem.\"" },
-                    { letter: "B", text: "\"Fica surpreso, como se ela tivesse feito um milagre acadêmico.\"" },
-                    { letter: "C", text: "\"Acha natural, pois aprender é uma característica humana, não cronológica.\"" }
+                    { letter: "B", text: "\"Acha bonitinho, parece um jovem em corpo de velho.\"" },
+                    { letter: "C", text: "\"Acha natural, pois pessoas de qualquer idade podem ser contemporâneas e conectadas.\"" }
                 ],
                 correct: "C",
-                explanation: "A A julga a atualização como falsidade. A B é o 'idadismo benevolente': tratar o básico (aprender) como algo extraordinário apenas por causa da idade."
+                explanation: "Tratar a conexão com a modernidade como 'propriedade exclusiva dos jovens' é uma forma de barreira cultural etária."
             },
             {
                 id: 7,
-                text: "Os filhos vendem a casa do pai de 78 anos para ele morar perto deles, sem consultá-lo profundamente.",
+                text: "Em uma reunião de condomínio, um morador de 78 anos dá uma opinião longa sobre uma reforma. Alguém sussurra: 'Ele já está repetitivo, vamos ignorar'. Você:",
                 options: [
-                    { letter: "A", text: "\"Um ato de amor e proteção para que ele não fique só.\"" },
-                    { letter: "B", text: "\"Uma violação da autonomia e do direito de escolha do pai.\"" },
-                    { letter: "C", text: "\"Prático, afinal, pessoas idosas não sabem mais administrar imóveis.\"" }
+                    { letter: "A", text: "Fica em silêncio para acelerar a reunião, pois também achou o comentário cansativo." },
+                    { letter: "B", text: "Pede para ele resumir porque 'o tempo dos outros é precioso'." },
+                    { letter: "C", text: "Garante o tempo de fala dele, valida sua experiência histórica no prédio e ouve com atenção." }
                 ],
-                correct: "B",
-                explanation: "A A mascara o autoritarismo com 'amor'. A C é um preconceito cognitivo, assumindo que idade é igual a incapacidade mental."
+                correct: "C",
+                explanation: "Desqualificar a fala do idoso rotulando-o imediatamente como 'gagá' ou 'prolongado' é violência discursiva."
             },
             {
                 id: 8,
-                text: "A família usa a avó como babá e motorista fixa dos netos sem perguntar seus planos.",
+                text: "Uma avó diz que não vai cuidar dos netos no fim de semana porque vai a um show de rock com amigos. A família reclama. Sua opinião:",
                 options: [
-                    { letter: "A", text: "\"Uma forma de manter a avó ativa e útil na família.\"" },
-                    { letter: "B", text: "\"Idadismo funcional: ver a pessoa idosa apenas como um prestador de serviços gratuito.\"" },
-                    { letter: "C", text: "\"O dever natural de todo avô e avó.\"" }
+                    { letter: "A", text: "\"Ela está errada, a família e a segurança dos netos devem vir sempre em primeiro lugar.\"" },
+                    { letter: "B", text: "\"Ela tem o direito de se divertir, mas show de rock não combina muito com a idade dela.\"" },
+                    { letter: "C", text: "\"Ela está certíssima. Ser avó é um papel afetuoso, não uma obrigação de servidão.\"" }
                 ],
-                correct: "B",
-                explanation: "Ambas anulam a identidade da mulher para além do papel de 'avó'. Ela tem agenda, desejos e o direito de dizer 'não'."
+                correct: "C",
+                explanation: "A sociedade tenta sequestrar a identidade da mulher para além do papel de 'avó'. Ela tem agenda, desejos e o direito de dizer 'não'."
             },
             {
                 id: 9,
@@ -1110,34 +818,34 @@
                 id: 10,
                 text: "Os filhos decidem colocar grades nas janelas e esconder as chaves do carro do pai 'pelo bem dele':",
                 options: [
-                    { letter: "A", text: "\"Proteção extrema e amorosa.\"" },
-                    { letter: "B", text: "\"Cárcere privado e violação da autonomia individual.\"" },
-                    { letter: "C", text: "\"Prevenção de acidentes necessária para qualquer pessoa nessa idade.\"" }
+                    { letter: "A", text: "\"Uma precaução correta, idosos perdem reflexos muito rápido.\"" },
+                    { letter: "B", text: "\"Uma agressão à sua independência, caso não haja diagnóstico médico limitante.\"" },
+                    { letter: "C", text: "\"Uma demonstração pura de amor filial e zelo.\"" }
                 ],
                 correct: "B",
-                explanation: "Retirar a liberdade de ir e vir sem um diagnóstico real de incapacidade é uma agressão severa à dignidade humana."
+                explanation: "O falso cuidado (hiperproteção) asfixia a dignidade humana. Proteção sem base clínica real é cárcere privado velado."
             },
             {
                 id: 11,
-                text: "Um filho não visita a mãe há meses, pois 'ela tem comida, remédios e uma TV ótima'. Isso é:",
+                text: "No consultório médico, o doutor se dirige apenas ao acompanhante para explicar os remédios da paciente de 80 anos. A paciente está lúcida. O que o médico fez?",
                 options: [
-                    { letter: "A", text: "\"Solidão funcional e abandono afetivo estrutural.\"" },
-                    { letter: "B", text: "\"Respeito ao espaço e à privacidade da pessoa idosa.\"" },
-                    { letter: "C", text: "\"Confiança na autonomia da mãe.\"" }
+                    { letter: "A", text: "\"Agir de forma prática, pois o jovem vai lembrar mais facilmente da receita.\"" },
+                    { letter: "B", text: "\"Invisibilização idadista, retirando o protagonismo da própria saúde da paciente.\"" },
+                    { letter: "C", text: "\"Uma gentileza para não estressar a idosa com termos técnicos.\"" }
                 ],
-                correct: "A",
-                explanation: "O bem-estar material não supre a necessidade de pertencimento e conexão. Condenar a pessoa idosa à TV é condená-la à morte social."
+                correct: "B",
+                explanation: "Anular a presença do idoso na consulta, tratando-o como objeto e não sujeito, é idadismo clínico severo."
             },
             {
                 id: 12,
-                text: "Atendimento preferencial que funciona no balcão, mas o serviço demora o dobro depois:",
+                text: "Em uma fila de banco, um jovem reclama em voz alta: 'Essa fila preferencial é um absurdo, o idoso tem o dia todo livre e vem bem no horário de pico'. Sua análise:",
                 options: [
-                    { letter: "A", text: "\"Um azar do dia, acontece com todo mundo.\"" },
-                    { letter: "B", text: "\"Um 'respeito de fachada' que não se traduz em eficiência estrutural.\"" },
-                    { letter: "C", text: "\"A pessoa idosa tem mais tempo mesmo, então pode esperar um pouco mais.\"" }
+                    { letter: "A", text: "\"O jovem tem razão parcial, falta bom senso e organização de tempo por parte dos idosos.\"" },
+                    { letter: "B", text: "\"O idoso tem direito legal e social de gerir seu tempo como quiser, o tempo dele vale igual ao de qualquer um.\"" },
+                    { letter: "C", text: "\"Os idosos deveriam ter horários específicos restritos para não atrapalhar o comércio.\"" }
                 ],
                 correct: "B",
-                explanation: "A C é um desrespeito ao tempo de vida da pessoa idosa. A A ignora que a lei exige prioridade em todas as etapas do fluxo, não só na fila."
+                explanation: "O idadismo utilitarista avalia o valor do tempo da pessoa com base na sua produtividade econômica ativa. O tempo de vida pertence ao cidadão."
             },
             {
                 id: 13,
@@ -1154,34 +862,34 @@
                 id: 14,
                 text: "O uso de termos como 'vovozinho' ou 'velhinho' por desconhecidos é:",
                 options: [
-                    { letter: "A", text: "\"Uma forma carinhosa e respeitosa de tratamento.\"" },
-                    { letter: "B", text: "\"Infantilização e apagamento da identidade individual da pessoa.\"" },
-                    { letter: "C", text: "\"Necessário para que elas se sintam acolhidas.\"" }
+                    { letter: "A", text: "\"Uma forma carinhosa de inclusão e respeito à ancestralidade.\"" },
+                    { letter: "B", text: "\"Inofensivo, as pessoas exageram no politicamente correto atualmente.\"" },
+                    { letter: "C", text: "\"Linguagem infantilizante (elderspeak) que retira o status de adulto e a autoridade do indivíduo.\"" }
                 ],
-                correct: "B",
-                explanation: "Chamar um estranho de 'vovô' retira dele seu nome e sua história. É tratá-lo como uma categoria fofa, não como um cidadão."
+                correct: "C",
+                explanation: "Chamar um adulto desconhecido por termos infantis ou familiares desrespeita sua história e sua individualidade."
             },
             {
                 id: 15,
-                text: "Ao ver uma pessoa idosa pobre no transporte público, a reação comum é:",
+                text: "Uma reportagem sobre longevidade foca apenas em doenças, asilos e custos para a previdência:",
                 options: [
-                    { letter: "A", text: "\"Oferecer o lugar e perguntar se ela precisa de ajuda.\"" },
-                    { letter: "B", text: "\"Torná-la invisível, ignorando suas dificuldades de acesso.\"" },
-                    { letter: "C", text: "\"Achar que ela está passeando e atrapalhando quem trabalha.\"" }
+                    { letter: "A", text: "\"Infelizmente é a realidade, o envelhecimento é um fardo social.\"" },
+                    { letter: "B", text: "\"Reflete a visão idadista da mídia, omitindo a contribuição social e econômica dos longevos.\"" },
+                    { letter: "C", text: "\"A mídia está certa em alertar sobre a crise demográfica iminente.\"" }
                 ],
                 correct: "B",
-                explanation: "A C é a crueldade do idadismo de classe: achar que a pessoa idosa pobre não tem o direito de circular pela cidade no horário que precisar."
+                explanation: "Reduzir a longevidade a uma 'equação de custos' ou 'tragédia sanitária' perpetua o pânico demográfico e o ódio geracional."
             },
             {
                 id: 16,
-                text: "Na TV, a pessoa idosa é quase sempre retratada como 'ranzinza' ou 'esquecida'. O impacto é:",
+                text: "Nas novelas e filmes, os idosos geralmente são avós bondosos ou rabugentos sem vida própria:",
                 options: [
-                    { letter: "A", text: "\"Apenas humor, não deve ser levado a sério.\"" },
-                    { letter: "B", text: "\"A manutenção de estereótipos que moldam como a sociedade trata pessoas idosas.\"" },
-                    { letter: "C", text: "\"Realista, pois a maioria das pessoas idosas é assim mesmo.\"" }
+                    { letter: "A", text: "\"Normal, reflete o papel tradicional da maturidade na dramaturgia.\"" },
+                    { letter: "B", text: "\"Prejudicial, pois formata o imaginário social com estereótipos rasos e redutivos.\"" },
+                    { letter: "C", text: "\"É apenas entretenimento, não influencia a vida real das pessoas.\"" }
                 ],
                 correct: "B",
-                explanation: "A mídia cria a realidade. Se só vemos pessoas idosas limitadas na tela, passamos a acreditar que a maturidade é apenas perda e rabugice."
+                explanation: "Falta de representatividade complexa e realista gera invisibilidade. Se só vemos pessoas idosas limitadas na tela, passamos a acreditar que a maturidade é apenas perda."
             },
             {
                 id: 17,
@@ -1198,38 +906,38 @@
                 id: 18,
                 text: "Linguagem inacessível (letras minúsculas, termos em inglês sem explicação) é:",
                 options: [
-                    { letter: "A", text: "\"Uma falha de design sem intenção.\"" },
-                    { letter: "B", text: "\"Uma forma de exclusão digital e social do público maduro.\"" },
-                    { letter: "C", text: "\"Culpa da pessoa idosa que não se esforça para aprender.\"" }
+                    { letter: "A", text: "\"Falta de interesse do idoso em se atualizar no world globalizado.\"" },
+                    { letter: "B", text: "\"Idadismo por desenho (design exclusion), excluindo deliberadamente os longevos.\"" },
+                    { letter: "C", text: "\"Exigência do mercado tecnológico moderno, que não pode parar.\"" }
                 ],
                 correct: "B",
-                explanation: "O design que não inclui todas as idades é um design excludente. Acessibilidade é um direito, não um privilégio."
+                explanation: "Criar barreiras arquitetônicas ou informacionais digitais sabendo que impedem o acesso dos mais velhos é discriminação estrutural."
             },
             {
                 id: 19,
-                text: "Uma pessoa idosa decide abrir uma startup aos 65 anos. O mercado financeiro geralmente:",
+                text: "Em um restaurante, o garçom traz o menu infantil para uma senhora de 85 anos alegando que 'elas comem pouquinho igual criança':",
                 options: [
-                    { letter: "A", text: "\"Dá todo apoio pela experiência acumulada.\"" },
-                    { letter: "B", text: "\"Dificulta o crédito por considerar o risco de 'sobrevida' do negócio.\"" },
-                    { letter: "C", text: "\"Ignora, achando que é apenas um passatempo de aposentado.\"" }
+                    { letter: "A", text: "\"Uma delicadeza atenciosa que gera economia na conta final.\"" },
+                    { letter: "B", text: "\"Um absurdo idadista que infantiliza e desrespeita a maturidade da cliente.\"" },
+                    { letter: "C", text: "\"Prática comercial inteligente e benéfica para ambas as partes.\"" }
                 ],
                 correct: "B",
-                explanation: "O mercado ignora que o empreendedorismo sênior tem maior taxa de sucesso. Tratar como 'passatempo' é desqualificar décadas de expertise."
+                explanation: "Equiparar velhice à infância é apagar toda a experiência de vida e maturidade biológica desenvolvida pelo indivíduo."
             },
             {
                 id: 20,
-                text: "No currículo de uma pessoa de 62 anos, o descarte imediato ocorre por:",
+                text: "Você ouve um humorista fazendo piadas pesadas sobre a lentidão e a falta de memória dos idosos. Você:",
                 options: [
-                    { letter: "A", text: "\"Falta de qualificação técnica para o mundo moderno.\"" },
-                    { letter: "B", text: "\"Idadismo: medo de que ela não aceite ordens de jovens ou seja lenta.\"" },
-                    { letter: "C", text: "\"Salário pretendido ser muito alto.\"" }
+                    { letter: "A", text: "\"Dá risada, afinal humor não tem limites e piada não mata ninguém.\"" },
+                    { letter: "B", text: "\"Reconhece o idadismo recreativo, que usa o preconceito para ridicularizar grupos vulneráveis.\"" },
+                    { letter: "C", text: "\"Acha que os idosos deveriam rir de si mesmos para sofrerem menos.\"" }
                 ],
                 correct: "B",
-                explanation: "O preconceito assume que a pessoa madura é rígida ou tecnologicamente incapaz, o que é uma mentira generalizada."
+                explanation: "O humor preconceituoso (idadismo recreativo) normaliza a exclusão e valida a crueldade social disfarçada de riso."
             },
             {
                 id: 21,
-                text: "Uma mulher de 66 anos quer abrir conta PJ e o gerente sugere o nome do filho:",
+                text: "Uma mulher de 68 anos quer abrir uma conta PJ e o gerente sugere o nome do filho:",
                 options: [
                     { letter: "A", text: "\"Um conselho financeiro prudente.\"" },
                     { letter: "B", text: "\"Idadismo financeiro que ataca a autonomia feminina e sênior.\"" },
@@ -1247,36 +955,36 @@
                     { letter: "C", text: "\"Todos sofrem exatamente igual.\"" }
                 ],
                 correct: "B",
-                explanation: "A interseccionalidade prova que vulnerabilidades se somam. A maturidade não apaga o racismo nem o machismo; ela os aprofunda."
+                explanation: "O idadismo é interseccional: ele cruza com machismo, racismo e classismo, tornando a velhice das minorias muito mais vulnerável."
             },
             {
                 id: 23,
-                text: "\"É da idade mesmo\", diz o médico sem fazer exames em uma pessoa idosa pobre:",
+                text: "Dizer 'ele tem cabeça de jovem' para elogiar um idoso significa:",
                 options: [
-                    { letter: "A", text: "\"Um diagnóstico sincero baseado na estatística.\"" },
-                    { letter: "B", text: "\"Negligência médica baseada no idadismo estrutural.\"" },
-                    { letter: "C", text: "\"Uma forma de acalmar o paciente.\"" }
+                    { letter: "A", text: "\"Um elogio sincero à inteligência dele.\"" },
+                    { letter: "B", text: "\"Idadismo linguístico embutido (pressupõe que ter cabeça de velho é ruim).\"" },
+                    { letter: "C", text: "\"Que ele é superior aos outros idosos da mesma idade.\"" }
                 ],
                 correct: "B",
-                explanation: "Idade não é diagnóstico. Dor e mal-estar em pessoas idosas devem ser investigados com o mesmo rigor que em jovens."
+                explanation: "Para elogiar a lucidez, usamos atributos da juventude. Isso reforça a ideia de que a velhice em si é decadência cognitiva."
             },
             {
                 id: 24,
-                text: "Uma pessoa negra, idosa e simples entra numa concessionária de veículos, sendo ignorada pelos vendedores.",
+                text: "O envelhecimento ativo significa:",
                 options: [
-                    { letter: "A", text: "\"Os vendedores sabem que ela só vai olhar.\"" },
-                    { letter: "B", text: "\"É um 'combo' de racismo, classismo e idadismo.\"" },
-                    { letter: "C", text: "\"É mais um idoso zanzando no comércio, sem ter nada pra fazer em casa.\"" }
+                    { letter: "A", text: "\"Correr maratonas e trabalhar até morrer sem reclamar.\"" },
+                    { letter: "B", text: "\"A otimização das oportunidades de saúde, participação e segurança ao longo da vida.\"" },
+                    { letter: "C", text: "\"Fazer cirurgias plásticas para esconder o tempo de qualquer forma.\"" }
                 ],
                 correct: "B",
-                explanation: "Assume-se que a pessoa idosa (especialmente se for negra ou parecer pobre) não pode ser o sujeito do desejo de consumo."
+                explanation: "Conceito oficial da OMS: foca em dignidade, direitos e qualidade de vida, e não em obrigação de performance atlética ou estética."
             },
             {
                 id: 25,
-                text: "O relacionamento ideal entre jovens e pessoas maduras seria:",
+                text: "A intergeracionalidade real ocorre quando:",
                 options: [
-                    { letter: "A", text: "\"O jovem ensinar tecnologia e a pessoa idosa apenas ouvir.\"" },
-                    { letter: "B", text: "\"A pessoa idosa contar histórias e o jovem fingir que ouve.\"" },
+                    { letter: "A", text: "\"O jovem ensina internet e o idoso apenas agradece com um bolo.\"" },
+                    { letter: "B", text: "\"O idoso dita as regras do passado e o jovem obedece por educação.\"" },
                     { letter: "C", text: "\"Uma troca mútua: o novo do jovem e o contexto da pessoa madura.\"" }
                 ],
                 correct: "C",
@@ -1295,36 +1003,36 @@
             },
             {
                 id: 27,
-                text: "Uma pessoa idosa quer aprender IA e os colegas jovens riem. A presença dela é:",
+                text: "Uma pessoa idosa quer aprender IA (Inteligência Artificial). O instrutor foca apenas em tarefas básicas:",
                 options: [
-                    { letter: "A", text: "\"Uma tentativa desesperada de não se sentir só.\"" },
-                    { letter: "B", text: "\"Um exemplo de lifelong learning e direito à atualização.\"" },
-                    { letter: "C", text: "\"Perda de tempo, pois o cérebro não processa mais isso.\"" }
+                    { letter: "A", text: "\"Correto, pois conceitos profundos exigiriam demais da mente sênior.\"" },
+                    { letter: "B", text: "\"Idadismo didático, subestimando o potencial cognitivo analítico do aluno.\"" },
+                    { letter: "C", text: "\"Uma forma de acelerar a aula para os outros alunos mais jovens.\"" }
                 ],
                 correct: "B",
-                explanation: "A neuroplasticidade continua. Rir da busca por conhecimento é uma das formas mais cruéis de idadismo acadêmico."
+                explanation: "Limitar o teto do conhecimento ofertado por causa da idade do estudante é uma agressão pedagógica etarista."
             },
             {
                 id: 28,
-                text: "A família viaja e avisa à avó: 'Você vai para cuidar das crianças à noite':",
+                text: "O idadismo autoinfligido ocorre quando a própria pessoa madura diz:",
                 options: [
-                    { letter: "A", text: "\"Assume-se que o tempo da pessoa idosa é 'sobra' e não tem valor próprio.\"" },
-                    { letter: "B", text: "\"É uma ajuda que toda avó gosta de dar.\"" },
-                    { letter: "C", text: "\"Uma forma de economizar com a babá.\"" }
+                    { letter: "A", text: "\"Estou velho demais para aprender a tocar piano, meu tempo já passou.\"" },
+                    { letter: "B", text: "\"Vou me planejar para viver bem os próximos 20 anos da minha vida.\"" },
+                    { letter: "C", text: "\"Quero fazer faculdade agora na maturidade porque adoro estudar.\"" }
                 ],
                 correct: "A",
-                explanation: "Ignora que ela pode ter seus próprios planos de viagem e lazer na mesma ocasião."
+                explanation: "O preconceito internalizado sabota os sonhos do indivíduo. A pessoa assume as amarras mentais que a sociedade impõe."
             },
             {
                 id: 29,
-                text: "O preconceito de ver pessoas idosas como 'sem agenda própria' resulta em:",
+                text: "A gerontofobia social se manifesta na:",
                 options: [
-                    { letter: "A", text: "\"Mais tempo de descanso para elas.\"" },
-                    { letter: "B", text: "\"Isolamento social e perda do sentido de vida (logoterapia).\"" },
-                    { letter: "C", text: "\"Uma vida mais simples e sem estresse.\"" }
+                    { letter: "A", text: "\"Busca por políticas públicas de saúde preventiva para todos.\"" },
+                    { letter: "B", text: "\"Obsessão estética pela eterna juventude e pavor visível de rugas e marcas do tempo.\"" },
+                    { letter: "C", text: "\"Construção de rampas e calçadas acessíveis nas cidades.\"" }
                 ],
                 correct: "B",
-                explanation: "O ser humano precisa de propósito. Retirar a agenda da pessoa idosa é retirar seu lugar no mundo."
+                explanation: "O pânico irracional de envelhecer (gerontofobia) alimenta o consumo desenfreado de ilusões estéticas invasivas."
             },
             {
                 id: 30,
@@ -1341,34 +1049,34 @@
                 id: 31,
                 text: "Quando uma pessoa idosa diz que quer aprender uma nova língua, uma pessoa sem idadismo dirá?",
                 options: [
-                    { letter: "A", text: "\"Que inspirador! Nunca é tarde para aprender.\"" },
-                    { letter: "B", text: "\"Na sua idade? Melhor descansar.\"" },
-                    { letter: "C", text: "\"Para que vai servir agora?\"" }
+                    { letter: "A", text: "\"Que inspirador! Qual idioma você escolheu?\"" },
+                    { letter: "B", text: "\"Para quê? Você não vai mais viajar tanto na sua idade.\"" },
+                    { letter: "C", text: "\"É bom para exercitar o cérebro e evitar o Alzheimer.\"" }
                 ],
                 correct: "A",
-                explanation: "As opções B e C desestimulam o aprendizado contínuo, ignorando que a capacidade de aprender permanece ao longo da vida."
+                explanation: "A resposta A reconhece o desejo intrínseco do indivíduo de crescer, sem medicalizar ou reduzir seu projeto de vida a uma terapia cognitiva (como faz a C)."
             },
             {
                 id: 32,
-                text: "Uma pessoa idosa é impedida de integrar o Projeto de Visita aos Clientes. Qual teu posicionamento?",
+                text: "A arquitetura urbana hostil com calçadas esburacadas e sem bancos públicos representa:",
                 options: [
-                    { letter: "A", text: "\"É compreensível, visitas externas exigem muito esforço.\"" },
-                    { letter: "B", text: "\"Faz sentido, porque vai querer ir no banheiro a todo momento.\"" },
-                    { letter: "C", text: "\"Preconceito organizacional, disfarçado em falsas premissas. \"" }
+                    { letter: "A", text: "\"Apenas falta de verba orçamentária geral do município.\"" },
+                    { letter: "B", text: "\"Idadismo urbanístico e exclusão espacial estrutural do idoso.\"" },
+                    { letter: "C", text: "\"Uma forma de incentivar as pessoas a caminharem sem descanso.\"" }
                 ],
-                correct: "C",
-                explanation: "Pessoas idosas têm muito a contribuir. Rejeitá-la, pelos motivos da letra A e B, é puro preconceito."
+                correct: "B",
+                explanation: "Cidades planejadas exclusivamente para corpos jovens e ágeis aprisionam os longevos dentro de suas próprias casas."
             },
             {
                 id: 33,
-                text: "Um colega diz para um trabalhador de 60 anos: 'Já está na hora de aposentar, deixe a vaga para os mais jovens'. Isso é:",
+                text: "No trânsito, ao ver um motorista dirigindo devagar, alguém grita: 'Tinha que ser velho!'. Esse comportamento é:",
                 options: [
-                    { letter: "A", text: "\"Um conselho amigável para o bem-estar da pessoa idosa.\"" },
-                    { letter: "B", text: "\"Discriminação por idade que viola o direito ao trabalho.\"" },
-                    { letter: "C", text: "\"Uma constatação realista sobre o mercado de trabalho.\"" }
+                    { letter: "A", text: "\"Uma reação compreensível ao estresse do trânsito urbano.\"" },
+                    { letter: "B", text: "\"Idadismo clássico que usa um comportamento individual para demonizar todo um grupo.\"" },
+                    { letter: "C", text: "\"Uma verdade, pois todos os motoristas idosos são inseguros.\"" }
                 ],
                 correct: "B",
-                explanation: "A idade não determina capacidade produtiva. Forçar aposentadoria é discriminação e viola o Estatuto da Pessoa Idosa."
+                explanation: "Generalizar erros individuais transformando-os em defeitos coletivos biológicos da idade é a base lógica de todo preconceito."
             },
             {
                 id: 34,
@@ -1387,34 +1095,32 @@
                 options: [
                     { letter: "A", text: "\"Um estereótipo prejudicial sem base científica.\"" },
                     { letter: "B", text: "\"Uma verdade estatística sobre desempenho laboral.\"" },
-                    { letter: "C", text: "\"A necessidade de funções adaptadas para pessoas maduras.\"" }
+                    { letter: "C", text: "\"A necessidade de funções adaptadas mais simples.\"" }
                 ],
                 correct: "A",
-                explanation: "Pesquisas mostram que trabalhadores mais velhos têm menor absenteísmo, mais experiência e maior comprometimento. A produtividade não diminui necessariamente com a idade."
+                explanation: "Estudos mostram que equipes intergeracionais são mais resilientes e assertivas. A experiência mitiga variações de velocidade."
             },
             {
                 id: 36,
-                text: "Quando uma pessoa idosa permanece ativa no mercado, muitos dizem: 'O que ela quer com essa vaga, tomando espaço dos jovens?'. Esta visão:",
+                text: "O conceito de 'Economia Prateada' envolve:",
                 options: [
-                    { letter: "A", text: "\"Promove a competição intergeracional injusta.\"" },
-                    { letter: "B", text: "\"Ignora que o mercado deve incluir todas as gerações.\"" },
-                    { letter: "C", text: "\"Ambas as alternativas anteriores estão corretas.\"" }
-                ],
-                correct: "C",
-                explanation: "Não existe 'quantidade limitada' de trabalho. A inclusão de pessoas maduras no mercado não prejudica jovens, mas sim enriquece as organizações com experiência e diversidade."
-            },
-            
-            // NOVAS QUESTÕES 37-41 (ATUALIZADAS)
-            {
-                id: 37,
-                text: "Um homem de 68 anos decide se assumir publicamente como gay e participar do movimento LGBTQIA+. Muitos dizem: 'Nessa idade? Já passou da hora, devia ficar quieto'. Isso revela:",
-                options: [
-                    { letter: "A", text: "\"Que a sexualidade tem prazo de validade e pessoas idosas não têm direito à autenticidade.\"" },
-                    { letter: "B", text: "\"Que o idadismo também afeta a comunidade LGBTQIA+, negando identidade sexual tardia.\"" },
-                    { letter: "C", text: "\"Um cuidado para proteger a pessoa idosa de possíveis preconceitos sociais.\"" }
+                    { letter: "A", text: "\"A venda de produtos de saúde e remédios para a terceira idade.\"" },
+                    { letter: "B", text: "\"O mercado de produtos e serviços voltados para o público 50+ de forma ativa e digna.\"" },
+                    { letter: "C", text: "\"A poupança que o governo faz para pagar as aposentadorias.\"" }
                 ],
                 correct: "B",
-                explanation: "A A é preconceituosa ao limitar expressão sexual por idade. A C mascara controle como proteção. A pessoa idosa tem direito à autenticidade em qualquer idade."
+                explanation: "Os longevos são consumidores, empreendedores e investidores. A Economia Prateada reconhece esse motor econômico gigante."
+            },
+            {
+                id: 37,
+                text: "Uma senhora de 74 anos publica fotos de biquíni na praia. Leitores comentam: 'Falta de respeito com a família, uma senhora com netos devia se preservar'. Isso é:",
+                options: [
+                    { letter: "A", text: "\"Um conselho moral correto sobre decência na maturidade.\"" },
+                    { letter: "B", text: "\"Idadismo machista que vigia e pune o corpo da mulher madura.\"" },
+                    { letter: "C", text: "\"Zelo público pela imagem das pessoas idosas na internet.\"" }
+                ],
+                correct: "B",
+                explanation: "A sociedade tolera o corpo idoso apenas se estiver invisível ou coberto. Exibir-se livre é um ato revolucionário de posse do próprio corpo."
             },
             {
                 id: 38,
@@ -1432,26 +1138,26 @@
                 text: "Um senhor de 75 anos volta a estudar (ensino médio) e sofre bullying dos colegas jovens: riem quando ele faz perguntas, chamam de 'vovô caduco'. Isso é:",
                 options: [
                     { letter: "A", text: "\"Apenas brincadeira de jovens, sem maldade.\"" },
-                    { letter: "B", text: "\"Assédio moral educacional que pode levar ao abandono dos estudos.\"" },
-                    { letter: "C", text: "\"Natural, pois ele está fora do ambiente etário adequado.\"" }
+                    { letter: "B", text: "\"Idadismo escolar tóxico que tenta banir o longevo dos espaços de saber.\"" },
+                    { letter: "C", text: "\"Falta de adaptação dele ao ambiente escolar dinâmico.\"" }
                 ],
                 correct: "B",
-                explanation: "O direito à educação é para todas as idades. Ridicularizar a pessoa idosa estudante é uma forma cruel de exclusão educacional que viola direitos fundamentais."
+                explanation: "A escola e a universidade pertencem a todas as idades. O bullying etário tenta expulsar o idoso do banquete do conhecimento."
             },
             {
                 id: 40,
-                text: "Pessoas idosas são alvo constante de bancos com produtos duvidosos (consórcios, seguros caríssimos, investimentos complexos) e golpes de amor virtual. A raiz do problema é:",
+                text: "A expressão 'Melhor Idade' usada de forma obrigatória para suavizar a palavra 'velho' é:",
                 options: [
-                    { letter: "A", text: "\"Ingenuidade das pessoas idosas que não sabem se proteger.\"" },
-                    { letter: "B", text: "\"Solidão e falta de rede de apoio para orientação e aconselhamento.\"" },
-                    { letter: "C", text: "\"Falta de fiscalização governamental apenas.\"" }
+                    { letter: "A", text: "\"A melhor denominação existente, pois eleva a autoestima do grupo.\"" },
+                    { letter: "B", text: "\"Um eufemismo idadista que mascara as reais dificuldades e fobia da palavra velho.\"" },
+                    { letter: "C", text: "\"Um termo técnico científico correto usado por geriatras.\"" }
                 ],
                 correct: "B",
-                explanation: "A vulnerabilidade não é ingenuidade, mas fruto do isolamento social. Pessoas idosas solitárias são presas fáceis para golpistas. A rede de apoio familiar e comunitária é essencial."
+                explanation: "Fugir das palavras 'velho' ou 'idoso' demonstra o pavor que a sociedade tem da velhice. Velho é um status biológico e histórico, não um xingamento."
             },
             {
                 id: 41,
-                text: "Aplicativos como 'amigo virtual', 'jantar com estranhos' ou 'botão de pânico' que avisa 'estou vivo' revelam:",
+                text: "Os novos 'Aplicativos de Companhia Virtual' (robôs conversadores ou acompanhantes de aluguel por app) que fazem sucesso entre idosos revelam:",
                 options: [
                     { letter: "A", text: "\"A criatividade tecnológica para lidar com problemas modernos.\"" },
                     { letter: "B", text: "\"O quanto nossa sociedade está doente de solidão, especialmente para pessoas idosas.\"" },
@@ -1459,11 +1165,110 @@
                 ],
                 correct: "B",
                 explanation: "Esses aplicativos são sintomas da 'epidemia de solidão' que atinge especialmente pessoas idosas. Revelam o fracasso das redes sociais reais e o abandono afetivo estrutural."
+            },
+            {
+                id: 42,
+                text: "Expressões de aversão sensorial e estética como dizer que tem pavor de pele enrugada, horror a cabelos brancos ou afirmar com desdém que reconhece de longe o 'cheiro de velho' revelam:",
+                options: [
+                    { letter: "A", text: "\"Uma reação higiênica e de preferência estética perfeitamente natural do ser humano.\"" },
+                    { letter: "B", text: "\"Uma constatização biológica inevitável sobre as alterações físicas provocadas pelo tempo.\"" },
+                    { letter: "C", text: "\"Idadismo sensorial e gerontofobia, projetando nos outros o pavor irracional e a negação do seu próprio processo de envelhecimento.\"" }
+                ],
+                correct: "C",
+                explanation: "A repulsa física aos sinais do tempo (rugas, cabelos brancos, odores naturais) mascara o medo psicológico profundo de amadurecer e encarar a própria finitude. Desumanizar o corpo sênior é uma tentativa vã de blindar a própria juventude."
+            },
+            {
+                id: 43,
+                text: "A equipe de RH de uma startup se reuniu para revisar os perfis profissiográficos e alguém sugere: 'Vamos travar a contratação de pessoas acima de 50 anos porque elas quebram o nosso fit cultural e a vibe ágil'. Como você avalia essa prática?",
+                options: [
+                    { letter: "A", text: "\"Uma decisão de negócios moderna legítima para garantir que a equipe fale a mesma língua e mantenha o ritmo.\"" },
+                    { letter: "B", text: "\"Uma cautela puramente administrativa para proteger a empresa de custos excessivos com planos de saúde.\"" },
+                    { letter: "C", text: "\"Idadismo corporativo institucional e ilegal, que usa termos da moda para camuflar a discriminação de talentos baseada apenas na idade.\"" }
+                ],
+                correct: "C",
+                explanation: "Omitir ou barrar profissionais maduros usando eufemismos como 'fit cultural' sabota a diversidade cognitiva das equipes e mascara um preconceito estrutural explícito nas políticas de recrutamento."
+            },
+            {
+                id: 44,
+                text: "Em um brainstorming de marketing digital, surge a ideia de criar uma linha voltada para o mercado sênior. Um gestor de 28 anos corta a ideia dizendo: 'O mercado grisalho ou dourado não performa bem, eles não compram online e são resistentes a inovações'. Essa postura demonstra:",
+                options: [
+                    { letter: "A", text: "\"Visão míope e idadismo econômico que ignora o poder avassalador da Economia Prateada, composta por consumidores ativos e digitalizados.\"" },
+                    { letter: "B", text: "\"Uma análise realista de conversão de métricas digitais aplicadas ao consumo tradicional.\"" },
+                    { letter: "C", text: "\"Prudência orçamentária para focar os investimentos da empresa no público que dita as tendências mundiais.\"" }
+                ],
+                correct: "A",
+                explanation: "Desprezar o mercado maduro presumindo que ele é digitalmente incapaz ou financeiramente inerte é uma falha mercadológica grave alimentada por estereótipos etários."
+            },
+            {
+                id: 45,
+                text: "Sua empresa se orgulha de ser totalmente 'pet friendly' e aberta a novas vibes, permitindo animais no escritório e roupas casuais. Porém, no dia a dia, os colaboradores fazem piadas nas redes quando o colega de 55 anos pede ajuda com o Slack ou o Notion. Podemos dizer que essa empresa:",
+                options: [
+                    { letter: "A", text: "\"É inclusiva e moderna de fato, pois as brincadeiras cotidianas não anulam os benefícios reais concedidos aos animais e ao bem-estar.\"" },
+                    { letter: "B", text: "\"Não é um ambiente genuinamente acolhedor ou 'friendly' para as pessoas idosas e longevas, ostentando uma inclusão seletiva e superficial.\"" },
+                    { letter: "C", text: "\"Está correta, pois a agilidade tecnológica é uma obrigação individual e quem não acompanha o Notion gera gargalos na equipe.\"" }
+                ],
+                correct: "B",
+                explanation: "Uma cultura corporativa que acolhe cães e tolera o deboche contra o trabalhador sênior pratica uma inclusão puramente estética, revelando que a diversidade humana geracional não é valorizada."
+            },
+            {
+                id: 46,
+                text: "Durante o happy hour da empresa em um bar descolado com lounges baixos, música alta e cardápio exclusivamente por QR Code invisível, um colaborador sugere chamar o diretor mais sênior. Alguém responde: 'Nem combina, aquela vibe de lounges descolados é para a nossa galera de 20 e poucos'. O que reside nesse comentário?",
+                options: [
+                    { letter: "A", text: "\"Zelo pelo conforto do diretor, que certamente preferiria um restaurante tradicional mais calmo.\"" },
+                    { letter: "B", text: "\"Uma constatação natural de nichos de lazer urbanos que são mapeados para públicos geracionais específicos.\"" },
+                    { letter: "C", text: "\"Uma microagressão cotidiana que promove o isolamento social, delimitando territórios invisíveis e segregando a pessoa longeva dos espaços de convivência e descontração.\"" }
+                ],
+                correct: "C",
+                explanation: "Etiquetar espaços de lazer como exclusivos para os jovens e excluir os mais velhos do convívio informal é uma violência sutil que alimenta a solidão e rompe pontes de intergeracionalidade."
+            },
+            {
+                id: 47,
+                text: "Ao folhear uma revista ou rolar o feed, você percebe que a indústria da beleza promove agressivamente termos como 'rejuvenescimento celular radical' e trata rugas ou marcas de expressão como defeitos graves a serem reparados. O que essa imposição cultural fomenta silenciosamente?",
+                options: [
+                    { letter: "A", text: "\"A autoaceitação plena, já que oferece recursos científicos modernos para que o longevo eleve sua autoestima corporal.\"" },
+                    { letter: "B", text: "\"O autopreconceito internalizado, fazendo com que o próprio longevo sinta vergonha de sua história biológica gravada na pele, gerando sofrimento e gerontofobia autoinfligida.\"" },
+                    { letter: "C", text: "\"A evolução natural do mercado cosmético, que atende de forma neutra às demandas universais da vaidade humana.\"" }
+                ],
+                correct: "B",
+                explanation: "A obsessão mercadológica anti-idade constrói o mito de que o corpo maduro é um erro estético. Isso força o próprio longevo a internalizar o preconceito, rejeitando o seu processo natural de amadurecimento."
+            },
+            {
+                id: 48,
+                text: "Em um debate familiar, um parente afirma que pessoas acima de 75 anos não deveriam mais iniciar relacionamentos amorosos ou expressar desejos afetivos, rotulando essas manifestações como 'coisa de velho sem noção' ou 'ilusão desnecessária'. Essa negação do afeto apoia-se em:",
+                options: [
+                    { letter: "A", text: "\"Mitos e estereótipos idadistas que tentam asfixiar a dimensão afetiva, o desejo e a busca por sentido existencial, que permanecem vivos em todas as etapas da vida.\"" },
+                    { letter: "B", text: "\"Prudência emocional familiar para evitar que o longevo sofra decepções ou frustrações afetivas tardias.\"" },
+                    { letter: "C", text: "\"Respeito às fases naturais do ciclo vital, onde o foco deve ser exclusivamente a espiritualidade ou o descanso familiar.\"" }
+                ],
+                correct: "A",
+                explanation: "Deshumanizar o idoso privando-o de desejo, afeto e novos laços amorosos é uma violência existencial. O amor e a busca por conexões profundas não possuem prazo de validade biológica."
+            },
+            {
+                id: 49,
+                text: "Cidades planejadas sem bancos públicos nas calçadas, com tempos de semáforo extremamente rápidos para pedestres e ausência de banheiros acessíveis em praças revelam a falta de políticas públicas sustentáveis. Essa hostilidade arquitetônica resulta em:",
+                options: [
+                    { letter: "A", text: "\"Um incentivo urbanístico moderno para manter o fluxo dinâmico de automóveis e a produtividade das vias centrais.\"" },
+                    { letter: "B", text: "\"Negação à participação social e segregação urbana, empurrando a pessoa idosa para o isolamento doméstico forçado devido ao medo do espaço público.\"" },
+                    { letter: "C", text: "\"Uma característica comum de metrópoles globais que afeta igualmente todas as faixas etárias sem distinção.\"" }
+                ],
+                correct: "B",
+                explanation: "Um desenho urbano que ignora as vulnerabilidades físicas da longevidade comete idadismo urbanístico estrutural, banindo os cidadãos maduros do convívio comunitário básico e do direito à cidade."
+            },
+            {
+                id: 50,
+                text: "Instituições e empresas que abrem espaços de convivência ou conselhos deliberativos, mas tratam as propostas dos membros seniores apenas como formalidades burocráticas descartáveis, sem integrá-las de fato às decisões centrais, pecam pela falta de ambientes 60+ legítimos. Falta-lhes:",
+                options: [
+                    { letter: "A", text: "\"Verba e infraestrutura técnica de ponta para automatizar a triagem de ideias sugeridas pela comunidade.\"" },
+                    { letter: "B", text: "\"Estratégia corporativa focada em nichos de mercado mais jovens e rentáveis.\"" },
+                    { letter: "C", text: "\"Valorização, Acolhimento e Respeito real, transformando a presença do público longevo em mera vitrine em vez de promover protagonismo e escuta ativa.\"" }
+                ],
+                correct: "C",
+                explanation: "Ambientes genuinamente 60+ exigem que a ancestralidade e a experiência prática do longevo sejam tratadas com dignidade de voto e voz. A inclusão puramente burocrática é um verniz que perpetua a invisibilidade geracional."
             }
         ];
 
         // ESTADO DA APLICAÇÃO
-        const TOTAL_QUESTIONS = 41;
+        const TOTAL_QUESTIONS = 50;
         let userAnswers = new Array(TOTAL_QUESTIONS).fill(null);
         let currentQuestionIndex = 0;
         let score = 0;
@@ -1478,64 +1283,48 @@
         const downloadQuestionsBtn = document.getElementById('download-questions-btn');
         const viewResultsBtn = document.getElementById('view-results-btn');
         const resultsWarning = document.getElementById('results-warning');
-        const feedbackSection = document.getElementById('feedback-section');
 
         // INICIALIZAÇÃO
         document.addEventListener('DOMContentLoaded', function() {
             updateCounters();
-            startTestBtn.addEventListener('click', () => openQuestionModal(0));
-            downloadQuestionsBtn.addEventListener('click', downloadQuestions);
-            viewResultsBtn.addEventListener('click', showResults);
+            document.getElementById('hero-start-btn').addEventListener('click', () => openQuestionModal(0));
             
-            // Mostrar seção de feedback depois de completar o teste
-            const checkCompletion = setInterval(() => {
-                if (answeredCount === TOTAL_QUESTIONS) {
-                    feedbackSection.scrollIntoView({ behavior: 'smooth' });
-                    clearInterval(checkCompletion);
-                }
-            }, 1000);
+            startTestBtn.addEventListener('click', () => {
+                let firstEmpty = userAnswers.indexOf(null);
+                openQuestionModal(firstEmpty === -1 ? 0 : firstEmpty);
+            });
+
+            downloadQuestionsBtn.addEventListener('click', downloadQuestionsTxt);
+            viewResultsBtn.addEventListener('click', showResults);
         });
 
-        // BAIXAR QUESTÕES EM PDF
-        function downloadQuestions() {
-            let content = "QUESTÕES DO AUTODIAGNÓSTICO SOBRE IDADISMO - 41 QUESTÕES\n";
-            content += "Direitos Reservados: Ricardo de Faria Barros - Psicólogo CRP 01/7844\n";
-            content += "Especialista em Longevidade e Combate ao Idadismo\n";
-            content += "Baseado em relatos reais coletados em 30 anos de prática clínica\n";
-            content += "NOTA: Utilizamos intencionalmente a expressão 'pessoa idosa' por ser mais inclusiva e respeitosa.\n\n";
-            content += "=================================================================\n\n";
-            
-            questions.forEach((question, index) => {
-                content += `QUESTÃO ${index + 1}:\n`;
-                content += `${question.text}\n\n`;
-                content += `OPÇÕES:\n`;
-                question.options.forEach(option => {
-                    content += `${option.letter}) ${option.text}\n`;
+        // DOWNLOAD TXT COMPLETO
+        function downloadQuestionsTxt() {
+            let txtContent = "=========================================================\n";
+            txtContent += "   50 QUESTÕES DO AUTODIAGNÓSTICO: DAS 50- PARA AS 50+\n";
+            txtContent += "   Autor: Psic. Ricardo de Faria Barros\n";
+            txtContent += "=========================================================\n\n";
+
+            questions.forEach(q => {
+                txtContent += `Questão ${q.id}: ${q.text}\n`;
+                q.options.forEach(o => {
+                    txtContent += `  [ ${o.letter} ] ${o.text}\n`;
                 });
-                content += `\nRESPOSTA CORRETA: ${question.correct}\n`;
-                content += `EXPLICAÇÃO: ${question.explanation}\n\n`;
-                content += "=================================================================\n\n";
+                txtContent += `--> RESPOSTA CORRETA: ${q.correct}\n`;
+                txtContent += `--> EXPLICAÇÃO: ${q.explanation}\n`;
+                txtContent += "\n---------------------------------------------------------\n\n";
             });
-            
-            content += "\n\nPARA APRENDER MAIS:\n";
-            content += "- YouTube: @positivaatitude\n";
-            content += "- TikTok: @ricardodefariabarros\n";
-            content += "- Site: https://www.animodh.com.br/\n";
-            content += "- Portal: https://www.plenalongevidade.com.br/\n";
-            content += "- Email: ricardo@animodh.com.br\n\n";
-            content += "© 2026 - Combate ao Idadismo - Ricardo de Faria Barros";
-            
-            const blob = new Blob([content], { type: 'text/plain' });
+
+            const blob = new Blob([txtContent], { type: 'text/plain;charset=utf-8' });
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = '41_Questoes_Autodiagnostico_Idadismo_Ricardo_Barros.txt';
+            a.download = '50_Questoes_Das_50_menos_para_as_50_mais.txt';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
             window.URL.revokeObjectURL(url);
-            
-            alert('Questões baixadas com sucesso! Um arquivo .txt foi gerado com todas as 41 questões e respostas corretas.');
+            alert('Questões baixadas com sucesso! Um arquivo .txt foi gerado com todas as 50 questões e gabarito.');
         }
 
         // ABRIR MODAL DE QUESTÃO
@@ -1552,103 +1341,57 @@
             const userAnswer = userAnswers[currentQuestionIndex];
             const progressPercent = ((currentQuestionIndex + 1) / TOTAL_QUESTIONS) * 100;
             
+            const isLastQuestion = (currentQuestionIndex === TOTAL_QUESTIONS - 1);
+            const nextBtnText = isLastQuestion ? '<i class="fas fa-check-circle"></i> FINALIZAR' : 'AVANÇAR <i class="fas fa-arrow-right"></i>';
+
             const modalContent = `
                 <div class="modal-header">
                     <span>Questão ${currentQuestionIndex + 1} de ${TOTAL_QUESTIONS}</span>
-                    <span class="close-modal">&times;</span>
+                    <span class="close-modal" onclick="closeQuestionModal()">&times;</span>
                 </div>
                 
-                <!-- BARRA DE PROGRESSO -->
                 <div class="progress-container">
                     <div class="progress-bar">
                         <div class="progress-fill" style="width: ${progressPercent}%"></div>
                     </div>
-                    <div class="progress-text">${currentQuestionIndex + 1}/${TOTAL_QUESTIONS} - ${Math.round(progressPercent)}% completo</div>
-                </div>
-                
-                <!-- BOX DA PERGUNTA -->
-                <div class="question-box">
-                    <div class="question-number">QUESTÃO ${currentQuestionIndex + 1}</div>
-                    <div class="question-text">${question.text}</div>
-                </div>
-                
-                <!-- OPÇÕES -->
-                <div class="options-container">
-                    ${question.options.map(option => `
-                        <div class="option ${userAnswer === option.letter ? 'selected' : ''} 
-                                        ${userAnswer && option.letter === question.correct ? 'correct' : ''} 
-                                        ${userAnswer && userAnswer !== question.correct && option.letter === userAnswer ? 'incorrect' : ''}" 
-                             data-letter="${option.letter}">
-                            <div class="option-letter ${option.letter}">${option.letter}</div>
-                            <div class="option-text">${option.text}</div>
-                        </div>
-                    `).join('')}
-                </div>
-                
-                <!-- EXPLICAÇÃO (SE RESPONDIDA) -->
-                ${userAnswer ? `
-                    <div class="explanation">
-                        <div class="explanation-title">📝 Por que as outras estão erradas?</div>
-                        <div>${question.explanation}</div>
+                    <div style="text-align: center; font-weight: bold; margin-top: 5px; color: var(--azul-escuro);">
+                        Progresso: ${Math.round(progressPercent)}%
                     </div>
-                ` : ''}
-                
-                <!-- BOTÕES DE NAVEGAÇÃO -->
+                </div>
+
+                <div class="question-box">
+                    <div class="question-number">Questão ${question.id}</div>
+                    <p class="question-text">${question.text}</p>
+                </div>
+
+                <div class="options-container">
+                    ${question.options.map(opt => {
+                        let optClass = "option";
+                        if (userAnswer === opt.letter) { optClass += " selected"; }
+                        return `
+                            <div class="${optClass}" onclick="selectOption('${opt.letter}')">
+                                <div class="option-letter ${opt.letter}">${opt.letter}</div>
+                                <div class="option-text">${opt.text}</div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+
                 <div class="nav-buttons">
-                    <button class="nav-btn prev" ${currentQuestionIndex === 0 ? 'disabled style="display: none;"' : ''}>
-                        <i class="fas fa-arrow-left"></i> ANTERIOR
+                    <button class="nav-btn prev" onclick="prevQuestion()" ${currentQuestionIndex === 0 ? 'disabled' : ''}>
+                        <i class="fas fa-arrow-left"></i> VOLTAR
                     </button>
-                    <button class="nav-btn next" ${!userAnswer ? 'disabled' : ''}>
-                        ${currentQuestionIndex < questions.length - 1 ? 'PRÓXIMA <i class="fas fa-arrow-right"></i>' : 'FINALIZAR TESTE'}
+                    <button class="nav-btn next" onclick="nextQuestion()" ${userAnswer === null ? 'disabled' : ''}>
+                        ${nextBtnText}
                     </button>
                 </div>
             `;
+
+            document.getElementById('questionModalContent').innerHTML = modalContent;
             
-            questionModal.querySelector('.modal-content').innerHTML = modalContent;
-            
-            // ADICIONAR EVENTOS
-            const closeBtn = questionModal.querySelector('.close-modal');
-            const prevBtn = questionModal.querySelector('.nav-btn.prev');
-            const nextBtn = questionModal.querySelector('.nav-btn.next');
-            const options = questionModal.querySelectorAll('.option:not(.selected)');
-            
-            closeBtn.addEventListener('click', () => {
+            document.querySelector('.close-modal').addEventListener('click', () => {
                 questionModal.style.display = 'none';
                 document.body.style.overflow = 'auto';
-            });
-            
-            if (prevBtn) {
-                prevBtn.addEventListener('click', () => {
-                    if (currentQuestionIndex > 0) {
-                        currentQuestionIndex--;
-                        updateQuestionModal();
-                    }
-                });
-            }
-            
-            if (nextBtn) {
-                nextBtn.addEventListener('click', () => {
-                    if (currentQuestionIndex < questions.length - 1) {
-                        currentQuestionIndex++;
-                        updateQuestionModal();
-                    } else {
-                        questionModal.style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                        // Rolar até a seção de feedback após completar
-                        setTimeout(() => {
-                            feedbackSection.scrollIntoView({ behavior: 'smooth' });
-                        }, 500);
-                    }
-                });
-            }
-            
-            options.forEach(option => {
-                if (!option.classList.contains('selected')) {
-                    option.addEventListener('click', () => {
-                        const selectedLetter = option.getAttribute('data-letter');
-                        selectOption(selectedLetter);
-                    });
-                }
             });
         }
 
@@ -1657,16 +1400,36 @@
             const question = questions[currentQuestionIndex];
             userAnswers[currentQuestionIndex] = selectedLetter;
             
-            if (selectedLetter === question.correct) {
-                // Calcula pontuação baseada em 10 pontos totais para 41 questões
-                score = Math.round((userAnswers.filter((answer, idx) => 
-                    answer !== null && answer === questions[idx].correct
-                ).length / TOTAL_QUESTIONS) * 10 * 10) / 10;
-            }
+            score = Math.round((userAnswers.filter((answer, idx) => answer !== null && answer === questions[idx].correct).length / TOTAL_QUESTIONS) * 10 * 10) / 10;
             
             answeredCount = userAnswers.filter(answer => answer !== null).length;
             updateCounters();
             updateQuestionModal();
+        }
+
+        // AVANÇAR QUESTÃO OU FINALIZAR
+        function nextQuestion() {
+            if (currentQuestionIndex === TOTAL_QUESTIONS - 1) {
+                questionModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                showResults();
+            } else {
+                currentQuestionIndex++;
+                updateQuestionModal();
+            }
+        }
+
+        // VOLTAR QUESTÃO
+        function prevQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                updateQuestionModal();
+            }
+        }
+
+        function closeQuestionModal() {
+            questionModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
 
         // ATUALIZAR CONTADORES
@@ -1675,177 +1438,190 @@
             scoreCounter.textContent = score.toFixed(1);
         }
 
-        // MOSTRAR RESULTADOS
+        // MOSTRAR RESULTADOS COM ANÁLISE DE ERROS NO FINAL
         function showResults() {
             if (answeredCount < TOTAL_QUESTIONS) {
                 resultsWarning.style.display = 'block';
-                setTimeout(() => {
-                    resultsWarning.style.display = 'none';
-                }, 3000);
+                window.scrollTo({ top: resultsWarning.offsetTop - 100, behavior: 'smooth' });
+                setTimeout(() => { resultsWarning.style.display = 'none'; }, 4000);
                 return;
             }
-            
+
             const notaFinal = score;
-            const acertos = userAnswers.filter((answer, idx) => 
-                answer !== null && answer === questions[idx].correct
-            ).length;
-            
-            let level, message, color;
-            
+            const acertos = userAnswers.filter((answer, idx) => answer === questions[idx].correct).length;
+            let faixa = {};
+
+            // Mapeamento das Faixas de Consciência
             if (notaFinal >= 9.0) {
-                level = "Um Jedi da Longelescência! 🏆";
-                message = "Parabéns! Você demonstra uma consciência excepcional sobre os desafios do idadismo e uma visão profundamente respeitosa da longevidade. Compartilhe esse conhecimento!";
-                color = "linear-gradient(90deg, var(--amarelo), var(--laranja))";
+                faixa = {
+                    nivel: 5, titulo: "Embaixador(a) da Longelescência", emoji: "🏆", cor: "linear-gradient(135deg, #4CAF50, #2E7D32)", corSolida: "#4CAF50",
+                    texto: "Sua consciência etária é exemplar. Você enxerga a longevidade com dignidade, apoia a autonomia plena e combate as microagressões cotidianas ativamente. Você compreendeu a essência da longelescência — o frescor da descoberta com o peso positivo da experiência.",
+                    citacao: "\"A maturidade não nos retira a vida — ela nos expande o horizonte de significados.\"",
+                    consultoria: {
+                        titulo: "🚀 Sua Consultoria de Mudança: MULTIPLICAR",
+                        descricao: "Você já é uma liderança natural contra o idadismo. Sua missão agora é espalhar e estruturar esse conhecimento para criar espaços inclusivos.",
+                        acoes: ["Compartilhe este teste em seus grupos familiares e redes sociais", "Intervenha ativamente sempre que notar falas idadistas ocultas", "Explore o desenvolvimento de projetos intergeracionais organizados"]
+                    }
+                };
             } else if (notaFinal >= 7.0) {
-                level = "Consciente e Informado 💡";
-                message = "Você tem boa consciência sobre o idadismo, mas ainda pode aprofundar alguns conceitos. Continue estudando e conversando sobre longevidade!";
-                color = "linear-gradient(90deg, var(--azul), var(--verde))";
-            } else if (notaFinal >= 5.0) {
-                level = "Em Desenvolvimento 🌱";
-                message = "Você está no caminho certo, mas ainda internalizou alguns estereótipos sobre o envelhecimento. Reflita sobre as questões que errou!";
-                color = "linear-gradient(90deg, var(--verde), var(--azul))";
+                faixa = {
+                    nivel: 4, titulo: "Guardião(ã) Consciente", emoji: "🛡️", cor: "linear-gradient(135deg, #2196F3, #1565C0)", corSolida: "#2196F3",
+                    texto: "Excelente nível de compreensão! Você rejeita o idadismo explícito e protege a autonomia dos mais velhos. Contudo, algumas sutilezas estruturais ou expressões tradicionais ainda passam como invisíveis aos seus olhos. O idadismo muitas vezes chega embrulhado em 'cuidado' ou em 'elogio'.",
+                    citacao: "\"O idadismo mais perigoso não é o que grita — é o que sussurra gentilezas que diminuem.\"",
+                    consultoria: {
+                        titulo: "💡 Sua Consultoria de Mudança: APROFUNDAR",
+                        descricao: "Você está muito perto do topo. As questões que errou provavelmente estão nas zonas mais sutis — vale analisá-las abaixo.",
+                        acoes: ["Analise a lista de erros gerada abaixo para ajustar o olhar", "Observe como o idadismo velado aparece em propagandas anti-idade", "Converse com pessoas idosas sobre os pequenos impedimentos diários que elas sofrem"]
+                    }
+                };
+            } else if (notaFinal >= 5.5) {
+                faixa = {
+                    nivel: 3, titulo: "Consciência em Movimento", emoji: "⚖️", cor: "linear-gradient(135deg, #FFC107, #FF8F00)", corSolida: "#FFC107",
+                    texto: "Você está no meio do caminho, em plena transição. Já percebe absurdos evidentes (como violência patrimonial), mas ainda reproduz práticas idadistas arraigadas, como o uso de termos infantilizantes ou o falso excesso de proteção que anula escolhas individuais.",
+                    citacao: "\"Cuidar de quem amamos não significa assumir o controle de suas vidas, mas sim proteger sua liberdade de decidir.\"",
+                    consultoria: {
+                        titulo: "🔍 Sua Consultoria de Mudança: EXPANDIR PONTOS CEGOS",
+                        descricao: "Seu olhar está se abrindo. O desafio agora é desvincular a ideia de cuidado da ideia de controle ou infantilização.",
+                        acoes: ["Estude os gabaritos das questões erradas listadas abaixo", "Policie-se para remover diminutivos paternalistas desnecessários no dia a dia", "Pratique a escuta ativa: consulte a pessoa sênior antes de resolver algo por ela"]
+                    }
+                };
+            } else if (notaFinal >= 4.0) {
+                faixa = {
+                    nivel: 2, titulo: "Despertar em Curso", emoji: "🌋", cor: "linear-gradient(135deg, #9C27B0, #6A1B9A)", corSolida: "#9C27B0",
+                    texto: "Sua pontuação aponta que muitas crenças idadistas tradicionais operam em seu julgamento. Você tende a enxergar a maturidade associada à limitação técnica, lentidão profissional ou exclusão de desejos afetivos e estéticos. Há um universo de preconceitos herdados que precisam ser questionados.",
+                    citacao: "\"Ninguém nasce preconceituoso — nós aprendemos. E o que se aprendeu, pode ser desaprendido.\"",
+                    consultoria: {
+                        titulo: "🌱 Sua Consultoria de Mudança: QUESTIONAR",
+                        descricao: "O despertar já começou. Agora é hora de questionar com curiosidade as velhas crenças que carregamos sobre a velhice.",
+                        acoes: ["Use a seção de erros abaixo como uma apostila de correção imediata", "Reflita sobre os modelos de envelhecimento que você viu dentro da sua própria família", "Busque acompanhar exemplos reais de longevos que empreendem ou iniciam carreiras novas"]
+                    }
+                };
             } else {
-                level = "Iniciante na Jornada 🚀";
-                message = "Este teste revelou que há muitos conceitos sobre envelhecimento e idadismo para explorar. É uma ótima oportunidade para começar!";
-                color = "linear-gradient(90deg, var(--rosa), var(--roxo))";
+                faixa = {
+                    nivel: 1, titulo: "Ponto de Ignição", emoji: "🔥", cor: "linear-gradient(135deg, #E91E63, #C2185B)", corSolida: "#E91E63",
+                    texto: "Seu resultado sinaliza um padrão fortemente baseado em preconceitos estruturais e na formatação social antiga da velhice. É muito provável que você enxergue o envelhecimento estritamente como sinônimo de declínio, invalidez, fardo ou inutilidade produtiva. Não se assuste: a sociedade nos treina para isso.",
+                    citacao: "\"O maior perigo de aceitar os estereótipos sobre a velhice é que, um dia, nós nos tornaremos o preconceito que cultivamos.\"",
+                    consultoria: {
+                        titulo: "🏁 Sua Consultoria de Mudança: RECOMEÇAR O OLHAR",
+                        descricao: "Este é o seu ponto zero. O idadismo é cultural, mas a desconstrução dele é uma escolha pessoal, ética e urgente.",
+                        acoes: ["Leia atentamente todas as justificativas pedagógicas dos seus erros listados abaixo", "Assista a materiais informativos focados na Economia Prateada e na Nova Maturidade", "Explore os textos do Blog e os vídeos do Autor indicados na página inicial"]
+                    }
+                };
             }
-            
-            const resultsHTML = `
-                <div style="padding: 40px; text-align: center;">
-                    <div style="font-size: 2.5rem; color: var(--azul-escuro); margin-bottom: 20px; font-weight: 700;">SEU RESULTADO COMPLETO</div>
-                    
-                    <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 30px 0;">
-                        <div style="text-align: center;">
-                            <div style="font-size: 4.5rem; font-weight: 900; color: var(--rosa); margin: 10px 0; background: linear-gradient(45deg, var(--rosa), var(--laranja)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">${notaFinal.toFixed(1)}</div>
-                            <div style="font-weight: 700; color: var(--texto-medio);">NOTA (0-10)</div>
+
+            // GERAÇÃO DINÂMICA DA ANÁLISE DE ERROS PEDAGÓGICA
+            let errosHtml = "";
+            let totalErros = TOTAL_QUESTIONS - acertos;
+
+            if (totalErros === 0) {
+                errosHtml = `
+                    <div style="background: #E8F5E9; border: 2px solid #4CAF50; padding: 20px; border-radius: 15px; text-align: center; margin-top: 25px;">
+                        <i class="fas fa-star" style="color: #FFC107; font-size: 2rem; margin-bottom: 10px;"></i>
+                        <h4 style="color: #2E7D32; font-size: 1.2rem;">Incrível! Zero Pontos Cegos Identificados!</h4>
+                        <p style="font-size: 1rem; color: #333; margin-top: 5px;">Você demonstrou uma visão integral, empática e completamente alinhada aos conceitos da Longelescência em todas as situações propostas.</p>
+                    </div>
+                `;
+            } else {
+                errosHtml = `
+                    <div style="margin-top: 30px; text-align: left;">
+                        <h3 style="color: var(--azul-escuro); font-size: 1.4rem; border-bottom: 2px solid #DDD; padding-bottom: 8px; margin-bottom: 15px;">
+                            <i class="fas fa-search"></i> 📝 Análise dos Seus Pontos Cegos Etários (${totalErros} itens a desconstruir)
+                        </h3>
+                        <p style="color: var(--texto-medio); font-size: 0.95rem; margin-bottom: 20px; font-style: italic;">
+                            Abaixo estão listados detalhadamente os cenários em que você acabou reproduzindo respostas com viés etarista ou idadista. Use este mapeamento para desaprender o preconceito estrutural:
+                        </p>
+                `;
+
+                userAnswers.forEach((answer, idx) => {
+                    if (answer !== questions[idx].correct) {
+                        const q = questions[idx];
+                        const alternativaCorretaTexto = q.options.find(o => o.letter === q.correct).text;
+                        const alternativaUsuarioTexto = q.options.find(o => o.letter === answer).text;
+
+                        errosHtml += `
+                            <div style="background: #FFF9F9; border-left: 5px solid var(--rosa); padding: 18px; border-radius: 10px; margin-bottom: 18px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+                                <strong style="color: var(--azul-escuro); font-size: 1.05rem; display: block; margin-bottom: 6px;">Questão ${q.id}</strong>
+                                <p style="font-size: 0.95rem; color: #333; margin-bottom: 10px; font-weight: 500;">${q.text}</p>
+                                
+                                <div style="font-size: 0.9rem; margin-bottom: 8px; color: #C2185B; background: #FFEBEE; padding: 8px 12px; border-radius: 6px;">
+                                    <strong>Sua escolha com viés:</strong> [${answer}] ${alternativaUsuarioTexto}
+                                </div>
+                                <div style="font-size: 0.9rem; margin-bottom: 12px; color: #2E7D32; background: #E8F5E9; padding: 8px 12px; border-radius: 6px;">
+                                    <strong>Alternativa sem idadismo:</strong> [${q.correct}] ${alternativaCorretaTexto}
+                                </div>
+                                <div style="font-size: 0.95rem; color: #444; background: #FFF; border: 1px dashed #DDD; padding: 12px; border-radius: 6px; line-height: 1.5;">
+                                    <i class="fas fa-graduation-cap" style="color: var(--azul); margin-right: 5px;"></i> <strong>Por que essa é a postura correta?</strong><br>${q.explanation}
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+
+                errosHtml += `</div>`;
+            }
+
+            // Montagem Completa da Janela de Resultados
+            const resultsContent = `
+                <div style="font-size: 1.2rem; color: var(--text-claro); font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">SEU RESULTADO COMPLETO</div>
+                
+                <div style="margin: 20px auto; width: 110px; height: 110px; border-radius: 50%; background: ${faixa.cor}; display: flex; align-items: center; justify-content: center; font-size: 3.2rem; box-shadow: 0 12px 30px rgba(0,0,0,0.25);">
+                    ${faixa.emoji}
+                </div>
+
+                <div style="display: inline-block; padding: 12px 32px; border-radius: 50px; font-weight: 700; font-size: 1.4rem; margin-bottom: 15px; background: ${faixa.cor}; color: white; box-shadow: 0 8px 20px rgba(0,0,0,0.2);">
+                    Nível ${faixa.nivel} de 5 &mdash; ${faixa.titulo}
+                </div>
+
+                <div style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin: 12px 0 20px;">
+                    ${[1,2,3,4,5].map(n => `
+                        <div style="padding: 6px 16px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; 
+                                    background: ${n === faixa.nivel ? faixa.cor : '#E0E0E0'}; 
+                                    color: ${n === faixa.nivel ? 'white' : '#777'};">
+                            Nível ${n}
                         </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 4.5rem; font-weight: 900; color: var(--azul); margin: 10px 0; background: linear-gradient(45deg, var(--azul), var(--roxo)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">${acertos}</div>
-                            <div style="font-weight: 700; color: var(--texto-medio);">ACERTOS</div>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 4.5rem; font-weight: 900; color: var(--verde); margin: 10px 0; background: linear-gradient(45deg, var(--verde), #4CAF50); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">${answeredCount}</div>
-                            <div style="font-weight: 700; color: var(--texto-medio);">RESPONDIDAS</div>
-                        </div>
-                    </div>
-                    
-                    <div style="display: inline-block; padding: 15px 35px; border-radius: 50px; font-weight: 700; font-size: 1.5rem; margin-bottom: 30px; background: ${color}; color: white; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-                        ${level}
-                    </div>
-                    
-                    <div style="font-size: 1.3rem; margin-bottom: 40px; color: #555; line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto; font-weight: 600;">
-                        ${message}
-                    </div>
-                    
-                    <div style="background: rgba(126, 214, 223, 0.1); padding: 30px; border-radius: 20px; margin: 30px 0; text-align: center; border: 3px solid var(--azul);">
-                        <h4 style="color: var(--azul-escuro); margin-bottom: 20px; font-size: 1.4rem;">📊 SEU DESEMPENHO DETALHADO</h4>
-                        <div style="display: inline-block; text-align: left; font-size: 1.1rem; font-weight: 600;">
-                            <div style="margin-bottom: 10px;"><strong>Acertos:</strong> ${acertos} de ${TOTAL_QUESTIONS}</div>
-                            <div style="margin-bottom: 10px;"><strong>Porcentagem:</strong> ${Math.round((acertos/TOTAL_QUESTIONS)*100)}%</div>
-                            <div style="margin-bottom: 10px;"><strong>Nível de Consciência:</strong> ${getNivelConsciencia(notaFinal)}</div>
-                            <div><strong>Próximo Passo:</strong> ${getProximoPasso(notaFinal)}</div>
-                        </div>
-                    </div>
-                    
-                    <!-- SEÇÃO DE FEEDBACK NO RESULTADO -->
-                    <div style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 87, 34, 0.1)); padding: 30px; border-radius: 20px; margin: 30px 0; text-align: center; border: 3px solid var(--laranja);">
-                        <h4 style="color: var(--azul-escuro); margin-bottom: 20px; font-size: 1.4rem;"><i class="fas fa-comments"></i> FALE DIRETAMENTE COMIGO</h4>
-                        <p style="color: var(--texto-medio); margin-bottom: 20px; font-size: 1.1rem;">
-                            <strong>Sua opinião é essencial para melhorar este trabalho!</strong>
-                        </p>
-                        <p style="color: var(--texto-medio); margin-bottom: 25px; font-size: 1rem;">
-                            Clique abaixo para se comunicar <strong>diretamente comigo</strong>. Você pode sugerir temas, avaliar a experiência ou compartilhar relatos.
-                        </p>
-                        <a href="https://forms.gle/1mQMewjBpJbccQYp7" target="_blank" style="display: inline-block; padding: 18px 40px; background: linear-gradient(90deg, var(--laranja), var(--rosa)); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.2rem; box-shadow: 0 10px 25px rgba(255, 87, 34, 0.4); transition: all 0.3s ease;">
-                            <i class="fas fa-paper-plane"></i> FALAR DIRETAMENTE COM RICARDO
-                        </a>
-                        <p style="color: var(--texto-claro); font-size: 0.9rem; margin-top: 15px;">
-                            <i class="fas fa-envelope-open-text"></i> Eu leio pessoalmente cada mensagem
-                        </p>
-                    </div>
-                    
-                    <!-- CHAMADA PARA PESQUISA MUNDO LONGEVO -->
-                    <div style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(33, 150, 243, 0.1)); padding: 30px; border-radius: 20px; margin: 30px 0; text-align: center; border: 3px solid var(--verde);">
-                        <h4 style="color: var(--azul-escuro); margin-bottom: 20px; font-size: 1.4rem;">🔬 PARTICIPE DA PESQUISA MUNDO LONGEVO</h4>
-                        <p style="color: var(--texto-medio); margin-bottom: 20px; font-size: 1.1rem;">
-                            <strong>Você tem 50 anos ou mais?</strong> Sua experiência é valiosa para a ciência da longevidade!
-                        </p>
-                        <p style="color: var(--texto-medio); margin-bottom: 25px; font-size: 1rem;">
-                            <strong>Como brinde:</strong> Todos os participantes recebem meu livro <strong>"Aposentei-me e Agora?"</strong> em formato digital!
-                        </p>
-                        <a href="https://forms.gle/3i9bUdmc5AicdXHUA" target="_blank" style="display: inline-block; padding: 18px 40px; background: linear-gradient(90deg, var(--verde), var(--azul)); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.2rem; box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4); transition: all 0.3s ease;">
-                            <i class="fas fa-clipboard-check"></i> PARTICIPAR DA PESQUISA
-                        </a>
-                        <p style="color: var(--texto-claro); font-size: 0.9rem; margin-top: 15px;">
-                            <i class="fas fa-lock"></i> Dados protegidos • Pesquisa anônima • Ética aprovada
-                        </p>
-                    </div>
-                    
-                    <!-- BOTÃO PARA BAIXAR QUESTÕES -->
-                    <div style="margin: 30px 0;">
-                        <button onclick="downloadQuestions()" style="padding: 18px 40px; background: linear-gradient(90deg, var(--roxo), var(--azul)); color: white; border: none; border-radius: 50px; font-weight: 700; font-size: 1.2rem; cursor: pointer; margin: 10px; box-shadow: 0 10px 25px rgba(156, 39, 176, 0.4); transition: all 0.3s ease;">
-                            <i class="fas fa-download"></i> BAIXAR AS 41 QUESTÕES E RESPOSTAS
-                        </button>
-                        <p style="color: var(--texto-medio); margin-top: 10px; font-size: 0.9rem;">
-                            Baixe todas as 41 questões com explicações para estudar e compartilhar
-                        </p>
-                    </div>
-                    
-                    <!-- REDES SOCIAIS NO RESULTADO -->
-                    <div style="background: rgba(255, 193, 7, 0.1); padding: 25px; border-radius: 15px; margin: 20px 0;">
-                        <h4 style="color: var(--azul-escuro); margin-bottom: 15px;">📱 SIGA NAS REDES SOCIAIS</h4>
-                        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                            <a href="https://www.youtube.com/@positivaatitude" target="_blank" style="padding: 12px 25px; background: #FF0000; color: white; border-radius: 50px; text-decoration: none;">
-                                <i class="fab fa-youtube"></i> YouTube
-                            </a>
-                            <a href="https://www.tiktok.com/@ricardodefariabarros?is_from_webapp=1&sender_device=pc" target="_blank" style="padding: 12px 25px; background: #000000; color: white; border-radius: 50px; text-decoration: none;">
-                                <i class="fab fa-tiktok"></i> TikTok
-                            </a>
-                            <a href="https://www.animodh.com.br/" target="_blank" style="padding: 12px 25px; background: var(--azul); color: white; border-radius: 50px; text-decoration: none;">
-                                <i class="fas fa-globe"></i> Site
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div style="margin-top: 20px;">
-                        <p style="color: var(--texto-medio); font-size: 0.9rem;">
-                            Teste desenvolvido por <strong>Ricardo de Faria Barros</strong> - Psicólogo CRP 01/7844<br>
-                            Especialista em Longevidade e Combate ao Idadismo • Baseado em relatos reais
-                        </p>
-                    </div>
-                    
-                    <button onclick="closeResultsModal()" style="padding: 18px 45px; background: linear-gradient(90deg, var(--azul-escuro), #1565C0); color: white; border: none; border-radius: 50px; font-weight: 700; font-size: 1.2rem; cursor: pointer; margin-top: 20px; box-shadow: 0 10px 25px rgba(13, 71, 161, 0.3); transition: all 0.3s ease;">
-                        FECHAR
+                    `).join('')}
+                </div>
+
+                <p style="font-size: 1.3rem; font-weight: 700; color: var(--azul-escuro); margin-bottom: 20px;">
+                    Sua nota: <span style="font-size: 2.2rem; color: ${faixa.corSolida}; font-weight: 900;">${notaFinal.toFixed(1)}</span> de 10.0 pontos 
+                    <small style="font-size: 1rem; color: var(--texto-medio); display: block; font-weight: 500; margin-top: 5px;">(${acertos} respostas sem idadismo das ${TOTAL_QUESTIONS} analisadas)</small>
+                </p>
+
+                <div style="background-color: #F8F9FA; padding: 25px; border-radius: 20px; text-align: left; margin-bottom: 25px; border-left: 6px solid ${faixa.corSolida}; font-size: 1.1rem; line-height: 1.6; color: #333;">
+                    ${faixa.texto}
+                </div>
+
+                <div style="background: #FFF; padding: 20px; border-radius: 15px; margin: 25px auto; max-width: 560px; border-left: 5px solid ${faixa.corSolida}; text-align: left;">
+                    <p style="font-style: italic; color: var(--azul-escuro); font-size: 1.05rem; font-weight: 600; margin: 0 0 8px;">
+                        ${faixa.citacao}
+                    </p>
+                    <small style="color: var(--texto-claro); font-weight: 700;">— Ricardo de Faria Barros</small>
+                </div>
+
+                <div style="background: linear-gradient(135deg, rgba(33,150,243,0.07), rgba(76,175,80,0.07)); padding: 28px; border-radius: 20px; margin: 25px 0; text-align: left; border: 2px solid ${faixa.corSolida};">
+                    <h4 style="color: var(--azul-escuro); margin-bottom: 10px; font-size: 1.25rem; text-align: center;">${faixa.consultoria.titulo}</h4>
+                    <p style="color: var(--texto-medio); margin-bottom: 18px; font-size: 0.95rem; text-align: center; font-style: italic;">
+                        ${faixa.consultoria.descricao}
+                    </p>
+                    <ul style="margin-left: 20px; font-size: 1.05rem; color: var(--texto-escuro); display: flex; flex-direction: column; gap: 10px;">
+                        ${faixa.consultoria.acoes.map(acao => `
+                            <li><i class="fas fa-arrow-alt-circle-right" style="color: ${faixa.corSolida}; margin-right: 8px;"></i> ${acao}</li>
+                        `).join('')}
+                    </ul>
+                </div>
+
+                ${errosHtml}
+
+                <div style="margin-top: 30px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <button class="nav-btn next" onclick="closeResultsModal()" style="padding: 14px 35px; font-size: 1.1rem;">
+                        <i class="fas fa-times-circle"></i> FECHAR DIAGNÓSTICO
                     </button>
                 </div>
             `;
-            
-            resultsModal.querySelector('.modal-content').innerHTML = resultsHTML;
+
+            document.getElementById('resultsModalContent').innerHTML = resultsContent;
             resultsModal.style.display = 'block';
             document.body.style.overflow = 'hidden';
-            
-            // Depois de fechar o modal, rolar até a seção de feedback
-            const closeBtn = resultsModal.querySelector('button[onclick="closeResultsModal()"]');
-            closeBtn.addEventListener('click', () => {
-                setTimeout(() => {
-                    feedbackSection.scrollIntoView({ behavior: 'smooth' });
-                }, 500);
-            });
-        }
-
-        // FUNÇÕES AUXILIARES
-        function getNivelConsciencia(nota) {
-            if (nota >= 9) return "Excelente";
-            if (nota >= 7) return "Bom";
-            if (nota >= 5) return "Em desenvolvimento";
-            return "Iniciante";
-        }
-
-        function getProximoPasso(nota) {
-            if (nota >= 9) return "Compartilhe seu conhecimento e seja multiplicador!";
-            if (nota >= 7) return "Continue estudando e converse com pessoas idosas";
-            if (nota >= 5) return "Reflita sobre os erros e baixe as questões para estudar";
-            return "Converse com pessoas idosas e baixe as questões para aprender";
         }
 
         // FECHAR MODAL DE RESULTADOS
@@ -1856,13 +1632,8 @@
 
         // FECHAR MODAL CLICANDO FORA
         window.addEventListener('click', (e) => {
-            if (e.target === questionModal) {
-                questionModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-            if (e.target === resultsModal) {
-                closeResultsModal();
-            }
+            if (e.target === questionModal) { questionModal.style.display = 'none'; document.body.style.overflow = 'auto'; }
+            if (e.target === resultsModal) { resultsModal.style.display = 'none'; document.body.style.overflow = 'auto'; }
         });
     </script>
 </body>
