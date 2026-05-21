@@ -138,78 +138,115 @@
             margin-bottom: var(--espaco-md);
         }
         
-        /* BLOCO DE DESTAQUE: ANABB 70+ */
-        .anabb-box {
-            background: linear-gradient(135deg, #E3F2FD, #FFF);
-            border: 2px solid #1565C0;
-            border-left: 8px solid #0D47A1;
+        /* SISTEMA DE ABAS CENTRALIZADO E EXPANSÍVEL */
+        .anabb-tabs-container {
+            background: white;
             padding: var(--espaco-lg);
-            border-radius: var(--borda-radius-sm);
+            border-radius: var(--borda-radius);
             margin-bottom: var(--espaco-lg);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: left;
+            box-shadow: var(--sombra);
+            border-top: 6px solid var(--azul-escuro);
         }
 
-        .anabb-tag {
-            background-color: #0D47A1;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-        
-        /* REDES SOCIAIS E BLOG DO AUTOR */
-        .social-section {
-            background: white;
-            padding: var(--espaco-xl);
-            border-radius: var(--borda-radius);
-            margin: var(--espaco-xl) 0;
-            box-shadow: var(--sombra);
-            text-align: center;
-        }
-        
-        .social-title { color: var(--azul-escuro); margin-bottom: var(--espaco-lg); font-size: 1.8rem; }
-        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--espaco-lg); margin-bottom: var(--espaco-xl); }
-        
-        .social-card {
-            background: linear-gradient(135deg, #F8F9FA, #E8F4F8);
-            padding: var(--espaco-lg);
-            border-radius: 15px;
-            box-shadow: var(--sombra);
-            transition: var(--transicao);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        
-        .social-card:hover { transform: translateY(-5px); }
-        .social-icon { font-size: 2.5rem; margin-bottom: var(--espaco-md); display: block; }
-        .social-icon.youtube { color: #FF0000; }
-        .social-icon.website { color: var(--azul); }
-        .social-icon.plena { color: var(--verde); }
-        .social-icon.blog { color: var(--laranja); }
-        .social-icon.email { color: var(--roxo); }
-        .social-icon.tiktok { color: #000000; }
-        
-        .social-btn {
-            display: inline-block;
-            padding: 15px 30px;
-            background: linear-gradient(90deg, var(--azul), var(--roxo));
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
+        .anabb-intro-text {
             font-size: 1.1rem;
+            color: var(--texto-escuro);
+            margin-bottom: var(--espaco-md);
+            border-left: 4px solid var(--azul);
+            padding-left: 12px;
+        }
+
+        .tabs-header {
+            display: flex;
+            gap: 6px;
+            border-bottom: 2px solid #E0E0E0;
+            margin-bottom: var(--espaco-md);
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 18px;
+            border: none;
+            background: #F5F5F5;
+            color: var(--texto-medio);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.92rem;
+            cursor: pointer;
+            border-radius: 12px 12px 0 0;
             transition: var(--transicao);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tab-btn:hover { background: #E0E0E0; color: var(--azul-escuro); }
+        .tab-btn.active { background: var(--azul-escuro); color: white; }
+
+        .tab-content { display: none; animation: fadeIn 0.4s ease; }
+        .tab-content.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* BOX EXECUTIVO: ALTA GOVERNANÇA */
+        .governança-box {
+            background: linear-gradient(135deg, #F0F4C3, #FFF);
+            padding: var(--espaco-lg);
+            border-radius: var(--borda-radius-sm);
+            border-left: 6px solid #827717;
+            margin-top: var(--espaco-sm);
+        }
+
+        /* FORMATAÇÃO INTERNA DO MANIFESTO */
+        .manifesto-box {
+            background: linear-gradient(135deg, #FFF9FA, #FFF);
+            padding: var(--espaco-lg);
+            border-radius: var(--borda-radius-sm);
+            border: 1px dashed var(--rosa);
             margin-top: var(--espaco-sm);
         }
         
-        .social-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-        
+        .manifesto-header {
+            text-align: center;
+            margin-bottom: var(--espaco-md);
+            color: var(--rosa);
+        }
+
+        .manifesto-pilar {
+            background: #FFF;
+            padding: var(--espaco-md);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            border-left: 4px solid var(--rosa);
+        }
+        .manifesto-pilar h4 { color: var(--texto-escuro); font-size: 1.15rem; margin-bottom: 8px; }
+        .manifesto-pilar ul { margin-left: 20px; font-size: 1rem; color: var(--texto-medio); }
+
+        /* GRID DE COMPETÊNCIAS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--espaco-md);
+            margin-top: var(--espaco-sm);
+        }
+
+        .skills-column {
+            background: #F8F9FA;
+            padding: var(--espaco-md);
+            border-radius: var(--borda-radius-sm);
+            border-top: 4px solid var(--azul);
+        }
+        .skills-column.soft { border-top-color: var(--roxo); }
+
+        .skill-item {
+            margin-bottom: 12px;
+            font-size: 1rem;
+            color: var(--texto-escuro);
+            line-height: 1.4;
+        }
+        .skill-item strong { color: var(--azul-escuro); }
+
         /* INTRO COM RELATOS */
         .intro-box {
             background: white;
@@ -495,11 +532,17 @@
             .subtitle { font-size: 1rem; margin-bottom: var(--espaco-md); padding: 0 var(--espaco-sm); }
             .header-compliment { font-size: 0.85rem; padding: 4px 12px; }
             
+            .anabb-tabs-container { padding: var(--espaco-sm); border-radius: 16px; }
+            .tab-btn { padding: 10px 12px; font-size: 0.8rem; border-radius: 8px; width: 100%; justify-content: flex-start; }
+            .tabs-header { border-bottom: none; gap: 4px; }
+            .skills-grid { grid-template-columns: 1fr; gap: var(--espaco-sm); }
+            .manifesto-box { padding: var(--espaco-sm); }
+            .governança-box { padding: var(--espaco-sm); }
+
             .hero-start-btn { font-size: 1.15rem; padding: 16px 36px; gap: 8px; width: 90%; max-width: 320px; }
             .hero-hint { font-size: 0.8rem; }
             
             .intro-box { padding: var(--espaco-md); border-radius: 18px; margin-bottom: var(--espaco-lg); }
-            .anabb-box { padding: var(--espaco-md); }
             .relatos-box { padding: var(--espaco-sm); }
             .linguagem-box { font-size: 0.85rem; padding: var(--espaco-sm); }
             .aviso { font-size: 0.9rem; padding: var(--espaco-sm); }
@@ -563,12 +606,158 @@
 
     <main class="container">
         
-        <section class="anabb-box">
-            <span class="anabb-tag"><i class="fas fa-star"></i> PIONEIRISMO INSTITUCIONAL</span>
-            <h3 style="color: #0D47A1; margin-bottom: 8px; font-size: 1.4rem;">Parceria de Visão: Apoio ao Projeto ANABB 70+</h3>
-            <p style="font-size: 1.05rem; line-height: 1.6; color: #333; margin-bottom: 0;">
-                Este instrumento pedagógico orgulha-se de fazer menção honrosa ao <strong>Projeto ANABB 70+</strong>, iniciativa em que o autor atua como consultor especialista em longevidade. O Projeto ANABB 70+ consolidou-se como um verdadeiro marco histórico ao conduzir a temática da maturidade de forma <strong>cidadã, inclusiva, participativa e combativa</strong>. Antecipando-se com maestria a um movimento inevitável de revolução cultural e económica na nossa sociedade, a ANABB assume um papel inteiramente protagonista. Mais do que acolher, a instituição promove de forma ativa um espaço insubstituível de socialização, reflexão profunda e luta intransigente pelos direitos fundamentais das pessoas idosas — que hoje já constituem uma expressiva e honrosa parcela dos seus associados e assistidos.
+        <section class="anabb-tabs-container">
+            <h3 style="color: var(--azul-escuro); font-size: 1.5rem; margin-bottom: 12px;"><i class="fas fa-landmark"></i> Espaço de Conscientização &amp; Vanguarda</h3>
+            <p class="anabb-intro-text">
+                Navegue pelos módulos de conhecimento para entender o impacto político, social e mercadológico da longevidade ativa. **A primeira aba abaixo detalha o funcionamento do teste:**
             </p>
+            
+            <div class="tabs-header">
+                <button class="tab-btn active" onclick="switchTab(event, 'aba-diagnostico')"><i class="fas fa-clipboard-check"></i> 1. O Diagnóstico (Como Funciona)</button>
+                <button class="tab-btn" onclick="switchTab(event, 'aba-impacto')"><i class="fas fa-eye"></i> 2. Projeto ANABB 70+</button>
+                <button class="tab-btn" onclick="switchTab(event, 'aba-motivos')"><i class="fas fa-shield-alt"></i> 3. Os 3 Motivos Centrais</button>
+                <button class="tab-btn" onclick="switchTab(event, 'aba-competencias')"><i class="fas fa-graduation-cap"></i> 4. Competências de Futuro</button>
+                <button class="tab-btn" onclick="switchTab(event, 'aba-manifesto')"><i class="fas fa-scroll"></i> 5. Manifesto LongeViver</button>
+                <button class="tab-btn" onclick="switchTab(event, 'aba-governanca')"><i class="fas fa-users-cog"></i> 6. Convocação à Alta Governança</button>
+            </div>
+
+            <div id="aba-diagnostico" class="tab-content active">
+                <p style="font-size: 1.05rem; color: #333; margin-bottom: 12px;">
+                    Este instrumento de <strong>Autodiagnóstico</strong> foi estruturado com base em situações reais do cotidiano para ajudar você a identificar os seus próprios pontos cegos etários e descobrir em qual nível de consciência sobre a <strong>Longelescência</strong> você se encontra.
+                </p>
+                <p style="font-size: 1.05rem; color: #333; margin-bottom: 0; font-weight: 600;">
+                    Para garantir a máxima fidelidade estatística e clínica dos seus resultados, o teste funciona de forma "cega" durante o preenchimento: você responde espontaneamente e, apenas no relatório final, o sistema desnudará cada erro e entregará a consultoria pedagógica correspondente.
+                </p>
+            </div>
+
+            <div id="aba-impacto" class="tab-content">
+                <p style="font-size: 1.05rem; color: #333; margin-bottom: 12px;">
+                    A inclusão do público longevo na estratégia central de grandes instituições reflete uma visão humanizada e de vanguarda, que transforma o envelhecimento populacional em uma oportunidade de conexão e aprendizado. Ao revisar processos e priorizar o cuidado e o acolhimento, essas organizações demonstram um profundo respeito por aqueles que dedicaram décadas de suas vidas ao mercado de trabalho ou ao fortalecimento das próprias marcas. Esse posicionamento não apenas resgata a dignidade do público idoso, interno ou externo, mas também combate o preconceito etário de forma prática, provando que o valor de uma pessoa não expira com o tempo.
+                </p>
+                <p style="font-size: 1.05rem; color: #333; margin-bottom: 0;">
+                    Mais do que um ato de responsabilidade social, essa postura consolida uma cultura institucional de empatia e solidariedade intergeracional que serve de modelo para toda a sociedade. Ao adaptar serviços, produtos e a comunicação para acolher as necessidades dos mais velhos, as instituições garantem a sustentabilidade de suas operações e o bem-estar coletivo. Celebrar a longevidade com respeito e inovação é a maior evidência de maturidade corporativa, transformando o legado dessas pessoas em combustível para um futuro mais inclusivo e acolhedor.
+                </p>
+            </div>
+
+            <div id="aba-motivos" class="tab-content">
+                <p style="font-size: 1.05rem; color: #333; font-weight: 600; margin-bottom: 15px;">
+                    A adoção de uma estratégia voltada para a longevidade pela ANABB representa um marco histórico e político por três motivos centrais:
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 14px;">
+                    <p style="font-size: 1rem; color: #444; border-left: 3px solid var(--amarelo); padding-left: 10px; margin-bottom: 0;">
+                        <strong>&bull; Poder de representação em escala:</strong> Como uma das maiores associações de classe da América Latina, reunindo mais de 80 mil associados, as diretrizes da ANABB não são apenas decisões internas. Elas estabelecem um novo padrão de mercado e influenciam diretamente o comportamento corporativo e sindical em todo o país.
+                    </p>
+                    <p style="font-size: 1rem; color: #444; border-left: 3px solid var(--azul); padding-left: 10px; margin-bottom: 0;">
+                        <strong>&bull; Influência nos maiores fundos do país:</strong> O público da ANABB está diretamente ligado à Previ (o maior fundo de pensão da América Latina) e à Cassi (um dos maiores planos de saúde autogestão). Atuar na valorização do público longevo significa proteger a sustentabilidade económica e operacional dessas megaestruturas, impactando o mercado financeiro e de saúde suplementar brasileiro.
+                    </p>
+                    <p style="font-size: 1rem; color: #444; border-left: 3px solid var(--roxo); padding-left: 10px; margin-bottom: 0;">
+                        <strong>&bull; Voz política e cidadã:</strong> Sendo uma entidade com forte trânsito no Congresso Nacional e no Poder Executivo, a ANABB transforma a pauta da longevidade ativa em pressão legítima por políticas públicas. Projetos dedicados a este público (como o Diário de Bordo – Longevidades da ANABB 70+) elevam o debate sobre o envelhecimento populacional ao topo da agenda económica e social do país.
+                    </p>
+                </div>
+            </div>
+
+            <div id="aba-competencias" class="tab-content">
+                <p style="font-size: 1.05rem; color: #333; margin-bottom: 15px;">
+                    Trabalhar com a pauta da longevidade na ANABB desenvolve competências altamente valorizadas e raras no mercado de trabalho atual. Para um profissional de 25 anos, estas habilidades representam um grande diferencial competitivo para o futuro da sua carreira:
+                </p>
+                
+                <div class="skills-grid">
+                    <div class="skills-column">
+                        <h4 style="color: var(--azul); font-size: 1.15rem; margin-bottom: 10px;"><i class="fas fa-tools"></i> Competências Técnicas (Hard Skills)</h4>
+                        <div class="skill-item">&bull; <strong>Design Inclusivo (Acessibilidade):</strong> Criar produtos, comunicações e interfaces digitais adaptadas para pessoas seniores.</div>
+                        <div class="skill-item">&bull; <strong>Análise Demográfica:</strong> Interpretar dados sobre o envelhecimento para prever tendências de consumo e comportamento.</div>
+                        <div class="skill-item">&bull; <strong>Gestão de Benefícios Complexos:</strong> Compreender o funcionamento técnico e financeiro de fundos de pensão (Previ) e planos de saúde (Cassi).</div>
+                        <div class="skill-item">&bull; <strong>Economia Prateada (Silver Economy):</strong> Desenvolver modelos de negócios focados no público que mais cresce no mercado global.</div>
+                        <div class="skill-item">&bull; <strong>Comunicação Multigeracional:</strong> Dominar técnicas de linguagem claras e assertivas para diferentes faixas etárias.</div>
+                    </div>
+                    
+                    <div class="skills-column soft">
+                        <h4 style="color: var(--roxo); font-size: 1.15rem; margin-bottom: 10px;"><i class="fas fa-brain"></i> Competências Comportamentais (Soft Skills)</h4>
+                        <div class="skill-item">&bull; <strong>Empatia Cognitiva:</strong> Capacidade de compreender profundamente as necessidades, limitações e desejos de uma geração diferente da sua.</div>
+                        <div class="skill-item">&bull; <strong>Escuta Ativa:</strong> Ouvir com atenção e respeito para extrair a real essência das dores e contributos dos associados longevos.</div>
+                        <div class="skill-item">&bull; <strong>Letramento Etário:</strong> Saber identificar, combater e eliminar o preconceito de idade (etarismo) no ambiente corporativo.</div>
+                        <div class="skill-item">&bull; <strong>Paciência Resiliente:</strong> Adaptar o ritmo de atendimento e processos à velocidade necessária para o acolhimento do idoso.</div>
+                        <div class="skill-item">&bull; <strong>Negociação Intergeracional:</strong> Facilitar o diálogo e a cooperação entre profissionais seniores e jovens dentro da instituição.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="aba-manifesto" class="tab-content">
+                <div class="manifesto-box">
+                    <div class="manifesto-header">
+                        <h4 style="font-size: 1.4rem; font-family: 'Poppins'; font-weight: bold; margin-bottom: 5px;">Manifesto da Longevidade Viva: O Tempo é Nosso Território</h4>
+                        <p style="font-size: 1.05rem; font-style: italic; color: var(--texto-medio); max-width: 800px; margin: 0 auto;">
+                            Nós, cidadãos da maturidade, associados, trabalhadores e lideranças, recusamos o silêncio do apagamento e a moldura do isolamento. Reivindicamos o tempo não como um declínio, mas como a nossa maior potência política, social e humana. Este manifesto é o nosso compromisso com o presente e o nosso legado para as próximas gerações.
+                        </p>
+                    </div>
+
+                    <div class="manifesto-pilar">
+                        <h4>✊ 1. Longevidade Combativa: Contra o Etarismo e a Invisibilidade</h4>
+                        <ul>
+                            <li><strong>Ocupação de espaços:</strong> Ocupamos as arenas políticas, os conselhos e o debate público.</li>
+                            <li><strong>Voz ativa:</strong> Exigimos leis justas e orçamentos públicos voltados para a maturidade.</li>
+                            <li><strong>Combate ao preconceito:</strong> Denunciamos o etarismo disfarçado de cuidado ou de piada.</li>
+                            <li><strong>Força institutional:</strong> Usamos a nossa representatividade para moldar políticas estatais de cuidado.</li>
+                        </ul>
+                    </div>
+
+                    <div class="manifesto-pilar" style="border-left-color: var(--azul);">
+                        <h4>🚀 2. Longevidade Ativa e Participativa: O Protagonismo Cidadão</h4>
+                        <ul>
+                            <li><strong>Cidades sustentáveis:</strong> Exigimos territórios urbanos acessíveis, seguros e acolhedores.</li>
+                            <li><strong>Arena da vida:</strong> Provamos a nossa vitalidade em iniciativas de grande escala.</li>
+                            <li><strong>Exemplo real:</strong> Celebramos o desporto e o movimento em eventos como o CINFAABB.</li>
+                            <li><strong>Presença digital:</strong> Conquistamos a tecnologia para ampliar a nossa autonomia diária.</li>
+                        </ul>
+                    </div>
+
+                    <div class="manifesto-pilar" style="border-left-color: var(--amarelo);">
+                        <h4>🧠 3. Longevidade Positiva e Contemplativa: A Sabedoria do Tempo</h4>
+                        <ul>
+                            <li><strong>Maturidade com propósito:</strong> Reinventamos carreiras, projetos de vida e novas aprendizagens.</li>
+                            <li><strong>Olhar atento:</strong> Valorizamos a pausa, a memória e a transmissão de saberes tradicionais.</li>
+                            <li><strong>Saúde integral:</strong> Defendemos o equilíbrio mental, físico e espiritual acima de metas numéricas.</li>
+                            <li><strong>Autoria do tempo:</strong> Vivemos cada ano com a certeza de quem escreve a própria história.</li>
+                        </ul>
+                    </div>
+
+                    <div class="manifesto-pilar" style="border-left-color: var(--verde);">
+                        <h4>❤️ 4. Longevidade Afetiva: A Construção de Territórios de Afeto</h4>
+                        <ul>
+                            <li><strong>Redes de apoio:</strong> Criamos laços profundos que blindam o indivíduo contra a solidão.</li>
+                            <li><strong>Integração geracional:</strong> Promovemos o diálogo aberto com os jovens de 25 anos nas empresas.</li>
+                            <li><strong>Acolhimento mútuo:</strong> Transformamos associações e comunidades em portos seguros de afeto.</li>
+                            <li><strong>Solidariedade viva:</strong> Cuidamos de quem nos cuidou, enquanto projetamos o futuro de quem virá.</li>
+                        </ul>
+                    </div>
+
+                    <p style="font-size: 1.05rem; color: #333; text-align: center; margin-top: 15px; font-weight: bold; line-height: 1.4;">
+                        Este não é um plano para o amanhã. É um vetor de transformação cultural, social e negocial para o agora. Assinamos este pacto pela dignidade, pela vivacidade e pelo direito inalienável de viver o tempo com orgulho, presença e voz.
+                    </p>
+                    <p style="text-align: center; color: var(--rosa); font-weight: 700; margin-top: 5px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                        &mdash; Assina: Psicólogo Ricardo de Faria Barros, Projeto 70+ ANABB
+                    </p>
+                </div>
+            </div>
+
+            <div id="aba-governanca" class="tab-content">
+                <div class="governança-box">
+                    <h4 style="font-size: 1.25rem; color: #555; margin-bottom: 12px; font-family: 'Poppins'; border-bottom: 2px solid #C0CA33; padding-bottom: 5px;"><i class="fas fa-bullhorn"></i> Carta Convocatória aos Líderes Nacionais</h4>
+                    <p style="font-size: 1.05rem; color: #222; font-weight: 600; margin-bottom: 12px;">Prezados Líderes e Membros da Alta Governança,</p>
+                    <p style="font-size: 1rem; color: #333; margin-bottom: 12px; text-align: justify;">
+                        O envelhecimento da população brasileira deixou de ser uma projeção estatística para se tornar a realidade mais urgente das nossas organizações. Diante desse cenário, ignorar a maturidade é um risco estratégico cego; acolhê-la com protagonismo é a nossa maior oportunidade de liderança corporativa, política e social. É por isso que convocamos todo o ecossistema plural e associativista do país — fundos de pensão, planos de saúde, sindicatos, institutions públicas e privadas, autarquias e fundações — a aderirem urgentemente à criação de ambientes 60+. Convidamos as vossas instituições a olharem atentamente para o exemplo da ANABB, que assumiu um posicionamento histórico com o lançamento do Programa ANABB 70+. Mais do que uma agenda interna de serviços, iniciativas como o Diário de Bordo – Longevidades redefiniram a forma como nos relacionamos com quem construiu o nosso legado, estruturando o acolhimento sob pilares essenciais como a saúde, a inclusão digital, a cidadania e o combate implacável ao etarismo.
+                    </p>
+                    <p style="font-size: 1rem; color: #333; margin-bottom: 12px; text-align: justify;">
+                        Essa postura exige valorizar, acolher e respeitar a população longeva em duas frentes indissociáveis: a externa, composta por cidadãos, usuários, clientes e consumidores que demandam dignidade; e a interna, formada pelos nossos próprios trabalhadores seniores. Mais do que reter talentos, as nossas instituições precisam de liderar a abertura de oportunidades reais e novas vagas para profissionais 50+ no mercado de trabalho, combatendo o desperdício de capital intelectual. Desenhar programas de longevidade customizados para estas realidades não é um ato de caridade; é uma estratégia indispensável de sustentabilidade institucional para os fundos que gerem o futuro financeiro do país e para as operadoras que garantem a saúde da população.
+                    </p>
+                    <p style="font-size: 1rem; color: #333; margin-bottom: 12px; text-align: justify;">
+                        Essa postura ultrapassa as fronteiras negociais e assume uma profunda dimensão política e de participação cidadã. Instituições que representam milhares de afiliados possuem a força e a legitimidade necessárias para atuar diretamente na formulação de leis e no desenho de planos de governo focados em cidades sustentáveis. Cooperar com esse movimento significa liderar a criação de territórios de afeto e de socialização, onde o espaço público e as dinâmicas comunitárias são pensados para garantir a dignidade e a vivacidade em todas as idades. O exemplo máximo dessa potência social e de bem-estar é a histórica parceria entre a ANABB e a FENABB no suporte ao CINFAABB (Campeonato de Integração Nacional dos Funcionários Aposentados do Banco do Brasil), consolidado como o maior torneio desportivo de aposentados do mundo. Eventos dessa magnitude provam que a maturidade é sinónimo de vitalidade, saúde e reencontro, transformando de forma definitiva o ecossistema das nossas organizações parceiras.
+                    </p>
+                    <p style="font-size: 1rem; color: #222; font-weight: bold; margin-bottom: 0; text-align: justify;">
+                        Ao assumirem este compromisso em conjunto, as nossas instituições deixam de ser meras espectadoras para se tornarem o vetor central de uma transformação cultural, social e negocial sem precedentes no país. Quando adaptamos serviços, abrimos vagas de emprego para os mais velhos, apoiamos políticas públicas de cuidado e celebramos a longevidade ativa em grandes arenas de integração, nós não apenas blindamos a sustentabilidade financeira dos nossos fundos e serviços; nós passamos a ditar a agenda da Economia Prateada no Brasil. Conclamamos a vossa liderança a dar esse passo definitivo: transformem o respeito à longevidade em uma diretriz executiva central e assumam conosco o papel de vanguarda na construção de um mercado inclusivo e de uma sociedade genuinamente cidadã, justa, ética e plural para as pessoas longevas.
+                    </p>
+                </div>
+            </div>
         </section>
 
         <section class="intro-box">
@@ -576,7 +765,6 @@
                 <span class="highlight">AUTODIAGNÓSTICO DE IDADISMO</span>
             </div>
             <p>O idadismo (ou etarismo) é um dos preconceitos mais silenciosos e socialmente aceitos no mundo moderno. Muitas vezes, ele se manifesta em nossas falas diárias disfarçado de "cuidado", "elogio" ou "brincadeira".</p>
-            <p>Este sistema de <strong>Autodiagnóstico</strong> foi estruturado pelo psicólogo <strong>Ricardo de Faria Barros</strong> com base em situações reais do cotidiano para ajudar você a identificar os seus próprios pontos cegos etários e descobrir em qual nível de consciência sobre a <strong>Longelescência</strong> você se encontra.</p>
             
             <div class="relatos-box">
                 <h4 style="color: var(--laranja); margin-bottom: 8px;"><i class="fas fa-comments"></i> O preconceito que se disfarça no dia a dia:</h4>
@@ -845,7 +1033,7 @@
                     { letter: "C", text: "\"Os idosos deveriam ter horários específicos restritos para não atrapalhar o comércio.\"" }
                 ],
                 correct: "B",
-                explanation: "O idadismo utilitarista avalia o valor do tempo da pessoa com base na sua produtividade econômica ativa. O tempo de vida pertence ao cidadão."
+                explanation: "O idadismo utilitarista avalia o valor do tempo da pessoa com base na sua produtividade econômica activa. O tempo de vida pertence ao cidadão."
             },
             {
                 id: 13,
@@ -906,7 +1094,7 @@
                 id: 18,
                 text: "Linguagem inacessível (letras minúsculas, termos em inglês sem explicação) é:",
                 options: [
-                    { letter: "A", text: "\"Falta de interesse do idoso em se atualizar no world globalizado.\"" },
+                    { letter: "A", text: "\"Falta de interesse do idoso em se atualizar no mundo globalizado.\"" },
                     { letter: "B", text: "\"Idadismo por desenho (design exclusion), excluindo deliberadamente os longevos.\"" },
                     { letter: "C", text: "\"Exigência do mercado tecnológico moderno, que não pode parar.\"" }
                 ],
@@ -1032,7 +1220,7 @@
                     { letter: "C", text: "\"Construção de rampas e calçadas acessíveis nas cidades.\"" }
                 ],
                 correct: "B",
-                explanation: "O pânico irracional de envelhecer (gerontofobia) alimenta o consumo desenfreado de ilusões estéticas invasivas."
+                explanation: "O pânico irracional de envelhecer (gerontofobia) alimenta o consumo desenfreado de illusions estéticas invasivas."
             },
             {
                 id: 30,
@@ -1102,7 +1290,7 @@
             },
             {
                 id: 36,
-                text: "O conceito de 'Economia Prateada' envolve:",
+                text: "O concept de 'Economia Prateada' envolve:",
                 options: [
                     { letter: "A", text: "\"A venda de produtos de saúde e remédios para a terceira idade.\"" },
                     { letter: "B", text: "\"O mercado de produtos e serviços voltados para o público 50+ de forma ativa e digna.\"" },
@@ -1171,7 +1359,7 @@
                 text: "Expressões de aversão sensorial e estética como dizer que tem pavor de pele enrugada, horror a cabelos brancos ou afirmar com desdém que reconhece de longe o 'cheiro de velho' revelam:",
                 options: [
                     { letter: "A", text: "\"Uma reação higiênica e de preferência estética perfeitamente natural do ser humano.\"" },
-                    { letter: "B", text: "\"Uma constatização biológica inevitável sobre as alterações físicas provocadas pelo tempo.\"" },
+                    { letter: "B", text: "\"Uma constatação biológica inevitável sobre as alterações físicas provocadas pelo tempo.\"" },
                     { letter: "C", text: "\"Idadismo sensorial e gerontofobia, projetando nos outros o pavor irracional e a negação do seu próprio processo de envelhecimento.\"" }
                 ],
                 correct: "C",
@@ -1179,7 +1367,7 @@
             },
             {
                 id: 43,
-                text: "A equipe de RH de uma startup se reuniu para revisar os perfis profissiográficos e alguém sugere: 'Vamos travar a contratação de pessoas acima de 50 anos porque elas quebram o nosso fit cultural e a vibe ágil'. Como você avalia essa prática?",
+                text: "A equipe de RH de uma startup se reúne para revisar os perfis profissiográficos e alguém sugere: 'Vamos travar a contratação de pessoas acima de 50 anos porque elas quebram o nosso fit cultural e a vibe ágil'. Como você avalia essa prática?",
                 options: [
                     { letter: "A", text: "\"Uma decisão de negócios moderna legítima para garantir que a equipe fale a mesma língua e mantenha o ritmo.\"" },
                     { letter: "B", text: "\"Uma cautela puramente administrativa para proteger a empresa de custos excessivos com planos de saúde.\"" },
@@ -1283,6 +1471,18 @@
         const downloadQuestionsBtn = document.getElementById('download-questions-btn');
         const viewResultsBtn = document.getElementById('view-results-btn');
         const resultsWarning = document.getElementById('results-warning');
+
+        // FUNÇÃO PARA TROCA DE ABAS (INTERATIVIDADE MULTIMÓDULO)
+        function switchTab(event, tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-btn');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
 
         // INICIALIZAÇÃO
         document.addEventListener('DOMContentLoaded', function() {
@@ -1395,20 +1595,26 @@
             });
         }
 
-        // SELECIONAR OPÇÃO
+        // SELECIONAR OPÇÃO + AVANÇO AUTOMÁTICO SEGURO
         function selectOption(selectedLetter) {
-            const question = questions[currentQuestionIndex];
             userAnswers[currentQuestionIndex] = selectedLetter;
             
             score = Math.round((userAnswers.filter((answer, idx) => answer !== null && answer === questions[idx].correct).length / TOTAL_QUESTIONS) * 10 * 10) / 10;
-            
             answeredCount = userAnswers.filter(answer => answer !== null).length;
+            
             updateCounters();
             updateQuestionModal();
+
+            // Avanço automático suave após o clique
+            setTimeout(() => {
+                nextQuestion();
+            }, 350);
         }
 
         // AVANÇAR QUESTÃO OU FINALIZAR
         function nextQuestion() {
+            if (userAnswers[currentQuestionIndex] === null) return;
+
             if (currentQuestionIndex === TOTAL_QUESTIONS - 1) {
                 questionModal.style.display = 'none';
                 document.body.style.overflow = 'auto';
